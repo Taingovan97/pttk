@@ -1,0 +1,85 @@
+a{
+  color: #111;
+}
+a:hover{
+  color: #111;
+}
+header{
+  border-bottom: 2px solid #111;
+  margin-top: 10px;
+}
+.logo h1{
+  padding: 10px;
+  background: #25e8e8;
+  border: 1px solid;
+}
+#login-button, #signup-button {
+  padding: 10px;
+  background: #25e8e8;
+  border: 1px solid;
+}
+.search input{
+  border-radius: 20px;
+  border: 1px solid;
+}
+.filter{
+  margin-top: 20px;
+}
+.filter li{
+  display: inline;
+  padding: 10px;
+}
+.filter .select{
+  background: #25e8e8;
+}
+.location{
+  margin-top: 10px;
+}
+.location li{
+  display: inline;
+  font-size: 20px;
+  padding: 5px 13px;
+  border-radius: 20px;
+  background: #ccc;
+}
+.location span{
+  font-size: 20px;
+}
+.root-view h3{
+  font-size: 20px;
+}
+.border-charts{
+  border: 1px solid #d5d72f;
+  height: 600px;
+}
+.border-charts .select{
+  background: yellow;
+}
+.charts{
+  padding: 10px;
+}
+.charts-content h4{
+  font-size: 18px;
+}
+.charts-element{
+  padding: 10px;
+}
+.search-view-element{
+  border-bottom: 1px solid;
+  margin-bottom: 20px;
+}
+.author{
+  border: 1px solid;
+  border-bottom: none;
+}
+.author p{
+  line-height: 30px;
+  border-bottom: 1px solid;
+  height: 30px;
+  margin-bottom: 0;
+}
+.summary{
+  padding: 5px;
+  border: 1px solid;
+  margin: 20px 0;
+}
