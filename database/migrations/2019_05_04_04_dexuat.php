@@ -23,8 +23,8 @@ class Dexuat extends Migration
             $table->string('maTK');
             $table->string('maNhom');
             $table->primary('maDX');
-            $table->foreign('maTK')->reference('maTK')->on('taikhoan');
-            $table->foreign('maNhom')->reference('maNhom')->on('nhom');
+            $table->foreign('maTK')->references('maTK')->on('taikhoan');
+            $table->foreign('maNhom')->references('maNhom')->on('nhom');
         
         });
 

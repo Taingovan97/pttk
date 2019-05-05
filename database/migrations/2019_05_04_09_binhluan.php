@@ -21,8 +21,8 @@ class Binhluan extends Migration
             $table->string('maChuong');
             $table->string('maTK');
             $table->primary('maBL');
-            $table->foreign('maChuong')->reference('maChuong')->on('chuongtruyen');
-            $table->foreign('maTK')->reference('maTK')->on('taikhoan');
+            $table->foreign('maChuong')->references('maChuong')->on('chuongtruyen');
+            $table->foreign('maTK')->references('maTK')->on('taikhoan');
         });
     }
 

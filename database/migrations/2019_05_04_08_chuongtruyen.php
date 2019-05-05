@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Truyen extends Migration
+class Chuongtruyen extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,14 @@ class Truyen extends Migration
     public function up()
     {
         //
-        Schema::create('truyen', function($table){
-            $table->string('maTruyen');
-            $table->string('tenTruyen');
-            $table->string('tacGia');
+        Schema::create('chuongtruyen', function($table){
+            $table->string('maChuong');
+            $table->string('tenChuong');
+            $table->string('noiDung');
             $table->date('ngayDang');
-            $table->text('gioiThieu')->nullable();
-            $table->integer('luotXem')->unsigned();
-            $table->float('diemDG');
-            $table->primary('maTruyen');
+            $table->string('maTruyen');
+            $table->primary('maChuong');
+            $table->foreign('maTruyen')->references('maTruyen')->on('truyen');
         });
     }
 
@@ -34,6 +33,6 @@ class Truyen extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('truyen');
+        Schema::dropIfExists('chuongtruyen');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Admin extends Migration
+class Thanhvien extends Migration
 {
     /**
      * Run the migrations.
@@ -14,15 +14,16 @@ class Admin extends Migration
     public function up()
     {
         //
-        Schema::create('admin', function($table){
-            $table->string('maAdmin');
+        Schema::create('thanhvien', function($table){
+            $table->string('maTV');
             $table->string('hoTen');
             $table->integer('gioiTinh');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->integer('sdt');
             $table->string('maTK');
-            $table->primary('maAdmin');
-            $talbe->foreign('maTK')->reference('maTk')->on('taikhoan');
+            $table->string('maNhom');
+            $table->primary('maTV');
+            $table->foreign('maTK')->references('maTK')->on('taikhoan');
         });
     }
 
@@ -34,6 +35,6 @@ class Admin extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('admin');
+        Schema::dropIfExists('thanhvien');
     }
 }

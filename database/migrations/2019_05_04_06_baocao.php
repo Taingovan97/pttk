@@ -24,9 +24,9 @@ class Baocao extends Migration
             $table->string('maTK2')->nullable();
             $table->string('maTruyen')->nullable();
             $table->primary('maBC');
-            $table->foreign('maTK1')->reference('maTK')->on('taikhoan');
-            $table->foreign('maTK2')->reference('maTK')->on('taikhoan');
-            $table->foreign('maTruyen')->reference('maTruyen')->on('truyen');
+            $table->foreign('maTK1')->references('maTK')->on('taikhoan');
+            $table->foreign('maTK2')->references('maTK')->on('taikhoan');
+            $table->foreign('maTruyen')->references('maTruyen')->on('truyen');
 
         });
     }

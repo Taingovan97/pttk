@@ -21,8 +21,8 @@ class Danhgia extends Migration
             $table->string('maTK');
             $table->string('maTruyen');
             $table->primary('maDG');
-            $table->foreign('maTK')->reference('maTK')->on('taikhoan');
-            $table->foreign('maTruyen')->reference('maTruyen')->on('truyen');
+            $table->foreign('maTK')->references('maTK')->on('taikhoan');
+            $table->foreign('maTruyen')->references('maTruyen')->on('truyen');
         });
     }
 

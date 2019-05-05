@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Taikhoan extends Migration
+class Admin extends Migration
 {
     /**
      * Run the migrations.
@@ -14,11 +14,15 @@ class Taikhoan extends Migration
     public function up()
     {
         //
-        Schema::create('taikhoan', function($table){
+        Schema::create('admin', function($table){
+            $table->string('maAdmin');
+            $table->string('hoTen');
+            $table->integer('gioiTinh');
+            $table->string('email');
+            $table->integer('sdt');
             $table->string('maTK');
-            $table->string('tenTK');
-            $table->string('matKhau');
-            $table->primary('maTK');
+            $table->primary('maAdmin');
+            $table->foreign('maTK')->references('maTK')->on('taikhoan');
         });
     }
 
@@ -30,6 +34,6 @@ class Taikhoan extends Migration
     public function down()
     {
         //
-        Schema::dropIfExists('taikhoan');
+        Schema::dropIfExists('admin');
     }
 }

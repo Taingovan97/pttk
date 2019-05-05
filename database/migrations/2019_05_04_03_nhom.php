@@ -21,7 +21,7 @@ class Nhom extends Migration
             $table->string('gioiThieu')->nullable();
             $table->string('maTruongNhom');
             $table->primary('maNhom');
-            $table->foreign('maTruongNhom')->reference('maTK')->on('taikhoan');
+            $table->foreign('maTruongNhom')->references('maTK')->on('taikhoan');
 
         });
     }

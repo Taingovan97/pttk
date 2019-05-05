@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class TruyenNhom extends Migration
+class Taikhoan extends Migration
 {
     /**
      * Run the migrations.
@@ -14,6 +14,15 @@ class TruyenNhom extends Migration
     public function up()
     {
         //
+        Schema::create('taikhoan', function($table){
+            $table->string('maTK');
+            $table->string('tenTK');
+            $table->string('matKhau');
+            $table->string('maTV');
+            $table->primary('maTK');
+
+            
+        });
     }
 
     /**
@@ -24,5 +33,6 @@ class TruyenNhom extends Migration
     public function down()
     {
         //
+        Schema::dropIfExists('taikhoan');
     }
 }

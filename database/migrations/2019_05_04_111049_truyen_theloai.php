@@ -13,7 +13,12 @@ class TruyenTheloai extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('truyen_theloai', function($table){
+            $table->string('maTL');
+            $table->string('maTruyen');
+            $table->primary('maTL');
+            
+        });
     }
 
     /**
@@ -23,6 +28,6 @@ class TruyenTheloai extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('theloai');
     }
 }
