@@ -16,6 +16,7 @@ class Danhgia extends Migration
         //
         Schema::create('danhgia', function($table){
             $table->string('maDG');
+            $table->string('tieuDe');
             $table->float('diem');
             $table->string('maTK');
             $table->string('maTruyen');

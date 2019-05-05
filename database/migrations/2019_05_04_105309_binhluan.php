@@ -16,7 +16,7 @@ class Binhluan extends Migration
         //
         Schema::create('binhluan', function($table){
             $table->string('maBL');
-            $table->string('noiDung');
+            $table->text('noiDung');
             $table->date('ngayGui');
             $table->string('maChuong');
             $table->string('maTK');

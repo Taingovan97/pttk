@@ -19,6 +19,7 @@ class Truyen extends Migration
             $table->string('tenTruyen');
             $table->string('tacGia');
             $table->date('ngayDang');
+            $table->text('gioiThieu')->nullable();
             $table->integer('luotXem')->unsigned();
             $table->float('diemDG');
             $table->primary('maTruyen');

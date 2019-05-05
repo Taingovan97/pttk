@@ -18,8 +18,11 @@ class Nhom extends Migration
             $table->string('maNhom');
             $table->string('tenNhom');
             $table->date('ngayLap');
-            $table->string('gioiThieu');
+            $table->string('gioiThieu')->nullable();
+            $table->string('maTruongNhom');
             $table->primary('maNhom');
+            $table->foreign('maTruongNhom')->reference('maTK')->on('taikhoan');
+
         });
     }
 

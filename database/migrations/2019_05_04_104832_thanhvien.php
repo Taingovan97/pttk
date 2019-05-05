@@ -18,7 +18,7 @@ class Thanhvien extends Migration
             $table->string('maTV');
             $table->string('hoTen');
             $table->integer('gioiTinh');
-            $table->string('email');
+            $table->string('email')->unique();
             $table->integer('sdt');
             $table->string('maTK');
             $table->string('maNhom');

@@ -16,7 +16,8 @@ class Dexuat extends Migration
         //
         Schema::create('dexuat', function($table){
             $table->string('maDX');
-            $table->string('noiDung');
+            $table->string('tieuDe');
+            $table->text('noiDung');
             $table->date('ngayGui');
             $table->boolean('trangThai');
             $table->string('maTK');

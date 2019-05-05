@@ -17,7 +17,7 @@ class Baocao extends Migration
         Schema::create('baocao', function($table){
             $table->string('maBC');
             $table->string('tieuDe');
-            $table->string('noiDung');
+            $table->text('noiDung');
             $table->date('ngayGui');
             $table->boolean('trangThai');
             $table->string('maTK1');
