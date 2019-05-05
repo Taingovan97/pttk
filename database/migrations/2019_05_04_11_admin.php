@@ -17,7 +17,7 @@ class Admin extends Migration
         Schema::create('admin', function($table){
             $table->string('maAdmin');
             $table->string('hoTen');
-            $table->integer('gioiTinh');
+            $table->string('gioiTinh');
             $table->string('email');
             $table->integer('sdt');
             $table->string('maTK');

@@ -17,7 +17,7 @@ class Thanhvien extends Migration
         Schema::create('thanhvien', function($table){
             $table->string('maTV');
             $table->string('hoTen');
-            $table->integer('gioiTinh');
+            $table->string('gioiTinh');
             $table->string('email')->unique();
             $table->integer('sdt');
             $table->string('maTK');
