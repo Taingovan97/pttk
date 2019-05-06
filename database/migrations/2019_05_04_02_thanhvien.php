@@ -17,11 +17,11 @@ class Thanhvien extends Migration
         Schema::create('thanhvien', function($table){
             $table->string('maTV');
             $table->string('hoTen');
-            $table->string('gioiTinh');
+            $table->string('gioiTinh')->nullable()->default('Nam');
             $table->string('email')->unique();
-            $table->integer('sdt');
+            $table->integer('sdt')->nullable();
             $table->string('maTK');
-            $table->string('maNhom');
+            $table->string('maNhom')->nullable();
             $table->primary('maTV');
             $table->foreign('maTK')->references('maTK')->on('taikhoan');
         });

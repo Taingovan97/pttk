@@ -160,7 +160,11 @@ header .container{
   text-decoration: none;
 }
 .comic h3 a:hover{
+<<<<<<< HEAD
   color: #ccc;
+=======
+  color: #c51f1a;
+>>>>>>> 345702677909421d086dc84d640e3cffc7ef677d
 }
 .comic p{
 
