@@ -15,7 +15,7 @@ class pagescontroller extends Controller
 
     public function index1()
     {
-    	return view('layouts.quanlyTK');
+    	return view('ql_tk.thongke_nhom');
     }
 }
 
