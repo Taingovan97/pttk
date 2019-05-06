@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,13 +17,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('Khach', function(){
-	return view('Khach.TrangChu');
-});
+//trang chu
+Route::get('home', 'pagescontroller@index');
 
-Route::get('quanlyTK', function(){
-	return view('quanlyTK.TrangChu');
-});
+//giao dien main cua quan ly tai khoan
+Route::get('/quanlyTK', 'pagescontroller@index1');
+
+
 
 Route::get('quanlyTK/xemTK/{id}', 'quanlyTK@xemTK');
 

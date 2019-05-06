@@ -19,7 +19,7 @@ class Admin extends Migration
             $table->string('hoTen');
             $table->string('gioiTinh');
             $table->string('email');
-            $table->integer('sdt');
+            $table->string('sdt');
             $table->string('maTK');
             $table->primary('maAdmin');
             $table->foreign('maTK')->references('maTK')->on('taikhoan');
