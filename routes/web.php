@@ -12,7 +12,8 @@
 */
 
 Route::get('/', function(){
-	return view('Khach.indexcut');
+//	return view('Khach.indexcut');
+    return view('ql_tk.thongke_nhom');
 });
 
 // xu ly dang ky

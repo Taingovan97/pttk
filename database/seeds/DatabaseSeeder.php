@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-<<<<<<< HEAD
+
        $faker = Faker\Factory::create();
     	for ($i =0; $i<3; $i++){
     		App\taikhoan::insert([
@@ -23,11 +23,9 @@ class DatabaseSeeder extends Seeder
     		]);
     	}
 
-=======
         //$this->call(tkSeeder::class);
         //$this->call(AdSeeder::class);
-        
->>>>>>> 41eae6a11f787c8595d0429f672dcbb7a79fd0a9
+
     }
 }
 

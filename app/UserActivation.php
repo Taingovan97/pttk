@@ -17,10 +17,10 @@ class UserActivation extends Model
     public function createActivation($user)
     {
 
-        $activation = $this->getActivation($user);
+        $activation = $this->getActivation($user); // lấy activation của user:taikhoan
 
         if (!$activation) {
-            return $this->createToken($user);
+            return $this->createToken($user); // chua có activation cho user thì tạo và return về activation code
         }
         return $this->regenerateToken($user);
 
