@@ -12,6 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+<<<<<<< HEAD
        $faker = Faker\Factory::create();
     	for ($i =0; $i<3; $i++){
     		App\taikhoan::insert([
@@ -22,5 +23,24 @@ class DatabaseSeeder extends Seeder
     		]);
     	}
 
+=======
+        //$this->call(tkSeeder::class);
+        //$this->call(AdSeeder::class);
+        
+>>>>>>> 41eae6a11f787c8595d0429f672dcbb7a79fd0a9
     }
+}
+
+class tkSeeder extends Seeder
+{
+	public function run()
+	{
+		DB::table('taikhoan')->insert([
+			['maTK'=>'a01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
+			['maTK'=>'m01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
+			['maTK'=>'m02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
+			['maTK'=>'a02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
+			['maTK'=>'m03', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)]
+		]);
+	}
 }

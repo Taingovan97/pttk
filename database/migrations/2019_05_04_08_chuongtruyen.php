@@ -17,7 +17,7 @@ class Chuongtruyen extends Migration
         Schema::create('chuongtruyen', function($table){
             $table->string('maChuong');
             $table->string('tenChuong');
-            $table->string('noiDung');
+            $table->text('noiDung');
             $table->date('ngayDang');
             $table->string('maTruyen');
             $table->primary('maChuong');

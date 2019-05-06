@@ -25,5 +25,28 @@ Route::get('dangky/taotaikhoan/xacthuc/{token}', 'DK_DangKyTK@XacThuc')-> name('
 // xu ly dang nhap
 Route::get('dangnhap','DK_QLTaiKhoan@getDangNhap')->name('taoformdangnhap');
 
+
 Route::post('dangnhap/kiemtra', 'DK_QLTaiKhoan@dangNhap')->name('dangnhap');
+
+Route::get('quanlyTK', function(){
+	return view('quanlyTK.TrangChu');
+});
+
+Route::get('quanlyTK/xemTK/{id}', 'quanlyTK@xemTK');
+
+Route::get('quanlyTK/suaTK/{id}', 'quanlyTK@suaTK');
+
+Route::get('quanlyTK/xoaTK/{id}', 'quanlyTK@xoaTK');
+
+
+Route::get('quanlyTK/nhom', 'quanlyTK@nhom');
+
+Route::get('quanlyTK/nhom/xemNhom', 'quanlyTK@xemNhom');
+
+Route::get('quanlyTK/nhom/xoaNhom', 'quanlyTK@xoaNhom');
+
+Route::get('quanlyTK/nhom/thongkeNhom', 'quanlyTK@thongkeNhom');
+
+
+
 ?>
