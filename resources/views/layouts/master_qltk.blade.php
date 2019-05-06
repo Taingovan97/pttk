@@ -70,7 +70,7 @@
             </div>
           </div></li>
           <li><a href="#">Quản lý tài khoản cá nhân</a></li>
-          <li><a href="#">Quản lý nhóm</a></li>
+          <li><a href='{{route('nhom')}}'>Quản lý nhóm</a></li>
         </ul>
       </div>
     </div>

@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\view;
+use App\Http\Controllers\nhom;
 
 class pagescontroller extends Controller
 {
@@ -15,7 +15,12 @@ class pagescontroller extends Controller
 
     public function index1()
     {
-    	return view('ql_tk.thongke_nhom');
+    	return view('layouts.master_qltk');
+    }
+
+    public function nhom()
+    {
+    	return view('quanlyTK.nhom');
     }
 }
 

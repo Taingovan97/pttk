@@ -23,12 +23,12 @@ Route::get('/', function(){
 Route::get('home', 'pagescontroller@index');
 
 //giao dien main cua quan ly tai khoan
-Route::get('/quanlyTK', 'pagescontroller@index1');
+Route::get('quanlyTK', 'pagescontroller@index1');
 
 
 Route::get('demo', function(){
 	return view('quanlyTK.nhom');
-});
+})->name('demo');
 
 // xu ly dang ky
 Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
@@ -51,8 +51,10 @@ Route::get('quanlyTK/suaTK/{id}', 'quanlyTK@suaTK')->name('suaTK');
 
 Route::get('quanlyTK/xoaTK/{id}', 'quanlyTK@xoaTK')->name('xoaTK');
 
-
-Route::get('quanlyTK/nhom', 'quanlyTK@nhom');
+//giao dien main cua quan ly nhom
+Route::get('quanlyTK/nhom',function(){
+	return view('quanlyTK.nhom');
+})->name('nhom');
 
 Route::get('quanlyTK/nhom/xemNhom', 'quanlyTK@xemNhom')->name('xemNhom');
 
