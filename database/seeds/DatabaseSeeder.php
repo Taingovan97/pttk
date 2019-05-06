@@ -12,5 +12,15 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
+       $faker = Faker\Factory::create();
+    	for ($i =0; $i<3; $i++){
+    		App\taikhoan::insert([
+    			'maTK'=> strval($i+6),
+    			'tenTK'=>  $faker->firstName($gender='male'),
+    			'matKhau'=> bcrypt($faker->firstName($gender='male')),
+    			'maTV'=> 'dfdf'
+    		]);
+    	}
+
     }
 }

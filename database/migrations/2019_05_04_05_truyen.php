@@ -23,6 +23,7 @@ class Truyen extends Migration
             $table->integer('luotXem')->unsigned();
             $table->float('diemDG');
             $table->string('maNhom');
+            $table->boolean('duyet')->default(false);
             $table->primary('maTruyen');
             $table->foreign('maNhom')->references('maNhom')->on('nhom');
 

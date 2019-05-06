@@ -1,85 +1,217 @@
-a{
+/*header css*/
+body{
+  background: #333;
+}
+header .container{
+  background: #222222;
+}
+.find,.user{
+  margin: 20px 0;
+}
+.find-element, .filter-element{
+  width: 50%;
+  float: left;
+}
+.find-element input{
+  width: 95%;
+  float: left;
+  height: 35px;
+  outline: none;
+  border: 1px solid #c0c0c0;
+  background-color: white;
+  border-radius: 10px;
+  color: #9f9f9f;
+  display: inline-block;
+  text-decoration: none;
+  float: left;
+}
+.find-element button{
+  border: none;
+  float: left;
+  border-radius: 15px;
+  margin-left: -40px;
+  width: 35px;
+  height: 35px;
+  background: url(images/searchicon.png);
+  background-size: 100%;
+  background-repeat: no-repeat;
+  text-align: center;
+}
+.filter-element select{
+  height: 35px;
+  width: 100%;
+  padding: 5px;
+  border: 1px solid #c0c0c0;
+  border-radius: 10px;
+  float: left;
+}
+.user{
+
+}
+.user button{
+  margin: 0 15px;
+  float: right;
+  width: 30%;
+  border-radius: 10px;
+  border: none;
+  height: 35px;
+  font-weight: bold;
+}
+.direct{
+  margin-top: 30px;
+}
+.direct ul{
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.direct ul li{
+  display: block;
+  width: 20%;
+  background: #00b2bf;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  float: left;
+  border: 1px solid #fff;
+}
+.direct ul li:hover{
+  background: #7aa6f6;
+}
+.direct ul li a{
+  color: #fff;
+  text-decoration: none;
+}
+.direct-manager{
+  color: #fff;
+}
+.direct-manager ul{
+  width: 100%;
+  padding: 0px;
+  margin: 0px;
+}
+.direct-manager ul li{
+  display: block;
+  width: 33.33%;
+  background: #00b2bf;
+  padding: 10px 0;
+  text-align: center;
+  font-weight: bold;
+  float: left;
+  border: 1px solid #fff;
+}
+.direct-manager ul li:hover{
+  background: #7aa6f6;
+}
+.direct-manager ul li a{
+  color: #fff;
+  text-decoration: none;
+}
+/*end header css*/
+
+/*comic css*/
+
+.location,.main{
+  background: #fff;
+}
+.location ul{
+
+}
+.location a{
   color: #111;
+  font-weight: bold;
+  font-size: 18px;
+  text-decoration: none;
 }
-a:hover{
+.location ul span{
+  float: left;
+  padding: 10px;
+}
+.location ul li{
+  display: block;
+  float: left;
+  padding: 10px 18px;
+  background: #ccc;
+  border: none;
+  margin: 0 3px;
+  border-radius: 20px;
+}
+.location ul li:hover{
+   background: #e5dbdb;
+}
+.view-comics, .border-charts{
+  margin-top: 15px;
+
+}
+
+.comic-border{
+  padding: 0;
+}
+.comic{
+  margin: 2px;
+  padding: 10px;
+  border: 1px solid;
+}
+.comic h3{
+  border-bottom: 1px solid;
+}
+.comic h3 a{
   color: #111;
+  text-decoration: none;
 }
-header{
-  border-bottom: 2px solid #111;
-  margin-top: 10px;
+.comic h3 a:hover{
+  color: #c51f1a;
 }
-.logo h1{
-  padding: 10px;
-  background: #25e8e8;
-  border: 1px solid;
+.comic p{
+
 }
-#login-button, #signup-button {
-  padding: 10px;
-  background: #25e8e8;
-  border: 1px solid;
+
+.border-charts{
+  border: 1px solid #ccc;
+  border-right: none;
+  height: 500px;
 }
-.search input{
-  border-radius: 20px;
-  border: 1px solid;
+.border-charts h3{
+  text-align: center;
+  font-size: 22px;
 }
-.filter{
-  margin-top: 20px;
+.border-charts .view-all{
+  text-align: center;
+  margin: 10px 0;
 }
-.filter li{
-  display: inline;
-  padding: 10px;
-}
-.filter .select{
-  background: #25e8e8;
-}
-.location{
-  margin-top: 10px;
-}
-.location li{
-  display: inline;
-  font-size: 20px;
-  padding: 5px 13px;
-  border-radius: 20px;
+.border-charts .view-all:hover{
   background: #ccc;
 }
-.location span{
-  font-size: 20px;
-}
-.root-view h3{
-  font-size: 20px;
-}
-.border-charts{
-  border: 1px solid #d5d72f;
-  height: 600px;
-}
-.border-charts .select{
-  background: yellow;
+.border-charts .view-all a{
+  text-decoration: none;
+  color: #111;
+  font-size: 22px;
+  font-weight: bold;
 }
 .charts{
-  padding: 10px;
+  background: #3a3939;
+  padding: 10px 0;
+  text-align: center;
+  border: 1px solid #fff;
 }
-.charts-content h4{
-  font-size: 18px;
+.charts a{
+  color: #fff;
+  font-weight: bold;
 }
 .charts-element{
-  padding: 10px;
+  border-bottom: 1px solid #ccc;
+  padding: 5px;
 }
-.search-view-element{
-  border-bottom: 1px solid;
-  margin-bottom: 20px;
-}
+/*end comic css*/
+
 .author{
   border: 1px solid;
-  border-bottom: none;
-}
-.author p{
-  line-height: 30px;
-  border-bottom: 1px solid;
-  height: 30px;
-  margin-bottom: 0;
+  margin: 20px 0;
 }
 .summary{
-  padding: 5px;
   border: 1px solid;
   margin: 20px 0;
+}
+.search-view-element .col-md-5 img{
+  border: 1px solid;
 }

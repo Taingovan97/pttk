@@ -9,4 +9,5 @@ class taikhoan extends Model
     //
     protected $table = 'taikhoan';
     public $timestamps = false;
+    protected $primaryKey = 'maTK';
 }

@@ -11,12 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', function(){
+	return view('Khach.indexcut');
 });
 
-Route::get('Khach', function(){
-	return view('Khach.TrangChu');
-});
+// xu ly dang ky
+Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
+Route::post('dangky/taotaikhoan','DK_QLTaiKhoan@postTaoTaiKhoan')->name('dangkytaikhoan');
+
+Route::get('dangky/taotaikhoan/xacthuc/{token}', 'DK_DangKyTK@XacThuc')-> name('user.activate');
+
+// xu ly dang nhap
+Route::get('dangnhap','DK_QLTaiKhoan@getDangNhap')->name('taoformdangnhap');
+
+Route::post('dangnhap/kiemtra', 'DK_QLTaiKhoan@dangNhap')->name('dangnhap');
 ?>

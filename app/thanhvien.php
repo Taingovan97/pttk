@@ -9,4 +9,6 @@ class thanhvien extends Model
     //
     protected $table = 'thanhvien';
     public $timestamps = false;
+    protected $primaryKey = 'maTV';
+
 }
