@@ -1,5 +1,7 @@
 <?php
 
+
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,6 +24,20 @@
  	Route::get('tacgia', 'DK_Trang@tacgia')->name('tacgia');
  	Route::get('nam', 'DK_Trang@nam')->name('nam');
 
+//trang chu
+Route::get('home', 'pagescontroller@index');
+
+//giao dien main cua quan ly tai khoan
+Route::get('quanlyTK', 'pagescontroller@index1');
+
+
+Route::get('demo', function(){
+	return view('quanlyTK.nhom');
+})->name('demo');
+
+// xu ly dang ky
+Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
+>>>>>>> 56f273a47ae3b7a6716e2b5f5c158ca869fe9063
 
  	// xu ly dang ky
  	Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
@@ -34,6 +50,7 @@
  	Route::get('dangnhap','DK_QLTaiKhoan@getDangNhap')->name('taoformdangnhap');
 
  	Route::post('dangnhap', 'DK_QLTaiKhoan@dangNhapThanhVien')->name('dangnhap');
+
 
  	// xu ly dang xuat
  	Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
@@ -61,22 +78,22 @@
 
  });
 
- //Route::get('quanlyTK/xemTK/{id}', 'quanlyTK@xemTK');
- //
- //Route::get('quanlyTK/suaTK/{id}', 'quanlyTK@suaTK');
- //
- //Route::get('quanlyTK/xoaTK/{id}', 'quanlyTK@xoaTK');
- //
- //
- //Route::get('quanlyTK/nhom', 'quanlyTK@nhom');
- //
- //Route::get('quanlyTK/nhom/xemNhom', 'quanlyTK@xemNhom');
- //
- //Route::get('quanlyTK/nhom/xoaNhom', 'quanlyTK@xoaNhom');
- //
- //Route::get('quanlyTK/nhom/thongkeNhom', 'quanlyTK@thongkeNhom');
 
 
-Auth::routes();
+Route::get('quanlyTK/xemTK/{id}', 'quanlyTK@xemTK')->name('xemTK');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('quanlyTK/suaTK/{id}', 'quanlyTK@suaTK')->name('suaTK');
+
+Route::get('quanlyTK/xoaTK/{id}', 'quanlyTK@xoaTK')->name('xoaTK');
+
+//giao dien main cua quan ly nhom
+Route::get('quanlyTK/nhom',function(){
+	return view('quanlyTK.nhom');
+})->name('nhom');
+
+Route::get('quanlyTK/nhom/xemNhom', 'quanlyTK@xemNhom')->name('xemNhom');
+
+Route::get('quanlyTK/nhom/xoaNhom', 'quanlyTK@xoaNhom')->name('xoaNhom');
+
+Route::get('quanlyTK/nhom/thongkeNhom', 'quanlyTK@thongkeNhom')->name('thongkeNhom');
+

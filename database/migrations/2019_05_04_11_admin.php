@@ -25,6 +25,7 @@ class Admin extends Migration
             $table->rememberToken()->nullable();
             $table->string('quyen');
             $table->timestamp('create_at');
+         
         });
     }
 

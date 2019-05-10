@@ -32,8 +32,13 @@ class DatabaseSeeder extends Seeder
         //     'maTruyen'=>'T0'
         // ]);
         //$this->call(tkSeeder::class);
+<<<<<<< HEAD
+        $this->call(AdSeeder::class);
+        
+=======
         //$this->call(AdSeeder::class);
 
+>>>>>>> 345702677909421d086dc84d640e3cffc7ef677d
     }
 }
 
