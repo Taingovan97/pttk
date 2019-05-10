@@ -25,20 +25,7 @@ class DatabaseSeeder extends Seeder
             
         );
 
-        // DB::table('chuongtruyen')->insert([
-        //     'tenChuong'=>'chuong 4 cua truyen 1',
-        //     'noiDung'=>'nd',
-        //     'ngayDang'=>'1-4-2019',
-        //     'maTruyen'=>'T0'
-        // ]);
-        //$this->call(tkSeeder::class);
-<<<<<<< HEAD
-        $this->call(AdSeeder::class);
-        
-=======
-        //$this->call(AdSeeder::class);
 
->>>>>>> 345702677909421d086dc84d640e3cffc7ef677d
     }
 }
 

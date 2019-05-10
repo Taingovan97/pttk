@@ -11,7 +11,7 @@ class DK_QLTruyen extends Controller
        $truyen = truyen::find($id);
        $charttruyens = truyen::all();
 
-       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen]);
+       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$charttruyens]);
    }
 
 

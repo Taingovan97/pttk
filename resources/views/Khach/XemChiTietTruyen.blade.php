@@ -64,7 +64,7 @@
 
     </div>
 
-{{--@include('partials.chart', ['chartTruyens' => $chartTruyens])--}}
+@include('partials.chart', ['chartTruyens' => $chartTruyens])
 
 </div>
 @endsection

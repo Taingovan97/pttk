@@ -37,39 +37,38 @@ Route::get('demo', function(){
 
 // xu ly dang ky
 Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
->>>>>>> 56f273a47ae3b7a6716e2b5f5c158ca869fe9063
 
- 	// xu ly dang ky
- 	Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
+// xu ly dang ky
+Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
- 	Route::post('dangky','DK_QLTaiKhoan@dangKyTaiKhoan')->name('dangkytaikhoan');
+Route::post('dangky','DK_QLTaiKhoan@dangKyTaiKhoan')->name('dangkytaikhoan');
 
- 	Route::get('dangky/taotaikhoan/xacthuc/{token}', 'DK_QLTaiKhoan@XacThuc')-> name('user.activate');
+Route::get('dangky/taotaikhoan/xacthuc/{token}', 'DK_QLTaiKhoan@XacThuc')-> name('user.activate');
 
- 	// xu ly dang nhap
- 	Route::get('dangnhap','DK_QLTaiKhoan@getDangNhap')->name('taoformdangnhap');
+// xu ly dang nhap
+Route::get('dangnhap','DK_QLTaiKhoan@getDangNhap')->name('taoformdangnhap');
 
- 	Route::post('dangnhap', 'DK_QLTaiKhoan@dangNhapThanhVien')->name('dangnhap');
+Route::post('dangnhap', 'DK_QLTaiKhoan@dangNhapThanhVien')->name('dangnhap');
 
 
- 	// xu ly dang xuat
- 	Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
+// xu ly dang xuat
+Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
 
- 	// xu ly doc truyen
- 	Route::get('chi_tiet_truyen/{id}', 'DK_QLTruyen@chiTietTruyen')->name('chitiettruyen');
+// xu ly doc truyen
+Route::get('chi_tiet_truyen/{id}', 'DK_QLTruyen@chiTietTruyen')->name('chitiettruyen');
 
- 	Route::get('truyen/{idTruyen}/{idChuong}','DK_QLTruyen@docTruyen')->name('doctruyen');
+Route::get('truyen/{idTruyen}/{idChuong}','DK_QLTruyen@docTruyen')->name('doctruyen');
 
- 	// xu ly truyen yeu thich
-     Route::get('truyenyeuthich', function () {
-         return view('ThanhVien.HomeThanhVien');
-     })->name('dstruyenyeuthich');
+// xu ly truyen yeu thich
+ Route::get('truyenyeuthich', function () {
+     return view('ThanhVien.HomeThanhVien');
+ })->name('dstruyenyeuthich');
 
-     Route::get('chiase/id={id}','DK_QLTruyen@chiaSe')->name('chiase');
+ Route::get('chiase/id={id}','DK_QLTruyen@chiaSe')->name('chiase');
 
-     Route::get('truyenyeuthich/xoatruyen', function () {
+ Route::get('truyenyeuthich/xoatruyen', function () {
 
-     })->name('xoatruyenyeuthich');
+ })->name('xoatruyenyeuthich');
 
  //    Route::group(['middleware' => ['']], function () {
  //
