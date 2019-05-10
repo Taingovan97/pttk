@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('head.title')
-    Trang chủ
+    {{ $truyen->tenTruyen}}
 @endsection
 
 @section('head.content')
@@ -11,7 +11,7 @@
         <h4>{{$truyen->tenTruyen}}</h4>
         <div class="row">
             <div class="col-md-5">
-                <img src="{{$truyen->linkAnh}}" alt="{{$truyen->tenTruyen}}" style="width: 100%;border: 2px solid;">
+                <img src="{{asset($truyen->linkAnh)}}" alt="{{$truyen->tenTruyen}}" style="width: 100%;border: 2px solid;">
             </div>
             <div class="col-md-7">
                 <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>

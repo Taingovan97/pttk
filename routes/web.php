@@ -55,13 +55,19 @@ Route::post('dangnhap', 'DK_QLTaiKhoan@dangNhapThanhVien')->name('dangnhap');
 Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
 
 // xu ly doc truyen
-Route::get('chi_tiet_truyen/{id}', 'DK_QLTruyen@chiTietTruyen')->name('chitiettruyen');
+Route::get('chi_tiet_truyen/{id}', function($id){
+	$truyen = App\truyen::find($id);
+       $charttruyens = App\truyen::all();
+
+       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$charttruyens]);
+
+})->name('chitiettruyen');
 
 Route::get('truyen/{idTruyen}/{idChuong}','DK_QLTruyen@docTruyen')->name('doctruyen');
 
 // xu ly truyen yeu thich
  Route::get('truyenyeuthich', function () {
-     return view('ThanhVien.HomeThanhVien');
+     return view('ThanhVien.TruyenYeuThich');
  })->name('dstruyenyeuthich');
 
  Route::get('chiase/id={id}','DK_QLTruyen@chiaSe')->name('chiase');
@@ -69,6 +75,18 @@ Route::get('truyen/{idTruyen}/{idChuong}','DK_QLTruyen@docTruyen')->name('doctru
  Route::get('truyenyeuthich/xoatruyen', function () {
 
  })->name('xoatruyenyeuthich');
+
+ // tai khoan ca nhan thanh vien
+
+ Route::get('taikhoancanhan', function () {
+     return view('ThanhVien.ThongTinCaNhan');
+ })->name('thongtintaikhoan');
+
+ Route::get('suatk-{tenTK}/', function (){
+     return view('ThanhVien.suaTaiKhoanCaNhan');
+ })->name('formsuatk');
+
+ Route::post('suatk{tenTK}-id={id}', 'DK_QLTaiKhoan@SuaTaiKhoan')->name('suatk');
 
  //    Route::group(['middleware' => ['']], function () {
  //

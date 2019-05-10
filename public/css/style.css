@@ -67,8 +67,8 @@ footer {
   border-radius: 10px;
   float: left;
 }
-.user{
-
+.row{
+  padding-top: 10px;
 }
 .user button{
   margin: 0 15px;

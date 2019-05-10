@@ -32,8 +32,8 @@ class DK_Trang extends Controller
 //           var_dump($chuong);
 //            echo '<pre/>';
 //    }
-         return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
-
+//         return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+            return view('ThanhVien.suaTaiKhoanCaNhan');
     }
 
     public function truyenmoi()
