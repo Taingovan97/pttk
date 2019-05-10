@@ -2,28 +2,13 @@
 
 @section('noidung')
 <div class="main container">
-    
-	<div class="row">
-	<div class="col-md-7">
-		<h3 style="margin-bottom: 20px;">Xem tài khoản</h3>
-	</div>
-	<div class="col-md-2">
-        <p style="margin:5px 0; text-align: right;">Chọn tài khoản :</p>
-      </div>
-      <div class="col-md-3">
-        <div class="find-element">
-          <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
-          <button type="submit"></button>
-        </div>
-      </div>
-	
-	</div>
+    <h3 style="margin-bottom: 20px;">Xem tài khoản</h3>
     <div class="">
       <h4>Thông tin tài khoản</h4>
       <div class="row">
         <div class="col-md-4">
           <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;border: 1px solid;">
-         
+          <button type="button" name="button" style="margin: 10px auto;display: block;width: 80%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Sửa tài khoản</button>
         </div>
         <div class="col-md-8">
           <div class="row">
@@ -73,4 +58,5 @@
 
   </div>
 
-@endsection 
+
+@endsection

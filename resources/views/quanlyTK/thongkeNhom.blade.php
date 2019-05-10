@@ -2,7 +2,7 @@
 
 @section('noidung')
 	<div class="main container" >
-    <h3 >Thống kê nhóm</h3>
+    <h3>Thống kê nhóm</h3>
     <div class="" style="padding: 30px 0;">
       <table border="1px" cellpadding="0px" cellspacing="0px" width="100%" style="text-align: center;">
         <tr>
