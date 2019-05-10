@@ -1,5 +1,7 @@
 <?php
 
+use App\User;
+
 return [
 
     /*
@@ -14,8 +16,8 @@ return [
     */
 
     'defaults' => [
-        'guard' => 'web',
-        'passwords' => 'users',
+        'guard' => 'thanhvien',
+        'passwords' => 'thanhvien',
     ],
 
     /*
@@ -36,14 +38,35 @@ return [
     */
 
     'guards' => [
-        'web' => [
+        // 'web' => [
+        //     'driver' => 'session',
+        //     'provider' => 'users',
+        // ],
+
+        // 'api' => [
+        //     'driver' => 'token',
+        //     'provider' => 'users',
+        //     'hash' => false,
+        // ],
+        'thanhvien' => [
             'driver' => 'session',
-            'provider' => 'users',
+            'provider' => 'thanhviens',
         ],
 
-        'api' => [
+        'thanhvien-api' => [
             'driver' => 'token',
-            'provider' => 'users',
+            'provider' => 'thanhviens',
+            'hash' => false,
+        ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+        'admin-api' => [
+            'driver' => 'token',
+            'provider' => 'admins',
             'hash' => false,
         ],
     ],
@@ -66,15 +89,22 @@ return [
     */
 
     'providers' => [
-        'users' => [
+        // 'users' => [
+        //     'driver' => 'eloquent',
+        //     'model' => App\User::class,
+        // ],
+
+
+        'thanhviens' => [
             'driver' => 'eloquent',
-            'model' => App\User::class,
+            'model' => App\thanhvien::class,
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => App\admin::class,
+        ],
+
     ],
 
     /*
@@ -93,8 +123,19 @@ return [
     */
 
     'passwords' => [
-        'users' => [
-            'provider' => 'users',
+        // 'users' => [
+        //     'provider' => 'users',
+        //     'table' => 'password_resets',
+        //     'expire' => 60,
+        // ],
+        'thanhvien' => [
+            'provider' => 'thanhviens',
+            'table' => 'password_resets',
+            'expire' => 60,
+        ],
+
+        'admin' => [
+            'provider' => 'admins',
             'table' => 'password_resets',
             'expire' => 60,
         ],

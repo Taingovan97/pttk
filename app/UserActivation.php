@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
 
 class UserActivation extends Model
@@ -20,32 +21,32 @@ class UserActivation extends Model
         $activation = $this->getActivation($user); // lấy activation của user:taikhoan
 
         if (!$activation) {
-            return $this->createToken($user); // chua có activation cho user thì tạo và return về activation code
+            return $this->createCode($user); // chua có activation cho user thì tạo và return về activation code
         }
-        return $this->regenerateToken($user);
+        return $this->regenerateCode($user);
 
     }
 
-    private function regenerateToken($user)
+    private function regenerateCode($user)
     {
 
         $token = $this->getToken();
         UserActivation::where('maTK', $user->maTK)->update([
-            'token' => $token,
+            'activation_code' => $token,
             'created_at' => new Carbon()
         ]);
         return $token;
     }
 
-    private function createToken($user)
+    private function createCode($user)
     {
-        $token = $this->getToken();
+        $code = $this->getToken();
         UserActivation::insert([
             'maTK' => $user->maTK,
-            'token' => $token,
+            'activation_code' => $code,
             'created_at' => new Carbon()
         ]);
-        return $token;
+        return $code;
     }
 
     public function getActivation($user)
@@ -54,13 +55,13 @@ class UserActivation extends Model
     }
 
 
-    public function getActivationByToken($token)
+    public function getActivationByToken($code)
     {
-        return UserActivation::where('token', $token)->first();
+        return UserActivation::where('activation_code', $code)->first();
     }
 
-    public function deleteActivation($token)
+    public function deleteActivation($code)
     {
-        UserActivation::where('token', $token)->delete();
+        UserActivation::where('activation_code', $code)->delete();
     }
 }

@@ -15,10 +15,9 @@ class Theloai extends Migration
     {
         //
         Schema::create('theloai', function($table){
-            $table->string('maTL');
+            $table->bigIncrements('maTL');
             $table->string('tenTL');
             $table->text('moTa');
-            $table->primary('maTL');
         });
     }
 

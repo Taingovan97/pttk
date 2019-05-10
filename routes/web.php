@@ -10,44 +10,73 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+ use App\truyen;
+ Route::group(['middleware'=>'web'], function () {
 
-Route::get('/', function(){
-//	return view('Khach.indexcut');
-    return view('ql_tk.thongke_nhom');
-});
-
-// xu ly dang ky
-Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
-
-Route::post('dangky/taotaikhoan','DK_QLTaiKhoan@postTaoTaiKhoan')->name('dangkytaikhoan');
-
-Route::get('dangky/taotaikhoan/xacthuc/{token}', 'DK_DangKyTK@XacThuc')-> name('user.activate');
-
-// xu ly dang nhap
-Route::get('dangnhap','DK_QLTaiKhoan@getDangNhap')->name('taoformdangnhap');
+ 	Route::get('/', 'DK_Trang@home')->name('trangchu');
+ 	
+ 	// thanh menu
+ 	Route::get('truyenmoi', 'DK_Trang@truyenmoi')->name('truyenmoi');
+ 	Route::get('theloai/{id?}', 'DK_QLTruyen@layTruyenTheoTheLoai')->name('theloai');
+ 	Route::get('nhomdich/{id?}', 'DK_QLTruyen@layTruyenTheoNhom')->name('nhomdich');
+ 	Route::get('tacgia', 'DK_Trang@tacgia')->name('tacgia');
+ 	Route::get('nam', 'DK_Trang@nam')->name('nam');
 
 
-Route::post('dangnhap/kiemtra', 'DK_QLTaiKhoan@dangNhap')->name('dangnhap');
+ 	// xu ly dang ky
+ 	Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
-Route::get('quanlyTK', function(){
-	return view('quanlyTK.TrangChu');
-});
+ 	Route::post('dangky','DK_QLTaiKhoan@dangKyTaiKhoan')->name('dangkytaikhoan');
 
-Route::get('quanlyTK/xemTK/{id}', 'quanlyTK@xemTK');
+ 	Route::get('dangky/taotaikhoan/xacthuc/{token}', 'DK_QLTaiKhoan@XacThuc')-> name('user.activate');
 
-Route::get('quanlyTK/suaTK/{id}', 'quanlyTK@suaTK');
+ 	// xu ly dang nhap
+ 	Route::get('dangnhap','DK_QLTaiKhoan@getDangNhap')->name('taoformdangnhap');
 
-Route::get('quanlyTK/xoaTK/{id}', 'quanlyTK@xoaTK');
+ 	Route::post('dangnhap', 'DK_QLTaiKhoan@dangNhapThanhVien')->name('dangnhap');
+
+ 	// xu ly dang xuat
+ 	Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
+
+ 	// xu ly doc truyen
+ 	Route::get('chi_tiet_truyen/{id}', 'DK_QLTruyen@chiTietTruyen')->name('chitiettruyen');
+
+ 	Route::get('truyen/{idTruyen}/{idChuong}','DK_QLTruyen@docTruyen')->name('doctruyen');
+
+ 	// xu ly truyen yeu thich
+     Route::get('truyenyeuthich', function () {
+         return view('ThanhVien.HomeThanhVien');
+     })->name('dstruyenyeuthich');
+
+     Route::get('chiase/id={id}','DK_QLTruyen@chiaSe')->name('chiase');
+
+     Route::get('truyenyeuthich/xoatruyen', function () {
+
+     })->name('xoatruyenyeuthich');
+
+ //    Route::group(['middleware' => ['']], function () {
+ //
+ //
+ //    });
+
+ });
+
+ //Route::get('quanlyTK/xemTK/{id}', 'quanlyTK@xemTK');
+ //
+ //Route::get('quanlyTK/suaTK/{id}', 'quanlyTK@suaTK');
+ //
+ //Route::get('quanlyTK/xoaTK/{id}', 'quanlyTK@xoaTK');
+ //
+ //
+ //Route::get('quanlyTK/nhom', 'quanlyTK@nhom');
+ //
+ //Route::get('quanlyTK/nhom/xemNhom', 'quanlyTK@xemNhom');
+ //
+ //Route::get('quanlyTK/nhom/xoaNhom', 'quanlyTK@xoaNhom');
+ //
+ //Route::get('quanlyTK/nhom/thongkeNhom', 'quanlyTK@thongkeNhom');
 
 
-Route::get('quanlyTK/nhom', 'quanlyTK@nhom');
+Auth::routes();
 
-Route::get('quanlyTK/nhom/xemNhom', 'quanlyTK@xemNhom');
-
-Route::get('quanlyTK/nhom/xoaNhom', 'quanlyTK@xoaNhom');
-
-Route::get('quanlyTK/nhom/thongkeNhom', 'quanlyTK@thongkeNhom');
-
-
-
-?>
+Route::get('/home', 'HomeController@index')->name('home');

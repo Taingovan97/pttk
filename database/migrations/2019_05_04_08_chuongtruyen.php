@@ -15,13 +15,10 @@ class Chuongtruyen extends Migration
     {
         //
         Schema::create('chuongtruyen', function($table){
-            $table->string('maChuong');
+            $table->bigIncrements('maChuong');
             $table->string('tenChuong');
-            $table->text('noiDung');
-            $table->date('ngayDang');
-            $table->string('maTruyen');
-            $table->primary('maChuong');
-            $table->foreign('maTruyen')->references('maTruyen')->on('truyen');
+            $table->timestamp('ngayDang');
+            $table->integer('maTruyen');
         });
     }
 

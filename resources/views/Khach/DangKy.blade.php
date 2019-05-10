@@ -1,7 +1,8 @@
 @extends('layouts.master_dangnhap_dangky')
 @section('head.title')
-  Đăng ký thành viên
-@stop
+    Đăng ký thành viên
+@endsection
+
 @section('head.option')
   Đăng ký
 @stop
@@ -53,6 +54,8 @@
 @section('head.button')
   Đăng ký
 @stop
+
+
 
 
 {{--<!DOCTYPE html>--}}

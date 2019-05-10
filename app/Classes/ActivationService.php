@@ -20,8 +20,10 @@ class ActivationService
     {
         if ($user->activated || !$this->shouldSend($user)) return;
         $token = $this->userActivation->createActivation($user);
-        $user->activation_link = route('user.activate', $token);
-        $mailable = new UserActivationEmail($user);
+        $activation_link = route('user.activate', $token);
+        $taikhoan = ['name' =>$user->name, 'activation_link' =>@$activation_link];
+        var_dump($taikhoan);
+        $mailable = new UserActivationEmail($taikhoan);
         Mail::to($user->email)->send($mailable);
     }
 

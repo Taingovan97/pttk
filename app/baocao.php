@@ -9,4 +9,6 @@ class baocao extends Model
     //
      protected $table = 'baocao';
     public $timestamps = false;
+    protected $primaryKey = 'maBC';
+
 }

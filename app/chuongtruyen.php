@@ -9,4 +9,5 @@ class chuongtruyen extends Model
     //
     protected $table = 'chuongtruyen';
     public $timestamps = false;
+    protected $primaryKey = 'maChuong';
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserActivationsTable extends Migration
+class CreateChaptruyensTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateUserActivationsTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_activations', function (Blueprint $table) {
-            $table->string('maTK');
-            $table->string('activation_code')->index();
-            $table->timestamps();
+        Schema::create('trangtruyen', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('link');
+            $table->integer('maChuong');
         });
     }
 
@@ -27,6 +27,6 @@ class CreateUserActivationsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('user_activations');
+        Schema::dropIfExists('trangtruyen');
     }
 }

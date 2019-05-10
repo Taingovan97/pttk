@@ -9,4 +9,5 @@ class nhom extends Model
     //
     protected $table = 'nhom';
     public $timestamps = false;
+    protected $primaryKey = 'maNhom';
 }

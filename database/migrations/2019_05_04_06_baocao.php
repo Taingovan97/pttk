@@ -15,19 +15,15 @@ class Baocao extends Migration
 	{
 		//
 		Schema::create('baocao', function($table){
-			$table->string('maBC');
+			$table->bigIncrements('maBC');
 			$table->string('tieuDe');
 			$table->text('noiDung');
-			$table->date('ngayGui');
-			$table->boolean('trangThai');
-			$table->string('maTK1');
-			$table->string('maTK2')->nullable();
-			$table->string('maTruyen')->nullable();
-			$table->primary('maBC');
-			$table->foreign('maTK1')->references('maTK')->on('taikhoan');
-			$table->foreign('maTK2')->references('maTK')->on('taikhoan');
-			$table->foreign('maTruyen')->references('maTruyen')->on('truyen');
-
+			$table->timestamp('ngayGui');
+			$table->boolean('trangThai')->default(false);
+			$table->integer('maTK1');
+			$table->integer('maTK2')->nullable();
+			$table->integer('maTruyen')->nullable();
+			$table->integer('loaiBC')->default(0);
 		});
 	}
 

@@ -9,4 +9,5 @@ class theloai extends Model
     //
     protected $table = 'theloai';
     public $timestamps = false;
+    protected $primaryKey = 'maTL';
 }

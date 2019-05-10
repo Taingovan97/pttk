@@ -15,16 +15,13 @@ class Dexuat extends Migration
     {
         //
         Schema::create('dexuat', function($table){
-            $table->string('maDX');
+            $table->bigIncrements('maDX');
             $table->string('tieuDe');
             $table->text('noiDung');
-            $table->date('ngayGui');
-            $table->boolean('trangThai');
-            $table->string('maTK');
-            $table->string('maNhom');
-            $table->primary('maDX');
-            $table->foreign('maTK')->references('maTK')->on('taikhoan');
-            $table->foreign('maNhom')->references('maNhom')->on('nhom');
+            $table->timestamp('ngayGui');
+            $table->boolean('trangThai')->default(false);
+            $table->integer('maTK');
+            $table->integer('maNhom');
         
         });
 

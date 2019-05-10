@@ -4,10 +4,10 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class taikhoan extends Model
+class thanhvien_truyenyeuthich extends Model
 {
-    //
-    protected $table = 'taikhoan';
+    protected $table = 'thanhvien_truyenyeuthich';
     public $timestamps = false;
     protected $primaryKey = 'maTK';
+
 }
