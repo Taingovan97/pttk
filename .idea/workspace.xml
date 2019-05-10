@@ -2,16 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9a9f30-d6a4-4c9d-8f72-6cae53174d18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/trangtruyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/trangtruyen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/seeds/taikhoanSeeder.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/app.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/home.blade.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/header.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/layouts/master_qlnd.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/ql_tkcn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/thongke_danhgia.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/thongke_luotxem.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/thongke_nhomdich.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/thongke_truyen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/tracuu_baocao.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/tracuu_bc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/traloi_baocao.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/xem_baocao.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/xem_tt_canhan.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/xetduyet_truyen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/xoa_bc.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/xoa_truyen.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyTK/ql_tkcn.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyTK/thongke_nhom.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyTK/tracuuTK.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyTK/tracuutk.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xem+xoa_tk.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xemTKCN.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xem_tt_TK.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xem_tttkcn.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/taikhoanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/taikhoanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_qltk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_qltk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/quanlyND.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/nhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/nhom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/ql_nhom.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/ql_nhom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/thongkeNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/thongkeNhom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xemNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xemNhom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xemTK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xemTK.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xoaTK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xoaTK.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xoa_nhom.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xoa_nhom.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xoa_tk.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xoa_tk.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -65,7 +89,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="349">
-              <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="e#348#386#0#HTML" expanded="true" />
                 <element signature="e#1216#1242#0#HTML" expanded="true" />
@@ -491,12 +515,12 @@
       <workItem from="1557211421503" duration="17791000" />
       <workItem from="1557273673235" duration="7456000" />
       <workItem from="1557299572540" duration="34078000" />
-      <workItem from="1557489295500" duration="18927000" />
+      <workItem from="1557489295500" duration="19295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="160274000" />
+    <option name="totallyTimeSpent" value="160642000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -857,7 +881,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
-          <caret line="67" lean-forward="true" selection-start-line="67" selection-end-line="67" />
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="e#348#386#0#HTML" expanded="true" />
             <element signature="e#1216#1242#0#HTML" expanded="true" />
