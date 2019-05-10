@@ -9,4 +9,5 @@ class dexuat extends Model
     //
     protected $table = 'dexuat';
     public $timestamps = false;
+    protected $primaryKey = 'maDX';
 }

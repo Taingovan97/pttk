@@ -29,6 +29,6 @@ class UserActivationEmail extends Mailable
      */
     public function build()
     {
-        return $this->view('user-activation')->with('user', $this->taikhoan);
+        return $this->view('Khach.user-activation')->with('user', $this->taikhoan);
     }
 }

@@ -15,17 +15,16 @@ class Truyen extends Migration
     {
         //
         Schema::create('truyen', function($table){
-            $table->string('maTruyen');
+            $table->bigIncrements('maTruyen');
             $table->string('tenTruyen');
             $table->string('tacGia');
-            $table->date('ngayDang');
+            $table->timestamp('ngayDang');
             $table->text('gioiThieu')->nullable();
-            $table->integer('luotXem')->unsigned();
-            $table->float('diemDG');
-            $table->string('maNhom');
+            $table->string('linkAnh')->default('images/x.png');
+            $table->integer('luotXem')->unsigned()->default(0);
+            $table->float('diemDG')->default(0.);
+            $table->integer('maNhom');
             $table->boolean('duyet')->default(false);
-            $table->primary('maTruyen');
-            $table->foreign('maNhom')->references('maNhom')->on('nhom');
 
         });
     }

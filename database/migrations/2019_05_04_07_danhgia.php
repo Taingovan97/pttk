@@ -15,14 +15,12 @@ class Danhgia extends Migration
     {
         //
         Schema::create('danhgia', function($table){
-            $table->string('maDG');
-            $table->string('tieuDe');
+            $table->bigIncrements('maDG');
             $table->float('diem');
-            $table->string('maTK');
-            $table->string('maTruyen');
-            $table->primary('maDG');
-            $table->foreign('maTK')->references('maTK')->on('taikhoan');
-            $table->foreign('maTruyen')->references('maTruyen')->on('truyen');
+            $table->integer('maTK');
+            $table->integer('maTruyen');
+            $table->timestamp('thoigian');
+
         });
     }
 

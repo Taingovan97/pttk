@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-
+use Carbon\Carbon;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -13,16 +13,24 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-       $faker = Faker\Factory::create();
-    	for ($i =0; $i<3; $i++){
-    		App\taikhoan::insert([
-    			'maTK'=> strval($i+6),
-    			'tenTK'=>  $faker->firstName($gender='male'),
-    			'matKhau'=> bcrypt($faker->firstName($gender='male')),
-    			'maTV'=> 'dfdf'
-    		]);
-    	}
+        DB::table('taikhoan')->insert(
+            [ 
+            'name'=>'tentk', 
+            'password'=>bcrypt(12345),
+             'email'=>'famousthanhduc@gmail.com',
+             'maNhom'=>'N0',
+             'quyen' => '0',
+             'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')
+         ]
+            
+        );
 
+        // DB::table('chuongtruyen')->insert([
+        //     'tenChuong'=>'chuong 4 cua truyen 1',
+        //     'noiDung'=>'nd',
+        //     'ngayDang'=>'1-4-2019',
+        //     'maTruyen'=>'T0'
+        // ]);
         //$this->call(tkSeeder::class);
 <<<<<<< HEAD
         $this->call(AdSeeder::class);
@@ -34,16 +42,16 @@ class DatabaseSeeder extends Seeder
     }
 }
 
-class tkSeeder extends Seeder
-{
-	public function run()
-	{
-		DB::table('taikhoan')->insert([
-			['maTK'=>'a01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
-			['maTK'=>'m01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
-			['maTK'=>'m02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
-			['maTK'=>'a02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
-			['maTK'=>'m03', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)]
-		]);
-	}
-}
+// class tkSeeder extends Seeder
+// {
+// 	public function run()
+// 	{
+// 		DB::table('taikhoan')->insert([
+// 			['maTK'=>'a01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
+// 			['maTK'=>'m01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
+// 			['maTK'=>'m02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
+// 			['maTK'=>'a02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
+// 			['maTK'=>'m03', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)]
+// 		]);
+// 	}
+// }

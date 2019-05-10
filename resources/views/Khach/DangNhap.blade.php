@@ -17,7 +17,7 @@
           <p>Tài khoản:</p>
         </div>
         <div class="col-md-8">
-          <input class="input-login" type="text" name="" value="" placeholder="">
+          <input class="input-login" type="text" name="tentaikhoan" value="" placeholder="">
         </div>
       </div>
       <div class="row">
@@ -25,7 +25,7 @@
           <p>Mật khẩu:</p>
         </div>
         <div class="col-md-8">
-          <input class="input-login" type="password" name="" value="" placeholder="">
+          <input class="input-login" type="password" name="matkhau" value="" placeholder="">
         </div>
       </div>
       <div class="row">
@@ -39,5 +39,5 @@
   </div>
 @stop
 @section('head.button')
-  Đăng ký
+  Đăng Nhập
 @stop

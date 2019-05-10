@@ -15,14 +15,17 @@ class Admin extends Migration
     {
         //
         Schema::create('admin', function($table){
-            $table->string('maAdmin');
-            $table->string('hoTen');
-            $table->string('gioiTinh');
-            $table->string('email');
-            $table->string('sdt');
-            $table->string('maTK');
-            $table->primary('maAdmin');
-            $table->foreign('maTK')->references('maTK')->on('taikhoan');
+            $table->bigIncrements('maTK');
+            $table->string('name');
+            $table->string('password');
+            $table->string('email')->unique();
+            $table->boolean('active')->default(false);
+            $table->string('gioiTinh')->default('Nam');
+            $table->integer('sdt')->nullable();
+            $table->rememberToken()->nullable();
+            $table->string('quyen');
+            $table->timestamp('create_at');
+         
         });
     }
 

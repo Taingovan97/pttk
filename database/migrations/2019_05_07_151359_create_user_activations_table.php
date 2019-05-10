@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Taikhoan extends Migration
+class CreateUserActivationsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,11 @@ class Taikhoan extends Migration
      */
     public function up()
     {
-        //
-        Schema::create('taikhoan', function($table){
-            $table->string('maTK');
-            $table->string('tenTK');
-            $table->string('matKhau');
-            $table->boolean('active')->default(false);
+        Schema::create('user_activations', function (Blueprint $table) {
+            $table->integer ('maTK');
+            $table->string('activation_code')->index();
+            $table->timestamp('created_at');
             $table->primary('maTK');
-
         });
     }
 
@@ -31,7 +28,6 @@ class Taikhoan extends Migration
      */
     public function down()
     {
-        //
-        Schema::dropIfExists('taikhoan');
+        Schema::dropIfExists('user_activations');
     }
 }

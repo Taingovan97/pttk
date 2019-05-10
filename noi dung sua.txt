@@ -1,0 +1,11 @@
+***Taikhoan
+ them active
+***Thanhvien 
+ $table->string('gioiTinh')->nullable();
+            $table->string('email')->unique()->default('Nam');
+            $table->integer('sdt')->nullable();
+            $table->string('maTK');
+            $table->string('maNhom')->nullable();
+
+***eloquent:
+	https://viblo.asia/p/tim-hieu-eloquent-trong-laravel-phan-1-eloquent-model-database-QpmleBAo5rd

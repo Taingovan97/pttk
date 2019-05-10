@@ -9,4 +9,6 @@ class binhluan extends Model
     //
      protected $table = 'binhluan';
     public $timestamps = false;
+    protected $primaryKey = 'maBL';
+
 }

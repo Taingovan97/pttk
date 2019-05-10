@@ -9,4 +9,5 @@ class danhgia extends Model
     //
     protected $table = 'danhgia';
     public $timestamps = false;
+    protected $primaryKey = 'maDG';
 }

@@ -15,15 +15,16 @@ class Thanhvien extends Migration
     {
         //
         Schema::create('thanhvien', function($table){
-            $table->string('maTV');
-            $table->string('hoTen');
-            $table->string('gioiTinh')->nullable()->default('Nam');
+            $table->bigIncrements('maTK');
+            $table->string('name');
+            $table->string('password');
             $table->string('email')->unique();
+            $table->boolean('active')->default(false);
+            $table->string('gioiTinh')->default('Nam');
             $table->integer('sdt')->nullable();
-            $table->string('maTK');
+            $table->rememberToken()->nullable();
             $table->string('maNhom')->nullable();
-            $table->primary('maTV');
-            $table->foreign('maTK')->references('maTK')->on('taikhoan');
+            $table->timestamp('create_at');
         });
     }
 

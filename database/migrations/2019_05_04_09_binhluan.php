@@ -15,14 +15,11 @@ class Binhluan extends Migration
     {
         //
         Schema::create('binhluan', function($table){
-            $table->string('maBL');
+            $table->bigIncrements('maBL');
             $table->text('noiDung');
-            $table->date('ngayGui');
-            $table->string('maChuong');
-            $table->string('maTK');
-            $table->primary('maBL');
-            $table->foreign('maChuong')->references('maChuong')->on('chuongtruyen');
-            $table->foreign('maTK')->references('maTK')->on('taikhoan');
+            $table->timestamp('ngayGui');
+            $table->integer('maChuong');
+            $table->integer('maTK');
         });
     }
 

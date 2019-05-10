@@ -15,13 +15,11 @@ class Nhom extends Migration
     {
         //
         Schema::create('nhom', function($table){
-            $table->string('maNhom');
+            $table->bigIncrements('maNhom');
             $table->string('tenNhom');
-            $table->date('ngayLap');
+            $table->dateTime('ngayLap');
             $table->string('gioiThieu')->nullable();
-            $table->string('maTruongNhom');
-            $table->primary('maNhom');
-            $table->foreign('maTruongNhom')->references('maTK')->on('taikhoan');
+            $table->integer('maTruongNhom');
 
         });
     }
