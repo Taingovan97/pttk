@@ -27,7 +27,7 @@ Route::get('quanlyTK', 'pagescontroller@index1');
 
 
 Route::get('demo', function(){
-	return view('quanlyTK.nhom');
+	return view('layouts.master_qlnd');
 })->name('demo');
 
 // xu ly dang ky
@@ -45,11 +45,19 @@ Route::post('dangnhap/kiemtra', 'DK_QLTaiKhoan@dangNhap')->name('dangnhap');
 
 
 
-Route::get('quanlyTK/xemTK/{id}', 'quanlyTK@xemTK')->name('xemTK');
+Route::get('quanlyTK/tracuu', 'taikhoanController@tracuu')->name('tracuuTK');
+
+
+Route::post('quanlyTK/hienthi', 'taikhoanController@hienthi')->name('hienthiTK');
+
+
 
 Route::get('quanlyTK/suaTK/{id}', 'quanlyTK@suaTK')->name('suaTK');
 
 Route::get('quanlyTK/xoaTK/{id}', 'quanlyTK@xoaTK')->name('xoaTK');
+
+
+
 
 //giao dien main cua quan ly nhom
 Route::get('quanlyTK/nhom',function(){
