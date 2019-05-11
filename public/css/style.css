@@ -10,7 +10,7 @@ header .container{
 
 }
 .user{
-  padding-right: 50px;
+  padding-right: 30px;
 }
 
 .navigator{
@@ -73,7 +73,7 @@ footer {
 .user button{
   margin: 0 15px;
   float: right;
-  width: 30%;
+  width: 35%;
   border-radius: 10px;
   border: none;
   height: 35px;
@@ -88,7 +88,7 @@ footer {
   margin: 0px;
 }
 .direct ul li{
-  display: block;
+  display: inline-block;
   width: 20%;
   background: #00b2bf;
   padding: 10px 0;
@@ -233,7 +233,6 @@ footer {
 /*end comic css*/
 
 .author{
-  border: 1px solid;
   margin: 20px 0;
 }
 .summary{

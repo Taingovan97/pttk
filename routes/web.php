@@ -41,11 +41,6 @@
 	    return view('Auth.DangKy');
     })->name('taoformdangky');
 
-	// xu ly dang ky
-	Route::get('dangky', function (){
-	    return view('Auth.DangKy');
-    })->name('taoformdangky');
-
 	Route::post('dangky','DK_QLTaiKhoan@dangKyTaiKhoan')->name('dangkytaikhoan');
 
 	Route::get('dangky/taotaikhoan/xacthuc/{token}', 'DK_QLTaiKhoan@XacThuc')-> name('user.activate');
@@ -68,7 +63,8 @@
 	// xu ly dang xuat
 	Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
 
-	// xu ly doc truyen
+	// truyen
+
 	Route::get('chi_tiet_truyen/{id}', function($id){
 		$truyen = App\truyen::find($id);
 	       $charttruyens = App\truyen::all();

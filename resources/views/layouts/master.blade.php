@@ -4,24 +4,15 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="icon" href="{{asset('images/favicon.png')}}">
     @yield('head.css')
     <title>@yield('head.title')</title>
 </head>
 <body>
 
-
+<div class="main container">
 @include('partials.header')
 
-
-<div class="main container">
-    <div class="navigator">
-        <div class="row">
-            <div class="col-md-7">
-                <h5><span>Trang chủ</span>/</h5>
-            </div>
-
-        </div>
-    </div>
     @yield('head.content')
 
 </div>

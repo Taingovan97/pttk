@@ -90,7 +90,7 @@ class DK_QLTaiKhoan extends Controller
 
     protected function dangxuatThanhVien()
     {
-        Auth::guard('admin')->logout();
+        Auth::guard('thanhvien')->logout();
         return redirect()->route('trangchu');
     }
 
