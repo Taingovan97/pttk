@@ -13,13 +13,12 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-        DB::table('taikhoan')->insert(
+        DB::table('thanhvien')->insert(
             [ 
-            'name'=>'tentk', 
+            'name'=>'tentkxx',
             'password'=>bcrypt(12345),
-             'email'=>'famousthanhduc@gmail.com',
+             'email'=>'famousthanhducxx@gmail.com',
              'maNhom'=>'N0',
-             'quyen' => '0',
              'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')
          ]
             
