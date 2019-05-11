@@ -12,28 +12,50 @@ class DK_Trang extends Controller
     public function home()
     {
 
-        $truyens = truyen::all();
-////        $chuong = chuongtruyen::all()->toArray();
-////                    echo '<pre>';
-////                    var_dump($chuong);
-////            echo '<pre/>';
-//
-//        foreach ($truyens as $t){
-//                $chuong = $t->chuongMoiNhat();
-////            echo gettype($chuong);
-//
-////            foreach ($chuong as $infor)
-////                {
-////                    echo '<pre>';
-////                    var_dump($infor->tenChuong);
-////                    echo '<pre/>';
-////                }
-//            echo '<pre>';
-//           var_dump($chuong);
-//            echo '<pre/>';
-//    }
-//         return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
-            return view('ThanhVien.suaTaiKhoanCaNhan');
+        if(Auth::guard('admin')->user())
+        {
+            if(Auth::guard('admin')->user()->quyen =='noidung')
+                return redirect()->route('quanlynoidung');
+            else {
+                return redirect()->route('quanlytaikhoan');
+        }
+
+        }else{
+            $truyens = truyen::all();
+            ////        $chuong = chuongtruyen::all()->toArray();
+            ////                    echo '<pre>';
+            ////                    var_dump($chuong);
+            ////            echo '<pre/>';
+            //
+            //        foreach ($truyens as $t){
+            //                $chuong = $t->chuongMoiNhat();
+            ////            echo gettype($chuong);
+            //
+            ////            foreach ($chuong as $infor)
+            ////                {
+            ////                    echo '<pre>';
+            ////                    var_dump($infor->tenChuong);
+            ////                    echo '<pre/>';
+            ////                }
+            //            echo '<pre>';
+            //           var_dump($chuong);
+            //            echo '<pre/>';
+            //    }
+            return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+            }
+
+
+    }
+
+    public function trangChuAdminNoiDung()
+    {
+            $truyens = truyen::all();
+            return view('quanlyND.index', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+        
+    }
+    public function trangChuAdminTaiKhoan()
+    {
+        return view('quanlyTK.tracuuTK');
     }
 
     public function truyenmoi()

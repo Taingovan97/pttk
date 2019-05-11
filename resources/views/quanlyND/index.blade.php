@@ -34,7 +34,6 @@
               <strong>Tung_tokyo</strong>
             </div>
             <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Thông tin tài khoản</a>
               <a class="dropdown-item" href="#">Đăng xuất</a>
             </div>
           </div>

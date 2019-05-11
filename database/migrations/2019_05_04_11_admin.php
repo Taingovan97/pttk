@@ -16,16 +16,16 @@ class Admin extends Migration
         //
         Schema::create('admin', function($table){
             $table->bigIncrements('maTK');
-            $table->string('name');
+            $table->string('name')->unique();
             $table->string('password');
             $table->string('email')->unique();
-            $table->boolean('active')->default(false);
             $table->string('gioiTinh')->default('Nam');
             $table->integer('sdt')->nullable();
-            $table->rememberToken()->nullable();
-            $table->string('quyen');
             $table->timestamp('create_at');
-         
+            $table->boolean('active')->default(false);
+            $table->string('quyen');
+            $table->rememberToken()->nullable();
+
         });
     }
 
