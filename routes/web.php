@@ -32,30 +32,22 @@
 	Route::get('quanlyTK', 'pagescontroller@index1');
 
 
-	Route::get('demo', function(){
-		return view('layouts.master_qlnd');
-	})->name('demo');
+	Route::get('demo', function(){	return view('layouts.master_qlnd');	})->name('demo');
 
 	// xu ly dang ky
-	Route::get('dangky', function (){
-	    return view('Auth.DangKy');
-    })->name('taoformdangky');
+	Route::get('dangky', function (){	return view('Auth.DangKy');   })->name('taoformdangky');
 
 	Route::post('dangky','DK_QLTaiKhoan@dangKyTaiKhoan')->name('dangkytaikhoan');
 
-	Route::get('dangky/taotaikhoan/xacthuc/{token}', 'DK_QLTaiKhoan@XacThuc')-> name('user.activate');
+	Route::get('dangky/tao_tai_khoan/xac_thuc/{token}', 'DK_QLTaiKhoan@XacThuc')-> name('user.activate');
 
 	// xu ly dang nhap
-	Route::get('dangnhap',function (){
-	    return view('Auth.DangNhap');
-	})->name('taoformdangnhap');
+	Route::get('dangnhap',function (){ return view('Auth.DangNhap'); })->name('taoformdangnhap');
 
 	Route::post('dangnhap', 'DK_QLTaiKhoan@dangNhapThanhVien')->name('dangnhap');
 
 		// dang nhap admin
-	Route::get('admin',function (){
-	    return view('Auth.DangNhapAdmin');
-    })->name('taoformdangnhapadmin');
+	Route::get('admin',function (){ return view('Auth.DangNhapAdmin'); })->name('taoformdangnhapadmin');
 
 	Route::post('admin', 'DK_QLTaiKhoan@dangNhapAdmin')->name('dangnhapadmin');
 
@@ -85,9 +77,7 @@
 
 	 Route::get('chiase/id={id}','DK_QLTruyen@chiaSe')->name('chiase');
 
-	 Route::get('truyenyeuthich/xoatruyen', function () {
-
-	 })->name('xoatruyenyeuthich');
+	 Route::get('truyenyeuthich/xoatruyen', function () {	 })->name('xoatruyenyeuthich');
 
 	 // tai khoan ca nhan thanh vien
 
@@ -101,6 +91,44 @@
 
 	 Route::post('suatk{tenTK}-id={id}', 'DK_QLTaiKhoan@SuaTaiKhoan')->name('suatk');
 
+	 Route::group(['prefix' => 'nhom',['middleware'=>'auth_thanhvienNhom']], function(){
+	 	Route::get('/', function() { return view('ThanhVienNhom.TrangChuNhom'); })->name('trangchunhom');
+	 	//truyen
+	 	Route::group(['prefix' => 'quan_ly_truyen'], function(){
+	 		Route::get('/', function() { return view('ThanhVienNhom.QuanLyTruyen'); })->name('quanlytruyen');
+
+	 		Route::get('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('themtruyenmoi');
+	 		Route::post('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('themtruyenmoi');
+
+		 	Route::get('them_chuong_moi', 'DK_QLTruyen@themChuongMoi')->name('themchuongmoi');
+		 	Route::post('them_chuong_moi', 'DK_QLTruyen@themChuongMoi')->name('themchuongmoi');
+
+		 	Route::get('thong_ke_truyen','DL_QLTruyen@thongKeTruyen')->name('thongketruyennhom');
+		 	Route::get('tracuutruyen', 'DK_QLTruyen@traCuuTruyenCuaNhom')->name('tracuutruyencuanhom');
+
+		 	Route::get('xoa/truyen_{id}', 'DK_QLTRuyen@checkXoaNhom')->name('xoa_checktruyen');
+		 	Route::post('xoa/truyen_{id}', 'DL_QLTruyen@xoaTruyenNhom')->name('xoatruyennhom');
+
+
+		 	Route::get('chinh_sua_truyen/id={id}','DL_QLTruyen@getchinhSuaTruyen')->name('formchinhsuatruyen');
+		 	Route::post('chinh_sua_truyen/id={id}','DL_QLTruyen@chinhSuaTruyen')->name('chinhsuatruyen');
+
+		 	});
+		 Route::group(['prefix'=>'de_xuat'], function(){ 
+		 	Route::get('/', function(){ return view('ThanhVienNhom.DeXuat'); })->name('qldexuat');
+		 	Route::get('chitiet/{id}', 'DK_QLDeXuat@xemChiTiet')->name('xemdexuat');
+		 	Route::get('xuli/{id}', 'DL_QLDeXuat@getxuLy')->name('formxulydexuat');
+		 	Route::post('xuly/{id}', 'DK_QLDeXuat@postxuLy')->name('xulydexuat');
+		 	Route::get('tracuu', 'DK_QLDeXuat@tracuu')->name('tracuu');
+		 });
+	 	Route::group(['prefix' =>'quanlynhom'], function(){
+	 		Route::get('thongtinnhom','QL_Nhom@thongTinNhom')->name('thongtinnhom');
+	 		Route::get('thanh_vien_nhom','DK_QLNhom@thanhVienNhom')->name('thanhviennhom');
+	 		Route::get('them_thanh_vien', 'DK_QLNhom@getThemThanhVien')->name('getthemthanhvien');
+	 		Route::post('them_thanh_vien', 'DK_QLNhom@themThanhVien')->name('themthanhvien');
+	 	});
+	 	//thanh viern nhom
+	 });
 
  });
 
@@ -112,9 +140,7 @@ Route::group(['prefix' => 'quanlynoidung'], function() {
 
 Route::group(['prefix'=>'quanlytaikhoan'], function(){
 
-	Route::get('captk', function (){
-	    return view('Auth.CapTaiKhoan');
-    })->name('taoformcaptaikhoan');
+	Route::get('captk', function (){ return view('Auth.CapTaiKhoan');  })->name('taoformcaptaikhoan');
 
 	Route::post('captk','DK_QLTaiKhoan@capTaiKhoan')->name('captaikhoan');
 

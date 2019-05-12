@@ -13,7 +13,7 @@
 <div class="main container">
 @include('partials.header')
 
-    @yield('head.content')
+@yield('head.content')
 
 </div>
 <footer class="main container" style="background-color: green">
