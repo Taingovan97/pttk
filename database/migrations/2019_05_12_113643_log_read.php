@@ -13,7 +13,7 @@ class LogRead extends Migration
      */
     public function up()
     {
-        Schema::table('log_read', function (Blueprint $table) {
+        Schema::create('log_read', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('maTruyen');
             $table->timestamp('read_at');
@@ -27,8 +27,6 @@ class LogRead extends Migration
      */
     public function down()
     {
-        Schema::table('log_read', function (Blueprint $table) {
-            //
-        });
+        Schema::dropIfExists('log_read');
     }
 }
