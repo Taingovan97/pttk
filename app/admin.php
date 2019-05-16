@@ -9,6 +9,6 @@ class admin extends Model
     //
      protected $table = 'admin';
     public $timestamps = false;
-    protected $primaryKey = 'maAdmin';
+    protected $primaryKey = 'maTK';
 
 }

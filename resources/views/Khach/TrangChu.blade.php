@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 @section('head.title')
-    Trang chủ
+   99 Comics
 @endsection
 
 @section('head.content')
@@ -19,7 +19,7 @@
                             <img src="{{$truyen->linkAnh}}" alt="{{$truyen->tenTruyen}}" style="width: 100%;">
                             <h3>Truyện 1</h3>
                             </a>
-                            <a href="{{route('doctruyen',['idTruyen'=>$truyen->maTruyen,'idChuong'=>$truyen->chuongMoiNhat()['tenChuong']])}}">
+                            <a href="{{route('doctruyen',['idTruyen'=>$truyen->maTruyen,'idChuong'=>$truyen->chuongMoiNhat()['maChuong']])}}">
                                 <p>{{$truyen->chuongMoiNhat()['tenChuong']}}</p>
                             </a>
                         </div>

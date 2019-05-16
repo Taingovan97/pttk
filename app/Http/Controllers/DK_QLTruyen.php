@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\truyen;
+use App\chuongtruyen;
 use Illuminate\Http\Request;
 
 class DK_QLTruyen extends Controller
@@ -11,7 +12,7 @@ class DK_QLTruyen extends Controller
        $truyen = truyen::find($id);
        $charttruyens = truyen::all();
 
-       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen]);
+       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$charttruyens]);
    }
 
 
@@ -41,6 +42,10 @@ class DK_QLTruyen extends Controller
 
    public function docTruyen($idTruyen,$idChuong)
    {
+       $chuong = chuongtruyen::find($idChuong);
+       $truyen = truyen::find($idTruyen);
+
+       return  view('Khach.DocTruyen',['truyen'=>$truyen,'chuongxem'=>$chuong]);
    	
    }
 

@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
+<<<<<<< HEAD
 
         // DB::table('chuongtruyen')->insert([
         //     'tenChuong'=>'chuong 4 cua truyen 1',
@@ -26,6 +27,20 @@ class DatabaseSeeder extends Seeder
         //$this->call(nhomSeeder::class);
         $this->call(nhom1::class);
         
+=======
+        DB::table('thanhvien')->insert(
+            [ 
+            'name'=>'tentkxx',
+            'password'=>bcrypt(12345),
+             'email'=>'famousthanhducxx@gmail.com',
+             'maNhom'=>'N0',
+             'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')
+         ]
+            
+        );
+
+
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
     }
 }
 

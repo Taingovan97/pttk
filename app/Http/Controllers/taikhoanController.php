@@ -6,8 +6,12 @@ use Illuminate\Http\Request;
 use App\thanhvien;
 class taikhoanController extends Controller
 {
+<<<<<<< HEAD
     
     //tra cuu tai khoan
+=======
+    //
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
     public function tracuu()
     {
     	return view('quanlyTK.tracuuTK');
@@ -27,6 +31,7 @@ class taikhoanController extends Controller
             return view('notFound');
 
     }
+<<<<<<< HEAD
 
     //tim tai khoan
     public function find()
@@ -57,4 +62,6 @@ class taikhoanController extends Controller
         return view('quanlyTK.xemTKCN');
     }
 
+=======
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
 }

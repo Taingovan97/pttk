@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <a href="{{route('trangchu')}}" title="Trang chủ"><img src="images/logo1.png" alt="Logo"></a>
+                <a href="{{route('trangchu')}}" title="Trang chủ"><img src="{{asset('images/logo1.png')}}" alt="Logo"></a>
             </div>
             <div class="col-md-4 find">
                 <div class="find-element">
@@ -26,7 +26,7 @@
                             <strong>{{Auth::user()->name}}</strong>
                         </div>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item item" href="#">Thông tin tài khoản</a>
+                            <a class="dropdown-item item" href="{{route('thongtintaikhoan')}}">Thông tin tài khoản</a>
                             <a class="dropdown-item item" href="#">Nhóm</a>
                             <a class="dropdown-item item" href="#"></a>
                             <a class="dropdown-item item" href="{{route('dangxuat')}}">Đăng xuất</a>

@@ -14,7 +14,7 @@ class truyen extends Model
 
     public function dsChuong()
     {
-        return $this->hasMany('chuongtruyen', 'maTruyen','maTruyen');
+        return $this->hasMany('App\chuongtruyen', 'maTruyen','maTruyen');
     }
 
     public function nhom()

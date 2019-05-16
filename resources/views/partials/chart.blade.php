@@ -13,10 +13,10 @@
     </div>
     <div class="">
         @if(isset($chartTruyens))
-            @foreach($chartTruyens as $Truyens)
+            @foreach($chartTruyens as $Truyen)
                 <div class="charts-element">
-                    <h4>{{$Truyens->tenTruyen}}</h4>
-                    <p><span>Số Chương: {{$Truyens->soChuong()}}</span> | <span> Lượt xem: {{$Truyens->luotXem}}</span></p>
+                    <h4><a href="{{route('chitiettruyen',['id'=>$Truyen->maTruyen])}}">{{$Truyen->tenTruyen}}</a></h4>
+                    <p><span>Số Chương: {{$Truyen->soChuong()}}</span> | <span> Lượt xem: {{$Truyen->luotXem}}</span></p>
                 </div>
             @endforeach
         @endif

@@ -7,6 +7,18 @@ header .container{
 }
 .find,.user{
   margin: 20px 0;
+<<<<<<< HEAD
+=======
+
+}
+.user{
+  padding-right: 30px;
+}
+
+.navigator{
+  padding-top: 10px;
+  border-bottom: 2px solid black;
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
 }
 .find-element, .filter-element{
   width: 50%;
@@ -45,13 +57,13 @@ header .container{
   border-radius: 10px;
   float: left;
 }
-.user{
-
+.row{
+  padding-top: 10px;
 }
 .user button{
   margin: 0 15px;
   float: right;
-  width: 30%;
+  width: 35%;
   border-radius: 10px;
   border: none;
   height: 35px;
@@ -66,7 +78,7 @@ header .container{
   margin: 0px;
 }
 .direct ul li{
-  display: block;
+  display: inline-block;
   width: 20%;
   background: #00b2bf;
   padding: 10px 0;
@@ -161,6 +173,10 @@ header .container{
 }
 .comic h3 a:hover{
   color: #ccc;
+<<<<<<< HEAD
+=======
+  color: #c51f1a;
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
 }
 .comic p{
 
@@ -205,7 +221,6 @@ header .container{
 /*end comic css*/
 
 .author{
-  border: 1px solid;
   margin: 20px 0;
 }
 .summary{

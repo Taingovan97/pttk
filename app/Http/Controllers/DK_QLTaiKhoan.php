@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\thanhvien;
+use App\admin;
 use App\truyen;
 use App\chuongtruyen;
 use App\UserActivation;
@@ -27,8 +28,8 @@ class DK_QLTaiKhoan extends Controller
 
 
     public function getDangKy(){
-        return view('Khach.DangKy');
-    }
+    return view('Khach.DangKy');
+}
     public function getDangNhap(){
         return view('Khach.DangNhap');
     }
@@ -63,13 +64,12 @@ class DK_QLTaiKhoan extends Controller
         $thanhvien->save();
 //        $this->activationService->sendActivationMail($thanhvien);
 
-        return redirect('dangnhap')->with('thongbao', 'Đăng ký thày công');
+        return redirect('dangnhap')->with('thongbao', 'Đăng ký thành công');
     }
 
     public function xacThuc($token)
     {
         if ($user = $this->activationService->activateUser($token)) {
-//            auth()->login($user);
             return redirect('/dangnhap');
         }
         abort(404);
@@ -79,31 +79,74 @@ class DK_QLTaiKhoan extends Controller
         $username = $request['tentaikhoan'];
         $password = $request['matkhau'];
 
-        if(Auth::guard('thanhvien')->attempt(['name'=>$username,'password' => $password]))
+        if(Auth::attempt(['name'=>$username,'password' => $password]))
         {
-
-//              echo Auth::user();
-//              view()->share('user1',Auth::user());
-            // return view('Khach.DangKy');
-            $truyens = truyen::where('duyet',true)->get();
-//            echo '<pre>';
-//                    var_dump($truyens);
-//            echo '<pre/>';
-
                return redirect()->route('trangchu');
-//            return view('ThanhVien.HomeThanhVien',['truyens'=>$truyens, 'chartTruyens' => $truyens]);
 
         }else{
-//            echo 'éo đc nhé'.'<br/>';
             return redirect()->route('taoformdangnhap');
         }
     }
 
-    protected function dangxuatThanhVien(){
-
+    protected function dangxuatThanhVien()
+    {
         Auth::guard('thanhvien')->logout();
         return redirect()->route('trangchu');
-//        echo 'da dang xuat';
+    }
+
+    protected function capTaiKhoan(Request $request){
+
+//        $this->activationService = new ActivationService(new UserActivation);
+//        $this->validate($request,[
+//           'tentaikhoan'=>'required|min:4',
+//            'email' => 'required|email|unique:taikhoans,email',
+//            'matkhau'=> 'required| min:8|max:32',
+//            'nhaplaimatkhau' =>'required|same:matkhau',
+//            'dongy' => 'required'
+//        ],[
+//            'tentaikhoan.required' =>'Bạn chưa nhập tên người dùng',
+//            'tentaikhoan.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
+//            'email.required' => 'Bạn chưa nhập email',
+//            'email.email' => 'Email không hợp lệ',
+//            'email.unique' => 'Địa chỉ đã tồn tại',
+//            'matkhau.required' => 'Bạn chưa nhập mật khẩu',
+//            'matkhau.min' => 'Mật khẩu phải phải chứa ít nhất 3 ký tự',
+//            'matkhau.max' => 'Mật khẩu không vượt quá 32 ký tự',
+//            'nhaplaimatkhau.required' => 'Bạn phải nhập lại mật khẩu',
+//            'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
+//            'dongy.required' => 'Bạn chưa đồng ý điều khoản'
+//        ]);
+
+        $admin = new admin;
+        $admin->name = $request ->tentaikhoan;
+        $admin->password = bcrypt($request ->matkhau);
+        $admin->email = $request->email;
+        $admin->create_at =  Carbon::now('Asia/Ho_Chi_Minh');
+        $admin->quyen = $request->quyen;
+        $admin->save();
+//        $this->activationService->sendActivationMail($thanhvien);
+
+        return redirect()->route('captaikhoan')->with('thongbao', 'Tao tai khoan thành công');
+    }
+
+    protected  function dangNhapAdmin(Request $request)
+    {
+        $username = $request['tentaikhoan'];
+        $password = $request['matkhau'];
+
+        if(Auth::guard('admin')->attempt(['name'=>$username,'password' => $password]))
+        {
+               return redirect()->route('trangchu');
+
+        }else{
+            return redirect()->route('taoformdangnhapadmin');
+        }
+    }
+
+    protected function dangxuatAdmin(){
+
+        Auth::guard('admin')->logout();
+        return redirect()->route('trangchu');
     }
 
 

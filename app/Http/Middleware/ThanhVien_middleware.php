@@ -3,6 +3,7 @@
 namespace App\Http\Middleware;
 
 use Closure;
+use Illuminate\Support\Facades\Auth;
 
 class thanhVien_middleware
 {
@@ -15,6 +16,13 @@ class thanhVien_middleware
      */
     public function handle($request, Closure $next)
     {
-        return $next($request);
+        if(Auth::user())
+        {
+            return $next($request);
+        }
+        else
+        {
+            return redirect()->route('taoformdangnhap');
+        }
     }
 }
