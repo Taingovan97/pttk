@@ -50,5 +50,29 @@ class DK_QLTruyen extends Controller
    	
    }
 
+   public function xetduyet_truyen()
+   {
+      return view('quanlyND.xetduyet_truyen');
+   }
 
+   public function thongke_luotxem()
+   {
+
+   }
+
+   public function thongke_danhgia()
+   {
+
+   }
+
+   public function thongke_nhomdich()
+   {
+
+   }
+
+   public function xoatruyen()
+   {
+      return view('quanlyND.xoatruyen');
+   }
+   
 }

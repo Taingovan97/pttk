@@ -38,7 +38,7 @@ class DK_QLTaiKhoan extends Controller
 //        $this->validate($request,[
 //           'tentaikhoan'=>'required|min:4',
 //            'email' => 'required|email|unique:taikhoans,email',
-//            'matkhau'=> 'required| min:8|max:32',
+//            'matkhau'=> 'required| min:3|max:32',
 //            'nhaplaimatkhau' =>'required|same:matkhau',
 //            'dongy' => 'required'
 //        ],[
@@ -105,5 +105,8 @@ class DK_QLTaiKhoan extends Controller
         return redirect()->route('trangchu');
 //        echo 'da dang xuat';
     }
+
+
+    
 
 }

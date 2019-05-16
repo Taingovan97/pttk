@@ -8,13 +8,12 @@
   <title></title>
 </head>
 
-<body>
 	<body>
   <header>
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <a href="#" title="Trang chủ"><img src="{{asset('images/logo1.png')}}" alt="Logo"></a>
+          <a href="{{route('index_qltk')}}" title="Trang chủ"><img src="{{asset('images/logo1.png')}}" alt="Logo"></a>
         </div>
         <div class="col-md-4 find">
 
@@ -56,13 +55,13 @@
               <strong>Quản lý tài khoản</strong>
             </div>
             <div class="dropdown-menu" style="text-align: center;width: 100%;">
-              <a class="dropdown-item text-dark" href="#">Tra cứu tài khoản</a>
-              <a class="dropdown-item text-dark" href="#">Xóa tài khoản</a>
+              <a class="dropdown-item text-dark" href="{{route('tracuuTK')}}">Tra cứu tài khoản</a>
+              <a class="dropdown-item text-dark" href="{{route('timTK')}}">Xóa tài khoản</a>
              
             </div>
           </div></li>
-          <li><a href="#">Quản lý tài khoản cá nhân</a></li>
-          <li><a href="#">Quản lý nhóm</a></li>
+          <li><a href="{{route('ttcanhan')}}">Quản lý tài khoản cá nhân</a></li>
+          <li><a href="{{route('nhom')}}">Quản lý nhóm</a></li>
         </ul>
       </div>
     </div>
@@ -74,7 +73,7 @@
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-  </footer>
+    </footer>
 </body>
 
 </html>

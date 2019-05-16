@@ -28,16 +28,15 @@
 Route::get('home', 'pagescontroller@index');
 
 //giao dien main cua quan ly tai khoan
-Route::get('quanlyTK', 'pagescontroller@index1');
+Route::get('quanlyTK', 'pagescontroller@index_qltk')->name('index_qltk');
 
 
 Route::get('demo', function(){
-	return view('layouts.master_qlnd');
+	return view('quanlyTK.suaTK');
 })->name('demo');
 
 // xu ly dang ky
 Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
->>>>>>> 56f273a47ae3b7a6716e2b5f5c158ca869fe9063
 
  	// xu ly dang ky
  	Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
@@ -79,29 +78,76 @@ Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
  });
 
 
-
+//tra cuu tai khoan
 Route::get('quanlyTK/tracuu', 'taikhoanController@tracuu')->name('tracuuTK');
 
-
-Route::post('quanlyTK/hienthi', 'taikhoanController@hienthi')->name('hienthiTK');
+//hien thi thong tin tai khoan
+Route::post('quanlyTK/hienthi','taikhoanController@hienthi')->name('hienthi');
 
 
 
 Route::get('quanlyTK/suaTK/{id}', 'quanlyTK@suaTK')->name('suaTK');
 
-Route::get('quanlyTK/xoaTK/{id}', 'quanlyTK@xoaTK')->name('xoaTK');
+//tim TK de xoa
+Route::get('quanlyTK/timTK', 'taikhoanController@find')->name('timTK');
+
+//giao dien xoa tk
+Route::post('quanlyTK/xoaTK', 'taikhoanController@xoaTK')->name('xoaTK');
+
+
+
+//thong tin ca nhan
+Route::get('quanlyTK/ttcanhan', 'taikhoanController@ttcanhan')->name('ttcanhan');
+
 
 
 
 
 //giao dien main cua quan ly nhom
-Route::get('quanlyTK/nhom',function(){
-	return view('quanlyTK.nhom');
-})->name('nhom');
+Route::get('quanlyTK/nhom', 'nhomController@index')->name('nhom');
 
-Route::get('quanlyTK/nhom/xemNhom', 'quanlyTK@xemNhom')->name('xemNhom');
+Route::get('quanlyTK/nhom/xemNhom/{id_nhom}', 'nhomController@xemNhom')->name('xemNhom');
 
-Route::get('quanlyTK/nhom/xoaNhom', 'quanlyTK@xoaNhom')->name('xoaNhom');
+Route::get('quanlyTK/nhom/xoaNhom', 'nhomController@xoaNhom')->name('xoaNhom');
 
-Route::get('quanlyTK/nhom/thongkeNhom', 'quanlyTK@thongkeNhom')->name('thongkeNhom');
+Route::get('quanlyTK/nhom/thongkeNhom', 'nhomController@thongkeNhom')->name('thongkeNhom');
+
+
+//admin quan ly noi dung
+Route::get('quanlyND', 'pagescontroller@index_qlnd')->name('index_qlnd');
+
+
+Route::get('quanlyND/ttcanhan', 'taikhoanController@ttcanhan');
+
+Route::get('quanlyND/suaTK/{id}', 'taikhoanController@suuTK');
+
+//xet duyet truyen
+Route::get('quanlyND/xetduyet_truyen', 'DK_QLTruyen@xetduyet_truyen')->name('xetduyet_truyen');
+
+//xoa truyen
+Route::get('quanlyND/xoatruyen', 'DK_QLTruyen@xoatruyen')->name('xoatruyen');
+
+//thong ke truyen
+Route::get('quanlyND/thongke_truyen', function(){
+	return view('quanlyND.thongke_truyen');})->name('thongke_truyen');
+
+
+Route::get('quanlyND/thongke_truyen/thongke_luotxem', 'DK_QLTruyen@thongke_luotxem');
+
+Route::get('quanlyND/thongke_truyen/thongke_danhgia', 'DK_QLTruyen@thongke_danhgia');
+
+Route::get('quanlyND/thongke_truyen/thongke_nhomdich', 'DK_QLTruyen@thongke_nhomdich');
+
+//quan ly bao cao
+Route::get('quanlyND/tracuuBC', 'baocaoController@tracuuBC');
+
+
+Route::get('themcot', function(){
+	Schema::table('nhom', function($table){
+		$table->integer('soLuongTV')->unsigned();
+		$table->integer('soLuongTruyen')->unsigned();
+	});
+});
+
+
 

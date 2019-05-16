@@ -9,7 +9,7 @@
         <p style="margin:5px 0; text-align: right;">Chọn tài khoản :</p>
       </div>
       <div class="col-md-3">
-        <form action="{{route("hienthi")}}" method="post">
+        <form action="{{route("xoaTK")}}" method="post">
         {{ csrf_field() }}
         <div class="find-element" >
           <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">

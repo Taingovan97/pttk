@@ -13,7 +13,7 @@
     <div class="container">
       <div class="row">
         <div class="col-md-4">
-          <a href="#" title="Trang chủ"><img src="{{asset('images/logo1.png')}}" alt="Logo"></a>
+          <a href="{{route('index_qlnd')}}" title="Trang chủ"><img src="{{asset('images/logo1.png')}}" alt="Logo"></a>
         </div>
         <div class="col-md-4 find">
           <div class="find-element">
@@ -65,12 +65,12 @@
               <strong>Quản lý truyện</strong>
             </div>
             <div class="dropdown-menu" style="text-align: center;width: 100%;">
-              <a class="dropdown-item text-dark" href="#">Xét duyệt truyện</a>
-              <a class="dropdown-item text-dark" href="#">Xóa truyện</a>
-              <a class="dropdown-item text-dark" href="#">Thống kê truyện</a>
+              <a class="dropdown-item text-dark" href="{{route('xetduyet_truyen')}}">Xét duyệt truyện</a>
+              <a class="dropdown-item text-dark" href="{{route('xoatruyen')}}">Xóa truyện</a>
+              <a class="dropdown-item text-dark" href="{{route('thongke_truyen')}}">Thống kê truyện</a>
             </div>
           </div></li>
-          <li><a href="ql_tkcn.html">Quản lý tài khoản cá nhân</a></li>
+          <li><a href="#">Quản lý tài khoản cá nhân</a></li>
           <li><a href="#">Quản lý báo cáo</a></li>
         </ul>
       </div>
@@ -100,3 +100,4 @@
 }
 
 </style>
+@yield('style')
