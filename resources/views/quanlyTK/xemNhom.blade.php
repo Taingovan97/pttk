@@ -16,15 +16,23 @@
               <p>Tên nhóm: </p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $group->tenNhom; ?></p>
+              <p>Devil Slayer Team</p>
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
-              <p>Ngày thành lập:</p>
+              <p>Ngày gia nhập:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $group->ngayLap; ?></p>
+              <p>24/03/2019</p>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-3">
+              <p>Chức vụ:</p>
+            </div>
+            <div class="col-md-4">
+              <p>Người quản lý nội dung</p>
             </div>
           </div>
           <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-del">Xóa</button>

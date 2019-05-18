@@ -5,7 +5,7 @@
 <div class="main container">
     <div class="row" >
       <div class="col-md-7">
-        <h3 >Quản lý tài khoản/Xóa tài khoản</h3>
+        <h3 >Quản lý tài khoản/Xem tài khoản</h3>
       </div>
       <div class="col-md-2">
         <p style="margin:5px 0; text-align: right;">Chọn tài khoản :</p>
@@ -76,18 +76,4 @@
     <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-cal">Hủy</button>
   </div>
 
-@endsection
-
-@section('style')
-</style>
-<script type="text/javascript">
-$(function(){
-  $(".button-del").click(function(){
-    $(".popup-alert").show();
-  });
-  $(".button-cal").click(function(){
-    $(".popup-alert").hide();
-  });
-});
-</script>
 @endsection

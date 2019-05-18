@@ -11,13 +11,10 @@
         <p style="margin:5px 0; text-align: right;">Chọn tài khoản :</p>
       </div>
       <div class="col-md-3">
-        <form action="{{route("hienthi")}}" method="post">
-        {{ csrf_field() }}
         <div class="find-element">
           <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
           <button type="submit"></button>
         </div>
-        </form>
       </div>
 	
 	</div>
@@ -34,7 +31,7 @@
               <p>Tên đăng nhập:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $ten; ?></p>
+              <p>Tung_tokyo</p>
             </div>
           </div>
           <div class="row">
@@ -42,7 +39,7 @@
               <p>Email:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $email; ?></p>
+              <p>vtv1@gmail.com</p>
             </div>
           </div>
           <div class="row">
@@ -50,8 +47,7 @@
               <p>Số điện thoại:</p>
             </div>
             <div class="col-md-4">
-              <input type="text" name="sdt"  placeholder="">
-              <p><?php echo $sdt; ?></p>
+              <input type="text" name="" value="Tung_tokyo" placeholder="">
             </div>
           </div>
           <div class="row">
@@ -59,7 +55,7 @@
               <p>Ngày gia nhập:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $time; ?></p>
+              <p>24/03/2019</p>
             </div>
           </div>
           <div class="row">

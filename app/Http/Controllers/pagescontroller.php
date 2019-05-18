@@ -13,7 +13,7 @@ class pagescontroller extends Controller
     	return view('layouts.home');
     }
 
-    public function index_qltk()
+    public function index1()
     {
     	return view('layouts.master_qltk');
     }
@@ -22,13 +22,6 @@ class pagescontroller extends Controller
     {
     	return view('quanlyTK.nhom');
     }
-
-    public function index_qlnd()
-    {
-        return view('quanlyND.index');
-    }
-
-    
 }
 
 
