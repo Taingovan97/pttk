@@ -40,9 +40,10 @@ class truyen extends Model
     }
 
 
-    public function soChuong()
+    public function time()
     {
-        return 0;
+        $chuong = chuongtruyen::where('maTruyen', $this->maTruyen)->orderBy('maChuong','desc')->take(1)->get()->toArray();
+        return $chuong['ngayDang'];
     }
 
 }

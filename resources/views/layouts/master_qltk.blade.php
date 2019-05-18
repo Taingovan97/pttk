@@ -56,7 +56,7 @@
             </div>
             <div class="dropdown-menu" style="text-align: center;width: 100%;">
               <a class="dropdown-item text-dark" href="{{route('tracuuTK')}}">Tra cứu tài khoản</a>
-              <a class="dropdown-item text-dark" href="{{route('timTK')}}">Xóa tài khoản</a>
+              <a class="dropdown-item text-dark" href="{{route('tim_xoaTK')}}">Xóa tài khoản</a>
              
             </div>
           </div></li>

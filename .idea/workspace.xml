@@ -2,16 +2,37 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9a9f30-d6a4-4c9d-8f72-6cae53174d18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Thanhviennhom_middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Thanhviennhom_middleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/thanhvien.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/thanhvien.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/da_xoa.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/qlnd_fail.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/qlnd_thanhcong.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/quanlyND/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/thanhcong.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/nhomController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/nhomController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/taikhoanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/taikhoanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/baocao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/baocao.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/truyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/truyen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_04_05_truyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_04_05_truyen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/TV_dsthanhvien.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/dsThanhvien.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/TV_qltruyennhom.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_qlnd.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_qlnd.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_qltk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_qltk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/notFound.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/notFound.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyND/index.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyND/index.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyND/thongke_danhgia.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyND/thongke_danhgia.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyND/thongke_luotxem.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyND/thongke_luotxem.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyND/thongke_truyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyND/thongke_truyen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyND/tracuuBC.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyND/tracuuBC.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyND/xemBC.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyND/xemBC.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyND/xetduyet_truyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyND/xetduyet_truyen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyND/xetduyet_truyen.html" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyND/xetduyet_truyen.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyND/xoatruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyND/xoatruyen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/nhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/nhom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/thongkeNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/thongkeNhom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xemNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xemNhom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xemTK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xemTK.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xem_xoaTK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xem_xoaTK.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xoaTK.blade.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="293">
-              <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+            <state relative-caret-position="633">
+              <caret line="149" column="48" selection-start-line="149" selection-start-column="48" selection-end-line="149" selection-end-column="48" />
               <folding>
                 <element signature="e#9#391#0#PHP" expanded="true" />
               </folding>
@@ -37,14 +58,23 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="159">
-              <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+              <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/css/style.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="408">
+              <caret line="24" selection-start-line="24" selection-end-line="24" />
             </state>
           </provider>
         </entry>
@@ -203,7 +233,6 @@
         <option value="$PROJECT_DIR$/resources/views/tvNhom/XemThongTInNhom.blade.php" />
         <option value="$PROJECT_DIR$/app/nhom.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/style.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/taikhoanController.php" />
         <option value="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Thanhviennhom_middleware.php" />
@@ -214,6 +243,7 @@
         <option value="$PROJECT_DIR$/app/thanhvien.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/style.css" />
       </list>
     </option>
   </component>
@@ -518,12 +548,12 @@
       <workItem from="1557997940336" duration="14096000" />
       <workItem from="1558078789999" duration="32790000" />
       <workItem from="1558137359889" duration="541000" />
-      <workItem from="1558138113447" duration="33622000" />
+      <workItem from="1558138113447" duration="33850000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275636000" />
+    <option name="totallyTimeSpent" value="275864000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -836,13 +866,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="417">
-          <caret line="35" column="1" selection-start-line="35" selection-start-column="1" selection-end-line="35" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_Trang.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -910,8 +933,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/routes/web.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="293">
-          <caret line="129" column="48" selection-start-line="129" selection-start-column="48" selection-end-line="129" selection-end-column="48" />
+        <state relative-caret-position="633">
+          <caret line="149" column="48" selection-start-line="149" selection-start-column="48" selection-end-line="149" selection-end-column="48" />
           <folding>
             <element signature="e#9#391#0#PHP" expanded="true" />
           </folding>
@@ -953,10 +976,17 @@
     <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="159">
-          <caret line="20" column="49" lean-forward="true" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
+          <caret line="20" column="49" selection-start-line="20" selection-start-column="49" selection-end-line="20" selection-end-column="49" />
           <folding>
             <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="24" selection-start-line="24" selection-end-line="24" />
         </state>
       </provider>
     </entry>

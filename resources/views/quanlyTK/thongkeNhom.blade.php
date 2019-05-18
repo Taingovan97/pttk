@@ -11,30 +11,16 @@
           <td>Số lượng truyện</td>
           <td>Ngày thành lập</td>
         </tr>
+        @foreach($temp as $nhom)
         <tr>
-          <td>Pinoy</td>
-          <td>11</td>
-          <td>15</td>
-          <td>20/11/2018</td>
+          <td><?php echo $nhom['tenNhom']; ?></td>
+          <td><?php echo $nhom['soLuongTV']; ?></td>
+          <td><?php echo $nhom['soLuongTruyen'] ?></td>
+          <td><?php echo $nhom['ngayLap']; ?></td>
         </tr>
-        <tr>
-          <td>Zero Team</td>
-          <td>12</td>
-          <td>10</td>
-          <td>01/01/2019</td>
-        </tr>
-        <tr>
-          <td>Mèo con</td>
-          <td>8</td>
-          <td>13</td>
-          <td>08/01/2019</td>
-        </tr>
-        <tr>
-          <td>Bomman</td>
-          <td>10</td>
-          <td>12</td>
-          <td>24/03/2019</td>
-        </tr>
+        @endforeach
+        
+        
       </table>
     </div>
   </div>

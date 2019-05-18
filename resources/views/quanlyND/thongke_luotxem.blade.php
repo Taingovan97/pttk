@@ -33,54 +33,23 @@
           <td>Chap mới nhất</td>
           <td>Lượt xem</td>
         </tr>
+        @foreach($truyen as $temp)
         <tr>
-          <td>Thiên thần ngày tận thế</td>
-          <td>1 giờ trước</td>
-          <td>Chap 75</td>
-          <td>6200</td>
+          <td><?php echo $temp['tenTruyen']; ?></td>
+          <td><?php 
+            $temp->time(); 
+          ?>
+             
+          </td>
+          <td><?php 
+            echo "Chap ".$temp->chuongMoiNhat();
+
+          ?>
+          </td>
+          <td><?php echo $temp['luotXem'] ?></td>
         </tr>
-        <tr>
-          <td>Thiên thần ngày tận thế</td>
-          <td>1 giờ trước</td>
-          <td>Chap 75</td>
-          <td>6200</td>
-        </tr>
-        <tr>
-          <td>Thiên thần ngày tận thế</td>
-          <td>1 giờ trước</td>
-          <td>Chap 75</td>
-          <td>6200</td>
-        </tr>
-        <tr>
-          <td>Thiên thần ngày tận thế</td>
-          <td>1 giờ trước</td>
-          <td>Chap 75</td>
-          <td>6200</td>
-        </tr>
-        <tr>
-          <td>Dịch vụ trả thù</td>
-          <td>3 giờ trước</td>
-          <td>Chap 70</td>
-          <td>876</td>
-        </tr>
-        <tr>
-          <td>Dịch vụ trả thù</td>
-          <td>3 giờ trước</td>
-          <td>Chap 70</td>
-          <td>876</td>
-        </tr>
-        <tr>
-          <td>Dịch vụ trả thù</td>
-          <td>3 giờ trước</td>
-          <td>Chap 70</td>
-          <td>876</td>
-        </tr>
-        <tr>
-          <td>Tiên trụ</td>
-          <td>11 giờ trước</td>
-          <td>Chap 37</td>
-          <td>114</td>
-        </tr>
+        @endforeach
+        
 
       </table>
     </div>

@@ -14,6 +14,10 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
 
         // DB::table('chuongtruyen')->insert([
         //     'tenChuong'=>'chuong 4 cua truyen 1',
@@ -22,10 +26,13 @@ class DatabaseSeeder extends Seeder
         //     'maTruyen'=>'T0'
         // ]);
         //$this->call(tkSeeder::class);
-        //$this->call(tvSeeder::class);
         //$this->call(nhomSeeder::class);
         $this->call(nhom1::class);
         
+<<<<<<< HEAD
+
+=======
+>>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
         DB::table('thanhvien')->insert(
             [ 
             'name'=>'tentkxx',
@@ -38,6 +45,10 @@ class DatabaseSeeder extends Seeder
         );
 
 
+<<<<<<< HEAD
+
+=======
+>>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
     }
 }
 
@@ -46,11 +57,11 @@ class DatabaseSeeder extends Seeder
  	public function run()
 	{
  		DB::table('taikhoan')->insert([
- 			['maTK'=>'a01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
- 			['maTK'=>'m01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
- 			['maTK'=>'m02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
- 			['maTK'=>'a02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)],
- 			['maTK'=>'m03', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5)]
+ 			['maTK'=>'a01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')],
+ 			['maTK'=>'m01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')],
+ 			['maTK'=>'m02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')],
+ 			['maTK'=>'a02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')],
+ 			['maTK'=>'m03', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')]
  		]);
  	}
 }

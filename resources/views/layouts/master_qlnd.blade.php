@@ -71,7 +71,7 @@
             </div>
           </div></li>
           <li><a href="#">Quản lý tài khoản cá nhân</a></li>
-          <li><a href="#">Quản lý báo cáo</a></li>
+          <li><a href="{{route('tracuuBC')}}">Quản lý báo cáo</a></li>
         </ul>
       </div>
     </div>

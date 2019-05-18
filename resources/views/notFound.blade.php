@@ -2,6 +2,6 @@
 
 @section('noidung')
 
-<h1 style="color: white">Không tồn tại tài khoản này</h1>
+<h1 style="color: white" align="center">Không có kết quả nào phù hợp</h1>
 
 @endsection
