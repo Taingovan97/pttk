@@ -12,10 +12,12 @@
         <p style="margin:5px 0; text-align: right;">Chọn báo cáo :</p>
       </div>
       <div class="col-md-3">
+        <form action="{{route('xemBC')}}" method="post">
         <div class="find-element">
           <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
           <button type="submit"></button>
         </div>
+        </form>
       </div>
     </div>
     <div class="" style="padding: 30px 0;">
@@ -25,36 +27,22 @@
           <td>Kiểu</td>
           <td>Ngày gửi</td>
         </tr>
+        @foreach($baocao as $temp)
         <tr>
-          <td><a href="#">Aladin [error 1]</a></td>
-          <td>Báo cáo truyện lỗi</td>
-          <td>02/03/2019</td>
+          <td><a href="{{route('xemBC', ['id'=>$temp['maBC']])}}"><?php echo $temp['tieuDe']; ?></a></td>
+          <td><?php  
+            if ($temp['loaiBC']==1) {
+              echo "Báo cáo truyện lỗi";
+            }
+            else
+              echo "Báo cáo vi phạm";
+          ?>
+            
+          </td>
+          <td><?php echo $temp['ngayGui']; ?></td>
         </tr>
-        <tr>
-          <td><a href="#">Bomman [violation 1]</a></td>
-          <td>Báo cáo vi phạm</td>
-          <td>14/02/2019</td>
-        </tr>
-        <tr>
-          <td><a href="#">Aladin [error 1]</a></td>
-          <td>Báo cáo truyện lỗi</td>
-          <td>02/03/2019</td>
-        </tr>
-        <tr>
-          <td><a href="#">Bomman [violation 1]</a></td>
-          <td>Báo cáo vi phạm</td>
-          <td>14/02/2019</td>
-        </tr>
-        <tr>
-          <td><a href="#">Aladin [error 1]</a></td>
-          <td>Báo cáo truyện lỗi</td>
-          <td>02/03/2019</td>
-        </tr>
-        <tr>
-          <td><a href="#">Bomman [violation 1]</a></td>
-          <td>Báo cáo vi phạm</td>
-          <td>14/02/2019</td>
-        </tr>
+        @endforeach
+        
       </table>
     </div>
   </div>

@@ -79,7 +79,7 @@
               <p>Mã tài khoản:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $maTK; ?></p>
+              <p><?php echo $id; ?></p>
             </div>
           </div>
           <div class="row">
@@ -99,7 +99,7 @@
   </div>
   <div class="popup-alert" style="display: none;width: 500px;margin: 0 auto;position: fixed;top: 200px;background: #ccc;left: 35%;padding: 20px;border-radius: 10px;text-align: center;">
     <h2>Xác nhận xóa ?</h2>
-    <a href="{{route('timTK')}}" action="{{<?php $account->delete(); ?>}}" type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý
+    <a href="{{route('da_xoa', ['id'=>$id])}}"  type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý
     </a>
     <a type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-cal">Hủy</a>
   </div>

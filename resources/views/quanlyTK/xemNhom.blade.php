@@ -34,27 +34,23 @@
     <div class="" style="margin: 50px auto; ">
       <table border="1px" cellpadding="0px" cellspacing="0px" width="80%" style="text-align: center;">
         <tr>
-          <td>Giới thiệu</td>
-          <td>Danh sách thành viên</td>
+          <td>
+            Giới thiệu
+            
+          </td>
+          <td >Danh sách thành viên</td>
           <td>Danh sách truyện</td>
         </tr>
         <tr>
-          <td rowspan="4">Là nhóm dịch rất tâm huyết và vui vẻ, thân thiện và chuyên đảm nhận các bộ truyện hot nhất</td>
-          <td>1. thành viên 1</td>
-          <td>1. Truyện 1</td>
+          <td rowspan="{{$length+1}}"><?php echo $group->gioiThieu; ?></td>
         </tr>
-        <tr>
-          <td>1. thành viên 2</td>
-          <td>1. Truyện 2</td>
-        </tr>
-        <tr>
-          <td>1. thành viên 3</td>
-          <td>1. Truyện 3</td>
-        </tr>
-        <tr>
-          <td>1. thành viên 4</td>
-          <td>1. Truyện 4</td>
-        </tr>
+        @for($i=0; $i< $length; $i++)
+          <tr>
+            <td>thanh vien 1</td>
+            <td>truyen 1</td>
+          </tr>
+        @endfor
+        
 
       </table>
 
@@ -62,8 +58,8 @@
   </div>
   <div class="popup-alert" style="display: none;width: 500px;margin: 0 auto;position: fixed;top: 200px;background: #ccc;left: 35%;padding: 20px;border-radius: 10px;text-align: center;">
     <h2>Xác nhận xóa nhóm?</h2>
-    <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý</button>
-    <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-cal">Hủy</button>
+    <a  href="{{route('xoaNhom',['id_nhom'=>$group->maNhom])}}" type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý</a>
+    <a type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-cal">Hủy</a>
   </div>
 
 
