@@ -1,0 +1,22 @@
+.col-md-8 .row button {
+  background: rgb(32 90 167);
+  margin-left: 150px;
+  margin-bottom: 50px;
+  color: white;
+  height: 40px;
+  width: 150px;
+}
+.col-md-9 li {
+  list-style: disc;
+  clear: both;
+}
+h5 {
+  font-size: 17px;
+}
+p {
+  float: left;
+}
+textarea {
+  float: right;
+  margin-left: 10px;
+}

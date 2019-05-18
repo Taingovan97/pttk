@@ -22,6 +22,11 @@ class truyen extends Model
        return $this->belongsTo('App\Nhom','maNhom', 'maNhom');
     }
 
+    public function theLoai(){
+
+        return  $this->hasMany('App\theloai', 'maTL', 'maTL');
+    }
+
     public function dstheloai()
     {
         return $this->hasMany('App\truyen_theloai', 'maTruyen', 'maTruyen');

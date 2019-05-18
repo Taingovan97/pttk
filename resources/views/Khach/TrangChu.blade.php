@@ -10,7 +10,6 @@
 
     <div class="col-md-7 view-comics">
         <div class="row">
-
             @if(!empty($dstruyen))
                 @foreach($dstruyen as $truyen)
                     <div class="col-md-3 comic-border">

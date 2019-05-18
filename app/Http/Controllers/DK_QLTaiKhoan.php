@@ -28,33 +28,36 @@ class DK_QLTaiKhoan extends Controller
 
 
     public function getDangKy(){
-    return view('Khach.DangKy');
-}
+
+        return view('Khach.DangKy');
+
+    }
     public function getDangNhap(){
         return view('Khach.DangNhap');
     }
     protected function dangKyTaiKhoan(Request $request){
 
-//        $this->activationService = new ActivationService(new UserActivation);
-//        $this->validate($request,[
-//           'tentaikhoan'=>'required|min:4',
-//            'email' => 'required|email|unique:taikhoans,email',
-//            'matkhau'=> 'required| min:8|max:32',
-//            'nhaplaimatkhau' =>'required|same:matkhau',
-//            'dongy' => 'required'
-//        ],[
-//            'tentaikhoan.required' =>'Bạn chưa nhập tên người dùng',
-//            'tentaikhoan.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
-//            'email.required' => 'Bạn chưa nhập email',
-//            'email.email' => 'Email không hợp lệ',
-//            'email.unique' => 'Địa chỉ đã tồn tại',
-//            'matkhau.required' => 'Bạn chưa nhập mật khẩu',
-//            'matkhau.min' => 'Mật khẩu phải phải chứa ít nhất 3 ký tự',
-//            'matkhau.max' => 'Mật khẩu không vượt quá 32 ký tự',
-//            'nhaplaimatkhau.required' => 'Bạn phải nhập lại mật khẩu',
-//            'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
-//            'dongy.required' => 'Bạn chưa đồng ý điều khoản'
-//        ]);
+       $this->activationService = new ActivationService(new UserActivation);
+       $this->validate($request,[
+          'tentaikhoan'=>'required|unique:thanhvien,name|min:4',
+           'email' => 'required|email|unique:thanhvien,email',
+           'matkhau'=> 'required| min:8|max:32',
+           'nhaplaimatkhau' =>'required|same:matkhau',
+           'dongy' => 'required'
+       ],[
+           'tentaikhoan.required' =>'Bạn chưa nhập tên người dùng',
+           'tentaikhoan.unique'=>'Tên tài khoản đã tồn tại',
+           'tentaikhoan.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
+           'email.required' => 'Bạn chưa nhập email',
+           'email.email' => 'Email không hợp lệ',
+           'email.unique' => 'Địa chỉ đã tồn tại',
+           'matkhau.required' => 'Bạn chưa nhập mật khẩu',
+           'matkhau.min' => 'Mật khẩu phải phải chứa ít nhất 8 ký tự',
+           'matkhau.max' => 'Mật khẩu không vượt quá 32 ký tự',
+           'nhaplaimatkhau.required' => 'Bạn phải nhập lại mật khẩu',
+           'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
+           'dongy.required' => 'Bạn chưa đồng ý điều khoản'
+       ]);
 
         $thanhvien = new thanhvien;
         $thanhvien->name = $request ->tentaikhoan;
@@ -96,26 +99,25 @@ class DK_QLTaiKhoan extends Controller
 
     protected function capTaiKhoan(Request $request){
 
-//        $this->activationService = new ActivationService(new UserActivation);
-//        $this->validate($request,[
-//           'tentaikhoan'=>'required|min:4',
-//            'email' => 'required|email|unique:taikhoans,email',
-//            'matkhau'=> 'required| min:8|max:32',
-//            'nhaplaimatkhau' =>'required|same:matkhau',
-//            'dongy' => 'required'
-//        ],[
-//            'tentaikhoan.required' =>'Bạn chưa nhập tên người dùng',
-//            'tentaikhoan.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
-//            'email.required' => 'Bạn chưa nhập email',
-//            'email.email' => 'Email không hợp lệ',
-//            'email.unique' => 'Địa chỉ đã tồn tại',
-//            'matkhau.required' => 'Bạn chưa nhập mật khẩu',
-//            'matkhau.min' => 'Mật khẩu phải phải chứa ít nhất 3 ký tự',
-//            'matkhau.max' => 'Mật khẩu không vượt quá 32 ký tự',
-//            'nhaplaimatkhau.required' => 'Bạn phải nhập lại mật khẩu',
-//            'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
-//            'dongy.required' => 'Bạn chưa đồng ý điều khoản'
-//        ]);
+       $this->activationService = new ActivationService(new UserActivation);
+       $this->validate($request,[
+          'tentaikhoan'=>'required|min:4',
+           'email' => 'required|email|unique:taikhoans,email',
+           'matkhau'=> 'required| min:8|max:32',
+           'nhaplaimatkhau' =>'required|same:matkhau',
+       ],[
+           'tentaikhoan.required' =>'Bạn chưa nhập tên người dùng',
+           'tentaikhoan.unique'=>'Tên tài khoản đã tồn tại',
+           'tentaikhoan.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
+           'email.required' => 'Bạn chưa nhập email',
+           'email.email' => 'Email không hợp lệ',
+           'email.unique' => 'Địa chỉ đã tồn tại',
+           'matkhau.required' => 'Bạn chưa nhập mật khẩu',
+           'matkhau.min' => 'Mật khẩu phải phải chứa ít nhất 8 ký tự',
+           'matkhau.max' => 'Mật khẩu không vượt quá 32 ký tự',
+           'nhaplaimatkhau.required' => 'Bạn phải nhập lại mật khẩu',
+           'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
+       ]);
 
         $admin = new admin;
         $admin->name = $request ->tentaikhoan;
@@ -147,6 +149,64 @@ class DK_QLTaiKhoan extends Controller
 
         Auth::guard('admin')->logout();
         return redirect()->route('trangchu');
+    }
+    protected function postSuaTaiKhoan(Request $request)
+    {
+            $this->validate($request,[
+          'tentaikhoan'=>'min:4',
+           'email' => 'required|email',
+           'matkhaucu'=> 'required',
+           'matkhaumoi'=> 'required| min:8|max:32',
+           'nhaplaimatkhau' =>'required|same:matkhaumoi',
+           'sdt'=>'min:10',
+
+       ],[
+           'tentaikhoan.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
+           'email.required' => 'Bạn chưa nhập email',
+           'email.email' => 'Email không hợp lệ',
+           'matkhaucu.required' => 'Bạn chưa nhập mật khẩu',
+           'matkhaumoi.required' => 'Bạn chưa nhập mật khẩu',
+           'matkhaumoi.min' => 'Mật khẩu phải phải chứa ít nhất 8 ký tự',
+           'matkhaumoi.max' => 'Mật khẩu không vượt quá 32 ký tự',
+           'nhaplaimatkhau.required' => 'Bạn phải nhập lại mật khẩu',
+           'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
+           'sdt.min'=>'sô điện thoại không hợp lệ',
+       ]);
+
+            $users_email = thanhvien::where('email','<>',Auth::guard('thanhvien')->user()->email)->get();
+            $user_ten = thanhvien::where('name','<>',Auth::guard('thanhvien')->user()->name)->get();
+
+            foreach ($users_email as $user) {
+              if ($user->name==$request->tentaikhoan) {
+                return view('ThanhVien.suaTaiKhoanCaNhan')->with('thongbao', 'Tên tài khoản đã được sử dụng');
+                break;
+              }
+            }
+
+            foreach ($user_ten as $user) {
+              if( $user->email == $request->email)
+              {
+                return view('ThanhVien.suaTaiKhoanCaNhan')->with('thongbao', 'email đã được sử dụng');
+                break;
+              }
+            }
+
+            $thanhvien = thanhvien::find(Auth::guard('thanhvien')->user()->maTK);
+            if(Hash::check($request->matkhaucu, $thanhvien->password))
+            {
+              $thanhvien->name = $request ->tentaikhoan;
+              $thanhvien->password = bcrypt($request ->matkhaumoi);
+              $thanhvien->email = $request->email;
+              if (isset($request->std)) {
+                $thanhvien->sdt = $request->sdt;
+              }
+              $thanhvien->save();
+              return view('ThanhVien.suaTaiKhoanCaNhan')->with('thongbao', 'Sửa thông tin thành công!');
+            }else
+            {
+              return view('ThanhVien.suaTaiKhoanCaNhan')->with('thongbao', 'Mật khẩu sai');
+            }
+
     }
 
 }
