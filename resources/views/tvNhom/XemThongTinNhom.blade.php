@@ -44,7 +44,7 @@
             </div>
 
             <div class="row" style="margin-top: 50px;">
-                <button>Danh sách thành viên</button>
+                <button onclick="window.location='{{route("chiase",['id'=>1])}}'">Danh sách thành viên</button>
                 <button>Danh sách truyện</button>
                 <button>Sửa thông tin nhóm</button>
             </div>

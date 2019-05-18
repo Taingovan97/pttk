@@ -11,6 +11,7 @@ class nhom extends Model
     public $timestamps = false;
     protected $primaryKey = 'maNhom';
 
+
     public function getNgayLap(){
         $ngay = new Carbon($this->ngayLap);
         return $ngay->toDateString();
@@ -24,11 +25,27 @@ class nhom extends Model
 
         return $this->getThanhVien->count();
     }
+
     public function getTruyen(){
         return $this->hasMany('App\truyen','maNhom','maNhom');
     }
 
-    public function getSoLuongTruyen(){
+    public function getSoLuongTruyen()
+    {
         return $this->getTruyen()->count();
+
+    }
+    
+    public function thanhvien()
+    {
+    	return $this->hasMany('App\thanhvien', 'maNhom', 'maNhom');
+    }
+
+    public function truyen()
+    {
+    	return $this->hasMany('App\Truyen', 'maNhom', 'maNhom');
+
     }
 }
+
+

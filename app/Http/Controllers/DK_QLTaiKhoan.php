@@ -58,6 +58,26 @@ class DK_QLTaiKhoan extends Controller
            'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
            'dongy.required' => 'Bạn chưa đồng ý điều khoản'
        ]);
+//        $this->activationService = new ActivationService(new UserActivation);
+//        $this->validate($request,[
+//           'tentaikhoan'=>'required|min:4',
+//            'email' => 'required|email|unique:taikhoans,email',
+//            'matkhau'=> 'required| min:3|max:32',
+//            'nhaplaimatkhau' =>'required|same:matkhau',
+//            'dongy' => 'required'
+//        ],[
+//            'tentaikhoan.required' =>'Bạn chưa nhập tên người dùng',
+//            'tentaikhoan.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
+//            'email.required' => 'Bạn chưa nhập email',
+//            'email.email' => 'Email không hợp lệ',
+//            'email.unique' => 'Địa chỉ đã tồn tại',
+//            'matkhau.required' => 'Bạn chưa nhập mật khẩu',
+//            'matkhau.min' => 'Mật khẩu phải phải chứa ít nhất 3 ký tự',
+//            'matkhau.max' => 'Mật khẩu không vượt quá 32 ký tự',
+//            'nhaplaimatkhau.required' => 'Bạn phải nhập lại mật khẩu',
+//            'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
+//            'dongy.required' => 'Bạn chưa đồng ý điều khoản'
+//        ]);
 
         $thanhvien = new thanhvien;
         $thanhvien->name = $request ->tentaikhoan;
@@ -208,5 +228,8 @@ class DK_QLTaiKhoan extends Controller
             }
 
     }
+
+
+    
 
 }

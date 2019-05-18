@@ -17,9 +17,11 @@ class Nhom extends Migration
         Schema::create('nhom', function($table){
             $table->bigIncrements('maNhom');
             $table->string('tenNhom');
-            $table->dateTime('ngayLap');
+            $table->timestamp('ngayLap');
             $table->string('gioiThieu')->nullable();
             $table->integer('maTruongNhom');
+            $table->integer('soLuongTV')->unsigned();
+            $table->integer('soLuongTruyen')->unsigned();
 
         });
     }

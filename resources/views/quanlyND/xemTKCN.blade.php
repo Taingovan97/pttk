@@ -1,32 +1,15 @@
-@extends('layouts.master_qltk')
+@extends('layouts.master_qlnd')
 
 @section('noidung')
+
 <div class="main container">
-    
-	<div class="row">
-	<div class="col-md-7">
-		<h3 style="margin-bottom: 20px;">Xem tài khoản</h3>
-	</div>
-	<div class="col-md-2">
-        <p style="margin:5px 0; text-align: right;">Chọn tài khoản :</p>
-      </div>
-      <div class="col-md-3">
-        <form action="{{route("hienthi")}}" method="post">
-        {{ csrf_field() }}
-        <div class="find-element">
-          <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
-          <button type="submit"></button>
-        </div>
-        </form>
-      </div>
-	
-	</div>
+    <h3 style="margin-bottom: 20px;">Xem tài khoản</h3>
     <div class="">
       <h4>Thông tin tài khoản</h4>
       <div class="row">
         <div class="col-md-4">
           <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;border: 1px solid;">
-         
+          <button type="button" name="button" style="margin: 10px auto;display: block;width: 80%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Sửa tài khoản</button>
         </div>
         <div class="col-md-8">
           <div class="row">
@@ -34,7 +17,7 @@
               <p>Tên đăng nhập:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $ten; ?></p>
+              <p>Tung_tokyo</p>
             </div>
           </div>
           <div class="row">
@@ -42,7 +25,7 @@
               <p>Email:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $email; ?></p>
+              <p>vtv1@gmail.com</p>
             </div>
           </div>
           <div class="row">
@@ -50,8 +33,7 @@
               <p>Số điện thoại:</p>
             </div>
             <div class="col-md-4">
-              <input type="text" name="sdt"  placeholder="">
-              <p><?php echo $sdt; ?></p>
+              <input type="text" name="" value="Tung_tokyo" placeholder="">
             </div>
           </div>
           <div class="row">
@@ -59,7 +41,7 @@
               <p>Ngày gia nhập:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $time; ?></p>
+              <p>24/03/2019</p>
             </div>
           </div>
           <div class="row">
@@ -77,4 +59,5 @@
 
   </div>
 
-@endsection 
+
+@endsection

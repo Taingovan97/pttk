@@ -1,3 +1,10 @@
+<<<<<<< HEAD
+@extends('layouts.master_qlnd')
+
+@section('noidung')
+
+<div class="location container">
+=======
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
@@ -77,6 +84,7 @@
   </header>
 
   <div class="location container">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
     <div class="row">
       <div class="col-md-7">
         <h5><span>Trang chủ</span>/</h5>
@@ -101,70 +109,110 @@
         <div class="row">
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
           </div>
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
           </div>
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
           </div>
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
           </div>
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
           </div>
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
           </div>
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
           </div>
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
           </div>
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
           </div>
           <div class="col-md-3 comic-border">
             <div class="comic">
+<<<<<<< HEAD
+              <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+=======
               <img src="../images/x.png" alt="" style="width: 100%;">
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
               <h3><a href="read.html">Truyện 1</a></h3>
               <p>Chap 11</p>
             </div>
@@ -211,6 +259,11 @@
       </div>
     </div>
   </div>
+<<<<<<< HEAD
+
+
+@endsection
+=======
   <footer>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -234,3 +287,4 @@
 }
 
 </style>
+>>>>>>> a762d398a1992ceca1b858f29592f1465191882d
