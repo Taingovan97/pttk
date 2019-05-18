@@ -87,7 +87,10 @@ class DK_QLTruyen extends Controller
       return view('qlnd_thanhcong');
    }
    //
+    public function getthemChuongMoi($maTruyen){
 
+
+    }
    //xoa truyen
    public function xoatruyen()
    {
@@ -97,8 +100,8 @@ class DK_QLTruyen extends Controller
 
    public function da_xoa($id)
    {
-      $data = truyen::find($id);
-      $data-
+//      $data = truyen::find($id);
+//      $data-
    }
 
 
@@ -116,6 +119,28 @@ class DK_QLTruyen extends Controller
 
    public function thongke_nhomdich()
    {
+
+   }
+
+   public  function xoaTruyenNhom($maTruyen)
+   {
+       $tv_truyens = Auth::guard('thanhvien')->user()->getTruyen;
+       $check = false;
+       foreach ($tv_truyens as $tv_truyen)
+       {
+            if($tv_truyen->getTruyen->maTruyen == $maTruyen){
+                $check= true;
+                break;
+            }
+       }
+
+       if($check==True){
+           $tv_truyen->getTruyen->delete();
+           return redirect()->route('quanlytruyen');
+       }
+       else{
+           return redirect()->route('quanlytruyen',['thongbao'=>'Truyện không phải của nhóm!']);
+       }
 
    }
 

@@ -22,12 +22,8 @@ class truyen extends Model
        return $this->belongsTo('App\Nhom','maNhom', 'maNhom');
     }
 
-    public function theLoai(){
 
-        return  $this->hasMany('App\theloai', 'maTL', 'maTL');
-    }
-
-    public function dstheloai()
+    public function getTheloai()
     {
         return $this->hasMany('App\truyen_theloai', 'maTruyen', 'maTruyen');
     }
@@ -40,6 +36,10 @@ class truyen extends Model
     }
 
 
+    public function soChuong()
+    {
+        return $this->hasMany('App\chuongTruyen', 'maTruyen', 'maTruyen')->count();
+    }
     public function time()
     {
         $chuong = chuongtruyen::where('maTruyen', $this->maTruyen)->orderBy('maChuong','desc')->take(1)->get()->toArray();

@@ -36,16 +36,12 @@ class nhom extends Model
 
     }
     
-    public function thanhvien()
+    public function getTruongNhom()
     {
-    	return $this->hasMany('App\thanhvien', 'maNhom', 'maNhom');
+    	return $this->hasOne('App\thanhvien', 'maTK', 'maTruongNhom');
     }
 
-    public function truyen()
-    {
-    	return $this->hasMany('App\Truyen', 'maNhom', 'maNhom');
 
-    }
 }
 
 

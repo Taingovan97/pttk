@@ -3,8 +3,8 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/TV_themchuongtruyen.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/TV_themchuongtruyen.css')}}">
 
     <title>trang mau</title>
 </head>
@@ -14,7 +14,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-4">
-                <a href="#" title="Trang chủ"><img src="images/logo1.png" alt="Logo"></a>
+                <a href="#" title="Trang chủ"><img src="{{asset('images/logo1.png')}}" alt="Logo"></a>
             </div>
             <div class="col-md-4 find">
                 <div class="find-element">
@@ -100,7 +100,7 @@
   <tr>
     <td style="width: 25%;">Hình ảnh*:</td>
     <td>
-      <div class="row" style="margin-left: 20%;"><img src="#"><img src="#"><img src="#"><img src="#"><img src="#"><img src="#"></div>
+      <div class="row" style="margin-left: 20%;"></div>
       <button>Xóa</button>
       <div class="row">
         <i><p>*Kéo thả để sắp xếp vị trí các ảnh.</p>

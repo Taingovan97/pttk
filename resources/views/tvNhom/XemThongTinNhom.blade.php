@@ -35,6 +35,7 @@
                 <div class="col-md-9">
                     <h6>{{$nhom->tenNhom}}</h6>
                     <ul>
+                        <li>Trưởng nhóm: {{$nhom->getTruongNhom->name}}</li>
                         <li>Ngày thành lập: {{$nhom->getNgayLap()}}</li>
                         <li>Số lượng thành viên: {{$nhom->getSoLuongThanhVien()}}</li>
                         <li>Số lượng truyện đã dịch: {{$nhom->getSoLuongTruyen()}}</li>
@@ -46,7 +47,9 @@
             <div class="row" style="margin-top: 50px;">
                 <button onclick="window.location='{{route("thanhviennhom")}}'">Danh sách thành viên</button>
                 <button onclick="window.location='{{route("quanlytruyen")}}'">Danh sách truyện</button>
-                <button onclick="window.location='{{route("thanhviennhom")}}'">Sửa thông tin nhóm</button>
+                @if(Auth::guard('thanhvien')->user()->maTK ==$nhom->maTruongNhom)
+                    <button onclick="window.location='{{route("suathongtinnhom",['maTK'=>$nhom->maTruongNhom])}}'">Sửa thông tin nhóm</button>
+                @endif
             </div>
 
         </div>

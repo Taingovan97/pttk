@@ -143,17 +143,17 @@ Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 	 	Route::group(['prefix' => 'quan_ly_truyen'], function(){
 	 		Route::get('/', function() { return view('tvNhom.QuanLyTruyen'); })->name('quanlytruyen');
 
-	 		Route::get('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('themtruyenmoi');
+	 		Route::get('them_truyen_moi',function (){ return view('tvNhom.ThemTruyen');})->name('themtruyenmoi');
 	 		Route::post('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('themtruyenmoi');
 
-		 	Route::get('them_chuong_moi', 'DK_QLTruyen@themChuongMoi')->name('themchuongmoi');
+		 	Route::get('them_chuong_moi/{maTruyen}', function ($maTruyen){ return view('tvNhom.ThemChuongMoi',['maTruyen'=>$maTruyen]);})->name('formthemchuongmoi');
 		 	Route::post('them_chuong_moi', 'DK_QLTruyen@themChuongMoi')->name('themchuongmoi');
 
 		 	Route::get('thong_ke_truyen','DL_QLTruyen@thongKeTruyen')->name('thongketruyennhom');
 		 	Route::get('tracuutruyen', 'DK_QLTruyen@traCuuTruyenCuaNhom')->name('tracuutruyencuanhom');
 
 		 	Route::get('xoa/truyen_{id}', 'DK_QLTRuyen@checkXoaNhom')->name('xoa_checktruyen');
-		 	Route::post('xoa/truyen_{id}', 'DL_QLTruyen@xoaTruyenNhom')->name('xoatruyennhom');
+		 	Route::post('xoa/truyen_{maTruyen}', 'DL_QLTruyen@xoaTruyenNhom')->name('xoatruyennhom');
 
 
 		 	Route::get('chinh_sua_truyen/id={id}','DL_QLTruyen@getchinhSuaTruyen')->name('formchinhsuatruyen');
@@ -169,6 +169,7 @@ Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 		 });
 	 	Route::group(['prefix' =>'quanlynhom'], function(){
 	 		Route::get('thongtinnhom','DKQL_Nhom@thongTinNhom')->name('thongtinnhom');
+            Route::get('suathongtin/{maTK}', 'DK_QLNhom@getSuaThongTinNhom')->name('suathongtinnhom');
 	 		Route::get('thanh_vien_nhom',function (){ return view('tvNhom.dsThanhVien');})->name('thanhviennhom');
 	 		Route::get('them_thanh_vien', 'DK_QLNhom@getThemThanhVien')->name('getthemthanhvien');
 	 		Route::post('them_thanh_vien', 'DK_QLNhom@themThanhVien')->name('themthanhvien');

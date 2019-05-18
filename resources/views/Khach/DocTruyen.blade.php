@@ -71,9 +71,19 @@
 
         	<select name="select">
                 @foreach($truyen->dsChuong as $chuong)
-	            <option value="{{$chuong->maChuong}}"><a href="#">{{$chuong->tenChuong}}</a></option>
+	            <option id="selectChap" value="{{$chuong->maChuong}}" onchange="changechap()"><a href="#">{{$chuong->tenChuong}}</a></option>
                 @endforeach
              </select>
+
+            <script>
+                function changechap(){
+                    alert('check');
+                    var maChuong = document.getElementById("selectChap").value;
+                    var maTruyen = '{{$truyen->maTruyen}}';
+                    window.location ='truyen/'+ maTruyen +'/' +maChuong;
+                }
+
+            </script>
 
         	<button type="button" class="next"  onclick="window.location='<?php if($chuongxem->chuongSau())
                 echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->chuongSau()]);

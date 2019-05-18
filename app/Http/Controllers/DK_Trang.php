@@ -21,7 +21,7 @@ class DK_Trang extends Controller
         }
 
         }else{
-            $truyens = truyen::all();
+            $truyens = truyen::where('duyet',true)->get();
             ////        $chuong = chuongtruyen::all()->toArray();
             ////                    echo '<pre>';
             ////                    var_dump($chuong);
@@ -41,7 +41,8 @@ class DK_Trang extends Controller
             //           var_dump($chuong);
             //            echo '<pre/>';
             //    }
-            return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+
             }
 
 

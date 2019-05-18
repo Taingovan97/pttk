@@ -27,89 +27,53 @@
         </div>
     </div>
     <h6>ABC Team</h6>
-    <div class="row root-view" style="padding-left: 20px;">
+<div class="row root-view" style="padding-left: 20px;">
+    <?php
+    $nhom =Auth::guard('thanhvien')->user()->getNhom;
+    $dstruyen = $nhom->getTruyen
+    ?>
 
-    <div class="col-md-6 view-comics">
+    <div class="col-md-7 view-comics">
+        @foreach($dstruyen as $truyen)
         <div class="row" style="margin-top: 20px;">
 
-        <img src="images/anh1.png">
-        <div class="col-md-8">
-       <b>Doraemon</b>
-        <ul>
-        <li>Đánh giá:<span> ⭐ ⭐ ⭐ ⭐ ⭐ </span></li>
-        <li><span>Chap 50</span><span> | </span> Lượt xem:<span> 1000</span></li>
-        <li>Thể loại: Hành động</li>
-        <li>Tình trạng: Đang thực hiện</li>
-        <li>Sơ lược nội dung truyện: bbbbbbbbbbbbbbbbbbbbbbbbbbbb</li>
-    </ul>
-    <div class="row" style="margin-top: 20px;">
-            <button>Thêm chương truyện</button>
-            <button>Xóa truyện</button>
-        </div>
-        </div>
-        </div>
+            <img src="{{$truyen->linkAnh}}" onerror="this.src='{{asset('images/anh1.png')}}'">
+            <div class="col-md-8">
+                <b>{{$truyen->tenTruyen}}</b>
+                <ul>
+                    <li>Đánh giá:<span> {{$truyen->diemDG}}</span></li>
+                    <li><span>Chap {{$truyen->soChuong()}}0</span><span> | </span> Lượt xem:<span> {{$truyen->luotXem}}</span></li>
+                    <li>Thể loại:
+                    @foreach($truyen->getTheLoai as $tr_theloai)
+                        {{$tr_theloai->getTheLoai->tenTL}},
+                    @endforeach
+                    </li>
+                    <li>Tình trạng: Đang thực hiện</li>
+                    <li>Sơ lược nội dung truyện: {{$truyen->gioiThieu}}</li>
+                </ul>
+                <div class="row" style="margin-top: 20px;">
+                    <button onclick="window.location='{{route("formthemchuongmoi",['maTruyen'=>$truyen->maTruyen])}}'">Thêm chương truyện</button>
+                    <button onclick="confirmDelete()">Xóa truyện</button>
+                    <script>
+                        function confirmDelete(){
+                            var name = "{{$truyen->tenTruyen}}"
+                            var r = confirm("Xác nhận xóa truyện " + name + ' khỏi danh sách của bạn?');
 
-    <div class="row" style="margin-top: 20px;">
+                            if (r==true){
+                                window.location ='{{route("xoatruyennhom",["maTruyen"=>$truyen->maTruyen])}}';
 
-        <img src="images/anh1.png">
-        <div class="col-md-8">
-        <b>Doraemon</b>
-        <ul>
-        <li>Đánh giá:<span> ⭐ ⭐ ⭐ ⭐ ⭐ </span></li>
-        <li><span>Chap 50</span><span> | </span> Lượt xem:<span> 1000</span></li>
-        <li>Thể loại: Hành động</li>
-        <li>Tình trạng: Đang thực hiện</li>
-        <li>Sơ lược nội dung truyện: bbbbbbbbbbbbbbbbbbbbbbbbbbbb</li>
-    </ul>
-    <div class="row" style="margin-top: 20px;">
-            <button>Thêm chương truyện</button>
-            <button>Xóa truyện</button>
-        </div>
-        </div>
-        </div>    
+                            }
+                        }
 
-    </div>
-        <div class="col-md-6 view-comics">
-        <div class="row" style="margin-top: 20px;">
-
-        <img src="images/anh1.png">
-        <div class="col-md-8">
-        <b>Doraemon</b>
-        <ul>
-        <li>Đánh giá:<span> ⭐ ⭐ ⭐ ⭐ ⭐ </span></li>
-        <li><span>Chap 50</span><span> | </span> Lượt xem:<span> 1000</span></li>
-        <li>Thể loại: Hành động</li>
-        <li>Tình trạng: Đang thực hiện</li>
-        <li>Sơ lược nội dung truyện: bbbbbbbbbbbbbbbbbbbbbbbbbbbb</li>
-    </ul>
-    <div class="row" style="margin-top: 20px;">
-            <button>Thêm chương truyện</button>
-            <button>Xóa truyện</button>
+                    </script>
+                </div>
+            </div>
         </div>
+        @endforeach
         </div>
-        </div>
-
-    <div class="row" style="margin-top: 20px;">
-
-        <img src="images/anh1.png">
-        <div class="col-md-8">
-        <b>Doraemon</b>
-        <ul>
-        <li>Đánh giá:<span> ⭐ ⭐ ⭐ ⭐ ⭐ </span></li>
-        <li><span>Chap 50</span><span> | </span> Lượt xem:<span> 1000</span></li>
-        <li>Thể loại: Hành động</li>
-        <li>Tình trạng: Đang thực hiện</li>
-        <li>Sơ lược nội dung truyện: bbbbbbbbbbbbbbbbbbbbbbbbbbbb</li>
-    </ul>
-    <div class="row" style="margin-top: 20px;">
-            <button>Thêm chương truyện</button>
-            <button>Xóa truyện</button>
-        </div>
-        </div>
-        </div>    
 
     </div>
-   
+
 
 </div>
 
