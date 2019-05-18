@@ -6,7 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\nhom;
 use Illuminate\Support\Facades\Auth;
-
+use Illuminate\Support\Facades\DB;
 class DK_QLNhom extends Controller
 {
     function fetch(Request $request)
@@ -57,5 +57,12 @@ class DK_QLNhom extends Controller
         return redirect()->route('formtaonhom')->with('thongbao', 'Tạo nhóm thành công!');
 
     }
+
+    public function xoaThanhVienNhom($maTK){
+        DB::table('thanhvien')
+            ->where('maTK',$maTK)
+            ->update(['maNhom' => null]);
+    }
+
 
 }

@@ -24,6 +24,7 @@ class Truyen extends Migration
             $table->integer('luotXem')->unsigned()->default(0);
             $table->float('diemDG')->default(0.);
             $table->integer('maNhom');
+            $table->integer('manguoiDang');
             $table->boolean('duyet')->default(false);
 
         });

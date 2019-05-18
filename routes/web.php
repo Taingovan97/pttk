@@ -115,12 +115,13 @@ Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
      Route::get('taonhom', function () { return view('ThanhVien.taoNhom');}) ->name('formtaonhom');
      Route::post('taonhom', 'DK_QLNhom@postTaoNhom')->name('posttaonhom');
+
      Route::group(['prefix' => 'nhom',['middleware'=>'auth_thanhvienNhom']], function(){
 
 	 	Route::get('/', 'DK_QLNhom@Trangchu')->name('trangchunhom');
 	 	//truyen
 	 	Route::group(['prefix' => 'quan_ly_truyen'], function(){
-	 		Route::get('/', function() { return view('ThanhVienNhom.QuanLyTruyen'); })->name('quanlytruyen');
+	 		Route::get('/', function() { return view('tvNhom.QuanLyTruyen'); })->name('quanlytruyen');
 
 	 		Route::get('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('themtruyenmoi');
 	 		Route::post('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('themtruyenmoi');
@@ -148,9 +149,10 @@ Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 		 });
 	 	Route::group(['prefix' =>'quanlynhom'], function(){
 	 		Route::get('thongtinnhom','DKQL_Nhom@thongTinNhom')->name('thongtinnhom');
-	 		Route::get('thanh_vien_nhom','DK_QLNhom@thanhVienNhom')->name('thanhviennhom');
+	 		Route::get('thanh_vien_nhom',function (){ return view('tvNhom.dsThanhVien');})->name('thanhviennhom');
 	 		Route::get('them_thanh_vien', 'DK_QLNhom@getThemThanhVien')->name('getthemthanhvien');
 	 		Route::post('them_thanh_vien', 'DK_QLNhom@themThanhVien')->name('themthanhvien');
+            Route::get('xoatv/{maTK}', 'DK_QLNhom@xoaThanhVienNhom')->name('xoathanhvien');
 	 	});
 	 	//thanh viern nhom
 	 });

@@ -10,7 +10,7 @@ header .container{
 
 }
 .user{
-  padding-right: 30px;
+  padding-right: 50px;
 }
 
 .navigator{
@@ -33,6 +33,11 @@ footer {
 
 .dropdown .item{
   padding: 3px 12px;
+}
+.col-md-10 p {
+  float: left;
+  margin-left: 100px;
+  margin-top: 10px;
 }
 .find-element input{
   width: 95%;
@@ -66,14 +71,15 @@ footer {
   border: 1px solid #c0c0c0;
   border-radius: 10px;
   float: left;
+  margin-left: 50px;
 }
-.row{
-  padding-top: 10px;
+.user{
+
 }
 .user button{
   margin: 0 15px;
   float: right;
-  width: 35%;
+  width: 30%;
   border-radius: 10px;
   border: none;
   height: 35px;
@@ -88,7 +94,7 @@ footer {
   margin: 0px;
 }
 .direct ul li{
-  display: inline-block;
+  display: block;
   width: 20%;
   background: #00b2bf;
   padding: 10px 0;
@@ -160,15 +166,13 @@ footer {
   border-radius: 20px;
 }
 .location ul li:hover{
-   background: #e5dbdb;
+  background: #e5dbdb;
 }
 .view-comics, .border-charts{
-  margin-top: 10px;
+  margin-top: 5px;
 
 }
-.view-comics{
-  padding-left:25px;
-}
+
 .comic-border{
   padding: 0;
 }
@@ -187,7 +191,6 @@ footer {
 }
 .comic h3 a:hover{
   color: #ccc;
-  color: #c51f1a;
 }
 .comic p{
 
@@ -233,6 +236,7 @@ footer {
 /*end comic css*/
 
 .author{
+  border: 1px solid;
   margin: 20px 0;
 }
 .summary{

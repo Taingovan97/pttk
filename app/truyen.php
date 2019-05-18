@@ -34,6 +34,8 @@ class truyen extends Model
     public function chuongMoiNhat()
     {
         $chuong = chuongtruyen::where('maTruyen', $this->maTruyen)->orderBy('maChuong','desc')->take(1)->get()->toArray();
+        if(empty($chuong))
+            return 0;
         return $chuong[0];
     }
 
