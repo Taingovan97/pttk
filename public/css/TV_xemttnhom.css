@@ -1,0 +1,10 @@
+.col-md-10 .row button {
+  background: rgb(32 90 167);
+  margin-left: 75px;
+  margin-bottom: 50px;
+  color: white;
+  height: 40px;
+}
+.col-md-9 li {
+  list-style: disc;
+}

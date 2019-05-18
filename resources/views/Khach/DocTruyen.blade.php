@@ -8,6 +8,7 @@
             {{$truyen->tenTruyen}}
         @endif
     </title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
 </head>
@@ -57,21 +58,33 @@
 	</div>
 	<div class="main">
 			<div class="main_header">
-				<b><a href="#">Trang chủ</a><span> / </span><a href="#">Đọc truyện</a><span> / </span><a href="#">Doraemon</a></b>	
+				<b><a href="{{route('trangchu')}}">Trang chủ</a><span>/</span><a href="{{route('chitiettruyen',['id'=>$truyen->maTruyen])}}">{{$truyen->tenTruyen}}</a><span>/{{$chuongxem->tenChuong}}</span></b>
+{{--                    onMouseOver="this.style.color='#00F'" onMouseOut="this.style.color='#000'" style="text-decoration: None"--}}
+
       </div>
         <div class="title" id="navbar">
-        	<button type="button" class="next"><</button>
+        	<button type="button" class="next" onclick="window.location='<?php if($chuongxem->chuongTruoc())
+                echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->chuongTruoc()]);
+            else
+                echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->maChuong]);
+            ?>'"><</button>
+
         	<select name="select">
                 @foreach($truyen->dsChuong as $chuong)
 	            <option value="{{$chuong->maChuong}}"><a href="#">{{$chuong->tenChuong}}</a></option>
                 @endforeach
              </select>
-        	<button type="button" class="next">></button>
-        	<button type="button" title="Nhấp vào đây để báo lỗi" class="else">Báo lỗi</button>
+
+        	<button type="button" class="next"  onclick="window.location='<?php if($chuongxem->chuongSau())
+                echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->chuongSau()]);
+            else
+                echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->maChuong]);
+            ?>'">></button>
+        	<button type="button" title="Nhấp vào đây để báo lỗi" class="else"  onclick="window.location='{{route("baocaotruyen",['idTruyen'=>$truyen->maTruyen, 'idChuong'=> $chuongxem->maChuong])}}'">Báo lỗi</button>
         </div>
       <ul class="content">
-          @foreach($chuongxem->dsTrangTruyen as $trang)
-            <li><img src="{{$trang->link}}" alt="{{$chuongxme->tenChuong}}"></li>
+          @foreach($chuongxem->getdsTrangTruyen as $trang)
+            <li><img src="{{$trang->link}}" alt="{{$chuongxem->tenChuong}}"></li>
           @endforeach
       </ul>
      
@@ -81,36 +94,49 @@
         <li>
       <div class="comment">
         <img src="{{asset('images/comment.png')}}">
-        <div class="comment_left">
-        <textarea>Thêm bình luận</textarea>
-        <footer>
-          <button>Hủy</button>
-          <button>Đăng</button>
-        </footer>
-      </div>
+          <form method="post", action="{{route('binhluan',['maTruyen'=> $truyen->maTruyen,'maChuong'=>$chuongxem->maChuong,'noidung'])}}">
+              {{csrf_field()}}
+              <div class="comment_left">
+                  <textarea id="binhluan" placeholder="Thêm bình luận" name="binhluan"></textarea>
+                  <footer>
+                      <button >Hủy</button>
+                      <button id= "dang" type="submit" >Đăng</button>
+{{--                      <script>--}}
+{{--                          function clearcomment() {--}}
+{{--                              document.getElementById('binhluan').value="";--}}
+{{--                          }--}}
+{{--                          --}}{{--$(document).ready(function(){--}}
+{{--                          --}}{{--    $("#dang").click(function(){--}}
+{{--                          --}}{{--        $.post("{{route('binhluan')}}",--}}
+{{--                          --}}{{--            {--}}
+{{--                          --}}{{--                binhluan: "Donald Duck",--}}
+{{--                          --}}{{--            },--}}
+{{--                          --}}{{--            function(data){--}}
+{{--                          --}}{{--                  --}}
+{{--                          --}}{{--            });--}}
+{{--                          --}}{{--    });--}}
+{{--                          --}}{{--});--}}
+{{--                      </script>--}}
+                  </footer>
+              </div>
+          </form>
+
       </div>
     </li>
+    @foreach($chuongxem->getdsBinhLuan as $binhluan)
     <li>
       <div class="comment">
-        <img src="{{asset('images/comment.png')}}">
+          <div >
+              <img src="{{asset($binhluan->getThanhVien->linhAnh)}}" onerror="this.src='{{asset('images/comment.png')}}'" />
+          </div>
         <div class="comment_completed">
-        <p>Truyện hay quá</p>
-        <p><span><a href="#">Thích</a></span><span><a href="#">Phản hồi</a></span><span>9 giờ trước</span></p>
-        
+        <p>{{$binhluan->noiDung}}</p>
+        <p><span><a href="{{route('getbaocaovipham',['maTruyen'=>$truyen->maTruyen,'maChuong'=>$chuongxem->maChuong, 'maTV2'=>1])}}">Báo cáo</a></span><span>{{$binhluan->timeUpToNow()}} phút trước</span></p>
       </div>
       </div>
     </li>
-	
-	<li>
-      <div class="comment">
-        <img src="{{asset('images/comment.png')}}">
-        <div class="comment_completed">
-        <p>Truyện hay quáfgdfg dfdfgdfg dfgdfgdfggg  g dg  dgdgd  gd gdg df  gdgdg dg   gdgdgdg</p>
-        <p><span><a href="#">Thích</a></span><span><a href="#">Phản hồi</a></span><span>9 giờ trước</span></p>
-        
-      </div>
-      </div>
-    </li>
+	@endforeach
+
   </ul>
     </div>
 		

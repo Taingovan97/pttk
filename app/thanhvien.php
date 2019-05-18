@@ -34,4 +34,14 @@ class thanhvien extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function truyenYeuThich()
+    {
+        return $this->hasMany('App\thanhvien_truyenyeuthich','maTK', 'maTK');
+    }
+
+    public function getNhom()
+    {
+        return $this->belongsTo('App\nhom','maNhom','maNhom');
+    }
 }

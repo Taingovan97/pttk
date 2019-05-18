@@ -57,8 +57,14 @@
 
 
 
+
+//giao dien main cua quan ly tai khoan
+Route::get('quanlyTK', 'pagescontroller@index_qltk')->name('index_qltk');
+
+
 	// xu ly dang xuat
 	Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
+
 
 
 
@@ -66,11 +72,22 @@
 // xu ly dang ky
 Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
-	// truyen
 
+Route::get('demo', function(){
+	return view('quanlyTK.suaTK');
+})->name('demo');
+
+// xu ly dang ky
+Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
+
+	// truyen
 	Route::get('chi_tiet_truyen/{id}', function($id){
 		$truyen = App\truyen::find($id);
 	       $charttruyens = App\truyen::all();
+
+
+
+
 	       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$charttruyens]);
 
 	})->name('chitiettruyen');
@@ -81,28 +98,46 @@ Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
  Route::group(['middleware'=>['web','auth_thanhvien']], function(){
 
 	// xu ly truyen yeu thich
-	 Route::get('truyenyeuthich', function () {
-	     return view('ThanhVien.TruyenYeuThich');
-	 })->name('dstruyenyeuthich');
+	 Route::get('truyenyeuthich', function () { return view('ThanhVien.TruyenYeuThich'); })->name('dstruyenyeuthich');
+	 Route::post('truyenyeuthich/them','DK_QLTruyen@themTruyenYeuThich')->name('themTruyenYeuThich');
+	 
+	 Route::get('chiase/id-{id}','DK_QLTruyen@chiaSe')->name('chiase');
 
-	 Route::get('chiase/id={id}','DK_QLTruyen@chiaSe')->name('chiase');
-
-	 Route::get('truyenyeuthich/xoatruyen', function () {	 })->name('xoatruyenyeuthich');
+	 Route::get('truyenyeuthich/xoatruyen-{id}', 'DK_QLTruyen@xoaTruyenYeuThich')->name('xoatruyenyeuthich');
 
 	 // tai khoan ca nhan thanh vien
 
-	 Route::get('taikhoancanhan', function () {
-	     return view('ThanhVien.ThongTinCaNhan');
-	 })->name('thongtintaikhoan');
+	 Route::get('taikhoancanhan', function () { return view('ThanhVien.ThongTinCaNhan'); })->name('thongtintaikhoan');
 
-	 Route::get('suatk-{tenTK}/', function (){
-	     return view('ThanhVien.suaTaiKhoanCaNhan');
-	 })->name('formsuatk');
+	 Route::get('{ten}/suatk', function (){ return view('ThanhVien.suaTaiKhoanCaNhan'); })->name('formsuatk');
 
-	 Route::post('suatk{tenTK}-id={id}', 'DK_QLTaiKhoan@SuaTaiKhoan')->name('suatk');
+	 Route::post('suatk', 'DK_QLTaiKhoan@postSuaTaiKhoan')->name('postsuatk');
 
-	 Route::group(['prefix' => 'nhom',['middleware'=>'auth_thanhvienNhom']], function(){
-	 	Route::get('/', function() { return view('ThanhVienNhom.TrangChuNhom'); })->name('trangchunhom');
+     Route::get('dexuat', function (){ return view('ThanhVien.DeXuat');})->name('dexuat');
+
+     Route::post('dexuat', 'DK_QLDeXuat@postGuiDeXuat')->name('guidexuat');
+     Route::get('tennhom', 'DK_QLDeXuat@getNhom');
+//     function () { return view('ThanhVien.DeXuat'); }
+     // Báo cáo
+
+     Route::get('baocaotruyen/{idTruyen}/{idChuong}', 'DK_QLBaoCao@getbaoCaoTruyen')->name('baocaotruyen');
+
+     Route::post('baocaotruyen/{maTruyen}-{maChuong}', 'DK_QLBaoCao@postBaoCaoTruyen')->name('postbaocaotruyen');
+
+     Route::get('baocaovipham/{maTruyen}/{maChuong}/{maTV2}', 'DK_QLBaoCao@getBaoCaoViPham')->name('getbaocaovipham');
+
+     Route::post('baocaovipham/{maTruyen}-{maChuong}-{maTV2}', 'DK_QLBaoCao@postBaoCaoViPham')->name('postbaocaovipham');
+
+	 // binh luan
+     Route::post('binhluan/{maTruyen}/{maChuong}/{maTK}','DK_QLTruyen@thembinhluan')->name('binhluan');
+
+     // Tạo nhóm
+
+     Route::get('taonhom', function () { return view('ThanhVien.taoNhom');}) ->name('formtaonhom');
+     Route::post('taonhom', 'DK_QLNhom@postTaoNhom')->name('posttaonhom');
+     Route::group(['prefix' => 'nhom',['middleware'=>'auth_thanhvienNhom']], function(){
+
+	 	Route::get('/', 'DK_QLNhom@Trangchu')->name('trangchunhom');
 	 	//truyen
 	 	Route::group(['prefix' => 'quan_ly_truyen'], function(){
 	 		Route::get('/', function() { return view('ThanhVienNhom.QuanLyTruyen'); })->name('quanlytruyen');
@@ -132,7 +167,7 @@ Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 		 	Route::get('tracuu', 'DK_QLDeXuat@tracuu')->name('tracuu');
 		 });
 	 	Route::group(['prefix' =>'quanlynhom'], function(){
-	 		Route::get('thongtinnhom','QL_Nhom@thongTinNhom')->name('thongtinnhom');
+	 		Route::get('thongtinnhom','DKQL_Nhom@thongTinNhom')->name('thongtinnhom');
 	 		Route::get('thanh_vien_nhom','DK_QLNhom@thanhVienNhom')->name('thanhviennhom');
 	 		Route::get('them_thanh_vien', 'DK_QLNhom@getThemThanhVien')->name('getthemthanhvien');
 	 		Route::post('them_thanh_vien', 'DK_QLNhom@themThanhVien')->name('themthanhvien');
@@ -157,14 +192,19 @@ Route::group(['prefix'=>'quanlytaikhoan'], function(){
 
 
 
+
+//tra cuu tai khoan
+
 	Route::get('/', 'DK_Trang@trangChuAdminTaiKhoan')->name('admintaikhoan');
 	
 });
+
 
 //giao dien main cua quan ly tai khoan
 Route::get('quanlyTK', 'pagescontroller@index_qltk')->name('index_qltk');
 
 //tra cuu tai khoan
+
 Route::get('quanlyTK/tracuu', 'taikhoanController@tracuu')->name('tracuuTK');
 
 //hien thi thong tin tai khoan

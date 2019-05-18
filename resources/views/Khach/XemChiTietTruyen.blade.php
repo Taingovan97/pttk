@@ -57,7 +57,7 @@
                             <a href="{{route('doctruyen',['idTruyen'=>$truyen->maTruyen, 'idChuong'=>$chuong->maChuong])}}">{{$chuong->tenChuong}}</a>
                         </div>
                         <div class="col-md-5">
-                            <p>{{}}</p>
+                            <p>{{$chuong->thoiGianDaDang()}}</p>
                         </div>
                     @endforeach
 

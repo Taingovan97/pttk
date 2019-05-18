@@ -22,7 +22,7 @@ class Thanhvien extends Migration
             $table->boolean('active')->default(false);
             $table->string('gioiTinh')->default('Nam');
             $table->integer('sdt')->nullable();
-            $table->string('maNhom')->nullable();
+            $table->integer('maNhom')->nullable();
             $table->rememberToken()->nullable();
             $table->timestamp('create_at');
         });

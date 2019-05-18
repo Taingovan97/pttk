@@ -16,7 +16,7 @@ class Baocao extends Migration
 		//
 		Schema::create('baocao', function($table){
 			$table->bigIncrements('maBC');
-			$table->string('tieuDe');
+			$table->string('tieuDe')->default('không tiêu đề');
 			$table->text('noiDung');
 			$table->timestamp('ngayGui');
 			$table->boolean('trangThai')->default(false);

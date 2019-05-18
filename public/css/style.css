@@ -7,7 +7,10 @@ header .container{
 }
 .find,.user{
   margin: 20px 0;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
 
 }
 .user{
@@ -17,11 +20,27 @@ header .container{
 .navigator{
   padding-top: 10px;
   border-bottom: 2px solid black;
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
 }
+
+footer {
+  height: 50px;
+  background: green;
+  color: black;
+  text-align: center;
+  line-height: 50px;
+}
+
 .find-element, .filter-element{
   width: 50%;
   float: left;
+}
+
+.dropdown .item{
+  padding: 3px 12px;
 }
 .find-element input{
   width: 95%;
@@ -124,6 +143,7 @@ header .container{
 
 .location,.main{
   background: #fff;
+  padding-bottom: 20px;
 }
 .location ul{
 
@@ -151,10 +171,12 @@ header .container{
    background: #e5dbdb;
 }
 .view-comics, .border-charts{
-  margin-top: 15px;
+  margin-top: 10px;
 
 }
-
+.view-comics{
+  padding-left:25px;
+}
 .comic-border{
   padding: 0;
 }
@@ -164,6 +186,7 @@ header .container{
   border: 1px solid;
 }
 .comic h3{
+  padding: 5px;
   border-bottom: 1px solid;
 }
 .comic h3 a{
@@ -172,10 +195,14 @@ header .container{
 }
 .comic h3 a:hover{
   color: #ccc;
+<<<<<<< HEAD
 
 
   color: #c51f1a;
 
+=======
+  color: #c51f1a;
+>>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
 }
 .comic p{
 
@@ -187,6 +214,7 @@ header .container{
   height: 500px;
 }
 .border-charts h3{
+  padding: 5px;
   text-align: center;
   font-size: 22px;
 }
@@ -229,4 +257,9 @@ header .container{
 .search-view-element .col-md-5 img{
   border: 1px solid;
 }
-
+.heart {
+  color: red;
+  font-size: 25px;
+  float: right;
+  margin-right: 20px;
+}

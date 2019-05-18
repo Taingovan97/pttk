@@ -14,7 +14,10 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
 
         // DB::table('chuongtruyen')->insert([
         //     'tenChuong'=>'chuong 4 cua truyen 1',
@@ -26,7 +29,10 @@ class DatabaseSeeder extends Seeder
         //$this->call(nhomSeeder::class);
         $this->call(nhom1::class);
         
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
         DB::table('thanhvien')->insert(
             [ 
             'name'=>'tentkxx',
@@ -39,7 +45,10 @@ class DatabaseSeeder extends Seeder
         );
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
     }
 }
 

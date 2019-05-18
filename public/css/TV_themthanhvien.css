@@ -1,0 +1,19 @@
+.col-md-8 .row button {
+  background: rgb(32 90 167);
+  margin-left: 20px;
+  color: white;
+  height: 35px;
+  font-size: 15px;
+}
+.col-md-8 li {
+  list-style: disc;
+  margin-bottom: 15px;
+} 
+h5{
+  float: left;
+  font-size: 17px;
+}
+h6 {
+  font-size: 20px;
+  margin-top: 20px;
+}

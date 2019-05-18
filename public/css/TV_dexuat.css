@@ -1,0 +1,38 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+form {
+	border: 1px solid black;
+    margin: 0 auto;
+    min-height: 450px;
+    width: 25%;
+    padding: 20px;
+}
+textarea {
+	width: 95%;
+	height: 150px;
+	margin-left: 10px;
+}
+h2 {
+	background: lightblue;
+	text-align: center;
+}
+p{
+	float: left;
+}
+.tennhom {
+	float: left;
+	height: 30px;
+	width: 60%;
+	margin-left: 10px;
+	margin-top: 10px;
+}
+button {
+	height: 30px;
+	width: 75px;
+	margin-left:10px;
+	margin-top: 50px;
+	background: rgb(32 90 167);
+	color: white;
+}

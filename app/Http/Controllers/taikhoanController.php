@@ -7,8 +7,13 @@ use App\thanhvien;
 class taikhoanController extends Controller
 {
 
+
     
+    
+
     //tra cuu tai khoan
+    //
+
     public function tracuu()
     {
     	return view('quanlyTK.tracuuTK');
@@ -63,6 +68,9 @@ class taikhoanController extends Controller
     {
         return view('quanlyTK.xemTKCN');
     }
+
+
+
 
 
 }

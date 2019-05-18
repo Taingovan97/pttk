@@ -27,8 +27,8 @@
                         </div>
                         <div class="dropdown-menu">
                             <a class="dropdown-item item" href="{{route('thongtintaikhoan')}}">Thông tin tài khoản</a>
-                            <a class="dropdown-item item" href="#">Nhóm</a>
-                            <a class="dropdown-item item" href="#"></a>
+                            <a class="dropdown-item item" href="{{route('trangchunhom')}}">Nhóm</a>
+                            <a class="dropdown-item item" href="{{route('dexuat')}}">Đề xuất</a>
                             <a class="dropdown-item item" href="{{route('dangxuat')}}">Đăng xuất</a>
                         </div>
                     </div>

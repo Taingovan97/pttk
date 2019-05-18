@@ -7,17 +7,18 @@
 @section('head.content')
 
     <div class="row">
-    <div class="col-md-4">
-        <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;border: 1px solid;">
-        <button type="button" name="button" onclick="window.location='{{route("formsuatk", ['tenTK'=>'xxx'])}}'"  style="margin: 10px auto;display: block;width: 80%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Sửa tài khoản</button>
+        <?php $user = Auth::guard('thanhvien')->user()?>
+        <div class="col-md-4">
+        <img onerror="this.src='{{asset('images/x.png')}}'" src="{{$user->linkAnh}}" alt="" style="width: 100%;border: 1px solid;">
+        <button type="button" name="button" onclick="window.location='{{route("formsuatk",['ten'=>$user->name])}}'"  style="margin: 10px auto;display: block;width: 80%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Sửa tài khoản</button>
     </div>
     <div class="col-md-8">
         <div class="row">
             <div class="col-md-3">
-                <p>Tên đăng nhập:</p>
+                <p>Tên đăng nhập: </p>
             </div>
             <div class="col-md-4">
-                <p>Tung_tokyo</p>
+                <p>{{$user->name}}</p>
             </div>
         </div>
         <div class="row">
@@ -25,7 +26,7 @@
                 <p>Email:</p>
             </div>
             <div class="col-md-4">
-                <p>vtv1@gmail.com</p>
+                <p>{{$user->email}}</p>
             </div>
         </div>
         <div class="row">
@@ -33,7 +34,11 @@
                 <p>Số điện thoại:</p>
             </div>
             <div class="col-md-4">
-                <input type="text" name="" value="Tung_tokyo" placeholder="">
+                @if($user->sdt)
+                    <p>{{$user->std}}</p>
+                @else
+                    <p> Chưa nhập </p>
+                @endif
             </div>
         </div>
         <div class="row">
@@ -41,7 +46,7 @@
                 <p>Ngày gia nhập:</p>
             </div>
             <div class="col-md-4">
-                <p>24/03/2019</p>
+                <p>{{$user->create_at}}</p>
             </div>
         </div>
         <div class="row">
@@ -49,7 +54,11 @@
                 <p>Nhóm:</p>
             </div>
             <div class="col-md-4">
-                <p>xxx</p>
+                @if($user->nhom)
+                    <p>xxx</p>
+                    @else
+                <p> Không tham gia nhóm</p>
+                    @endif
             </div>
         </div>
 
