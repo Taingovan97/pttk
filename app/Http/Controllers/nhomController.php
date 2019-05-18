@@ -34,7 +34,7 @@ class nhomController extends Controller
     {
         $ten = $request->input('keyword');
         $id = nhom::where('tenNhom', $ten)->value('maNhom');
-        return redirect('xemNhom', ['id_nhom'=>$id]);    
+        return redirect()->route('xemNhom', ['id_nhom'=>$id]);    
     }
 
     public function xoaNhom($id_nhom)

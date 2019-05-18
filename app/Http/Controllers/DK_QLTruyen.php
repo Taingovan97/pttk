@@ -98,7 +98,7 @@ class DK_QLTruyen extends Controller
    public function da_xoa($id)
    {
       $data = truyen::find($id);
-      $data-
+    
    }
 
 

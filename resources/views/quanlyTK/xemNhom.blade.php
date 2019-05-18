@@ -46,7 +46,7 @@
         </tr>
         @for($i=0; $i< $length; $i++)
           <tr>
-            <td>thanh vien 1</td>
+            <td><?php echo "thanh vien ".$i; ?></td>
             <td>truyen 1</td>
           </tr>
         @endfor

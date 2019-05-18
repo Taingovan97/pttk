@@ -12,9 +12,10 @@
       </div>
       <div class="col-md-3">
         <form action="{{route('post_xemNhom')}}" method="post">
+        {{ csrf_field() }}
         <div class="find-element" style="width: 70%;">
           <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
-          <button type="submit"></button>
+          <button type="submit" ></button>
         </div>
         </form>
     </div>

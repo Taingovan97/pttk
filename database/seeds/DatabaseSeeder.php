@@ -14,10 +14,10 @@ class DatabaseSeeder extends Seeder
     {
         // $this->call(UsersTableSeeder::class);
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
+
+
+
 
         // DB::table('chuongtruyen')->insert([
         //     'tenChuong'=>'chuong 4 cua truyen 1',
@@ -27,12 +27,12 @@ class DatabaseSeeder extends Seeder
         // ]);
         //$this->call(tkSeeder::class);
         //$this->call(nhomSeeder::class);
-        $this->call(nhom1::class);
-        
-<<<<<<< HEAD
+        //$this->call(nhom1::class);
+        $this->call(Admin::class);
 
-=======
->>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
+
+
+
         DB::table('thanhvien')->insert(
             [ 
             'name'=>'tentkxx',
@@ -45,10 +45,10 @@ class DatabaseSeeder extends Seeder
         );
 
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 08037fc70aaae9341027db80376244543ac97b4d
+
+
+
     }
 }
 
@@ -81,5 +81,16 @@ class nhom1 extends Seeder
         $data->ngayLap = Carbon::now('Asia/Ho_Chi_Minh');
         $data->save(); 
         }  
+    }
+}
+class Admin extends Seeder
+{
+    public function run()
+    {
+        DB::table('admin')->insert([
+            ['name'=>'tai', 'password'=>'12345', 'email'=>'tai97@gmail.com', 'create_at'=>Carbon::now('Asia/Ho_Chi_Minh'), 'quyen'=>'noidung'],
+            ['name'=>'duc', 'password'=>'99999', 'email'=>'duc97@gmail.com', 'create_at'=>Carbon::now('Asia/Ho_Chi_Minh'), 'quyen'=>'taikhoan']
+
+        ]);
     }
 }
