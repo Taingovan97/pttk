@@ -15,9 +15,9 @@ class DK_Trang extends Controller
         if(Auth::guard('admin')->user())
         {
             if(Auth::guard('admin')->user()->quyen =='noidung')
-                return redirect()->route('quanlynoidung');
+                return redirect()->route('index_qlnd');
             else {
-                return redirect()->route('quanlytaikhoan');
+                return redirect()->route('index_qltk');
         }
 
         }else{
@@ -50,13 +50,14 @@ class DK_Trang extends Controller
 
     public function trangChuAdminNoiDung()
     {
-            $truyens = truyen::all();
-            return view('quanlyND.index', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+            //$truyens = truyen::all();
+            //return view('quanlyND.index', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+        return redirect()->route('index_qlnd');
         
     }
     public function trangChuAdminTaiKhoan()
     {
-        return view('quanlyTK.tracuuTK');
+        return redirect()->route('index_qltk');
     }
 
     public function truyenmoi()

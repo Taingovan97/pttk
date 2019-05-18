@@ -29,9 +29,7 @@
 	//trang chu
 	Route::get('home', 'pagescontroller@index');
 
-	//giao dien main cua quan ly tai khoan
-	Route::get('quanlyTK', 'pagescontroller@index1');
-
+	
 
 	
 
@@ -58,8 +56,7 @@
 
 
 
-//giao dien main cua quan ly tai khoan
-Route::get('quanlyTK', 'pagescontroller@index_qltk')->name('index_qltk');
+
 
 
 	// xu ly dang xuat
@@ -73,9 +70,9 @@ Route::get('quanlyTK', 'pagescontroller@index_qltk')->name('index_qltk');
 Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
 
-Route::get('demo', function(){
-	return view('quanlyTK.suaTK');
-})->name('demo');
+Route::get('demo/dangky', function(){
+	return view('auth.DangKy');
+});
 
 // xu ly dang ky
 Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
@@ -214,7 +211,7 @@ Route::get('quanlyTK/tracuu', 'taikhoanController@tracuu')->name('tracuuTK');
 Route::post('quanlyTK/hienthi','taikhoanController@hienthi')->name('hienthi');
 
 
-Route::get('quanlyTK/suaTK/{id}', 'quanlyTK@suaTK')->name('suaTK');
+Route::get('quanlyTK/suaTK/{ten}', 'quanlyTK@suaTK')->name('suaTK');
 
 //tim TK de xoa
 Route::get('quanlyTK/tim_xoaTK', 'taikhoanController@find')->name('tim_xoaTK');

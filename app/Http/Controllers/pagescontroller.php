@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\nhom;
+use App\truyen;
+
 
 class pagescontroller extends Controller
 {
@@ -25,7 +27,8 @@ class pagescontroller extends Controller
 
     public function index_qlnd()
     {
-        return view('quanlyND.index');
+        $truyens = truyen::all();
+        return view('quanlyND.index', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
     }
 
     

@@ -6,9 +6,10 @@
     <div class="">
       <h4>Thông tin tài khoản</h4>
       <div class="row">
+        <?php $user = Auth::guard('admin')->user()?>
         <div class="col-md-4">
           <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;border: 1px solid;">
-          <a href="#" type="button" name="button"  style="margin: 10px auto;display: block;width: 80%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" >
+          <a href="{{route("formsuatk",['ten'=>$user->name])}}" type="button" name="button"  style="margin: 10px auto;display: block;width: 80%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" >
           <center>Sửa tài khoản</center>
           </a>
         </div>

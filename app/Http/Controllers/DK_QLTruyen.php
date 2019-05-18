@@ -102,6 +102,8 @@ class DK_QLTruyen extends Controller
    {
 //      $data = truyen::find($id);
 //      $data-
+      $data = truyen::find($id);
+    
    }
 
 
