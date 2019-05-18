@@ -12,6 +12,7 @@
         <div class="row">
             @if(!empty($dstruyen))
                 @foreach($dstruyen as $truyen)
+                    @if($truyen->chuongMoiNhat()!=0)
                     <div class="col-md-3 comic-border">
                         <div class="comic">
                             <a href="{{asset(route('chitiettruyen',['id'=>$truyen->maTruyen]))}}">
@@ -23,6 +24,7 @@
                             </a>
                         </div>
                     </div>
+                    @endif
                 @endforeach
             @endif
         </div>

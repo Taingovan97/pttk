@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
+use Carbon\Carbon;
 class thanhvien extends Authenticatable
 {
     //
@@ -35,6 +35,10 @@ class thanhvien extends Authenticatable
         'password', 'remember_token',
     ];
 
+    public function getNgayThamGia(){
+        $date = new Carbon($this->create_at);
+        return $date->toDateString();
+    }
     public function truyenYeuThich()
     {
         return $this->hasMany('App\thanhvien_truyenyeuthich','maTK', 'maTK');
@@ -43,5 +47,14 @@ class thanhvien extends Authenticatable
     public function getNhom()
     {
         return $this->belongsTo('App\nhom','maNhom','maNhom');
+    }
+
+    public function getSoLuongTruyenDang()
+    {
+        return $this->hasMany('App\truyen', 'manguoiDang', 'maTK')->count();
+    }
+
+    public function setNhom(){
+
     }
 }

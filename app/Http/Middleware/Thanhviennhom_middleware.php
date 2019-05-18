@@ -23,7 +23,7 @@ class Thanhviennhom_middleware
             {
                 return $next($request);
             }else{
-                return redirect()->route('trangchu')
+                return redirect()->route('trangchu');
             }
 
         }else{
