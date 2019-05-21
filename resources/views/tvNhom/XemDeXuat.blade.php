@@ -50,7 +50,7 @@
                         }
                         function xoa() {
                             var madx = '{{$dexuat->maDX}}';
-                            window.location = '/xoa/'+madx;
+                            window.location = '/nhom/de_xuat/xoa/'+madx;
 
                         }
                     </script>

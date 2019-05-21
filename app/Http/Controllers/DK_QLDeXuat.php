@@ -78,7 +78,6 @@ class DK_QLDeXuat extends Controller
 
     public function xoa($id){
         $dx = dexuat::find($id);
-        $dx->trangThai =true;
         $dx->delete();
         return redirect()->route('qldexuat');
     }

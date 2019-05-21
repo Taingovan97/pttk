@@ -1,60 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7e9a9f30-d6a4-4c9d-8f72-6cae53174d18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/avatar/no-avatar208.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/covers/x.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/css/TV_xemchitiettruyen.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/layouts/master_nhom.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/partials/header_nhom.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/tvNhom/TrangChu_nhom.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/tvNhom/XemDeXuat.blade.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/resources/views/tvNhom/dsDeXuat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLDeXuat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLDeXuat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_Trang.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_Trang.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/Thanhviennhom_middleware.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/Thanhviennhom_middleware.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/dexuat.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/dexuat.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/truyen_theloai.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/truyen_theloai.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_04_05_truyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_04_05_truyen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_04_111049_truyen_theloai.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_04_111049_truyen_theloai.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_07_151758_create_chaptruyens_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_07_151758_create_chaptruyens_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/TV_baocao.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/TV_baocao.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/TV_binhluan.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/TV_binhluan.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/TV_dexuat.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/TV_dexuat.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/TV_themchuongtruyen.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/TV_themchuongtruyen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/TV_themtruyen.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/TV_themtruyen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ThanhVien/BaoCaoTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ThanhVien/BaoCaoTruyen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ThanhVien/BaoCaoViPham.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ThanhVien/BaoCaoViPham.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ThanhVien/DeXuat.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ThanhVien/DeXuat.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/ThemChuongMoi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/ThemChuongMoi.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_dsthanhvien.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_qltruyennhom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_suachaptruyen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_suattnhom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_suatttruyen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_themchuongtruyen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_themthanhvien.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_themtruyen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_thongketruyen.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/TV_xemttnhom.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/dsThanhvien.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/dsThanhvien.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/images/anh1.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/images/logo1.PNG" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/images/searchicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-    </list>
+    <list default="true" id="7e9a9f30-d6a4-4c9d-8f72-6cae53174d18" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,8 +57,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/dsDeXuat.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+            <state relative-caret-position="306">
+              <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
             </state>
           </provider>
         </entry>
@@ -565,16 +512,15 @@
       <workItem from="1558262434345" duration="2451000" />
       <workItem from="1558271682917" duration="16022000" />
       <workItem from="1558402192770" duration="6109000" />
-      <workItem from="1558421792483" duration="33154000" />
+      <workItem from="1558421792483" duration="33393000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="345630000" />
+    <option name="totallyTimeSpent" value="345869000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
@@ -954,8 +900,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/dsDeXuat.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="46" selection-start-line="21" selection-start-column="46" selection-end-line="21" selection-end-column="46" />
+        <state relative-caret-position="306">
+          <caret line="18" column="32" lean-forward="true" selection-start-line="18" selection-start-column="32" selection-end-line="18" selection-end-column="32" />
         </state>
       </provider>
     </entry>
