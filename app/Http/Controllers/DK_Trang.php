@@ -48,6 +48,7 @@ class DK_Trang extends Controller
 
     }
 
+
     public function trangChuAdminNoiDung()
     {
             //$truyens = truyen::all();
@@ -55,6 +56,15 @@ class DK_Trang extends Controller
         return redirect()->route('index_qlnd');
         
     }
+
+    public function quanlytruyen(){
+        $nhom = Auth::guard('thanhvien')->user()->getNhom;
+
+        $dstruyen = truyen::where('maNhom',$nhom->maNhom)->paginate(4);
+        $sltruyen = $dstruyen->count();
+        return view('tvNhom.QuanLyTruyen',['dstruyen'=>$dstruyen, 'sltruyen'=>$sltruyen]);
+    }
+
     public function trangChuAdminTaiKhoan()
     {
         return redirect()->route('index_qltk');

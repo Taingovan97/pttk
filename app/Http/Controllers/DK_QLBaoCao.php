@@ -8,6 +8,7 @@ use App\baocao;
 use App\thanhvien;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Http\Request;
 
 class DK_QLBaoCao extends Controller
 {

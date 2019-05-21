@@ -6,132 +6,106 @@
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/TV_themchuongtruyen.css')}}">
 
-    <title>trang mau</title>
+    <title>Thêm chương mới</title>
 </head>
 <body>
 
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <a href="#" title="Trang chủ"><img src="{{asset('images/logo1.png')}}" alt="Logo"></a>
-            </div>
-            <div class="col-md-4 find">
-                <div class="find-element">
-                    <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
-                    <button type="submit"></button>
-                </div>
-                <div class="filter-element">
-                    <select name="mostLike" class="select">
-                        <option disabled selected value>Tìm theo tên truyện</option>
-                        <option value="tác giả">Tìm theo tên tác giả</option>
-                        <option value="thể loại">Tìm theo thể loại truyện</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4 user">
-
-                    <div class="dropdown " style="float:right;margin-left: 20px;">
-                        <div class="dropdown-toggle text-danger" data-toggle="dropdown">
-                            <strong>tentaikhoan</strong>
-                        </div>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item item" href="#">Thông tin tài khoản</a>
-                            <a class="dropdown-item item" href="#">Nhóm</a>
-                            <a class="dropdown-item item" href="#"></a>
-                            <a class="dropdown-item item" href="">Đăng xuất</a>
-                        </div>
-                    </div>
-                <a href="truyenyeuthich" title="Truyện yêu thích" class="heart">❤</a>
-
-               
-            </div>
-        </div>
-        <div class="row direct">
-            <ul>
-                <li><a href="">Truyện mới</a></li>
-                <li><a href="">Thể loại</a></li>
-                <li><a href="">Nhóm dịch</a></li>
-                <li><a href="">Tác giả</a></li>
-                <li><a href="">Năm</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
+@include('partials.header_nhom')
 
 <div class="main container">
     <div class="navigator">
         <div class="row">
             <div class="col-md-7">
-                <h5><a href="#">Trang chủ/</a><a href="#"> Nhóm/</a><a href="#"> Thêm chương mới/</a><a href="#"> Doraemon/</a></h5>
+                <h5><a href="{{route('trangchu')}}">Trang chủ/</a><a href="{{route('trangchunhom')}}"> Nhóm/</a><a href="#"> Thêm chương mới</a></h5>
             </div>
 
         </div>
 
     </div>
-     <h6>Doraemon>Chap mới</h6>
+     <h6><a href="{{route('chitiettruyen',['id'=>$truyen->maTruyen])}}">{{$truyen->tenTruyen}}</a>>Chap mới</h6>
     <div class="row root-view">
          
 <div class="col-md-2">
 
     </div>
-    <div class="col-md-10 view-comics" style="margin-top: 30px;">
+<div class="col-md-10 view-comics" style="margin-top: 30px;">
+    @if(session('thongbao'))
+    <?php
+    echo session('thongbao');
+    ?>
+    @endif
+
+
+    <form method="post" action="{{route('themchuongmoi',['maTruyen'=>$truyen->maTruyen])}}">
+        {{csrf_field()}}
         <table style="width:80%">
-  <tr>
-    <td style="width: 25%;">Hướng dẫn:</td>
-    <td><a href="#"> https://www.w3schools.com/tags/tag_table.asp</a></td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">STT Chap*:</td>
-    <td><input type="text" name=""></td>
-  </tr>
-   <tr>
-    <td style="width: 25%;">Tên Chap*:</td>
-    <td><input type="text" name=""></td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Chọn file tải lên*:</td>
-    <td><button>Chọn file</button></td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Link ảnh*:</td>
-    <td><textarea style="height: 100px; width: 100%;">https://www.w3schools.com/tags/tag_table.asp</textarea></td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Hình ảnh*:</td>
-    <td>
-      <div class="row" style="margin-left: 20%;"></div>
-      <button>Xóa</button>
-      <div class="row">
-        <i><p>*Kéo thả để sắp xếp vị trí các ảnh.</p>
-        <p>*Chọn ảnh lỗi và xóa: Giữ Ctrl và click để xóa đồng thời.</p></i>
-      </div>
-    </td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Thời gian phát hành*:</td>
-    <td><input type="text" name=""></td>
-  </tr>
-  <tr>
-    <td colspan="2">
-        <i>
-            <p>Lưu ý:</p>
-            <p>- Có thể chọn nhiều file cùng lúc.</p>
-            <p>- Dung lượng file tối đa là 5MB, nên để file dưới 1MB để load nhanh hơn.</p>
-            <p>- Chỉ chấp nhận các định dạng ảnh sau: .jpg, .png, .git, .bmp.</p>
-        </i>
-    </td>
-  </tr>
-</table>
- <div class="row">
-    <button>Cập nhật</button><button>Hủy</button>
-  </div>
+            <tr>
+                <td style="width: 25%;">Hướng dẫn:</td>
+                <td><a href="#"> https://www.w3schools.com/tags/tag_table.asp</a></td>
+            </tr>
+            <tr>
+                <td style="width: 25%;">STT Chap*:</td>
+                <td><p>{{$truyen->soChuong()+1}}</p></td>
+            </tr>
+            <tr>
+                <td style="width: 25%;">Tên Chap*:</td>
+                <td><input type="text" name="tenchuong"></td>
+            </tr>
+            <tr>
+                <td style="width: 25%;">Chọn file tải lên*:</td>
+                <td>
+                    <input type="file" name="trang" id="input_trang" style="width: 100px"/>
+                    <script>
+
+                        function readURL(input) {
+
+                            if (input.files && input.files[0]) {
+                                var reader = new FileReader();
+
+                                // reader.onload = function(e) {
+                                //     $('#avatar').attr('src', e.target.result);
+                                // }
+
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+
+                        $("#input_trang").change(function() {
+                            readURL(this);
+                        });
+
+                    </script>
+                    <button>Chọn file</button></td>
+            </tr>
+            <tr>
+                <td style="width: 25%;">Link ảnh*:</td>
+                <td><textarea style="height: 100px; width: 100%;" placeholder="past link ảnh vào đây" name="linktrang"></textarea></td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <i>
+                        <p>Lưu ý:</p>
+                        <p>- Có thể chọn nhiều file cùng lúc.</p>
+                        <p>- Dung lượng file tối đa là 5MB, nên để file dưới 1MB để load nhanh hơn.</p>
+                        <p>- Chỉ chấp nhận các định dạng ảnh sau: .jpg, .png, .git, .bmp.</p>
+                        <p>- Mỗi linh cách nhau bởi dấu ;</p>
+                    </i>
+                </td>
+            </tr>
+        </table>
+        <div class="row">
+            <button type="submit">Thêm chương</button >
+            <input type="button" id="huy" value="Hủy"  onclick="window.location='{{route("quanlytruyen")}}'"></input>
+        </div>
+    </form>
 
 
-    </div>
-    <div class="col-md-1">
 
-    </div>
+</div>
+<div class="col-md-1">
+
+</div>
    
 
 </div>

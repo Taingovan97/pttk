@@ -3,7 +3,7 @@
 <head>
     <link rel="stylesheet" href="{{asset('css/TV_baocao.css')}}">
 
-    <title>TRUYỆN TRANH</title>
+    <title>Báo cáo vi phạm</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -26,7 +26,8 @@
     <textarea name="ghichu" placeholder="Ghi chú vào đây để giúp chúng tôi xử lý nhanh chóng"></textarea>
     <div style="float: right;">
         <button type="submit" formaction="{{route('postbaocaovipham',['Truyen'=>$truyen->maTruyen,'Chuong'=>$chuong->maChuong, 'maTV2'=>$thanhvien->maTK])}}" formmethod="post">Gửi</button>
-        <button type="submit" formaction="{{route('doctruyen',['idTruyen'=>$truyen->maTruyen,'idChuong'=>$chuong->maChuong])}}">Hủy</button>
+        <input type="button" value="Hủy" id="huy" onclick="window.location='{{route('doctruyen',['idTruyen'=>$truyen->maTruyen,'idChuong'=>$chuong->maChuong])}}'">
+
     </div>
 </form>
 </body>

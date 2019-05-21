@@ -14,9 +14,10 @@ class TruyenTheloai extends Migration
     public function up()
     {
         Schema::create('truyen_theloai', function($table){
+            $table->bigIncrements('id');
             $table->integer('maTL');
             $table->integer('maTruyen');
-            $table->primary('maTL');
+
             
         });
     }

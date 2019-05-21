@@ -29,13 +29,9 @@ class DK_QLNhom extends Controller
      }
     }
 
-    public function TrangChu(){
-
-      // var_dump(Auth::guard('thanhvien')->user()->getNhom->toArray());
-         if(Auth::guard('thanhvien')->user()->maNhom)
+    public function thongTinNhom()
+    {
              return view('tvNhom.XemThongTinNhom');
-         else
-             return redirect()->route('formtaonhom');
 
     }
     public function postTaoNhom(Request $request){

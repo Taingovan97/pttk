@@ -28,11 +28,13 @@
              </select>
                  @if (Auth::guard('thanhvien')->user() or Auth::guard('admin')->user())
                 <div class="dropdown">
-                    <div id="account"> <strong>xxxx</strong>
+                    <div id="account"> <strong style="color: red">{{Auth::guard('thanhvien')->user()->name}}</strong>
                         <nav class="dropdown-list">
                             <a href="{{route('thongtintaikhoan')}}" class="dropdown-link">Thông tin tài khoàn</a>
                             <br>
                             <a href="" class="dropdown-link">Nhóm</a>
+                            <br>
+                            <a class="dropdown-item item" href="{{route('dexuat')}}">Đề xuất</a>
                             <br>
                             <a href="{{route('dangxuat')}}" class="dropdown-link">Đăng xuất</a>
                         </nav>
@@ -69,20 +71,21 @@
                 echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->maChuong]);
             ?>'"><</button>
 
-        	<select name="select">
+        	<select id="selectChap" onchange="changechap()">
                 @foreach($truyen->dsChuong as $chuong)
-	            <option id="selectChap" value="{{$chuong->maChuong}}" onchange="changechap()"><a href="#">{{$chuong->tenChuong}}</a></option>
+	            <option  value="{{$chuong->maChuong}}" ><a href="#">{{$chuong->tenChuong}}</a></option>
                 @endforeach
              </select>
 
             <script>
                 function changechap(){
-                    alert('check');
                     var maChuong = document.getElementById("selectChap").value;
                     var maTruyen = '{{$truyen->maTruyen}}';
-                    window.location ='truyen/'+ maTruyen +'/' +maChuong;
-                }
+                    alert(maChuong);
+                    alert(maTruyen);
+                    window.location = '/truyen/'+ maTruyen +'/' +maChuong;
 
+                }
             </script>
 
         	<button type="button" class="next"  onclick="window.location='<?php if($chuongxem->chuongSau())
@@ -150,7 +153,7 @@
   </ul>
     </div>
 		
-	<footer>Copy by X</footer>
+	<footer> Copyright © 2019 by ANH_EM_AN_HAI_TEAM</footer>
 </div>
 <script>
 window.onscroll = function() {myFunction()};
