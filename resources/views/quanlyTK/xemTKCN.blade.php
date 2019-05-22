@@ -19,7 +19,7 @@
               <p>Tên đăng nhập:</p>
             </div>
             <div class="col-md-4">
-              <p>Tung_tokyo</p>
+              <p><?php echo $user->name; ?></p>
             </div>
           </div>
           <div class="row">
@@ -27,7 +27,7 @@
               <p>Email:</p>
             </div>
             <div class="col-md-4">
-              <p>vtv1@gmail.com</p>
+              <p><?php echo $user->email; ?></p>
             </div>
           </div>
           <div class="row">
@@ -35,7 +35,11 @@
               <p>Số điện thoại:</p>
             </div>
             <div class="col-md-4">
-              <input type="text" name="" value="Tung_tokyo" placeholder="">
+                @if($user->sdt)
+                    <p>{{$user->std}}</p>
+                @else
+                    <p> Chưa nhập </p>
+                @endif
             </div>
           </div>
           <div class="row">
@@ -43,7 +47,7 @@
               <p>Ngày gia nhập:</p>
             </div>
             <div class="col-md-4">
-              <p>24/03/2019</p>
+              <p><?php echo $user->create_at; ?></p>
             </div>
           </div>
           <div class="row">
@@ -51,7 +55,11 @@
               <p>Chức vụ:</p>
             </div>
             <div class="col-md-4">
-              <p>Người quản lý nội dung</p>
+              @if($user->quyen == 'noidung')
+                    <p><?php echo "Người quản lý nội dung"; ?></p>
+                @else
+                    <p> <?php echo "Người quản lý tài khoản"; ?></p>
+                @endif
             </div>
           </div>
 

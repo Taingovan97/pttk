@@ -223,7 +223,7 @@ Route::get('quanlyTK/da_xoa/{id}', 'taikhoanController@da_xoa')->name('da_xoa');
 
 
 //thong tin ca nhan
-Route::get('quanlyTK/ttcanhan', 'taikhoanController@ttcanhan')->name('ttcanhan');
+Route::get('quanlyTK/ttcanhan', 'taikhoanController@ttcanhan')->name('admin_tk');
 
 
 
@@ -247,7 +247,7 @@ Route::get('quanlyTK/nhom/thongkeNhom', 'nhomController@thongkeNhom')->name('tho
 Route::get('quanlyND', 'pagescontroller@index_qlnd')->name('index_qlnd');
 
 
-Route::get('quanlyND/ttcanhan', 'taikhoanController@ttcanhan');
+Route::get('quanlyND/ttcanhan', 'taikhoanController@ttcanhan')->name('admin_nd');
 
 Route::get('quanlyND/suaTK/{id}', 'taikhoanController@suuTK');
 
@@ -258,7 +258,7 @@ Route::get('quanlyND/da_duyet/{id}', 'DK_QLTruyen@da_duyet')->name('da_duyet');
 //
 
 Route::get('demo', function(){
-	$data = nhom::find(8);
+	$data = nhom::find(1);
 	$data->tenNhom ="Kanefusa Fansub";
 	$data->save();
 	echo "da edit";
