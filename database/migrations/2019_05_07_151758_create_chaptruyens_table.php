@@ -15,7 +15,7 @@ class CreateChaptruyensTable extends Migration
     {
         Schema::create('trangtruyen', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('link');
+            $table->text('link')->default('images/x.png');
             $table->integer('maChuong');
         });
     }

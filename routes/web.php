@@ -78,16 +78,12 @@ Route::get('demo/dangky', function(){
 Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
 	// truyen
-	Route::get('chi_tiet_truyen/{id}', function($id){
-		$truyen = App\truyen::find($id);
-	       $charttruyens = App\truyen::all();
+Route::get('chi_tiet_truyen/{id}', function($id){
+    $truyen = App\truyen::find($id);
+       $charttruyens = App\truyen::all();
+       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$charttruyens]);
 
-
-
-
-	       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$charttruyens]);
-
-	})->name('chitiettruyen');
+})->name('chitiettruyen');
 
 	Route::get('truyen/{idTruyen}/{idChuong}','DK_QLTruyen@docTruyen')->name('doctruyen');
 });
@@ -135,22 +131,23 @@ Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
      Route::group(['prefix' => 'nhom',['middleware'=>'auth_thanhvienNhom']], function(){
 
-	 	Route::get('/', 'DK_QLNhom@Trangchu')->name('trangchunhom');
+	 	Route::get('/', function (){ return view('tvNhom.TrangChu_nhom');})->name('trangchunhom');
+
 	 	//truyen
 	 	Route::group(['prefix' => 'quan_ly_truyen'], function(){
-	 		Route::get('/', function() { return view('tvNhom.QuanLyTruyen'); })->name('quanlytruyen');
+	 		Route::get('/', 'DK_Trang@quanlytruyen')->name('quanlytruyen');
 
-	 		Route::get('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('themtruyenmoi');
-	 		Route::post('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('themtruyenmoi');
+	 		Route::get('them_truyen_moi',"DK_QLTruyen@getThemTruyenMoi")->name('formthemtruyenmoi');
+	 		Route::post('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('postthemtruyenmoi');
 
-		 	Route::get('them_chuong_moi', 'DK_QLTruyen@themChuongMoi')->name('themchuongmoi');
-		 	Route::post('them_chuong_moi', 'DK_QLTruyen@themChuongMoi')->name('themchuongmoi');
+		 	Route::get('them_chuong_moi/{maTruyen}','DK_QLTruyen@getthemChuongMoi')->name('formthemchuongmoi');
+		 	Route::post('them_chuong_moi/{maTruyen}', 'DK_QLTruyen@themChuongMoi')->name('themchuongmoi');
 
 		 	Route::get('thong_ke_truyen','DL_QLTruyen@thongKeTruyen')->name('thongketruyennhom');
 		 	Route::get('tracuutruyen', 'DK_QLTruyen@traCuuTruyenCuaNhom')->name('tracuutruyencuanhom');
 
 		 	Route::get('xoa/truyen_{id}', 'DK_QLTRuyen@checkXoaNhom')->name('xoa_checktruyen');
-		 	Route::post('xoa/truyen_{id}', 'DL_QLTruyen@xoaTruyenNhom')->name('xoatruyennhom');
+		 	Route::post('xoa/truyen_{maTruyen}', 'DL_QLTruyen@xoaTruyenNhom')->name('xoatruyennhom');
 
 
 		 	Route::get('chinh_sua_truyen/id={id}','DL_QLTruyen@getchinhSuaTruyen')->name('formchinhsuatruyen');
@@ -158,14 +155,16 @@ Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
 		 	});
 		 Route::group(['prefix'=>'de_xuat'], function(){ 
-		 	Route::get('/', function(){ return view('ThanhVienNhom.DeXuat'); })->name('qldexuat');
+		 	Route::get('/{name?}', 'DK_QLDeXuat@dsDeXuat')->name('qldexuat');
 		 	Route::get('chitiet/{id}', 'DK_QLDeXuat@xemChiTiet')->name('xemdexuat');
-		 	Route::get('xuli/{id}', 'DL_QLDeXuat@getxuLy')->name('formxulydexuat');
-		 	Route::post('xuly/{id}', 'DK_QLDeXuat@postxuLy')->name('xulydexuat');
-		 	Route::get('tracuu', 'DK_QLDeXuat@tracuu')->name('tracuu');
+		 	Route::get('xuli/{id}', 'DK_QLDeXuat@xuLy')->name('xulydexuat');
+            Route::get('xoa/{id}', 'DK_QLDeXuat@xoa')->name('xoadexuat');
+		 	Route::get('tracuu/{findvalue}', 'DK_QLDeXuat@dsDeXuat')->name('tracuu');
 		 });
 	 	Route::group(['prefix' =>'quanlynhom'], function(){
-	 		Route::get('thongtinnhom','DKQL_Nhom@thongTinNhom')->name('thongtinnhom');
+
+	 		Route::get('thongtinnhom','DK_QLNhom@thongTinNhom')->name('thongtinnhom');
+            Route::get('suathongtin/{maTK}', 'DK_QLNhom@getSuaThongTinNhom')->name('suathongtinnhom');
 	 		Route::get('thanh_vien_nhom',function (){ return view('tvNhom.dsThanhVien');})->name('thanhviennhom');
 	 		Route::get('them_thanh_vien', 'DK_QLNhom@getThemThanhVien')->name('getthemthanhvien');
 	 		Route::post('them_thanh_vien', 'DK_QLNhom@themThanhVien')->name('themthanhvien');

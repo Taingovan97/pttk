@@ -29,13 +29,9 @@ class DK_QLNhom extends Controller
      }
     }
 
-    public function TrangChu(){
-
-      // var_dump(Auth::guard('thanhvien')->user()->getNhom->toArray());
-         if(Auth::guard('thanhvien')->user()->maNhom)
+    public function thongTinNhom()
+    {
              return view('tvNhom.XemThongTinNhom');
-         else
-             return redirect()->route('formtaonhom');
 
     }
     public function postTaoNhom(Request $request){
@@ -58,11 +54,29 @@ class DK_QLNhom extends Controller
 
     }
 
+    public function getSuaThongTinNhom($maTK){
+
+        if(Auth::guard('thanhvien')->user()->maTK == $maTK)
+            return view('tvNhom.SuaThongTinNhom');
+        else
+            return redirect()->route('trangchunhom');
+    }
+
     public function xoaThanhVienNhom($maTK){
         DB::table('thanhvien')
             ->where('maTK',$maTK)
             ->update(['maNhom' => null]);
     }
+
+    public function getThemThanhVien(){
+
+        $nhom = Auth::guard('thanhvien')->user()->getNhom;
+        if($nhom->maTruongNhom == Auth::guard('thanhvien')->user()->maTK)
+            return view('tvNhom.ThemThanhVien');
+        else
+            return view('trangchunhom');
+    }
+
 
 
 }

@@ -21,7 +21,7 @@ class DK_Trang extends Controller
         }
 
         }else{
-            $truyens = truyen::all();
+            $truyens = truyen::where('duyet',true)->get();
             ////        $chuong = chuongtruyen::all()->toArray();
             ////                    echo '<pre>';
             ////                    var_dump($chuong);
@@ -41,11 +41,13 @@ class DK_Trang extends Controller
             //           var_dump($chuong);
             //            echo '<pre/>';
             //    }
-            return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+
             }
 
 
     }
+
 
     public function trangChuAdminNoiDung()
     {
@@ -54,6 +56,15 @@ class DK_Trang extends Controller
         return redirect()->route('index_qlnd');
         
     }
+
+    public function quanlytruyen(){
+        $nhom = Auth::guard('thanhvien')->user()->getNhom;
+
+        $dstruyen = truyen::where('maNhom',$nhom->maNhom)->paginate(4);
+        $sltruyen = $dstruyen->count();
+        return view('tvNhom.QuanLyTruyen',['dstruyen'=>$dstruyen, 'sltruyen'=>$sltruyen]);
+    }
+
     public function trangChuAdminTaiKhoan()
     {
         return redirect()->route('index_qltk');

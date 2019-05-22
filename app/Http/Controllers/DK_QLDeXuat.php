@@ -2,9 +2,12 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\nhom;
 use App\dexuat;
+use Illuminate\Support\Facades\Auth;
+
 class DK_QLDeXuat extends Controller
 {
     function getNhom(){
@@ -17,7 +20,7 @@ class DK_QLDeXuat extends Controller
     	$this->validate($request,[
             'tieude'=>'required|min:4',
             'tennhom'=>'required|exists:nhom,tenNhom',
-            'noidung'=>'required|min:30'
+            'noidung'=>'required|min:20'
 
         ],[
             'tieude.min' => 'Tên nhóm phải chứa ít nhất 4 ký tự',
@@ -27,7 +30,55 @@ class DK_QLDeXuat extends Controller
             'noidung'=>'nội dung quá ngắn'
 
         ]);
+    	$nhom = nhom::where('tenNhom', $request->tennhom)->get()->toArray()[0];
     	$dexuat = new dexuat;
+    	$dexuat->tieuDe = $request->tieude;
+    	$dexuat->noiDung =$request->noidung;
+    	$dexuat->maNhom =$nhom['maNhom'];
+    	$dexuat->maTK = Auth::guard('thanhvien')->user()->maTK;
+    	$dexuat->ngayGui = Carbon::now('Asia/Ho_Chi_Minh');
+        $dexuat->save();
+        return redirect()->route('dexuat')->with('thongbao', 'bạn đã gửi đề xuất thành công!');
+    }
+    public function dsDeXuat($name=null){
 
+        if ($name==null){
+            $dx = dexuat::orderBy('trangThai')->paginate(10);
+            return view('tvNhom.dsDeXuat',['dexuat'=>$dx]);
+        }else{
+            $pattern = '/[a-zA-Z]*';
+            $tokens = explode(' ',$name);
+            foreach ($tokens as $tk)
+            {
+                $pattern = $pattern.$tk.'[a-zA-Z]*\s*';
+            }
+            $pattern = $pattern.'/';
+            $results =[];
+            $dexuats = dexuat::all();
+            foreach ($dexuats as $dx)
+            {
+                if(preg_match($pattern, $dx->tieuDe))
+                    array_push($results,$dx);
+            }
+            return view('tvNhom.dsDeXuat',['dexuat'=>$results,'find'=>1]);
+//            echo 'check';
+        }
+    }
+    public function xemChiTiet($id){
+        $dexuat = dexuat::find($id);
+        return view('tvNhom.XemDeXuat',['dexuat'=>$dexuat]);
+    }
+
+    public function xuLy($id){
+        $dx = dexuat::find($id);
+        $dx->trangThai =true;
+        $dx->save();
+        return redirect()->route('qldexuat');
+    }
+
+    public function xoa($id){
+        $dx = dexuat::find($id);
+        $dx->delete();
+        return redirect()->route('qldexuat');
     }
 }

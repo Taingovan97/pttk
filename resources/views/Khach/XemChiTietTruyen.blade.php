@@ -3,7 +3,9 @@
 @section('head.title')
     {{ $truyen->tenTruyen}}
 @endsection
-
+@section('head.css')
+    <link rel="stylesheet" href="{{asset('css/TV_xemchitiettruyen.css')}}">
+@stop
 @section('head.content')
     <div class="navigator">
         <div class="row">
@@ -16,28 +18,43 @@
     </div>
 <div class="row root-view">
     <div class="col-md-7 view-comics">
-        <h4>{{$truyen->tenTruyen}}</h4>
         <div class="row">
             <div class="col-md-5">
                 <img src="{{asset($truyen->linkAnh)}}" alt="{{$truyen->tenTruyen}}" style="width: 100%;border: 2px solid;">
             </div>
-            <div class="col-md-7">
-                <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>
-                <p>Đánh giá:{{$truyen->diemDG}}</p>
-                <p>Nhóm dịch: {{$truyen->nhom->toArray()['tenNhom']}}</p>
-                <div class="author">
-                    <p>Tác giả: {{$truyen->tacGia}}</p>
+{{--            <div class="col-md-7">--}}
+{{--                <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></p>--}}
+{{--                <p>Đánh giá:{{$truyen->diemDG}}</p>--}}
+{{--                <p>Nhóm dịch: {{$truyen->nhom->toArray()['tenNhom']}}</p>--}}
+{{--                <div class="author">--}}
+{{--                    <p>Tác giả: {{$truyen->tacGia}}</p>--}}
 
 {{--                    <p>Thể loại:--}}
 {{--                        @foreach($truyen->theloai as $theloai)--}}
 {{--                            <a href="{{route('theloai',['id'=>$theloai->maTL])}}">{{$theloai->tenTL}}</a>--}}
 {{--                        @endforeach--}}
 {{--                    </p>--}}
-                    <p>Trạng thái: đang tiến hành</p>
-                    <p>Lượt xem: {{$truyen->luotXem}}</p>
-                </div>
-                <div class="summary">
-                    <p>Tóm tắt:{{$truyen->gioiThieu}}</p>
+{{--                    <p>Trạng thái: đang tiến hành</p>--}}
+{{--                    <p>Lượt xem: {{$truyen->luotXem}}</p>--}}
+{{--                </div>--}}
+{{--                <div class="summary">--}}
+{{--                    <p>Tóm tắt:{{$truyen->gioiThieu}}</p>--}}
+{{--                </div>--}}
+{{--            </div>--}}
+            <div class="col-md-7">
+                <b>{{$truyen->tenTruyen}}</b>
+                <ul>
+                    <li><p>Đánh giá:{{$truyen->diemDG}}</p></li>
+                    <li>Tác giả: {{$truyen->tacGia}}</li>
+                    <li>Nhóm dịch: {{$truyen->nhom->toArray()['tenNhom']}}</li>
+                    <li><span>Chap 50</span><span> | </span> Lượt xem:<span> 1000</span></li>
+                    <li>Thể loại: Hành động</li>
+                    <li>Trạng thái: đang tiến hành</li>
+                    <li style="border: 1px solid grey; height: 100px;">Sơ lược nội dung truyện: {{$truyen->gioiThieu}}</li>
+                </ul>
+                <div class="row" style="margin-top: 20px;">
+                    <button>Like</button>
+                    <button>Share</button>
                 </div>
             </div>
         </div>
@@ -50,6 +67,7 @@
                     <div class="col-md-5">
                         <p>Ngày đăng</p>
                     </div>
+
                 </div>
                 <div class="row" style="height: 300px; overflow:auto; ">
                     @foreach($truyen->dsChuong as $chuong)
@@ -61,13 +79,6 @@
                         </div>
                     @endforeach
 
-
-                    <div class="col-md-7">
-                        <a href="#">Chap 31</a>
-                    </div>
-                    <div class="col-md-5">
-                        <p>2 ngày trước</p>
-                    </div>
                 </div>
             </div>
         </div>

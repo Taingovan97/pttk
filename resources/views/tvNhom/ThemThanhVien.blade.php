@@ -3,61 +3,13 @@
 <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/TV_themthanhvien.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="stylesheet" href="{{asset('css/TV_themthanhvien.css')}}">
 
     <title>trang mau</title>
 </head>
 <body>
-
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <a href="#" title="Trang chủ"><img src="images/logo1.png" alt="Logo"></a>
-            </div>
-            <div class="col-md-4 find">
-                <div class="find-element">
-                    <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
-                    <button type="submit"></button>
-                </div>
-                <div class="filter-element">
-                    <select name="mostLike" class="select">
-                        <option disabled selected value>Tìm theo tên truyện</option>
-                        <option value="tác giả">Tìm theo tên tác giả</option>
-                        <option value="thể loại">Tìm theo thể loại truyện</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4 user">
-
-                    <div class="dropdown " style="float:right;margin-left: 20px;">
-                        <div class="dropdown-toggle text-danger" data-toggle="dropdown">
-                            <strong>tentaikhoan</strong>
-                        </div>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item item" href="#">Thông tin tài khoản</a>
-                            <a class="dropdown-item item" href="#">Nhóm</a>
-                            <a class="dropdown-item item" href="#"></a>
-                            <a class="dropdown-item item" href="">Đăng xuất</a>
-                        </div>
-                    </div>
-                <a href="truyenyeuthich" title="Truyện yêu thích" class="heart">❤</a>
-
-               
-            </div>
-        </div>
-        <div class="row direct">
-            <ul>
-                <li><a href="">Truyện mới</a></li>
-                <li><a href="">Thể loại</a></li>
-                <li><a href="">Nhóm dịch</a></li>
-                <li><a href="">Tác giả</a></li>
-                <li><a href="">Năm</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
+@include('partials.header')
 
 <div class="main container">
     <div class="navigator">
@@ -79,7 +31,7 @@
     <div class="col-md-6 view-comics">
         <div class="row" style="margin-top: 20px;">
 
-        <img src="images/anh1.png">
+        <img src="images/anh1.png" onerror="this.src='{{asset('images/anh1.png')}}'">
         <div class="col-md-8">
         
         <ul>
