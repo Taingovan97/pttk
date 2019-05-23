@@ -46,9 +46,13 @@
                 <ul>
                     <li><p>Đánh giá:{{$truyen->diemDG}}</p></li>
                     <li>Tác giả: {{$truyen->tacGia}}</li>
-                    <li>Nhóm dịch: {{$truyen->nhom->toArray()['tenNhom']}}</li>
-                    <li><span>Chap 50</span><span> | </span> Lượt xem:<span> 1000</span></li>
-                    <li>Thể loại: Hành động</li>
+                    <li>Nhóm dịch: <a href="{{route('nhomdich',['id'=>$truyen->nhom->tenNhom])}}">{{$truyen->nhom->toArray()['tenNhom']}}</a></li>
+                    <li><span>Chap {{$truyen->soChuong()}}</span><span> | </span> Lượt xem:<span> {{$truyen->luotXem}}</span></li>
+                    <li>Thể loại:
+                        @foreach($truyen->getTheLoai as $tr_tl)
+                            <a href="{{route('theloai',['id'=>$tr_tl->getTheLoai->tenTL])}}">{{$tr_tl->getTheloai->tenTL}}</a>
+                        @endforeach
+                    </li>
                     <li>Trạng thái: đang tiến hành</li>
                     <li style="border: 1px solid grey; height: 100px;">Sơ lược nội dung truyện: {{$truyen->gioiThieu}}</li>
                 </ul>

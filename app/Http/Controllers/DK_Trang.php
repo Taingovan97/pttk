@@ -6,7 +6,7 @@ use App\truyen;
 use App\chuongtruyen;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
-
+use App\Http\Controllers\DK_QLTruyen;
 class DK_Trang extends Controller
 {
     public function home()
@@ -22,26 +22,14 @@ class DK_Trang extends Controller
 
         }else{
             $truyens = truyen::where('duyet',true)->get();
-            ////        $chuong = chuongtruyen::all()->toArray();
-            ////                    echo '<pre>';
-            ////                    var_dump($chuong);
-            ////            echo '<pre/>';
-            //
-            //        foreach ($truyens as $t){
-            //                $chuong = $t->chuongMoiNhat();
-            ////            echo gettype($chuong);
-            //
-            ////            foreach ($chuong as $infor)
-            ////                {
-            ////                    echo '<pre>';
-            ////                    var_dump($infor->tenChuong);
-            ////                    echo '<pre/>';
-            ////                }
-            //            echo '<pre>';
-            //           var_dump($chuong);
-            //            echo '<pre/>';
-            //    }
-           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+            $thongke = DK_QLTruyen::thongke('ngay');
+            $chartTruyens = [];
+            foreach ($thongke as $maTruyen=>$luotxem)
+            {
+                $truyen = truyen::find($maTruyen);
+                array_push($chartTruyens, $truyen);
+            }
+           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$chartTruyens]);
 
             }
 

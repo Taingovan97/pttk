@@ -19,7 +19,7 @@ class Thanhviennhom_middleware
         if(Auth::guard('thanhvien')->user())
         {
             $user = Auth::guard('thanhvien')->user();
-            if($user->nhom)
+            if($user->maNhom)
             {
                 return $next($request);
             }else{

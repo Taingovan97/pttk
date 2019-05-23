@@ -4,6 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use App\chuongtruyen;
+use Carbon\Carbon;
 class truyen extends Model
 {
     //
@@ -45,5 +46,19 @@ class truyen extends Model
         $chuong = chuongtruyen::where('maTruyen', $this->maTruyen)->orderBy('maChuong','desc')->take(1)->get()->toArray();
         return $chuong['ngayDang'];
     }
+
+    public function capNhatLuotXem(){
+        $this->luotXem = $this->luotXem + 1;
+        $this->save();
+    }
+
+    public function getNam()
+    {
+        $date = new Carbon($this->ngayDang);
+        $date = $date->year;
+        return $date;
+    }
+
+
 
 }

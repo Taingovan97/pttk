@@ -17,7 +17,10 @@
                         <div class="comic">
                             <a href="{{asset(route('chitiettruyen',['id'=>$truyen->maTruyen]))}}">
                             <img src="{{$truyen->linkAnh}}" alt="{{$truyen->tenTruyen}}" style="width: 100%;">
-                            <h3>Truyện 1</h3>
+                            <h3>
+                                    {{$truyen->tenTruyen}}
+
+                            </h3>
                             </a>
                             <a href="{{route('doctruyen',['idTruyen'=>$truyen->maTruyen,'idChuong'=>$truyen->chuongMoiNhat()['maChuong']])}}">
                                 <p>{{$truyen->chuongMoiNhat()['tenChuong']}}</p>

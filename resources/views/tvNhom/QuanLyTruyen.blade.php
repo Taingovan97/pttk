@@ -8,6 +8,8 @@
 @endsection
 @section('head.css')
     <link rel="stylesheet" href="{{asset('css/TV_qltruyennhom.css')}}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+
 @stop
 @section('head.content')
     {{----}}
@@ -15,15 +17,26 @@
     <div class="main container">
         <div class="navigator">
             <div class="row">
-                <div class="col-md-10">
-                    <h5><a href="#">Trang chủ/</a><a href="#"> Nhóm/</a><a href="#"> ABC Team/</a><a href="#"> Danh sách truyện</a></h5>
-                    <p>Tìm Truyện: </p>
+                <div class="col-md-9">
+                    <h5><a href="{{route('trangchu')}}">Trang chủ/</a><a href="{{route('trangchunhom')}}"> Nhóm/</a><a href="{{route('quanlytruyen')}}"> Danh sách truyện</a></h5>
+                    <p style="margin-left: 50px; float: left;">Tìm Truyện: </p>
                     <div class="find-element" style="width: 25%; margin-left: 10px;">
                         <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
                         <button type="submit"></button>
+                        <script>
+                            $(document).on("keypress", "input", function(e){
+                                if(e.which == 13){
+                                    var inputVal = $(this).val();
+                                    window.location = '/nhom/quan_ly_truyen/timtruyennhom/'+inputVal;
+                                }
+                            });
+                        </script>
                     </div>
                 </div>
-
+                <div class="right_row">
+                    <a href="{{route('thongketruyennhom')}}"><button class="else">Thống kê truyện</button></a>
+                    <a href="{{route('formthemtruyenmoi')}}"><button class="else">Thêm truyện mới</button></a>
+                </div>
             </div>
 
         </div>

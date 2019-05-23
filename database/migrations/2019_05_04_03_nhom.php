@@ -20,7 +20,6 @@ class Nhom extends Migration
             $table->timestamp('ngayLap');
             $table->string('gioiThieu')->nullable();
             $table->integer('maTruongNhom');
-            $table->integer('soLuongTV')->unsigned();
             $table->integer('soLuongTruyen')->unsigned();
 
         });

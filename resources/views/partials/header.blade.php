@@ -10,12 +10,22 @@
                     <button type="submit"></button>
                 </div>
                 <div class="filter-element">
-                    <select name="mostLike" class="select">
-                        <option disabled selected value>Tìm theo tên truyện</option>
-                        <option value="tác giả">Tìm theo tên tác giả</option>
-                        <option value="thể loại">Tìm theo thể loại truyện</option>
+                    <select id="option" name="mostLike" class="select">
+                        <option selected value="tentruyen">Tìm theo tên truyện</option>
+                        <option value="nhom">Tìm theo tên nhóm</option>
+                        <option value="theloai">Tìm theo thể loại truyện</option>
                     </select>
                 </div>
+                <script>
+                    $(document).on("keypress", "input", function(e){
+                        var option = $('select').val();
+                        if(e.which == 13){
+                            var inputVal = $(this).val();
+                            window.location = '/timtruyen/'+option + '/' + inputVal;
+
+                        }
+                    });
+                </script>
             </div>
             <div class="col-md-4 user">
 
@@ -44,11 +54,11 @@
         </div>
         <div class="row direct">
             <ul>
-                <li><a href="{{route('truyenmoi')}}">Truyện mới</a></li>
-                <li><a href="{{route('theloai')}}">Thể loại</a></li>
-                <li><a href="{{route('nhomdich')}}">Nhóm dịch</a></li>
-                <li><a href="{{route('tacgia')}}">Tác giả</a></li>
-                <li><a href="{{route('nam')}}">Năm</a></li>
+                <a href="{{route('truyenmoi')}}"><li>Truyện mới</li></a>
+                <a href="{{route('theloai')}}"><li>Thể loại</li></a>
+                <a href="{{route('nhomdich')}}"><li>Nhóm dịch</li></a>
+                <a href="{{route('tacgia')}}"><li>Tác giả</li></a>
+                <a href="{{route('nam')}}"><li>Năm</li></a>
             </ul>
         </div>
     </div>
