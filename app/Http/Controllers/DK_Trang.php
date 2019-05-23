@@ -63,13 +63,5 @@ class DK_Trang extends Controller
     	
     }
 
-    public function tacgia()
-    {
-    	
-    }
 
-    public function nam()
-    {
-    	
-    }
 }
