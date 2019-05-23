@@ -28,26 +28,35 @@
             </select>
           </div>
         </div>
+        
         <div class="col-md-4 user">
+        @if (Auth::guard('admin')->user()){
           <div class="dropdown " style="float:right;margin-left: 20px;">
             <div class="dropdown-toggle text-danger" data-toggle="dropdown">
-              <strong>Tung_tokyo</strong>
+              <strong>{{Auth::guard('admin')->user()->name}}</strong>
             </div>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#">Thông tin tài khoản</a>
               <a class="dropdown-item" href="#">Đăng xuất</a>
             </div>
           </div>
+           @if (Auth::guard('admin')->user()->quyen == 'noidung')
           <div class="dropdown " style="float:right;">
             <div class="dropdown-toggle text-danger" data-toggle="dropdown">
               <strong>Thông báo (2)</strong>
             </div>
+           
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#">Báo cáo 1</a>
               <a class="dropdown-item" href="#">Báo cáo 2</a>
+              <a class="dropdown-item" href="{{route('tracuuBC')}}">Xem tất cả</a>
+
             </div>
           </div>
+          @endif
+        @endif
         </div>
+        
       </div>
       <div class="row direct">
         <ul>
@@ -77,7 +86,8 @@
     </div>
   </header>
   @yield('noidung')
-  <footer>
+  <footer class="main container" style="background-color: green">
+    Copyright © 2019 by ANH_EM_AN_HAI_TEAM
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

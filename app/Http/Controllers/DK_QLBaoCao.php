@@ -2,6 +2,15 @@
 
 namespace App\Http\Controllers;
 
+<<<<<<< HEAD
+use Illuminate\Http\Request;
+
+
+
+
+    
+=======
+>>>>>>> 0faab6915b773337464164bea9794e68f810685c
 use App\truyen;
 use App\chuongtruyen;
 use App\baocao;
@@ -61,8 +70,11 @@ class DK_QLBaoCao extends Controller
         $baocao->save();
         return redirect()->route('doctruyen',  ['idTruyen' =>$maTruyen, 'idChuong' =>$maChuong]);
     }
+<<<<<<< HEAD
+=======
 
     //tim bao cao
+>>>>>>> 0faab6915b773337464164bea9794e68f810685c
     public function tracuuBC()
     {
         $data = baocao::all()->toArray();
@@ -80,7 +92,11 @@ class DK_QLBaoCao extends Controller
         }
         else
             return view('qlnd_fail');
+<<<<<<< HEAD
+}
+=======
     }
+>>>>>>> 0faab6915b773337464164bea9794e68f810685c
 
     //chi tiet bao cao
     public function xemBC($id)
@@ -98,5 +114,9 @@ class DK_QLBaoCao extends Controller
     }
 
 
+<<<<<<< HEAD
+    
+=======
+>>>>>>> 0faab6915b773337464164bea9794e68f810685c
 
 }

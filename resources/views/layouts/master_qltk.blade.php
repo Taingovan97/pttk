@@ -19,24 +19,18 @@
 
         </div>
         <div class="col-md-4 user">
+          @if (Auth::guard('admin')->user()){
           <div class="dropdown " style="float:right;margin-left: 20px;">
             <div class="dropdown-toggle text-danger" data-toggle="dropdown">
-              <strong>Tung_tokyo</strong>
+              <strong>{{Auth::user()->name}}</strong>
             </div>
             <div class="dropdown-menu">
-             
-              <a class="dropdown-item" href="#">Đăng xuất</a>
+              <a class="dropdown-item item" href="{{route('admin_tk')}}">Thông tin tài khoản</a>
+              <a class="dropdown-item item" href="{{route('dangxuat')}}">Đăng xuất</a>
             </div>
           </div>
-          <div class="dropdown " style="float:right;">
-            <div class="dropdown-toggle text-danger" data-toggle="dropdown">
-              <strong>Thông báo (2)</strong>
-            </div>
-            <div class="dropdown-menu">
-              <a class="dropdown-item" href="#">Báo cáo 1</a>
-              <a class="dropdown-item" href="#">Báo cáo 2</a>
-            </div>
-          </div>
+          @endif
+          
         </div>
       </div>
       <div class="row direct" style="display: none;">
@@ -60,7 +54,7 @@
              
             </div>
           </div></li>
-          <li><a href="{{route('ttcanhan')}}">Quản lý tài khoản cá nhân</a></li>
+          <li><a href="{{route('admin_tk')}}">Quản lý tài khoản cá nhân</a></li>
           <li><a href="{{route('nhom')}}">Quản lý nhóm</a></li>
         </ul>
       </div>

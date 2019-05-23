@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use App\nhom;
+use App\admin;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -27,27 +28,7 @@ class DatabaseSeeder extends Seeder
         // ]);
         //$this->call(tkSeeder::class);
         //$this->call(nhomSeeder::class);
-        //$this->call(nhom1::class);
-        $this->call(Admin::class);
-
-
-
-
-        DB::table('thanhvien')->insert(
-            [ 
-            'name'=>'tentkxx',
-            'password'=>bcrypt(12345),
-             'email'=>'famousthanhducxx@gmail.com',
-             'maNhom'=>'N0',
-             'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')
-         ]
-            
-        );
-
-
-
-
-
+        $this->call(Admin1::class);
 
     }
 }
@@ -83,14 +64,17 @@ class nhom1 extends Seeder
         }  
     }
 }
-class Admin extends Seeder
+
+class Admin1 extends Seeder
 {
     public function run()
     {
-        DB::table('admin')->insert([
-            ['name'=>'tai', 'password'=>'12345', 'email'=>'tai97@gmail.com', 'create_at'=>Carbon::now('Asia/Ho_Chi_Minh'), 'quyen'=>'noidung'],
-            ['name'=>'duc', 'password'=>'99999', 'email'=>'duc97@gmail.com', 'create_at'=>Carbon::now('Asia/Ho_Chi_Minh'), 'quyen'=>'taikhoan']
-
-        ]);
+        $ad1 = new admin;
+        $ad1->name ='ngo tai';
+        $ad1->password = bcrypt('12345');
+        $ad1->email = '1noname@gmail.com';
+        $ad1->create_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $ad1->quyen = 'noidung';
+        $ad1->save();
     }
 }
