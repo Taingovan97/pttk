@@ -42,7 +42,6 @@
 
                 <div class="row" style="margin-top: 50px;">
                     <button onclick="window.location='{{route("thanhviennhom")}}'">Danh sách thành viên</button>
-                    <button onclick="window.location='{{route("quanlytruyen")}}'">Danh sách truyện</button>
                     @if(Auth::guard('thanhvien')->user()->maTK ==$nhom->maTruongNhom)
                         <button onclick="window.location='{{route("suathongtinnhom",['maTK'=>$nhom->maTruongNhom])}}'">Sửa thông tin nhóm</button>
                     @endif

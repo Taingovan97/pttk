@@ -1,7 +1,9 @@
 <?php
 
 namespace App\Http\Controllers;
+   
 
+<<<<<<< HEAD
 
 use Illuminate\Http\Request;
 
@@ -11,6 +13,8 @@ use Illuminate\Http\Request;
     
 
 
+=======
+>>>>>>> 9560e4cbdad78aec3f5b76df2cbf770fa42106e0
 use App\truyen;
 use App\chuongtruyen;
 use App\baocao;
@@ -71,7 +75,10 @@ class DK_QLBaoCao extends Controller
         return redirect()->route('doctruyen',  ['idTruyen' =>$maTruyen, 'idChuong' =>$maChuong]);
     }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 9560e4cbdad78aec3f5b76df2cbf770fa42106e0
 
     //tim bao cao
 
@@ -93,10 +100,13 @@ class DK_QLBaoCao extends Controller
         else
             return view('qlnd_fail');
 
+<<<<<<< HEAD
     }
 
     
 
+=======
+>>>>>>> 9560e4cbdad78aec3f5b76df2cbf770fa42106e0
 
     //chi tiet bao cao
     public function xemBC($id)
@@ -115,7 +125,12 @@ class DK_QLBaoCao extends Controller
 
 }
 
+<<<<<<< HEAD
     
+=======
+
+
+>>>>>>> 9560e4cbdad78aec3f5b76df2cbf770fa42106e0
 
 
 

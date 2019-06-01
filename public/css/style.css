@@ -107,10 +107,16 @@ footer {
 .direct ul li:hover{
   background: #7aa6f6;
 }
+.direct ul a li {
+  color: #fff;
+  text-decoration: none;
+}
+
 .direct ul li a{
   color: #fff;
   text-decoration: none;
 }
+
 .direct-manager{
   color: #fff;
 }
@@ -252,4 +258,10 @@ footer {
   font-size: 25px;
   float: right;
   margin-right: 20px;
+}
+.charts button{
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  background-color: unset;
 }

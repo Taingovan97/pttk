@@ -11,11 +11,21 @@
                 </div>
                 <div class="filter-element">
                     <select name="mostLike" class="select">
-                        <option disabled selected value>Tìm theo tên truyện</option>
-                        <option value="tác giả">Tìm theo tên tác giả</option>
-                        <option value="thể loại">Tìm theo thể loại truyện</option>
+                        <option selected value="tentruyen">Tìm theo tên truyện</option>
+                        <option value="tacgia">Tìm theo tên nhóm</option>
+                        <option value="theloai">Tìm theo thể loại truyện</option>
                     </select>
                 </div>
+                <script>
+                    $(document).on("keypress", "input", function(e){
+                        var option = $("select").val();
+                        if(e.which == 13){
+                            var inputVal = $(this).val();
+                            window.location = '/timtruyen/'+option + '/' + inputVal;
+
+                        }
+                    });
+                </script>
             </div>
             <div class="col-md-4 user">
 

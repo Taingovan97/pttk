@@ -17,40 +17,257 @@ class DK_QLTruyen extends Controller
 {
    function chiTietTruyen($id){
        $truyen = truyen::find($id);
-       $charttruyens = truyen::all();
+       $thongke = $this->thongke('ngay');
+       $chartTruyens = [];
+       foreach ($thongke as $maTruyen=>$luotxem)
+       {
+           $truyen = truyen::find($maTruyen);
+           array_push($chartTruyens, $truyen);
+       }
 
-       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$charttruyens]);
+       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$chartTruyens]);
    }
 
+    public static function thongke($option='ngay')
+    {
+        $timenow = Carbon::now('Asia/Ho_Chi_Minh');
+        $year = $timenow->year;
+        $month = $timenow->month;
+        $week = $timenow->week;
+        $day = $timenow->day;
+        $results = [];
+        switch ($option)
+        {
+            case 'ngay':
+                $log_reads = log_read::all();
+                foreach ($log_reads as $log)
+               {
 
-   public function layTruyenTheoMa($id=null)
+                   if($year ==$log->getYear() and $month == $log->getMonth() and $day ==$log->getDay()){
+                       if(array_key_exists($log->maTruyen, $results))
+                       {
+                           $results[$log->maTruyen] = $results[$log->maTruyen] + 1;
+                       }else
+                       {
+                           $results[$log->maTruyen] = 1;
+                       }
+
+
+                   }
+               }
+
+            case 'thang':
+                $log_reads = log_read::all();
+                foreach ($log_reads as $log)
+                {
+
+                    if($year ==$log->getYear() and $month == $log->getMonth()){
+                        if(array_key_exists($log->maTruyen, $results))
+                        {
+                            $results[$log->maTruyen] = $results[$log->maTruyen] + 1;
+                        }else
+                        {
+                            $results[$log->maTruyen] = 1;
+                        }
+
+
+                    }
+                }
+            case 'tuan':
+                $log_reads = log_read::all();
+                foreach ($log_reads as $log)
+                {
+
+                    if($year ==$log->getYear() and $week == $log->getWeek()){
+                        if(array_key_exists($log->maTruyen, $results))
+                        {
+                            $results[$log->maTruyen] = $results[$log->maTruyen] + 1;
+                        }else
+                        {
+                            $results[$log->maTruyen] = 1;
+                        }
+
+
+                    }
+                }
+            default:
+                $log_reads = log_read::all();
+                foreach ($log_reads as $log)
+                {
+
+                    if($year ==$log->getYear() and $month == $log->getMonth() and $day ==$log->getDay()){
+                        if(array_key_exists($log->maTruyen, $results))
+                        {
+                            $results[$log->maTruyen] = $results[$log->maTruyen] + 1;
+                        }else
+                        {
+                            $results[$log->maTruyen] = 1;
+                        }
+
+
+                    }
+                }
+
+        }
+        arsort($results);
+        return $results;
+    }
+
+    function doithongke($option)
+    {
+        $chartTruyens = $this->thongke($option);
+        foreach($chartTruyens as $maTruyen=>$luotXem)
+        {
+            $Truyen = truyen::find($maTruyen);
+            echo   '<div class="charts-element"> <h4><a href="'.route('chitiettruyen',['id'=>$Truyen->maTruyen]).'">'.$Truyen->tenTruyen.'</a></h4><p><span>Số Chương: '. $Truyen->soChuong().'</span> | <span> Lượt xem: '.$Truyen->luotXem.'</span></p> </div>';
+
+        }
+    }
+
+    public function timKiemTruyen($option, $content=null)
    {
-   	
+       if($content)
+       {
+           switch ($option)
+           {
+               case 'tentruyen':
+                   return $this->layTruyenTheoTen($content);
+
+               case 'tennhom':
+                    return $this->layTruyenTheoNhom($content);
+
+               case 'theloai':
+                  return $this->layTruyenTheoTheLoai($content);
+               default:
+                   return $this->layTatCaTruyen();
+           }
+       }else{
+           return $this->layTatCaTruyen();
+       }
    }
 
-   public function layTruyenTheoTen($id=null)
+   public function layTruyenTheoMa($content=null)
    {
-   	
+       $results =[];
+       $truyens = truyen::all();
+       foreach ($truyens as $tr)
+       {
+           if(preg_match($content, $tr->maTruyen))
+               array_push($results,$tr);
+       }
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Mã ','conten'=>$content]);
    }
 
-   public function layTruyenTheoTheLoai($id=null)
+   public function layTruyenTheoTen($content=null)
    {
-   	
+       $pattern = '/[a-zA-Z]*';
+       $tokens = explode(' ',$content);
+       foreach ($tokens as $tk)
+       {
+           $pattern = $pattern.$tk.'[a-zA-Z]*\s*';
+       }
+       $pattern = $pattern.'/';
+       $results =[];
+       $truyens = truyen::all()->where('duyet',1);
+       foreach ($truyens as $tr)
+       {
+           if(preg_match($pattern, $tr->tenTruyen))
+               array_push($results,$tr);
+       }
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Truyện','content'=>$content]);
    }
 
-   public function layTruyenTheoNhom($id=null)
+   public function layTruyenTheoTheLoai($content=null)
    {
-   	
+       $pattern = '/[a-zA-Z]*';
+       $tokens = explode(' ',$content);
+       foreach ($tokens as $tk)
+       {
+           $pattern = $pattern.$tk.'[a-zA-Z]*\s*';
+       }
+       $pattern = $pattern.'/';
+       $results =[];
+       $truyens = truyen::all()->where('duyet',1);
+       foreach ($truyens as $tr)
+       {
+           $tr_tl = $tr->getTheLoai;
+           foreach ($tr_tl as $tl)
+
+               if(preg_match($pattern, $tl->getTheLoai->tenTL))
+                   array_push($results,$tr);
+       }
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Thể loại','content'=>$content]);
    }
+
+   public function layTruyenTheoNhom($content=null)
+   {
+       $pattern = '/[a-zA-Z]*';
+       $tokens = explode(' ',$content);
+       foreach ($tokens as $tk)
+       {
+           $pattern = $pattern.$tk.'[a-zA-Z]*\s*';
+       }
+       $pattern = $pattern.'/';
+       $results =[];
+       $truyens = truyen::all()->where('duyet',1);
+       foreach ($truyens as $tr)
+       {
+           if(preg_match($pattern, $tr->nhom->tenNhom))
+               array_push($results,$tr);
+       }
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Nhóm','content'=>$content]);
+   }
+
    public function layTatCaTruyen()
    {
-   	
+
+       return redirect()->route('trangchu');
    }
 
+   public function timTruyenCuaNhom($findvalue=null)
+   {
+     if ($findvalue) {
+        $pattern = '/[a-zA-Z]*';
+        $tokens = explode(' ',$findvalue);
+        foreach ($tokens as $tk)
+        {
+            $pattern = $pattern.$tk.'[a-zA-Z]*\s*';
+        }
+        $pattern = $pattern.'/';
+        $results =[];
+        $truyens = truyen::all()->where('maNhom',Auth::guard('thanhvien')->user()->maNhom);
+        foreach ($truyens as $tr)
+        {
+            if(preg_match($pattern, $tr->tenTruyen))
+                array_push($results,$tr);
+        }
+        return view('tvNhom.TimKiemTruyenNhom',['dstruyen'=>$results,'option'=>'Truyện của nhóm','content'=>$findvalue]);
+
+     }else {
+       $dstruyen = truyen::where('maNhom', Auth::guard('thanhvien')->user()->maNhom)->paginate(4);
+       $sltruyen = $dstruyen->count();
+       return view('tvNhom.QuanLyTruyen',['dstruyen'=>$dstruyen,'sltruyen'=>$sltruyen]);
+     }
+   }
+
+
+    public function layTruyenTheoNam($content){
+        $truyens = truyen::all();
+        $results = [];
+        foreach ($truyens as $truyen)
+        {
+            if($truyen->getNam()==$content)
+            {
+                array_push($results, $truyen);
+            }
+        }
+        return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Năm','content'=>$content]);
+    }
    public function docTruyen($idTruyen,$idChuong)
    {
        $chuong = chuongtruyen::find($idChuong);
        $truyen = truyen::find($idTruyen);
+       $truyen->capNhatLuotXem();
        $log = new log_read;
        $log->maTruyen = $truyen->maTruyen;
        $log->read_at = Carbon::now('Asia/Ho_Chi_Minh');
@@ -65,6 +282,7 @@ class DK_QLTruyen extends Controller
    {
    	
    }
+
    public function xoaTruyenYeuThich($id=null){
 
         $user = Auth::guard('thanhvien')->user();
@@ -205,6 +423,12 @@ class DK_QLTruyen extends Controller
         return redirect()->route('quanlytruyen');
 
 
+    }
+
+    public function thongKeTruyen(){
+       $nhom = Auth::guard('thanhvien')->user()->getNhom;
+       $dsTruyen = truyen::where('maNhom', $nhom->maNhom)->orderBy('ngayDang')->get();
+       return view('tvNhom.ThongKeTruyenNhom',['dsTruyen'=>$dsTruyen]);
     }
    //xoa truyen
    public function xoatruyen()

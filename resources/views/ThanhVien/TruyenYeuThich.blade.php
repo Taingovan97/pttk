@@ -32,8 +32,8 @@ Truyện tranh online
                     <p>Nhóm dịch: {{$tv_tl->getTruyen->nhom->tenNhom}}</p>
                     <p>Thể loại:
                         <span>
-                            @foreach($tv_tl->getTruyen->theLoai as $theloai)
-                                {{$tv_tl->getTruyen->tenTL}}<pre>, </pre>
+                            @foreach($tv_tl->getTruyen->getTheLoai as $theloai)
+                                {{$tv_tl->getTruyen->getTheLoai->tenTL}}<pre>, </pre>
                              @endforeach
                         </span>
                     </p>

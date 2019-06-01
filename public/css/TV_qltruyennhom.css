@@ -13,3 +13,8 @@ h5
   float: left;
   font-size: 17px;
 }
+
+.right_row button{
+  background-color: forestgreen;
+  border-radius: 10px;
+}
