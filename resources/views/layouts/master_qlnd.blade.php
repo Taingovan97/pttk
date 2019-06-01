@@ -37,7 +37,7 @@
             </div>
             <div class="dropdown-menu">
               <a class="dropdown-item" href="#">Thông tin tài khoản</a>
-              <a class="dropdown-item" href="#">Đăng xuất</a>
+              <a class="dropdown-item" href="{{route('dangxuat_admin')}}">Đăng xuất</a>
             </div>
           </div>
            @if (Auth::guard('admin')->user()->quyen == 'noidung')

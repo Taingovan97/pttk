@@ -33,7 +33,7 @@
               <p>Tên đăng nhập:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $ten; ?></p>
+              <p><?php echo $account->name; ?></p>
             </div>
           </div>
       <div class="row">
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-4">
               <p><?php 
-              if ($active == true) 
+              if ($account->active == true) 
                 echo "Đã xác thực";
               else
                 echo "Chưa xác thực";
@@ -54,15 +54,20 @@
               <p>Email:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $email; ?></p>
+              <p><?php echo $account->email; ?></p>
             </div>
           </div>
           <div class="row">
             <div class="col-md-3">
               <p>Số điện thoại:</p>
+
             </div>
             <div class="col-md-4">
-              <p><?php echo $sdt; ?></p>
+              @if($account->sdt)
+                  <p>{{$account->std}}</p>
+              @else
+                  <p> Chưa nhập </p>
+              @endif
             </div>
           </div>
 
@@ -71,7 +76,7 @@
               <p>Giới tính:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $genre; ?></p>
+              <p><?php echo $account->gioiTinh; ?></p>
             </div>
           </div>
           <div class="row">
@@ -79,16 +84,25 @@
               <p>Mã tài khoản:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $id; ?></p>
+              <p><?php echo $account->maTK; ?></p>
             </div>
           </div>
           <div class="row">
+            @if(isset($nhom))
             <div class="col-md-3">
               <p>Tên nhóm:</p>
             </div>
             <div class="col-md-4">
-              <p>Pinoy</p>
+              <p><?php echo $nhom; ?></p>
             </div>
+            @else
+            <div class="col-md-3">
+              <p>Quyền:</p>
+            </div>
+            <div class="col-md-4">
+              <p><?php echo $account->quyen; ?></p>
+            </div>
+            @endif
           </div>
 
         </div>

@@ -210,7 +210,64 @@ class DK_QLTaiKhoan extends Controller
 
     }
 
+    protected function suaTK_admin(Request $request)
+    {
+            $this->validate($request,[
+          'tentaikhoan'=>'min:4',
+           'email' => 'required|email',
+           'matkhaucu'=> 'required',
+           'matkhaumoi'=> 'required| min:8|max:32',
+           'nhaplaimatkhau' =>'required|same:matkhaumoi',
+           'sdt'=>'min:10',
 
+       ],[
+           'tentaikhoan.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
+           'email.required' => 'Bạn chưa nhập email',
+           'email.email' => 'Email không hợp lệ',
+           'matkhaucu.required' => 'Bạn chưa nhập mật khẩu',
+           'matkhaumoi.required' => 'Bạn chưa nhập mật khẩu',
+           'matkhaumoi.min' => 'Mật khẩu phải phải chứa ít nhất 8 ký tự',
+           'matkhaumoi.max' => 'Mật khẩu không vượt quá 32 ký tự',
+           'nhaplaimatkhau.required' => 'Bạn phải nhập lại mật khẩu',
+           'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
+           'sdt.min'=>'sô điện thoại không hợp lệ',
+       ]);
+
+            $users_email = admin::where('email','<>',Auth::guard('admin')->user()->email)->get();
+            $user_ten = admin::where('name','<>',Auth::guard('admin')->user()->name)->get();
+
+            foreach ($users_email as $user) {
+              if ($user->name==$request->tentaikhoan) {
+                return view('quanlyTK.suaTK')->with('thongbao', 'Tên tài khoản đã được sử dụng');
+                break;
+              }
+            }
+
+            foreach ($user_ten as $user) {
+              if( $user->email == $request->email)
+              {
+                return view('quanlyTK.suaTK')->with('thongbao', 'email đã được sử dụng');
+                break;
+              }
+            }
+
+            $admin = admin::find(Auth::guard('admin')->user()->maTK);
+            if(Hash::check($request->matkhaucu, $admin->password))
+            {
+              $admin->name = $request ->tentaikhoan;
+              $admin->password = bcrypt($request ->matkhaumoi);
+              $admin->email = $request->email;
+              if (isset($request->sdt)) {
+                $admin->sdt = $request->sdt;
+              }
+              $admin->save();
+              return view('quanlyTK.suaTK')->with('thongbao', 'Sửa thông tin thành công!');
+            }
+            else
+              return view('quanlyTK.suaTK')->with('thongbao', 'Mật khẩu sai');
+            
+
+    }
     
 
 }

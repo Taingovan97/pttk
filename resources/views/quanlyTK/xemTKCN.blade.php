@@ -9,9 +9,7 @@
         <?php $user = Auth::guard('admin')->user()?>
         <div class="col-md-4">
           <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;border: 1px solid;">
-          <a href="{{route("formsuatk",['ten'=>$user->name])}}" type="button" name="button"  style="margin: 10px auto;display: block;width: 80%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" >
-          <center>Sửa tài khoản</center>
-          </a>
+          <button type="button" name="button" onclick="window.location='{{route("suaTK",['ten'=>$user->name])}}'" style="margin: 10px auto;display: block;width: 80%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" >Sửa tài khoản</button>
         </div>
         <div class="col-md-8">
           <div class="row">
@@ -36,7 +34,7 @@
             </div>
             <div class="col-md-4">
                 @if($user->sdt)
-                    <p>{{$user->std}}</p>
+                    <p>{{$user->sdt}}</p>
                 @else
                     <p> Chưa nhập </p>
                 @endif

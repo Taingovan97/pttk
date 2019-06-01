@@ -4,6 +4,7 @@ use Illuminate\Database\Seeder;
 use Carbon\Carbon;
 use App\nhom;
 use App\admin;
+use App\thanhvien;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -26,24 +27,27 @@ class DatabaseSeeder extends Seeder
         //     'ngayDang'=>'1-4-2019',
         //     'maTruyen'=>'T0'
         // ]);
-        //$this->call(tkSeeder::class);
+        $this->call(tkSeeder::class);
         //$this->call(nhomSeeder::class);
-        $this->call(Admin1::class);
+        //$this->call(Admin1::class);
+        //$this->call(Admin2::class);
 
     }
 }
 
- class tkSeeder extends Seeder
+class tkSeeder extends Seeder
 {
  	public function run()
 	{
- 		DB::table('taikhoan')->insert([
- 			['maTK'=>'a01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')],
- 			['maTK'=>'m01', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')],
- 			['maTK'=>'m02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')],
- 			['maTK'=>'a02', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')],
- 			['maTK'=>'m03', 'tenTK'=>str_random(5), 'matKhau'=>bcrypt(str_random(10)), 'maTV'=>str_random(5), 'create_at' =>Carbon::now('Asia/Ho_Chi_Minh')]
- 		]);
+ 		for ($i=0; $i < 5; $i++) { 
+            $data = new thanhvien;
+            $data->name = str_random(3);
+            $data->password = bcrypt('12345');
+            $data->email = str_random(5).'@gmail.com';
+            $data->maNhom = random_int(1,5);
+            $data->create_at = Carbon::now('Asia/Ho_Chi_Minh');
+            $data->save();
+        }
  	}
 }
 
@@ -75,6 +79,20 @@ class Admin1 extends Seeder
         $ad1->email = '1noname@gmail.com';
         $ad1->create_at = Carbon::now('Asia/Ho_Chi_Minh');
         $ad1->quyen = 'noidung';
+        $ad1->save();
+    }
+}
+
+class Admin2 extends Seeder
+{
+    public function run()
+    {
+        $ad1 = new admin;
+        $ad1->name ='thanh duc';
+        $ad1->password = bcrypt('12345');
+        $ad1->email = '2noname@gmail.com';
+        $ad1->create_at = Carbon::now('Asia/Ho_Chi_Minh');
+        $ad1->quyen = 'taikhoan';
         $ad1->save();
     }
 }

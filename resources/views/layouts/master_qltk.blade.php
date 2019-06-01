@@ -22,11 +22,11 @@
           @if (Auth::guard('admin')->user()){
           <div class="dropdown " style="float:right;margin-left: 20px;">
             <div class="dropdown-toggle text-danger" data-toggle="dropdown">
-              <strong>{{Auth::user()->name}}</strong>
+              <strong>{{Auth::guard('admin')->user()->name}}</strong>
             </div>
             <div class="dropdown-menu">
               <a class="dropdown-item item" href="{{route('admin_tk')}}">Thông tin tài khoản</a>
-              <a class="dropdown-item item" href="{{route('dangxuat')}}">Đăng xuất</a>
+              <a class="dropdown-item item" href="{{route('dangxuat_admin')}}">Đăng xuất</a>
             </div>
           </div>
           @endif
@@ -64,6 +64,7 @@
   	@yield('noidung')
   </div>
   <footer>
+    Copyright © 2019 by ANH_EM_AN_HAI_TEAM
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
