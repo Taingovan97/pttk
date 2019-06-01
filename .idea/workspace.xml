@@ -2,18 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9a9f30-d6a4-4c9d-8f72-6cae53174d18" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/public/images/ảnh troll.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/taikhoanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/taikhoanController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/baocao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/baocao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_04_03_nhom.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_04_03_nhom.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_qlnd.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_qlnd.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_qltk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_qltk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ThanhVien/ThongTinCaNhan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ThanhVien/ThongTinCaNhan.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/suaTK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/suaTK.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xemTK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xemTK.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xemTKCN.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xemTKCN.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,11 +25,38 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="418">
-              <caret line="159" column="6" selection-start-line="159" selection-start-column="6" selection-end-line="159" selection-end-column="6" />
+            <state relative-caret-position="119">
+              <caret line="7" selection-start-line="7" selection-end-line="8" />
               <folding>
-                <element signature="e#1478#5024#0#HTML" />
-                <element signature="e#3352#3905#0#HTML" />
+                <element signature="e#1765#2051#0#HTML" />
+                <element signature="e#2064#2326#0#HTML" />
+                <element signature="e#2339#2618#0#HTML" />
+                <element signature="e#2631#2895#0#HTML" />
+                <element signature="e#2908#3181#0#HTML" />
+                <element signature="e#3194#3499#0#HTML" />
+                <element signature="e#3512#3762#0#HTML" />
+                <element signature="e#3781#3822#0#HTML" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="213">
+              <caret line="208" column="33" lean-forward="true" selection-start-line="208" selection-start-column="33" selection-end-line="208" selection-end-column="33" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-510">
+              <caret line="26" column="101" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="101" />
+              <folding>
+                <element signature="e#2912#2932#0#HTML" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -43,7 +66,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>erro</find>
       <find>border</find>
       <find>footer</find>
       <find>input_avatar</find>
@@ -73,6 +95,7 @@
       <find>thống</find>
       <find>chiTietTruyen</find>
       <find>form</find>
+      <find>pos</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -108,7 +131,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/TrangChu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/TrangChu_nhom.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Middleware/Thanhviennhom_middleware.php" />
         <option value="$PROJECT_DIR$/../Document 4-2/Project/Usecase/UC/uc_chi tiet/Giao diện/Thành viên nhóm/TV_qltruyennhom.html" />
@@ -118,12 +140,10 @@
         <option value="$PROJECT_DIR$/resources/views/ThanhVien/BaoCaoTruyen.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/ThanhVien/BaoCaoViPham.blade.php" />
         <option value="$PROJECT_DIR$/public/css/TV_themchuongtruyen.css" />
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/ThemChuongMoi.blade.php" />
         <option value="$PROJECT_DIR$/../TV_xemchitiettruyen/TV_xemchitiettruyen.html" />
         <option value="$PROJECT_DIR$/public/css/TV_xemchitiettruyen.css" />
         <option value="$PROJECT_DIR$/public/css/TV_binhluan.css" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" />
         <option value="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/dsThanhvien.blade.php" />
         <option value="$PROJECT_DIR$/app/dexuat.php" />
@@ -157,8 +177,11 @@
         <option value="$PROJECT_DIR$/public/css/TV_xemchitiettruyenNhom.css" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/XemChiTietTruyenNhom.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" />
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" />
       </list>
     </option>
   </component>
@@ -484,12 +507,12 @@
       <workItem from="1558569447712" duration="26073000" />
       <workItem from="1559013401318" duration="4297000" />
       <workItem from="1559322822358" duration="187000" />
-      <workItem from="1559366293763" duration="2454000" />
+      <workItem from="1559366293763" duration="8181000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389662000" />
+    <option name="totallyTimeSpent" value="395389000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -522,30 +545,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/XemDeXuat.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="142" selection-start-line="21" selection-start-column="142" selection-end-line="21" selection-end-column="142" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLDeXuat.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="64" column="9" selection-start-line="64" selection-start-column="9" selection-end-line="64" selection-end-column="9" />
-          <folding>
-            <element signature="e#40#58#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/TV_dexuat.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="334">
-          <caret line="46" column="4" selection-start-line="46" selection-start-column="4" selection-end-line="46" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/dexuat.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -564,13 +563,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="35" column="63" selection-start-line="35" selection-start-column="63" selection-end-line="35" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1530">
-          <caret line="23" column="6" selection-start-line="23" selection-start-column="6" selection-end-line="23" selection-end-column="6" />
         </state>
       </provider>
     </entry>
@@ -733,17 +725,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="126" column="64" selection-start-line="126" selection-start-column="64" selection-end-line="126" selection-end-column="64" />
-          <folding>
-            <element signature="e#9#391#0#PHP" expanded="true" />
-            <element signature="e#394#409#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/XemChiTietTruyenNhom.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1496">
@@ -768,16 +749,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="482">
           <caret line="76" column="58" selection-start-line="76" selection-start-column="20" selection-end-line="76" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="482">
-          <caret line="388" column="27" selection-start-line="388" selection-start-column="27" selection-end-line="388" selection-end-column="27" />
-          <folding>
-            <element signature="e#40#73#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -830,13 +801,70 @@
     <entry file="file://$PROJECT_DIR$/public/images/logo1.PNG">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/.env">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1768">
+          <caret line="104" selection-start-line="104" selection-end-line="104" />
+          <folding>
+            <element signature="e#46#74#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1020">
+          <caret line="60" selection-start-line="60" selection-end-line="60" />
+          <folding>
+            <element signature="e#9#391#0#PHP" expanded="true" />
+            <element signature="e#394#409#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-229">
+          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
+          <folding>
+            <element signature="e#40#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-510">
+          <caret line="26" column="101" selection-start-line="26" selection-start-column="72" selection-end-line="26" selection-end-column="101" />
+          <folding>
+            <element signature="e#2912#2932#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="213">
+          <caret line="208" column="33" lean-forward="true" selection-start-line="208" selection-start-column="33" selection-end-line="208" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="418">
-          <caret line="159" column="6" selection-start-line="159" selection-start-column="6" selection-end-line="159" selection-end-column="6" />
+        <state relative-caret-position="119">
+          <caret line="7" selection-start-line="7" selection-end-line="8" />
           <folding>
-            <element signature="e#1478#5024#0#HTML" />
-            <element signature="e#3352#3905#0#HTML" />
+            <element signature="e#1765#2051#0#HTML" />
+            <element signature="e#2064#2326#0#HTML" />
+            <element signature="e#2339#2618#0#HTML" />
+            <element signature="e#2631#2895#0#HTML" />
+            <element signature="e#2908#3181#0#HTML" />
+            <element signature="e#3194#3499#0#HTML" />
+            <element signature="e#3512#3762#0#HTML" />
+            <element signature="e#3781#3822#0#HTML" />
           </folding>
         </state>
       </provider>

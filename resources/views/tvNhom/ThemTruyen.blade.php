@@ -61,7 +61,6 @@ Thêm Truyện mới
                         <td style="width: 25%;">Hình ảnh*:</td>
                         <td>
                             <div class="col-md-2">
-                                {{--                            <button>Chọn ảnh</button>--}}
                                 <img src="" name="anh" id="avatar" style="clear: both;" >
                                 <input type="file" name="avatar" id="input_avatar" style="width: 100px"/>
                                 <script>

@@ -1,5 +1,7 @@
 @extends('layouts.master_qltk')
-
+@section('head.css')
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+@stop
 @section('noidung')
 	<div class="main container">
     <h4>Quản lý tài khoản cá nhân/Sửa tài khoản cá nhân</h4>
@@ -8,29 +10,7 @@
       <?php $user = Auth::guard('admin')->user()?>
       <div class="row">
         <div class="col-md-4">
-          <img src="{{asset($user->linkAnh)}}" alt="avatar" onerror="this.src='{{asset('images/x.png')}}'" style="width: 100%;border: 1px solid;">
-          <input type="file" name="avatar" id="input_avatar"/>
-          <script>
-
-            function readURL(input) {
-
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        $('#avatar').attr('src', e.target.result);
-                    }
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-
-            $("#input_avatar").change(function() {
-                readURL(this);
-            });
-
-          </script>
-        
+          <img id = 'avatar' src="{{asset($user->avatar)}}" alt="avatar" onerror="this.src='{{asset('images/x.png')}}'" style="width: 100%;border: 1px solid;">
         </div>
         
         <div class="col-md-8">
@@ -116,33 +96,63 @@
               @endif 
             </div>
           </div>
+                  <div class="row">
+            <div class="col-md-3">
+                <p>Avartar</p>
+            </div>
+            <div class="col-md-4">
+                <input type="file" name="avatar" id="input_avatar"/>
+                <script>
+
+                    function readURL(input) {
+
+                        if (input.files && input.files[0]) {
+                            var reader = new FileReader();
+
+                            reader.onload = function(e) {
+                                $('#avatar').attr('src', e.target.result);
+                            }
+
+                            reader.readAsDataURL(input.files[0]);
+                        }
+                    }
+
+                    $("#input_avatar").change(function() {
+                        readURL(this);
+                    });
+
+                </script>
+            </div>
+
+        </div>
+
           <button type="submit" name="save" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-del" >Lưu</button>
           <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" onclick="window.location='{{route('admin_tk')}}'">Hủy</center></button>
-          <?php // Xử Lý Upload
-
-        // Nếu người dùng click Upload
-        if (isset($_POST['save']))
-        {
-            // Nếu người dùng có chọn file để upload
-            if (isset($_FILES['avatar']))
-            {
-                // Nếu file upload không bị lỗi,
-                // Tức là thuộc tính error > 0
-                if ($_FILES['avatar']['error'] > 0)
-                {
-                    echo "<script type='text/javascript'>alert('File bi loi');</script>";
-                }
-                else{
-                    // Upload file
-                    move_uploaded_file($_FILES['avatar']['tmp_name'], './images/'.$_FILES['avatar']['name']);
-                    echo 'File Uploaded';
-                }
-            }
-            else{
-                echo 'Bạn chưa chọn file upload';
-            }
-        }
-        ?>
+<!--          <?php //// Xử Lý Upload
+//
+//        // Nếu người dùng click Upload
+////        if (isset($_POST['save']))
+////        {
+////            // Nếu người dùng có chọn file để upload
+////            if (isset($_FILES['avatar']))
+////            {
+////                // Nếu file upload không bị lỗi,
+////                // Tức là thuộc tính error > 0
+////                if ($_FILES['avatar']['error'] > 0)
+////                {
+////                    echo "<script type='text/javascript'>alert('File bi loi');</script>";
+////                }
+////                else{
+////                    // Upload file
+////                    move_uploaded_file($_FILES['avatar']['tmp_name'], './images/'.$_FILES['avatar']['name']);
+////                    echo 'File Uploaded';
+////                }
+////            }
+////            else{
+////                echo 'Bạn chưa chọn file upload';
+////            }
+////        }
+       ?> -->
         </form>
         </div>
       </div>

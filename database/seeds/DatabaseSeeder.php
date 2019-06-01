@@ -27,10 +27,10 @@ class DatabaseSeeder extends Seeder
         //     'ngayDang'=>'1-4-2019',
         //     'maTruyen'=>'T0'
         // ]);
-        $this->call(tkSeeder::class);
+        // $this->call(tkSeeder::class);
         //$this->call(nhomSeeder::class);
-        //$this->call(Admin1::class);
-        //$this->call(Admin2::class);
+        // $this->call(Admin1::class);
+        $this->call(Admin2::class);
 
     }
 }

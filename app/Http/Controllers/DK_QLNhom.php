@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\nhom;
+use App\thanhvien;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 class DK_QLNhom extends Controller
@@ -43,12 +44,17 @@ class DK_QLNhom extends Controller
             'tennhom.unique'=>'Tên nhóm đã tồn tại',
         ]);
         $nhom = new nhom;
-
+        $truongnhom = thanhvien::find(Auth::guard('thanhvien')->user()->maTK);
         $nhom->tenNhom = $request->tennhom;
         $nhom->gioiThieu = $request->gioithieu;
         $nhom->maTruongNhom = Auth::guard('thanhvien')->user()->maTK;
         $nhom->ngayLap = Carbon::now('Asia/Ho_Chi_Minh');
         $nhom->save();
+
+        $loadNhom = nhom::where('tenNhom',$request->tennhom)->get()->toArray();
+        $truongnhom->maNhom = $loadNhom[0]['maNhom'];
+        $truongnhom->save();
+
 
         return redirect()->route('formtaonhom')->with('thongbao', 'Tạo nhóm thành công!');
 

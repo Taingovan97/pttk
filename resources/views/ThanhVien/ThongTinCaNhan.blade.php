@@ -54,11 +54,11 @@
                 <p>Nhóm:</p>
             </div>
             <div class="col-md-4">
-                @if($user->nhom)
-                    <p>xxx</p>
-                    @else
-                <p> Không tham gia nhóm</p>
-                    @endif
+                @if($user->maNhom)
+                    <p><a href="{{route('trangchunhom')}}">{{$user->getNhom->tenNhom}}</a></p>
+                @else
+                    <p> Chưa tham gia nhóm</p>
+                @endif
             </div>
         </div>
 
