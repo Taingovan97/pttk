@@ -78,9 +78,30 @@ class DK_QLNhom extends Controller
 
         $nhom = Auth::guard('thanhvien')->user()->getNhom;
         if($nhom->maTruongNhom == Auth::guard('thanhvien')->user()->maTK)
-            return view('tvNhom.ThemThanhVien');
+        {
+          $manhom = $nhom->maNhom;
+            $thanhviens = thanhvien::when($manhom, function($query,$manhom){
+                $query->where('maNhom','<>',$manhom)
+                ->orWhereNull('maNhom');
+            })->paginate(4);
+            return view('tvNhom.ThemThanhVien',['thanhviens'=>$thanhviens,'slthanhvien'=>$thanhviens->count()]);
+        }
         else
             return view('trangchunhom');
+    }
+
+    public function themThanhVien($name){
+      if(Auth::guard('thanhvien')->user()->getNhom->maNhom != Auth::guard('thanhvien')->user()->maNhom)
+        return redirect()->route('trangchunhom');
+
+      $thanhvien = thanhvien::all()->where('name',$name)[0];
+      if(!$thanhvien->maNhom)
+      {
+        $thanhvien->maNhom = Auth::guard('thanhvien')->user()->maNhom;
+        $thanhvien->save();
+      }
+
+      return redirect()->route('getthemthanhvien');
     }
 
 

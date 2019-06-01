@@ -51,8 +51,6 @@
 		  <ul>
             <li><a class="active" href="#home">Truyện mới</a></li>
             <li><a href="#">Thể loại</a></li>
-            <li><a href="#">Nhóm dịch</a></li>
-            <li><a href="#">Tác giả</a></li>
             <li><a href="#">Năm</a></li>
           </ul>
         </div>

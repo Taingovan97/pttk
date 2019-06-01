@@ -41,7 +41,7 @@ class DK_QLTaiKhoan extends Controller
        $this->validate($request,[
           'tentaikhoan'=>'required|unique:thanhvien,name|min:4',
            'email' => 'required|email|unique:thanhvien,email',
-           // 'matkhau'=> 'required| min:8|max:32',
+           'matkhau'=> 'required| min:8|max:32',
            'nhaplaimatkhau' =>'required|same:matkhau',
            'dongy' => 'required'
        ],[
@@ -51,9 +51,9 @@ class DK_QLTaiKhoan extends Controller
            'email.required' => 'Bạn chưa nhập email',
            'email.email' => 'Email không hợp lệ',
            'email.unique' => 'Địa chỉ đã tồn tại',
-           // 'matkhau.required' => 'Bạn chưa nhập mật khẩu',
-           // 'matkhau.min' => 'Mật khẩu phải phải chứa ít nhất 8 ký tự',
-           // 'matkhau.max' => 'Mật khẩu không vượt quá 32 ký tự',
+           'matkhau.required' => 'Bạn chưa nhập mật khẩu',
+           'matkhau.min' => 'Mật khẩu phải phải chứa ít nhất 8 ký tự',
+           'matkhau.max' => 'Mật khẩu không vượt quá 32 ký tự',
            'nhaplaimatkhau.required' => 'Bạn phải nhập lại mật khẩu',
            'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
            'dongy.required' => 'Bạn chưa đồng ý điều khoản'

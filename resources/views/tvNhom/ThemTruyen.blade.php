@@ -50,10 +50,6 @@ Thêm Truyện mới
                         <td><input type="text" name="tacgia"></td>
                     </tr>
                     <tr>
-                        <td style="width: 25%;">Tình trạng dịch*:</td>
-                        <td><input type="text" name="tinhtrang"></td>
-                    </tr>
-                    <tr>
                         <td style="width: 25%;">Mô tả ngắn:</td>
                         <td><textarea name="gioithieu" style="height: 100px; width: 100%;"></textarea></td>
                     </tr>

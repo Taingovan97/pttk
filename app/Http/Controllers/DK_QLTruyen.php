@@ -163,7 +163,8 @@ class DK_QLTruyen extends Controller
            if(preg_match($content, $tr->maTruyen))
                array_push($results,$tr);
        }
-       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Mã ','conten'=>$content]);
+       $theloai =theloai::all();
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Mã ','conten'=>$content,'theloai'=>$theloai]);
    }
 
     public function layTruyenTheoTen($content=null)
@@ -182,7 +183,8 @@ class DK_QLTruyen extends Controller
            if(preg_match($pattern, $tr->tenTruyen))
                array_push($results,$tr);
        }
-       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Truyện','content'=>$content]);
+       $theloai =theloai::all();
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Truyện','content'=>$content,'theloai'=>$theloai]);
    }
 
     public function layTruyenTheoTheLoai($content=null)
@@ -204,7 +206,8 @@ class DK_QLTruyen extends Controller
                if(preg_match($pattern, $tl->getTheLoai->tenTL))
                    array_push($results,$tr);
        }
-       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Thể loại','content'=>$content]);
+       $theloai =theloai::all();
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Thể loại','content'=>$content,'theloai'=>$theloai]);
    }
 
     public function layTruyenTheoNhom($content=null)
@@ -223,7 +226,8 @@ class DK_QLTruyen extends Controller
            if(preg_match($pattern, $tr->nhom->tenNhom))
                array_push($results,$tr);
        }
-       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Nhóm','content'=>$content]);
+       $theloai =theloai::all();
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Nhóm','content'=>$content,'theloai'=>$theloai]);
    }
 
     public function layTatCaTruyen()
@@ -259,7 +263,7 @@ class DK_QLTruyen extends Controller
    }
 
 
-    public function layTruyenTheoNam($content){
+    public function layTruyenTheoNam($content=2019){
         $truyens = truyen::all();
         $results = [];
         foreach ($truyens as $truyen)
@@ -269,6 +273,7 @@ class DK_QLTruyen extends Controller
                 array_push($results, $truyen);
             }
         }
+        $theloai =theloai::all();
         return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Năm','content'=>$content]);
     }
 
@@ -290,6 +295,14 @@ class DK_QLTruyen extends Controller
    {
    	
    }
+
+    public function themTruyenYeuThich($id){
+        $tv_truyen = new thanhvien_truyenyeuthich;
+        $tv_truyen->maTK = Auth::guard('thanhvien')->user()->maTK;
+        $tv_truyen->maTruyen =$id;
+        $tv_truyen->save();
+        return redirect()->route('chitiettruyen',['id'=>$id]);
+    }
 
     public function xoaTruyenYeuThich($id=null){
 
@@ -419,33 +432,43 @@ class DK_QLTruyen extends Controller
          $truyen->ngayDang = Carbon::now('Asia/Ho_Chi_Minh');
          if($request->gioithieu)
             $truyen->gioiThieu = $request->gioithieu;
-        if ($request->hasFile('avatar')) {
-            $file = $request->avatar;
-            $truyen->linkAnh = 'cover/'.$file->getClientOriginalName();
-            $file->move('cover', 'test.png');
-        }
         $truyen->maNhom = Auth::guard('thanhvien')->user()->maNhom;
         $truyen->manguoiDang = Auth::guard('thanhvien')->user()->maTK;
         $truyen->save();
+
+        $t = truyen::where([['tenTruyen','=', $request->tentruyen],['maNhom','=',Auth::guard('thanhvien')->user()->maNhom]])->get()->toArray();
+        $truyen2 = truyen::find($t[0]['maTruyen']);
+        if ($request->hasFile('avatar')) {
+            $file = $request->avatar;
+            $truyen2->linkAnh = 'cover/'.strval($truyen2->maTruyen).'.png';
+            $file->move('cover', strval($truyen2->maTruyen).'.png');
+        }
 
         foreach ($request->theloai as $tl)
         {
             $theloai = theloai::where('tenTL', $tl)->get()->toArray()[0];
             $t_tl = new truyen_theloai;
             $t_tl->maTL = $theloai['maTL'];
-
-            $t = truyen::where('tenTruyen','=', $request->tentruyen)->get()->toArray();
-            $t_tl->maTruyen = $t[0]['maTruyen'];
+            $t_tl->maTruyen = $truyen2->maTruyen;
             $t_tl->save();
 
         }
+        $truyen2->save();
         return redirect()->route('quanlytruyen');
 
 
     }
 
     public function getchinhSuaTruyen($id){
+      $truyen = truyen::find($id);
+      if($truyen->maNhom == Auth::guard('thanhvien')->user()->maNhom)
+      {
+          $theloais = theloai::all();
+          return view('tvNhom.SuaThongTinTruyen',['truyen'=>$truyen, 'theloais'=>$theloais]);
 
+      }  
+      else
+        return redirect()->route('chitiettruyen',['id'=>$id]);
     }
 
     public function thongKeTruyen(){

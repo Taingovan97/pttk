@@ -54,7 +54,15 @@
                                 {{$tr_theloai->getTheLoai->tenTL}},
                             @endforeach
                         </li>
-                        <li>Tình trạng: {{$truyen->trangThai}}</li>
+                        <li>Tình trạng:
+                            @if ($truyen->trangThai ==0)
+                                Đang thưc hiện
+                            @elseif($truyen->trangThai == 1)
+                                Tạm dừng
+                            @else
+                                Hoàn thành
+                            @endif
+                        </li>
                         <li style="border: 1px solid grey; height: 120px;">Sơ lược nội dung truyện: {{$truyen->gioiThieu}}</li>
                     </ul>
                     <div class="row">

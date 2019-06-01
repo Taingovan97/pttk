@@ -34,3 +34,12 @@ td input {
   color: white;
   width: 160px;
  }
+
+.col-md-10 .row input {
+    height: 40px;
+    width: 150px;
+    background: rgb(32 90 167);
+    margin-left: 150px;
+    margin-top: 30px;
+    color: white;
+}

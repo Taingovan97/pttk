@@ -25,6 +25,7 @@ class Truyen extends Migration
             $table->float('diemDG')->default(0.);
             $table->integer('maNhom');
             $table->integer('manguoiDang');
+            $table->integer('trangThai')->default(0);
             $table->boolean('duyet')->default(false);
 
         });

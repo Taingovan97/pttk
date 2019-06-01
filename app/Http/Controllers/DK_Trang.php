@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\truyen;
 use App\chuongtruyen;
+use App\theloai;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Http\Controllers\DK_QLTruyen;
@@ -29,7 +30,8 @@ class DK_Trang extends Controller
                 $truyen = truyen::find($maTruyen);
                 array_push($chartTruyens, $truyen);
             }
-           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$chartTruyens]);
+            $theloai = theloai::all();
+           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$chartTruyens,'theloai'=>$theloai]);
 
             }
 

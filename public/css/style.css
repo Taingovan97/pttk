@@ -80,7 +80,7 @@ footer {
 .user button{
   margin: 0 15px;
   float: right;
-  width: 30%;
+  /*width: 30%;*/
   border-radius: 10px;
   border: none;
   height: 35px;

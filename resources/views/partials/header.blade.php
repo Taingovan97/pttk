@@ -30,7 +30,7 @@
             <div class="col-md-4 user">
 
 
-                @if (Auth::guard('thanhvien')->user()){
+                @if (Auth::guard('thanhvien')->user())
                     <div class="dropdown " style="float:right;margin-left: 20px;">
                         <div class="dropdown-toggle text-danger" data-toggle="dropdown">
                             <strong>{{Auth::user()->name}}</strong>
@@ -44,21 +44,19 @@
                     </div>
                 <a href="{{route('dstruyenyeuthich')}}" title="Truyện yêu thích" class="heart">❤</a>
 
-                }
-                @else{
+                
+                @else
                     <a href="{{route('taoformdangky')}}"><button type="button" name="signup">Đăng ký</button></a>
                     <a href="{{route('taoformdangnhap')}}"><button type="button" name="login">Đăng nhập</button></a>
-                }
+                
                 @endif
             </div>
         </div>
         <div class="row direct">
             <ul>
-                <a href="{{route('truyenmoi')}}"><li>Truyện mới</li></a>
-                <a href="{{route('theloai')}}"><li>Thể loại</li></a>
-                <a href="{{route('nhomdich')}}"><li>Nhóm dịch</li></a>
-                <a href="{{route('tacgia')}}"><li>Tác giả</li></a>
-                <a href="{{route('nam')}}"><li>Năm</li></a>
+                <li style="width: 33.33%;"><a href="{{route('truyenmoi')}}">Truyện mới</a></li>
+                <li style="width: 33.33%;"><a href="{{route('theloai')}}">Thể loại</a></li>
+                <li style="width: 33.33%;"><a href="{{route('nam')}}">Năm</a></li>
             </ul>
         </div>
     </div>

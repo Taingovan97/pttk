@@ -6,7 +6,9 @@
     ?>
    {{$nhom->tenNhom}}
 @endsection
-
+@section('head.css')
+    <link rel="stylesheet" href="{{asset('css/TV_xemttnhom.css')}}">
+@stop
 @section('head.content')
 {{----}}
 
@@ -39,7 +41,11 @@
                     </ul>
                 </div>
             </div>
-
+            <div class="row" style="margin-top: 50px;">
+                @if(Auth::guard('thanhvien')->user()->maTK ==$nhom->maTruongNhom)
+                    <button onclick="window.location='{{route("getthemthanhvien")}}'">Thêm thành viên mới</button>
+                @endif
+            </div>
         </div>
         <div class="col-md-1">
 

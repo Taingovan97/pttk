@@ -47,7 +47,15 @@ Truyện tranh online
                                         @endforeach
                         </span>
                                 </p>
-                                <p>Tình trạng: Đang thực hiện</p>
+                                <p>Tình trạng:
+                                    @if ($tv_tl->trangThai ==0)
+                                        Đang thưc hiện
+                                    @elseif($tv_tl->trangThai == 1)
+                                        Tạm dừng
+                                    @else
+                                        Hoàn thành
+                                    @endif
+                                </p>
                                 <p>Sơ lược nội dung truyện:<span> {{$tv_tl->gioiThieu}}</span></p>
 
                             </div>
@@ -57,7 +65,7 @@ Truyện tranh online
                 @endforeach
             @else
                 @if ($content)
-                    <div style="padding-left: 20px; ">Không có  {{$content}}</div>
+                    <div style="padding-left: 20px; ">Không có {{$option}}  {{$content}}</div>
                 @endif
             @endif
 
