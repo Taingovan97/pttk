@@ -51,19 +51,8 @@
 	Route::post('admin', 'DK_QLTaiKhoan@dangNhapAdmin')->name('dangnhapadmin');
 
 
-
-
-
-
-
-
-
-
     // xu ly dang xuat
     Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
-
-
-
 
 
     // xu ly dang ky
@@ -138,19 +127,22 @@ Route::middleware(['auth_thanhvienNhom'])->group(function (){
         Route::group(['prefix' => 'quan_ly_truyen'], function(){
             Route::get('/', 'DK_Trang@quanlytruyen')->name('quanlytruyen');
             Route::get('timtruyennhom/{findvalue?}','DK_QLTruyen@timTruyenCuaNhom');
+            Route::get('truyen={id}','DK_QLTruyen@chiTietTruyenNhom')->name('chitiettruyennhom');
             Route::get('them_truyen_moi',"DK_QLTruyen@getThemTruyenMoi")->name('formthemtruyenmoi');
             Route::post('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('postthemtruyenmoi');
 
             Route::get('them_chuong_moi/{maTruyen}','DK_QLTruyen@getthemChuongMoi')->name('formthemchuongmoi');
             Route::post('them_chuong_moi/{maTruyen}', 'DK_QLTruyen@themChuongMoi')->name('themchuongmoi');
 
+            Route::get('sua_chuong/id={id}', 'DK_QLTruyen@getsuaChuongTruyen')->name('formsuachuongtruyen');
+            ROute::post('sua_chuong/id={id}','DK_QLTruyen@suaChuongTruyen')->name('suachuongtruyne');
             Route::get('thong_ke_truyen','DK_QLTruyen@thongKeTruyen')->name('thongketruyennhom');
 //            Route::get('tracuutruyen', 'DK_QLTruyen@traCuuTruyenCuaNhom')->name('tracuutruyencuanhom');
 
-            Route::get('xoa/truyen_{id}', 'DK_QLTRuyen@checkXoaNhom')->name('xoa_checktruyen');
+            Route::get('xoa_truyen={id}', 'DK_QLTRuyen@checkXoaNhom')->name('xoa_checktruyen');
             Route::post('xoa/truyen_{maTruyen}', 'DK_QLTruyen@xoaTruyenNhom')->name('xoatruyennhom');
 
-
+//            Route::get('truyen={id}', function () { return view('tvNhom.XemChiTietTruyenNhom'); });
             Route::get('chinh_sua_truyen/id={id}','DK_QLTruyen@getchinhSuaTruyen')->name('formchinhsuatruyen');
             Route::post('chinh_sua_truyen/id={id}','DK_QLTruyen@chinhSuaTruyen')->name('chinhsuatruyen');
 

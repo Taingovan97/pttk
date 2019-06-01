@@ -201,6 +201,11 @@ class DK_QLTaiKhoan extends Controller
               if (isset($request->std)) {
                 $thanhvien->sdt = $request->sdt;
               }
+              if ($request->hasFile('avatar')) {
+                $file = $request->avatar;
+                $thanhvien->avatar = 'avatar/'.$file->getClientOriginalName();
+                $file->move('avatar', 'test.png');
+              }
               $thanhvien->save();
               return view('ThanhVien.suaTaiKhoanCaNhan')->with('thongbao', 'Sửa thông tin thành công!');
             }else

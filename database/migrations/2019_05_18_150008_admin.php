@@ -19,6 +19,7 @@ class Admin extends Migration
             $table->string('name')->unique();
             $table->string('password');
             $table->string('email')->unique();
+            $table->string('avatar')->default('avatar/no-avatar208.png');
             $table->string('gioiTinh')->default('Nam');
             $table->integer('sdt')->nullable();
             $table->timestamp('create_at');

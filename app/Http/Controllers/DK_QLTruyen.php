@@ -28,6 +28,14 @@ class DK_QLTruyen extends Controller
        return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$chartTruyens]);
    }
 
+   function chiTietTruyenNhom($id){
+       $truyen = truyen::find($id);
+       if($truyen->maNhom == Auth::guard('thanhvien')->user()->maNhom)
+        return view('tvNhom.XemChiTietTruyenNhom',['truyen'=>$truyen]);
+       else
+           return redirect()->route('chitiettruyen',['id'=>$id]);
+
+   }
     public static function thongke($option='ngay')
     {
         $timenow = Carbon::now('Asia/Ho_Chi_Minh');
@@ -146,7 +154,7 @@ class DK_QLTruyen extends Controller
        }
    }
 
-   public function layTruyenTheoMa($content=null)
+    public function layTruyenTheoMa($content=null)
    {
        $results =[];
        $truyens = truyen::all();
@@ -158,7 +166,7 @@ class DK_QLTruyen extends Controller
        return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Mã ','conten'=>$content]);
    }
 
-   public function layTruyenTheoTen($content=null)
+    public function layTruyenTheoTen($content=null)
    {
        $pattern = '/[a-zA-Z]*';
        $tokens = explode(' ',$content);
@@ -177,7 +185,7 @@ class DK_QLTruyen extends Controller
        return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Truyện','content'=>$content]);
    }
 
-   public function layTruyenTheoTheLoai($content=null)
+    public function layTruyenTheoTheLoai($content=null)
    {
        $pattern = '/[a-zA-Z]*';
        $tokens = explode(' ',$content);
@@ -199,7 +207,7 @@ class DK_QLTruyen extends Controller
        return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Thể loại','content'=>$content]);
    }
 
-   public function layTruyenTheoNhom($content=null)
+    public function layTruyenTheoNhom($content=null)
    {
        $pattern = '/[a-zA-Z]*';
        $tokens = explode(' ',$content);
@@ -218,13 +226,13 @@ class DK_QLTruyen extends Controller
        return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Nhóm','content'=>$content]);
    }
 
-   public function layTatCaTruyen()
+    public function layTatCaTruyen()
    {
 
        return redirect()->route('trangchu');
    }
 
-   public function timTruyenCuaNhom($findvalue=null)
+    public function timTruyenCuaNhom($findvalue=null)
    {
      if ($findvalue) {
         $pattern = '/[a-zA-Z]*';
@@ -263,7 +271,8 @@ class DK_QLTruyen extends Controller
         }
         return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Năm','content'=>$content]);
     }
-   public function docTruyen($idTruyen,$idChuong)
+
+    public function docTruyen($idTruyen,$idChuong)
    {
        $chuong = chuongtruyen::find($idChuong);
        $truyen = truyen::find($idTruyen);
@@ -277,20 +286,19 @@ class DK_QLTruyen extends Controller
    	
    }
 
-
-   public function chiaSe($id=null)
+    public function chiaSe($id=null)
    {
    	
    }
 
-   public function xoaTruyenYeuThich($id=null){
+    public function xoaTruyenYeuThich($id=null){
 
         $user = Auth::guard('thanhvien')->user();
        $tv_truyen = thanhvien_truyenyeuthich::where([['maTruyen', $id],['maTK',$user->maTK]])->delete();
         return redirect()->route('dstruyenyeuthich');
    }
 
-   public function themBinhLuan(Request $request, $maTruyen, $maChuong, $maTK)
+    public function themBinhLuan(Request $request, $maTruyen, $maChuong, $maTK)
    {
 
     $chuong = chuongtruyen::find($maChuong);
@@ -372,6 +380,17 @@ class DK_QLTruyen extends Controller
         return view('tvNhom.ThemTruyen',['theloais'=>$theloais]);
     }
 
+    public function getsuaChuongTruyen($id){
+
+       $chuong = chuongtruyen::find($id);
+       $truyen = truyen::find($chuong->maTruyen);
+
+       if($truyen->maNhom == Auth::guard('thanvien')->user()->maNhom)
+           return view('tvNhom.SuaChapTruyen',['chuong'=>$chuong]);
+       else
+           return redirect()->route('chitiettruyennhom',['truyen'=>$truyen]);
+
+    }
     public function themTruyenMoi(Request $request){
 
         $this->validate($request,[
@@ -422,6 +441,10 @@ class DK_QLTruyen extends Controller
         }
         return redirect()->route('quanlytruyen');
 
+
+    }
+
+    public function getchinhSuaTruyen($id){
 
     }
 
