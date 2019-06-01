@@ -51,6 +51,13 @@
 	Route::post('admin', 'DK_QLTaiKhoan@dangNhapAdmin')->name('dangnhapadmin');
 
 
+
+Route::get('dangxuat_admin', 'DK_QLTaiKhoan@dangxuatAdmin')->name('dangxuat_admin');
+
+
+
+
+
     // xu ly dang xuat
     Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
 
@@ -195,14 +202,11 @@ Route::group(['prefix'=>'quanlytaikhoan'], function(){
 Route::get('quanlyTK', 'pagescontroller@index_qltk')->name('index_qltk');
 
 //tra cuu tai khoan
-
 Route::get('quanlyTK/tracuu', 'taikhoanController@tracuu')->name('tracuuTK');
 
 //hien thi thong tin tai khoan
 Route::post('quanlyTK/hienthi','taikhoanController@hienthi')->name('hienthi');
 
-
-Route::get('quanlyTK/suaTK/{ten}', 'quanlyTK@suaTK')->name('suaTK');
 
 //tim TK de xoa
 Route::get('quanlyTK/tim_xoaTK', 'taikhoanController@find')->name('tim_xoaTK');
@@ -217,9 +221,12 @@ Route::get('quanlyTK/da_xoa/{id}', 'taikhoanController@da_xoa')->name('da_xoa');
 //thong tin ca nhan
 Route::get('quanlyTK/ttcanhan', 'taikhoanController@ttcanhan')->name('admin_tk');
 
+//sua tk ca nhan
+Route::get('quanlyTK/suaTK/{ten}', function(){
+	return view('quanlyTK.suaTK');
+})->name('suaTK');
 
-
-
+Route::post('quanlyTK/suaTK_admin', 'DK_QLTaiKhoan@suaTK_admin')->name('suaTK_admin');
 
 //giao dien main cua quan ly nhom
 Route::get('quanlyTK/nhom', 'nhomController@index')->name('nhom');

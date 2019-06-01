@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9a9f30-d6a4-4c9d-8f72-6cae53174d18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/images/ảnh troll.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_04_02_thanhvien.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_04_02_thanhvien.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_18_150008_admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_18_150008_admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/avatar/test.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/taikhoanController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/taikhoanController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/baocao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/baocao.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/seeds/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_qlnd.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_qlnd.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_qltk.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_qltk.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/suaTK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/suaTK.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xemTK.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xemTK.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/quanlyTK/xemTKCN.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/quanlyTK/xemTKCN.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -25,9 +29,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="154" column="32" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
+            <state relative-caret-position="418">
+              <caret line="159" column="6" selection-start-line="159" selection-start-column="6" selection-end-line="159" selection-end-column="6" />
               <folding>
+                <element signature="e#1478#5024#0#HTML" />
                 <element signature="e#3352#3905#0#HTML" />
               </folding>
             </state>
@@ -479,12 +484,12 @@
       <workItem from="1558569447712" duration="26073000" />
       <workItem from="1559013401318" duration="4297000" />
       <workItem from="1559322822358" duration="187000" />
-      <workItem from="1559366293763" duration="2130000" />
+      <workItem from="1559366293763" duration="2454000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="389338000" />
+    <option name="totallyTimeSpent" value="389662000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
@@ -827,9 +832,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="154" column="32" selection-start-line="154" selection-start-column="32" selection-end-line="154" selection-end-column="32" />
+        <state relative-caret-position="418">
+          <caret line="159" column="6" selection-start-line="159" selection-start-column="6" selection-end-line="159" selection-end-column="6" />
           <folding>
+            <element signature="e#1478#5024#0#HTML" />
             <element signature="e#3352#3905#0#HTML" />
           </folding>
         </state>

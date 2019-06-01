@@ -1,15 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-   
 
-use App\truyen;
+use Illuminate\Http\Request;
 use App\chuongtruyen;
 use App\baocao;
 use App\thanhvien;
 use Carbon\Carbon;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Http\Request;
+
 
 class DK_QLBaoCao extends Controller
 {
@@ -63,7 +62,6 @@ class DK_QLBaoCao extends Controller
         return redirect()->route('doctruyen',  ['idTruyen' =>$maTruyen, 'idChuong' =>$maChuong]);
     }
 
-
     //tim bao cao
 
     public function tracuuBC()
@@ -84,6 +82,9 @@ class DK_QLBaoCao extends Controller
         else
             return view('qlnd_fail');
 
+    }
+
+    
 
     //chi tiet bao cao
     public function xemBC($id)
@@ -100,8 +101,7 @@ class DK_QLBaoCao extends Controller
         return('da_xoa');
     }
 
-
-
-
-
 }
+
+
+
