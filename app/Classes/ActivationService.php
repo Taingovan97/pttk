@@ -1,6 +1,7 @@
 <?php
 namespace App\Classes;
 
+use App\thanhvien;
 use Mail;
 use App\UserActivation;
 use App\Mail\UserActivationEmail;
@@ -21,8 +22,8 @@ class ActivationService
         if ($user->activated || !$this->shouldSend($user)) return;
         $token = $this->userActivation->createActivation($user);
         $activation_link = route('user.activate', $token);
-        $taikhoan = ['name' =>$user->name, 'activation_link' =>@$activation_link];
-        var_dump($taikhoan);
+        $taikhoan = ['name' =>$user->name, 'activation_link' =>$activation_link];
+//        var_dump($taikhoan);
         $mailable = new UserActivationEmail($taikhoan);
         Mail::to($user->email)->send($mailable);
     }
@@ -31,7 +32,7 @@ class ActivationService
     {
         $activation = $this->userActivation->getActivationByToken($token);
         if ($activation === null) return null;
-        $user = taikhoan::find($activation->maTK);
+        $user = thanhvien::find($activation->maTK);
         $user->active = true;
         $user->save();
         $this->userActivation->deleteActivation($token);

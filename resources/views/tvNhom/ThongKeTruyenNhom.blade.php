@@ -38,10 +38,10 @@
         <td>{{$truyen->tenTruyen}}</td>
         <td>{{$truyen->ngayDang}}</td>
         <td>
-            @if ($truyen->ChuongMoiNhat()==0)
+            @if (empty($truyen->ChuongMoiNhat()->toArray()))
                 Chưa có chap
             @else
-                {{$truyen->ChuongMoiNhat()['tenChuong']}}
+                {{$truyen->ChuongMoiNhat()[0]->tenChuong}}
             @endif
         </td>
         <td>{{$truyen->luotXem}}</td>

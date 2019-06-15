@@ -7,17 +7,21 @@ use App\trangtruyen;
 use App\truyen;
 use App\chuongtruyen;
 use App\theloai;
+use App\nhom;
 use App\log_read;
 use App\truyen_theloai;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
 use Carbon\Carbon;
-
+use Illuminate\Pagination\Paginator;
+use Illuminate\Pagination\LengthAwarePaginator;
 class DK_QLTruyen extends Controller
 {
    function chiTietTruyen($id){
        $truyen = truyen::find($id);
-       $thongke = $this->thongke('ngay');
+       if ($truyen->duyet == True) {
+         $thongke = $this->thongke('ngay');
        $chartTruyens = [];
        foreach ($thongke as $maTruyen=>$luotxem)
        {
@@ -26,6 +30,9 @@ class DK_QLTruyen extends Controller
        }
 
        return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$chartTruyens]);
+       }
+       return redirect()->route('trangchu');
+       
    }
 
    function chiTietTruyenNhom($id){
@@ -36,6 +43,8 @@ class DK_QLTruyen extends Controller
            return redirect()->route('chitiettruyen',['id'=>$id]);
 
    }
+
+
     public static function thongke($option='ngay')
     {
         $timenow = Carbon::now('Asia/Ho_Chi_Minh');
@@ -134,7 +143,7 @@ class DK_QLTruyen extends Controller
 
     public function timKiemTruyen($option, $content=null)
    {
-       if($content)
+       if($option)
        {
            switch ($option)
            {
@@ -146,6 +155,7 @@ class DK_QLTruyen extends Controller
 
                case 'theloai':
                   return $this->layTruyenTheoTheLoai($content);
+
                default:
                    return $this->layTatCaTruyen();
            }
@@ -163,8 +173,7 @@ class DK_QLTruyen extends Controller
            if(preg_match($content, $tr->maTruyen))
                array_push($results,$tr);
        }
-       $theloai =theloai::all();
-       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Mã ','conten'=>$content,'theloai'=>$theloai]);
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Mã ','conten'=>$content]);
    }
 
     public function layTruyenTheoTen($content=null)
@@ -183,8 +192,13 @@ class DK_QLTruyen extends Controller
            if(preg_match($pattern, $tr->tenTruyen))
                array_push($results,$tr);
        }
-       $theloai =theloai::all();
-       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Truyện','content'=>$content,'theloai'=>$theloai]);
+        $paginate = 10;
+       $page = Input::get('page', 1);
+       $of = $page*$paginate-$paginate;
+       $curesults = array_slice($results, $of, $paginate, true);
+       $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+       $pagi->setpath('/theloai/');
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$pagi,'option'=>'Truyện','content'=>$content]);
    }
 
     public function layTruyenTheoTheLoai($content=null)
@@ -204,10 +218,21 @@ class DK_QLTruyen extends Controller
            foreach ($tr_tl as $tl)
 
                if(preg_match($pattern, $tl->getTheLoai->tenTL))
-                   array_push($results,$tr);
+                   if(!in_array($tr, $results))
+                    array_push($results,$tr);
        }
-       $theloai =theloai::all();
-       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Thể loại','content'=>$content,'theloai'=>$theloai]);
+       $paginate = 10;
+       $page = Input::get('page', 1);
+       $of = $page*$paginate-$paginate;
+       $curesults = array_slice($results, $of, $paginate, true);
+       $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+       $pagi->setpath('/theloai/');
+       $theloais = theloai::all();
+       $tentl = [];
+       foreach ($theloais as $tl) {
+         array_push($tentl, $tl->tenTL);
+       }
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$pagi,'option'=>'Thể loại','content'=>$content,'select'=>$tentl]);
    }
 
     public function layTruyenTheoNhom($content=null)
@@ -226,8 +251,20 @@ class DK_QLTruyen extends Controller
            if(preg_match($pattern, $tr->nhom->tenNhom))
                array_push($results,$tr);
        }
-       $theloai =theloai::all();
-       return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Nhóm','content'=>$content,'theloai'=>$theloai]);
+
+              $paginate = 10;
+       $page = Input::get('page', 1);
+       $of = $page*$paginate-$paginate;
+       $curesults = array_slice($results, $of, $paginate, true);
+       $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+       $pagi->setpath('/theloai/');
+       $nhoms = nhom::all();
+       $tennhoms = [];
+
+       foreach ($nhoms as $nhom) {
+         array_push($tennhoms, $nhom->tenNhom);
+       }
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$pagi,'option'=>'Nhóm','content'=>$content,'select'=>$tennhoms]);
    }
 
     public function layTatCaTruyen()
@@ -258,6 +295,13 @@ class DK_QLTruyen extends Controller
      }else {
        $dstruyen = truyen::where('maNhom', Auth::guard('thanhvien')->user()->maNhom)->paginate(4);
        $sltruyen = $dstruyen->count();
+
+        $paginate = 10;
+       $page = Input::get('page', 1);
+       $of = $page*$paginate-$paginate;
+       $curesults = array_slice($results, $of, $paginate, true);
+       $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+       $pagi->setpath('/theloai/');
        return view('tvNhom.QuanLyTruyen',['dstruyen'=>$dstruyen,'sltruyen'=>$sltruyen]);
      }
    }
@@ -273,14 +317,21 @@ class DK_QLTruyen extends Controller
                 array_push($results, $truyen);
             }
         }
-        $theloai =theloai::all();
-        return view('Khach.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Năm','content'=>$content]);
+       $paginate = 10;
+       $page = Input::get('page', 1);
+       $of = $page*$paginate-$paginate;
+       $curesults = array_slice($results, $of, $paginate, true);
+       $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+       $pagi->setpath('/theloai/');
+       $nams = range(2010, 2030);
+        return view('Khach.TimKiemTruyen',['dstruyen'=>$pagi,'option'=>'Năm','content'=>$content,'select' =>$nams]);
     }
 
     public function docTruyen($idTruyen,$idChuong)
    {
-       $chuong = chuongtruyen::find($idChuong);
        $truyen = truyen::find($idTruyen);
+       $chuong = chuongtruyen::find($idChuong);
+       if ($chuong && $truyen) {
        $truyen->capNhatLuotXem();
        $log = new log_read;
        $log->maTruyen = $truyen->maTruyen;
@@ -288,6 +339,10 @@ class DK_QLTruyen extends Controller
        $log->save();
 
        return  view('Khach.DocTruyen',['truyen'=>$truyen,'chuongxem'=>$chuong]);
+       }
+
+       return redirect()->route('trangchu');
+       
    	
    }
 
@@ -334,76 +389,12 @@ class DK_QLTruyen extends Controller
       $data->save();
       return view('qlnd_thanhcong');
    }
-   //
-    public function getthemChuongMoi($maTruyen){
-        $truyen = truyen::find($maTruyen);
-        return view('tvNhom.ThemChuongMoi',['truyen'=>$truyen]);
-    }
-
-    public function themChuongMoi(Request $request, $maTruyen){
-        $this->validate($request,[
-            'tenchuong'=>'required',
-            'linktrang' => 'required',
-
-
-        ],[
-            'tenchuong.required' =>'Bạn chưa nhập tên truyện',
-            'linktrang.required' => 'Bạn chưa chọn thể loại',
-
-        ]);
-        $chuongs = chuongtruyen::where('maTruyen', $maTruyen);
-
-        foreach ($chuongs as $chuong)
-        {
-            if($chuong->tenChuong == $request->tenchuong)
-            {
-                return redirect()->route('formthemchuongmoi',['maTruyen'=>$maTruyen])->with('thongbao', "<script> alert('Chương này đã được đăng')</script>");
-            }
-        }
-
-        $chuong = new chuongtruyen;
-        $chuong->tenChuong= $request->tenchuong;
-        $chuong->maTruyen = $maTruyen;
-        $chuong->ngayDang = Carbon::now('Asia/Ho_Chi_Minh');
-        if ($request->hasFile('trang')) {
-            $files = $request->trang;
-            $truyen->linkAnh = 'avatar/'.$file->getClientOriginalName();
-            $file->move('images', 'test.png');
-        }
-        $chuong->save();
-        $trangs = explode(';',$request->linktrang);
-        foreach ($trangs as $trang)
-        {
-//            $chuong = chuongtruyen::where('tenChuong', $request->tenchuong)->where('maTruyen', $maTruyen)->get()->toArray()[0];
-            $trangtruyen = new trangtruyen;
-            $trangtruyen->link = $trang;
-            $trangtruyen->maChuong = $chuong->maChuong;
-            $trangtruyen->save();
-            echo $trang;
-            echo '<br>';
-
-        }
-
-        return redirect()->route('formthemchuongmoi',['maTruyen'=>$maTruyen])->with('thongbao', "<script> alert('thêm chuong mới thành công')</script>");
-
-    }
 
     public function getThemTruyenMoi(){
         $theloais = theloai::all();
         return view('tvNhom.ThemTruyen',['theloais'=>$theloais]);
     }
 
-    public function getsuaChuongTruyen($id){
-
-       $chuong = chuongtruyen::find($id);
-       $truyen = truyen::find($chuong->maTruyen);
-
-       if($truyen->maNhom == Auth::guard('thanvien')->user()->maNhom)
-           return view('tvNhom.SuaChapTruyen',['chuong'=>$chuong]);
-       else
-           return redirect()->route('chitiettruyennhom',['truyen'=>$truyen]);
-
-    }
     public function themTruyenMoi(Request $request){
 
         $this->validate($request,[
@@ -471,11 +462,165 @@ class DK_QLTruyen extends Controller
         return redirect()->route('chitiettruyen',['id'=>$id]);
     }
 
+    public function chinhSuaTruyen($id){
+              $this->validate($request,[
+            'tentruyen'=>'required',
+            'theloai' => 'required',
+            'tacgia' => 'required',
+
+        ],
+        [
+            'tentruyen.required' =>'Bạn chưa nhập tên truyện',
+            'theloai.required' => 'Bạn chưa chọn thể loại',
+            'tacgia.required' =>'ban chua nhap tac gia'
+
+        ]);
+        $truyens = Auth::guard('thanhvien')->user()->getNhom->getTruyen;
+        foreach ($truyens as $truyenn)
+        {
+            if($truyenn->tenTruyen == $request->tentruyen and $truyenn->maTruyen != $id)
+            {
+                return redirect()->route('formchinhsuatruyen',['id'=>$truyen->maTruyen])->with('thongbao','Nhóm đã đăng truyện này!');
+            }
+        }
+
+         $truyen = truyen::find($id);
+         $truyen->tenTruyen= $request->tentruyen;
+        $truyen->tacGia = $request->tacgia;
+         if($request->gioithieu)
+            $truyen->gioiThieu = $request->gioithieu;
+
+        if ($request->hasFile('avatar')) {
+            $file = $request->avatar;
+            $truyen->linkAnh = 'cover/'.strval($truyen->maTruyen).'.png';
+            $file->move('cover', strval($truyen->maTruyen).'.png');
+        }
+
+        foreach ($truyen->getTheLoai as $tr_tl) {
+         $tr_tl->delete();
+        }
+
+        foreach ($request->theloai as $tl)
+        {
+            $theloai = theloai::where('tenTL', $tl)->get()->toArray()[0];
+            $t_tl = new truyen_theloai;
+            $t_tl->maTL = $theloai['maTL'];
+            $t_tl->maTruyen = $truyen->maTruyen;
+            $t_tl->save();
+
+        }
+
+        $truyen->save();
+
+        return redirect()->route('quanlytruyen');
+
+
+    }
+
+    public function getthemChuongMoi($maTruyen){
+        $truyen = truyen::find($maTruyen);
+        return view('tvNhom.ThemChuongMoi',['truyen'=>$truyen]);
+    }
+
+    public function themChuongMoi(Request $request, $maTruyen){
+        $this->validate($request,[
+            'tenchuong'=>'required',
+            'linktrang' => 'required',
+
+
+        ],[
+            'tenchuong.required' =>'Bạn chưa nhập tên chương',
+            'linktrang.required' => 'Bạn cần có link trang cho truyện',
+
+        ]);
+        $chuongs = chuongtruyen::where('maChuong', $maTruyen);
+
+        foreach ($chuongs as $chuong)
+        {
+            if($chuong->tenChuong == $request->tenchuong)
+            {
+                return redirect()->route('formthemchuongmoi',['maTruyen'=>$maTruyen])->with('thongbao', "<script> alert('Chương này đã được đăng')</script>");
+            }
+        }
+
+        $chuong = new chuongtruyen;
+        $chuong->tenChuong= $request->tenchuong;
+        $chuong->maTruyen = $maTruyen;
+        $chuong->ngayDang = Carbon::now('Asia/Ho_Chi_Minh');
+        $chuong->save();
+        $trangs = explode(';',$request->linktrang);
+        foreach ($trangs as $trang)
+        {
+//            $chuong = chuongtruyen::where('tenChuong', $request->tenchuong)->where('maTruyen', $maTruyen)->get()->toArray()[0];
+            $trangtruyen = new trangtruyen;
+            $trangtruyen->link = $trang;
+            $trangtruyen->maChuong = $chuong->maChuong;
+            $trangtruyen->save();
+
+        }
+
+        return redirect()->route('formthemchuongmoi',['maTruyen'=>$maTruyen])->with('thongbao', "<script> alert('thêm chuong mới thành công')</script>");
+
+    }
+
+    public function getsuaChuongTruyen($id){
+      
+           $chuong = chuongtruyen::find($id);
+           $truyen = truyen::find($chuong->maTruyen);
+           $stt = 1;
+           $chuongs = chuongtruyen::where('maTruyen',$truyen->maTruyen)->orderBy('maChuong')->get();
+           foreach ($chuongs as $c){
+              if($c->maChuong == $chuong->maChuong)
+                break;
+              $stt +=1;
+           }
+       if($truyen->maNhom == Auth::guard('thanhvien')->user()->maNhom)
+           return view('tvNhom.SuaChapTruyen',['truyen'=>$truyen,'chuong'=>$chuong,'stt'=>$stt]);
+       else
+           return redirect()->route('trangchu');
+
+    }
+
+    public function suaChuongTruyen(Request $request, $id){
+    $this->validate($request,[
+            'tenchuong'=>'required',
+            'linktrang' => 'required',
+
+
+        ],[
+            'tenchuong.required' =>'Bạn chưa nhập tên chương',
+            'linktrang.required' => 'Bạn cần có link cho trang chương truyện',
+
+        ]);
+        $chuong = chuongtruyen::find($id);
+        $trangs = trangtruyen::where('maChuong',$id)->get();
+        foreach ($trangs as $trang) {
+          $trang->delete();
+        };
+
+        $chuong->tenChuong = $request->tenchuong;
+        $chuong->ngayDang = Carbon::now('Asia/Ho_Chi_Minh');
+        $chuong->save();
+        $linktrangs = explode(';',$request->linktrang);
+        foreach ($linktrangs as $trang)
+        {
+            $trangtruyen = new trangtruyen;
+            $trangtruyen->link = $trang;
+            $trangtruyen->maChuong = $chuong->maChuong;
+            $trangtruyen->save();
+
+        }
+
+        return redirect()->route('formsuachuongtruyen',['id'=>$chuong->maChuong])->with('thongbao', "<script> alert('Sửa chương thành công')</script>");
+
+    }
+
     public function thongKeTruyen(){
        $nhom = Auth::guard('thanhvien')->user()->getNhom;
        $dsTruyen = truyen::where('maNhom', $nhom->maNhom)->orderBy('ngayDang')->get();
        return view('tvNhom.ThongKeTruyenNhom',['dsTruyen'=>$dsTruyen]);
     }
+
    //xoa truyen
    public function xoatruyen()
    {

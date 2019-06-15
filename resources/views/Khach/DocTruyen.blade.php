@@ -22,9 +22,9 @@
 		       <button type="submit"></button>
 		   </div>
              <select name="select" class="select">
-	            <option selected value><a href="#">Tìm theo tên truyện</a></option>
-	            <option value="tác giả"><a href="#">Tìm theo tên tác giả</a></option>
-	            <option value="thể loại"><a href="#">Tìm theo thể loại truyện</a></option>
+	            <option selected value="tentruyen"><a href="#">Tìm theo tên truyện</a></option>
+	            <option value="tennhom"><a href="#">Tìm theo tên nhóm</a></option>
+	            <option value="theloai"><a href="#">Tìm theo thể loại truyện</a></option>
              </select>
                  @if (Auth::guard('thanhvien')->user() or Auth::guard('admin')->user())
                 <div class="dropdown">
@@ -32,7 +32,7 @@
                         <nav class="dropdown-list">
                             <a href="{{route('thongtintaikhoan')}}" class="dropdown-link">Thông tin tài khoàn</a>
                             <br>
-                            <a href="" class="dropdown-link">Nhóm</a>
+                            <a href="{{route('trangchunhom')}}" class="dropdown-link">Nhóm</a>
                             <br>
                             <a class="dropdown-item item" href="{{route('dexuat')}}">Đề xuất</a>
                             <br>
@@ -47,11 +47,11 @@
                 @endif
 
         </header>
-        <div id="menu_left">
-		  <ul>
-            <li><a class="active" href="#home">Truyện mới</a></li>
-            <li><a href="#">Thể loại</a></li>
-            <li><a href="#">Năm</a></li>
+        <div id="menu_left" style="font-weight: bold">
+		  <ul style="width: 100%">
+            <li style="width: 33%"><a class="active" href="{{route('truyenmoi')}}" >Truyện mới</a></li>
+            <li style="width: 33%"><a href="{{route('theloai')}}">Thể loại</a></li>
+            <li style="width: 33%"><a href="{{route('nam')}}">Năm</a></li>
           </ul>
         </div>
         

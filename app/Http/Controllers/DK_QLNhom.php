@@ -68,6 +68,9 @@ class DK_QLNhom extends Controller
             return redirect()->route('trangchunhom');
     }
 
+    public function postSuaThongTinNhom(Request $request){
+      
+    }
     public function xoaThanhVienNhom($maTK){
         DB::table('thanhvien')
             ->where('maTK',$maTK)

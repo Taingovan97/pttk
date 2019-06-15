@@ -30,10 +30,8 @@ class truyen extends Model
     }
     public function chuongMoiNhat()
     {
-        $chuong = chuongtruyen::where('maTruyen', $this->maTruyen)->orderBy('maChuong','desc')->take(1)->get()->toArray();
-        if(empty($chuong))
-            return 0;
-        return $chuong[0];
+        $chuong = chuongtruyen::where('maTruyen', $this->maTruyen)->orderBy('maChuong','desc')->take(1)->get();
+        return $chuong;
     }
 
 
@@ -57,6 +55,23 @@ class truyen extends Model
         $date = new Carbon($this->ngayDang);
         $date = $date->year;
         return $date;
+    }
+
+    public function trangThaiTruyen(){
+        switch ($this->trangThai) {
+            case '0':
+                return 'Đang thưc hiện';
+                break;
+            case '1':
+                return 'Tạm dừng';
+                break;
+            case '2':
+                return 'Hoàn thành';
+                break;
+            default:
+                return 'Đang thưc hiện';
+                break;
+        }
     }
 
 

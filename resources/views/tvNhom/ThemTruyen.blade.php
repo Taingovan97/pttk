@@ -17,13 +17,26 @@ Thêm Truyện mới
         </div>
 
     </div>
-    <h6>Thêm chương truyện</h6>
+    <h6>Thêm truyện</h6>
     <div class="row root-view">
 
         <div class="col-md-2">
 
         </div>
         <div class="col-md-10 view-comics" style="margin-top: 30px;">
+            @if(count($errors)>0)
+                <div class="alert alert-danger">
+                    @foreach($errors->all() as $err)
+                        {{$err}}<br>
+                    @endforeach
+                </div>
+            @endif
+            @if(session('thongbao'))
+                <div class="alert alert-danger">
+                    {{session('thongbao')}}
+                </div>
+            @endif
+
             <form action="{{route('postthemtruyenmoi')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
                 <table style="width:80%">
@@ -93,20 +106,7 @@ Thêm Truyện mới
 
 
         </div>
-        <div class="col-md-7">
-            @if(count($errors)>0)
-                <div class="alert alert-danger">
-                    @foreach($errors->all() as $err)
-                        {{$err}}<br>
-                    @endforeach
-                </div>
-            @endif
-            @if(session('thongbao'))
-                <div class="alert alert-danger">
-                    {{session('thongbao')}}
-                </div>
-            @endif
-        </div>
+
 
 
     </div>

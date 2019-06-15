@@ -5,9 +5,9 @@
 </head>
 <body>
 <p>
-    Chào mừng  đã đăng ký thành viên tại truyenCAM.com. Bạn hãy click vào đường link sau đây để hoàn tất việc đăng ký.
+    Chào mừng <b>{{$user['name']}}</b> đã đăng ký thành viên tại truyenO.com. Bạn hãy click vào đường link sau đây để hoàn tất việc đăng ký.<br>
     </br>
-{{--    <a href="{{ $user->activation_link }}">{{ $user->activation_link }}</a>--}}
+    <a href="{{ $user['activation_link']}}">{{ $user['activation_link'] }}</a>
 {{--    {{ $user->name }}--}}
 </p>
 </body>

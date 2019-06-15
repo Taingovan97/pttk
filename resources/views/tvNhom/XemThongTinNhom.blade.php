@@ -27,7 +27,7 @@
             <div class="col-md-10 view-comics" style="margin-top: 30px;">
                 <div class="row">
 
-                    <img src="{{asset($nhom->tenNhom)}}" onerror="this.src='{{asset('images/x.png')}}'">
+                    <img src="{{asset($nhom->linkAnh)}}" onerror="this.src='{{asset('images/x.png')}}'">
                     <div class="col-md-9">
                         <h6>{{$nhom->tenNhom}}</h6>
                         <ul>

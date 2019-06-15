@@ -68,16 +68,8 @@
                                         {{$tr_theloai->getTheLoai->tenTL}},
                                     @endforeach
                                 </li>
-                                <li>Tình trạng:
-                                @if ($truyen->trangThai ==0)
-                                        Đang thực hiện
-                                @elseif($truyen->trangThai ==1)
-                                Tạm dừng
-                                @else
-                                Kết thúc
-                                @endif
-                                </li>
-                                <li>Sơ lược nội dung truyện: {{$truyen->gioiThieu}}</li>
+                                <li>Tình trạng: {{$truyen->trangThaiTruyen()}}</li>
+                                <li>Sơ lược nội dung truyện: {{substr($truyen->gioiThieu,0,25)}}</li>
                             </ul>
                             <div class="row" style="margin-top: 20px;">
                                 <button onclick="window.location='{{route("formthemchuongmoi",['maTruyen'=>$truyen->maTruyen])}}'">Thêm chương truyện</button>

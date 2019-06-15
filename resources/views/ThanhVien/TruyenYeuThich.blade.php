@@ -10,7 +10,7 @@ Truyện tranh online
 
 <div class="row root-view">
     <ul>
-        @if(empty(Auth::guard('thanhvien')->user()->truyenYeuThich))
+        @if(!empty(Auth::guard('thanhvien')->user()->truyenYeuThich))
 
         @foreach(Auth::guard('thanhvien')->user()->truyenYeuThich as $tv_tr)
         <li>

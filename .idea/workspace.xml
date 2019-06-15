@@ -2,26 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9a9f30-d6a4-4c9d-8f72-6cae53174d18" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/public/cover_nhom/x.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/CapLaiMatKhau.blade.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/resources/views/auth/confirmPassword.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Classes/ActivationService.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Classes/ActivationService.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/DK_Trang.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/DK_Trang.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/truyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/truyen.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/config/mail.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_04_03_nhom.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_04_03_nhom.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/migrations/2019_05_04_05_truyen.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_05_04_05_truyen.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/TV_suatttruyen.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/TV_suatttruyen.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/cover/2.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/cover/2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/covers/x.png" beforeDir="false" afterPath="$PROJECT_DIR$/public/cover/x.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/TV_qltruyennhom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/TV_qltruyennhom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/TV_suattnhom.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/TV_suattnhom.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/new.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/new.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Khach/TimKiemTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/TimKiemTruyen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Khach/user-activation.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/user-activation.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/ThanhVien/ThongTinCaNhan.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ThanhVien/ThongTinCaNhan.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/ThanhVien/TruyenYeuThich.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/ThanhVien/TruyenYeuThich.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/master_qlnd.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/master_qlnd.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/DangNhap.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/DangNhap.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/partials/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/header.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/partials/header_nhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/partials/header_nhom.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/SuaChapTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/SuaChapTruyen.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/SuaThongTinNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/SuaThongTinNhom.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/SuaThongTinTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/SuaThongTinTruyen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/ThemThanhVien.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/ThemThanhVien.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/ThemChuongMoi.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/ThemChuongMoi.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/TrangChu_nhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/TrangChu_nhom.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/ThongKeTruyenNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/ThongKeTruyenNhom.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/XemChiTietTruyenNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/XemChiTietTruyenNhom.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/dsThanhvien.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/dsThanhvien.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,82 +55,84 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/routes/web.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/partials/header.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="207">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
+            <state relative-caret-position="332">
+              <caret line="58" column="78" selection-start-line="58" selection-start-column="78" selection-end-line="58" selection-end-column="78" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/partials/header_nhom.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="238">
+              <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/Khach/TimKiemTruyen.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="391">
+              <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
               <folding>
-                <element signature="e#9#391#0#PHP" expanded="true" />
-                <element signature="e#394#409#0#PHP" expanded="true" />
+                <element signature="e#698#765#0#HTML" expanded="true" />
+                <marker date="1560618568701" expanded="true" signature="3681:3704" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_Trang.php">
+        <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/ThongKeTruyenNhom.blade.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="33" column="110" lean-forward="true" selection-start-line="33" selection-start-column="110" selection-end-line="33" selection-end-column="110" />
-              <folding>
-                <element signature="e#39#75#0#PHP" expanded="true" />
-              </folding>
+            <state relative-caret-position="281">
+              <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/XemChiTietTruyenNhom.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="399">
-              <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="43" column="26" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="43" selection-end-column="26" />
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/public/cover_nhom/x.png">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
     </leaf>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>bu</find>
-      <find>main</find>
-      <find>dsDeXuat</find>
-      <find>pag</find>
-      <find>carbo</find>
-      <find>with</find>
-      <find>carbon</find>
-      <find>butt</find>
-      <find>guide</find>
-      <find>dexuat</find>
-      <find>a</find>
-      <find>li</find>
-      <find>TV_qltruyennhom</find>
-      <find>tim</find>
-      <find>laytruye</find>
-      <find>sear</find>
-      <find>nam</find>
-      <find>layTruyenTheoNhom</find>
-      <find>thống</find>
-      <find>chiTietTruyen</find>
-      <find>form</find>
-      <find>count</find>
-      <find>pos</find>
-      <find>route)</find>
-      <find>ro</find>
-      <find>get</find>
-      <find>TABLE</find>
       <find>like</find>
       <find>la</find>
       <find>route</find>
+      <find>container</find>
+      <find>body</find>
+      <find>20</find>
+      <find>15</find>
+      <find>row</find>
+      <find>100%</find>
+      <find>height</find>
+      <find>xxx</find>
+      <find>doc li</find>
+      <find>li</find>
+      <find>cho m</find>
+      <find>truyenyeuthich</find>
+      <find>img</find>
+      <find>button</find>
+      <find>else</find>
+      <find>ChuongMoiNhat</find>
+      <find>chitiet</find>
+      <find>Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')-&gt;name('taoformdangky')</find>
+      <find>taoformdangky</find>
+      <find>ducphamthanh</find>
+      <find>doima</find>
+      <find>matkhau</find>
+      <find>xacth</find>
+      <find>link</find>
+      <find>time</find>
+      <find>auth.</find>
+      <find>chuongmoi</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -135,11 +156,11 @@
     <setting file="file://$PROJECT_DIR$/resources/views/tvNhom/dsThanhvien.blade.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/UserActivation.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
+    <setting file="file://$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/database/migrations/2019_05_04_05_truyen.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" root0="SKIP_INSPECTION" root1="FORCE_HIGHLIGHTING" root2="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/database/migrations/2019_05_04_04_dexuat.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
-    <setting file="file://$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" root2="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/database/migrations/2019_05_04_03_nhom.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/Classes/ActivationService.php" root0="FORCE_HIGHLIGHTING" root1="SKIP_INSPECTION" />
     <setting file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" root0="SKIP_INSPECTION" root1="SKIP_INSPECTION" />
@@ -147,57 +168,57 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/resources/views/ThanhVien/BaoCaoViPham.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/TV_themchuongtruyen.css" />
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/ThemChuongMoi.blade.php" />
-        <option value="$PROJECT_DIR$/../TV_xemchitiettruyen/TV_xemchitiettruyen.html" />
-        <option value="$PROJECT_DIR$/public/css/TV_xemchitiettruyen.css" />
-        <option value="$PROJECT_DIR$/public/css/TV_binhluan.css" />
-        <option value="$PROJECT_DIR$/app/dexuat.php" />
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/QLBaoCao.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/QLDeXuat.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/TV_dexuat.css" />
-        <option value="$PROJECT_DIR$/resources/views/ThanhVien/DeXuat.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/XemDeXuat.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLDeXuat.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/dsDeXuat.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/TimKiemTruyen.blade.php" />
-        <option value="$PROJECT_DIR$/public/css/TV_qltruyennhom.css" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master_nhom.blade.php" />
         <option value="$PROJECT_DIR$/app/truyen.php" />
         <option value="$PROJECT_DIR$/app/log_read.php" />
         <option value="$PROJECT_DIR$/public/css/style.css" />
-        <option value="$PROJECT_DIR$/resources/views/partials/header_nhom.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/partials/chart.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/TimKiemTruyenNhom.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/ThongKeTruyenNhom.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php" />
         <option value="$PROJECT_DIR$/public/TV_xemchitiettruyen.html" />
-        <option value="$PROJECT_DIR$/public/css/TV_xemchitiettruyenNhom.css" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" />
         <option value="$PROJECT_DIR$/resources/views/quanlyTK/suaTK.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/TrangChu_nhom.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/ThemThanhVien.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/dsThanhvien.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" />
         <option value="$PROJECT_DIR$/public/css/TV_suatttruyen.css" />
-        <option value="$PROJECT_DIR$/resources/views/tvNhom/SuaThongTinTruyen.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/ThanhVien/TruyenYeuThich.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_Trang.php" />
         <option value="$PROJECT_DIR$/resources/views/ThanhVien/ThongTinCaNhan.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/ThanhVien/taoNhom.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/ThanhVien/suaTaiKhoanCaNhan.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/partials/header.blade.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
-        <option value="$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/Khach/TimKiemTruyen.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Khach/TranhChu.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_Trang.php" />
+        <option value="$PROJECT_DIR$/resources/views/ThanhVien/TruyenYeuThich.blade.php" />
+        <option value="$PROJECT_DIR$/public/css/TV_xemchitiettruyenNhom.css" />
+        <option value="$PROJECT_DIR$/public/css/TV_qltruyennhom.css" />
+        <option value="$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tvNhom/SuaChapTruyen.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tvNhom/ThemChuongMoi.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/XemChiTietTruyenNhom.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" />
+        <option value="$PROJECT_DIR$/resources/views/tvNhom/SuaThongTinTruyen.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" />
+        <option value="$PROJECT_DIR$/app/Classes/ActivationService.php" />
+        <option value="$PROJECT_DIR$/resources/views/Khach/user-activation.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/confirmPassword.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/CapLaiMatKhau.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/auth/DangNhap.blade.php" />
+        <option value="$PROJECT_DIR$/app/CapMatKhau.php" />
+        <option value="$PROJECT_DIR$/app/Mail/ResetPassowrd.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/header_nhom.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/partials/header.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Khach/TimKiemTruyen.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/tvNhom/ThongKeTruyenNhom.blade.php" />
       </list>
     </option>
   </component>
@@ -288,10 +309,9 @@
     </include_path>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="2513" />
-    <option name="y" value="-23" />
-    <option name="width" value="654" />
-    <option name="height" value="491" />
+    <option name="x" value="949" />
+    <option name="width" value="980" />
+    <option name="height" value="1031" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
@@ -301,6 +321,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -342,19 +363,25 @@
             <path>
               <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
               <item name="pttk" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="Mail" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pttk" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
               <item name="pttk" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="avatar" type="462c0819:PsiDirectoryNode" />
+              <item name="cover" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
               <item name="pttk" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
-              <item name="css" type="462c0819:PsiDirectoryNode" />
+              <item name="cover_nhom" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
@@ -386,28 +413,7 @@
               <item name="pttk" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
               <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pttk" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
               <item name="partials" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pttk" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="quanlyTK" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
-              <item name="pttk" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="views" type="462c0819:PsiDirectoryNode" />
-              <item name="ThanhVien" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
@@ -425,31 +431,30 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/resources/views/Khach" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/public/cover" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="fileTemplates" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\dell\Desktop\pttk\resources\views\Khach" />
-      <recent name="C:\Users\dell\Desktop\pttk\resources\views\tvNhom" />
-      <recent name="C:\Users\dell\Desktop\pttk\public\avatar" />
-      <recent name="C:\Users\dell\Desktop\pttk\public\cover" />
-      <recent name="C:\Users\dell\Desktop\pttk\resources\views\layouts" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\dell\Desktop\pttk\resources\views\partials" />
       <recent name="C:\Users\dell\Desktop\pttk\resources\views\ThanhVien" />
       <recent name="C:\Users\dell\Desktop\pttk\resources\views\auth" />
       <recent name="C:\Users\dell\Desktop\pttk\app\Models" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\dell\Desktop\pttk\public\cover" />
+      <recent name="C:\Users\dell\Desktop\pttk\resources\views\auth" />
+      <recent name="C:\Users\dell\Desktop\pttk\resources\views\Khach" />
+      <recent name="C:\Users\dell\Desktop\pttk\resources\views\tvNhom" />
+      <recent name="C:\Users\dell\Desktop\pttk\public\avatar" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -524,21 +529,22 @@
       <workItem from="1558569447712" duration="26073000" />
       <workItem from="1559013401318" duration="4297000" />
       <workItem from="1559322822358" duration="187000" />
-      <workItem from="1559366293763" duration="18873000" />
+      <workItem from="1559366293763" duration="18933000" />
+      <workItem from="1560527534870" duration="8435000" />
+      <workItem from="1560566683856" duration="34516000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="406081000" />
+    <option name="totallyTimeSpent" value="449092000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="1912" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
       <window_info id="Favorites" order="1" side_tool="true" />
       <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.22163388" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.22635408" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32624114" />
       <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.3285968" />
@@ -557,228 +563,38 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Database" order="3" />
     </layout>
+    <layout-to-restore>
+      <window_info id="npm" order="0" side_tool="true" />
+      <window_info id="Favorites" order="1" side_tool="true" />
+      <window_info id="Structure" order="2" side_tool="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="3" visible="true" weight="0.22635408" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32624114" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.49959514" weight="0.3285968" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.39893618" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.822695" />
+      <window_info anchor="bottom" id="Database Changes" order="9" />
+      <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50040483" side_tool="true" weight="0.3285968" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.3280142" />
+      <window_info anchor="bottom" id="Command Line Tools Console" order="12" weight="0.32978722" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Database" order="3" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="php">
-          <url>file://$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php</url>
-          <line>16</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/header_nhom.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/chart.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="295">
-          <caret line="29" selection-start-line="29" selection-end-line="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/TimKiemTruyenNhom.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret selection-end-line="8" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/TV_xemchitiettruyen.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="24" lean-forward="true" selection-start-line="19" selection-start-column="24" selection-end-line="19" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/ThongKeTruyenNhom.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="850">
-          <caret line="50" selection-start-line="50" selection-end-line="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/TV_qltruyennhom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="22" lean-forward="true" selection-start-line="18" selection-start-column="2" selection-end-line="18" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/TV_xemchitiettruyenNhom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="431">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/avatar/test.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/avatar/no-avatar208.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="21" column="2" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/no-avatar208.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/searchicon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/stand desk.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/test.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/timdo.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/traitim.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/Untitled.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/comment.PNG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/ava.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/anh1.PNG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/dep.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/favicon.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/logo.PNG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/images/logo1.PNG">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.env">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLBaoCao.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1768">
-          <caret line="104" selection-start-line="104" selection-end-line="104" />
-          <folding>
-            <element signature="e#46#74#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-229">
-          <caret line="15" column="6" selection-start-line="15" selection-start-column="6" selection-end-line="15" selection-end-column="6" />
-          <folding>
-            <element signature="e#40#73#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/quanlyTK/suatk.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2204" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/quanlyTK/suaTK.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="134" column="13" selection-start-line="134" selection-start-column="13" selection-end-line="134" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="10" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="689">
-          <caret line="208" column="33" selection-start-line="208" selection-start-column="33" selection-end-line="208" selection-end-column="33" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/ThemThanhVien.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="121" selection-start-line="17" selection-start-column="121" selection-end-line="17" selection-end-column="121" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/dsThanhvien.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="49" column="95" selection-start-line="49" selection-start-column="95" selection-end-line="49" selection-end-column="95" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="55" selection-start-line="55" selection-end-line="83" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/css/TV_suatttruyen.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="376">
           <caret line="37" column="21" selection-start-line="37" selection-start-column="21" selection-end-line="37" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/SuaThongTinTruyen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="238">
-          <caret line="102" column="165" selection-start-line="102" selection-start-column="165" selection-end-line="102" selection-end-column="165" />
-          <folding>
-            <element signature="e#1970#1989#0#HTML" expanded="true" />
-            <element signature="e#2025#2060#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/ThanhVien/TruyenYeuThich.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="63" column="79" selection-start-line="63" selection-start-column="79" selection-end-line="63" selection-end-column="79" />
-          <folding>
-            <element signature="e#2794#2814#0#HTML" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="884">
-          <caret line="52" column="45" selection-start-line="52" selection-start-column="45" selection-end-line="52" selection-end-column="45" />
         </state>
       </provider>
     </entry>
@@ -803,42 +619,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" lean-forward="true" selection-start-line="7" selection-end-line="7" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/layouts/master.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/partials/header.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="57" column="82" selection-start-line="57" selection-start-column="82" selection-end-line="57" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding>
-            <element signature="e#9#391#0#PHP" expanded="true" />
-            <element signature="e#394#409#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Khach/TimKiemTruyen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="209">
-          <caret line="52" column="50" selection-start-line="52" selection-start-column="50" selection-end-line="52" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -849,36 +633,311 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/avatar/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_Trang.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="33" column="110" lean-forward="true" selection-start-line="33" selection-start-column="110" selection-end-line="33" selection-end-column="110" />
+        <state relative-caret-position="1054">
+          <caret line="68" selection-start-line="68" selection-end-line="68" />
           <folding>
             <element signature="e#39#75#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php">
+    <entry file="file://$PROJECT_DIR$/resources/views/ThanhVien/TruyenYeuThich.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="60" column="100" lean-forward="true" selection-start-line="60" selection-start-column="100" selection-end-line="60" selection-end-column="100" />
+        <state relative-caret-position="204">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php">
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="43" column="26" lean-forward="true" selection-start-line="37" selection-start-column="20" selection-end-line="43" selection-end-column="26" />
+        <state relative-caret-position="4930">
+          <caret line="299" column="50" selection-start-line="299" selection-start-column="50" selection-end-line="299" selection-end-column="50" />
+          <folding>
+            <element signature="e#40#73#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Khach/TrangChu2.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="37" selection-start-line="37" selection-end-line="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4437">
+          <caret line="261" column="14" selection-start-line="261" selection-start-column="8" selection-end-line="261" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/XemThongTinNhom.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="29" column="52" selection-start-line="29" selection-start-column="52" selection-end-line="29" selection-end-column="52" />
+          <folding>
+            <element signature="e#785#810#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/TV_qltruyennhom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="15" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/css/TV_xemchitiettruyenNhom.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="334">
+          <caret line="67" column="15" lean-forward="true" selection-start-line="67" selection-start-column="2" selection-end-line="67" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/ThemChuongMoi.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1300">
+          <caret line="34" column="6" lean-forward="true" selection-start-line="34" selection-start-column="6" selection-end-line="34" selection-end-column="6" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/XemChiTietTruyenNhom.blade.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="399">
-          <caret line="63" column="34" selection-start-line="63" selection-start-column="34" selection-end-line="63" selection-end-column="34" />
+        <state relative-caret-position="250">
+          <caret line="56" column="67" selection-start-line="56" selection-start-column="67" selection-end-line="56" selection-end-column="67" />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Khach/XemChiTietTruyen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="204">
+          <caret line="36" column="63" selection-start-line="36" selection-start-column="63" selection-end-line="36" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/SuaThongTinTruyen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="210" selection-start-line="17" selection-start-column="210" selection-end-line="17" selection-end-column="210" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26">
+          <caret line="74" column="92" selection-start-line="74" selection-start-column="92" selection-end-line="74" selection-end-column="92" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/SuaChapTruyen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="38" column="36" lean-forward="true" selection-start-line="38" selection-start-column="36" selection-end-line="38" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/ThemTruyen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="32" column="18" lean-forward="true" selection-start-line="32" selection-start-column="18" selection-end-line="32" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="30" selection-start-line="14" selection-start-column="30" selection-end-line="14" selection-end-column="30" />
+          <folding>
+            <element signature="n#style#0;n#ul#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Khach/user-activation.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="61" lean-forward="true" selection-start-line="9" selection-start-column="61" selection-end-line="9" selection-end-column="61" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Khach/DangKy.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/DangKy.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/verify.blade.php">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/confirmPassword.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="33" selection-start-line="9" selection-start-column="33" selection-end-line="9" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/DangNhap.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="301">
+          <caret line="35" column="30" selection-start-line="35" selection-start-column="30" selection-end-line="35" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/vendor/laravel/framework/src/Illuminate/Http/Request.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="14" column="6" selection-start-line="14" selection-start-column="6" selection-end-line="14" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/auth/CapLaiMatKhau.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="10" column="24" selection-start-line="10" selection-start-column="24" selection-end-line="10" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/UserActivationEmail.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Classes/ActivationService.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/CapMatKhau.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="18" selection-start-line="23" selection-start-column="18" selection-end-line="23" selection-end-column="18" />
+          <folding>
+            <element signature="e#23#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/UserActivation.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="29" column="29" lean-forward="true" selection-start-line="29" selection-start-column="29" selection-end-line="29" selection-end-column="29" />
+          <folding>
+            <element signature="e#23#41#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Mail/ResetPassowrd.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="363">
+          <caret line="31" column="32" selection-start-line="31" selection-start-column="32" selection-end-line="31" selection-end-column="32" />
+          <folding>
+            <element signature="e#28#57#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTaiKhoan.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="131" column="9" lean-forward="true" selection-start-line="131" selection-start-column="9" selection-end-line="131" selection-end-column="9" />
+          <folding>
+            <element signature="e#40#58#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="61" column="91" selection-start-line="61" selection-start-column="91" selection-end-line="61" selection-end-column="91" />
+          <folding>
+            <element signature="e#9#391#0#PHP" expanded="true" />
+            <element signature="e#394#409#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1232">
+          <caret line="24" column="49" selection-start-line="24" selection-start-column="49" selection-end-line="24" selection-end-column="49" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/header.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="332">
+          <caret line="58" column="78" selection-start-line="58" selection-start-column="78" selection-end-line="58" selection-end-column="78" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/partials/header_nhom.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="14" column="46" selection-start-line="14" selection-start-column="46" selection-end-line="14" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="162">
+          <caret line="104" column="52" selection-start-line="104" selection-start-column="52" selection-end-line="104" selection-end-column="52" />
+          <folding>
+            <element signature="e#3513#3549#0#HTML" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Khach/TimKiemTruyen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="23" column="52" selection-start-line="23" selection-start-column="52" selection-end-line="23" selection-end-column="52" />
+          <folding>
+            <element signature="e#698#765#0#HTML" expanded="true" />
+            <marker date="1560618568701" expanded="true" signature="3681:3704" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cover/2.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cover/3.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cover/6.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cover/1.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cover/test.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cover/5.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/tvNhom/ThongKeTruyenNhom.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="281">
+          <caret line="40" column="57" selection-start-line="40" selection-start-column="57" selection-end-line="40" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/cover_nhom/x.png">
+      <provider selected="true" editor-type-id="images" />
     </entry>
   </component>
 </project>

@@ -31,23 +31,15 @@
                     <li><span>Chap {{$truyen->soChuong()}}</span><span> | </span> Lượt xem:<span> {{$truyen->luotXem}}</span></li>
                     <li>Thể loại:
                         @foreach($truyen->getTheLoai as $tr_tl)
-                            <a href="{{route('theloai',['id'=>$tr_tl->getTheLoai->tenTL])}}">{{$tr_tl->getTheloai->tenTL}}</a>
+                            <a href="{{route('theloai',['id'=>$tr_tl->getTheLoai->tenTL])}}">{{$tr_tl->getTheloai->tenTL}}</a>,
                         @endforeach
                     </li>
-                    <li>Trạng thái:
-                    @if ($truyen->trangThai ==0)
-                        Đang thưc hiện
-                    @elseif($truyen->trangThai == 1)
-                        Tạm dừng
-                    @else
-                        Hoàn thành
-                    @endif
-                    </li>
+                    <li>Trạng thái: {{$truyen->trangThaiTruyen()}}</li>
                     <li style="border: 1px solid grey; height: 100px;">Sơ lược nội dung truyện: {{$truyen->gioiThieu}}</li>
                 </ul>
                 <div class="row" style="margin-top: 20px;">
                     <button onclick="window.location = '{{route('themTruyenYeuThich',['id'=>$truyen->maTruyen])}}'">Like</button>
-                    <button>Share</button>
+                    <button><a href="https://www.facebook.com/sharer/sharer.php?u=YourPageLink.com&display=popup" style="color: white; text-decoration: none;">Chia sẻ</a></button>
                 </div>
             </div>
         </div>

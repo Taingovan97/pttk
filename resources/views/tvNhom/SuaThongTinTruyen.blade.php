@@ -15,33 +15,47 @@ Sửa thông tin truyện
     <div class="navigator">
         <div class="row">
             <div class="col-md-7">
-                <h5><a href="{{route('trangchu')}}">Trang chủ/</a><a href="{{route('trangchunhom')}}"> Nhóm/</a><a href=""> Sửa thông tin truyện/</a><a href=""> Doraemon</a></h5>
+                <h5><a href="{{route('trangchu')}}">Trang chủ/</a><a href="{{route('trangchunhom')}}"> Nhóm/</a><a href=""> Sửa thông tin truyện/</a><a href="{{route('chitiettruyennhom',['id'=>$truyen->maTruyen])}}"> {{$truyen->tenTruyen}}</a></h5>
             </div>
 
         </div>
-
     </div>
-     <h6>Doraemon</h6>
+
     <div class="row root-view">
          
 <div class="col-md-2">
 
     </div>
     <div class="col-md-10 view-comics" style="margin-top: 30px;">
-        <form>
+        <form action="{{route('chinhsuatruyen',['id'=>$truyen->maTruyen])}}" method="post" enctype="multipart/form-data">
+   @csrf
     <table style="width:80%">
       <tr>
-        <td style="width: 25%;">Tên truyện*:</td>
-        <td><input type="text" name=""></td>
+        <td style="width: 25%;">Tên truyện*: </td>
+        <td><input type="text" name="tentruyen" value="{{$truyen->tenTruyen}}"></td>
       </tr>
         <tr>
             <td style="width: 25%;">Thể loại truyện*:</td>
             <td>
                 <div class="filter-element">
                     <select name="theloai[]" class="select" multiple style="height: 100px">
-                        <option disabled selected value>Vui lòng chọn</option>
                         @foreach($theloais as $theloai)
-                            <option value="{{$theloai->tenTL}}">{{$theloai->tenTL}}</option>
+                            <?php
+                                $status = False;
+                            ?>
+                            @foreach($truyen->getTheLoai as $tr_tl)
+                                @if($theloai->tenTL == $tr_tl->getTheLoai->tenTL)
+                                    <?php
+                                        $status = True;
+                                        ?>
+                                    @break
+                                @endif
+                            @endforeach
+                            @if ($status)
+                                    <option selected value="{{$theloai->tenTL}}">{{$theloai->tenTL}}</option>
+                            @else
+                                    <option value="{{$theloai->tenTL}}">{{$theloai->tenTL}}</option>
+                            @endif
                         @endforeach
                     </select>
                 </div>
@@ -50,23 +64,28 @@ Sửa thông tin truyện
       </tr>
       <tr>
         <td style="width: 25%;">Tác giả*:</td>
-        <td><input type="text" name=""></td>
+        <td><input type="text" name="tacgia" value=" {{$truyen->tacGia}}"></td>
       </tr>
        <tr>
         <td style="width: 25%;">Nguồn/Nhóm dịch*:</td>
-        <td><input type="text" name=""></td>
+        <td>{{$truyen->nhom->tenNhom}}</td>
       </tr>
       <tr>
         <td style="width: 25%;">Chap mới nhất*:</td>
-        <td><input type="text" name=""></td>
+        <td>{{$truyen->soChuong()}}</td>
       </tr>
       <tr>
         <td style="width: 25%;">Tình trạng dịch*:</td>
-        <td><input type="text" name=""></td>
+        <td><select name="trangthai">
+                <option disabled selected>Tình trạng truyện</option>
+                <option value="dich">Đang dịch</option>
+                <option value="dung">Tạm dừng</option>
+                <option value="ketthuc">Kết thúc</option>
+            </select></td>
       </tr>
        <tr>
         <td style="width: 25%;">Mô tả ngắn:</td>
-        <td><textarea style="height: 100px; width: 100%;"></textarea></td>
+        <td><textarea style="height: 100px; width: 100%;" name="gioithieu" >{{$truyen->gioiThieu}}</textarea></td>
       </tr>
         <tr>
             <td style="width: 25%;">Hình ảnh*:</td>

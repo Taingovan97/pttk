@@ -12,7 +12,7 @@
                 <div class="filter-element">
                     <select name="mostLike" class="select">
                         <option selected value="tentruyen">Tìm theo tên truyện</option>
-                        <option value="tacgia">Tìm theo tên nhóm</option>
+                        <option value="tennhom">Tìm theo tên nhóm</option>
                         <option value="theloai">Tìm theo thể loại truyện</option>
                     </select>
                 </div>

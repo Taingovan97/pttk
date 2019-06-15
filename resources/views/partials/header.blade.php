@@ -12,7 +12,7 @@
                 <div class="filter-element">
                     <select id="option" name="mostLike" class="select">
                         <option selected value="tentruyen">Tìm theo tên truyện</option>
-                        <option value="nhom">Tìm theo tên nhóm</option>
+                        <option value="tennhom">Tìm theo tên nhóm</option>
                         <option value="theloai">Tìm theo thể loại truyện</option>
                     </select>
                 </div>
@@ -55,8 +55,8 @@
         <div class="row direct">
             <ul>
                 <li style="width: 33.33%;"><a href="{{route('truyenmoi')}}">Truyện mới</a></li>
-                <li style="width: 33.33%;"><a href="{{route('theloai')}}">Thể loại</a></li>
-                <li style="width: 33.33%;"><a href="{{route('nam')}}">Năm</a></li>
+                <li style="width: 33.33%;"><a href="{{route('theloai',['content'=>'Comedy'])}}">Thể loại</a></li>
+                <li style="width: 33.33%;"><a href="{{route('nam',['nam'=>2019])}}">Năm</a></li>
             </ul>
         </div>
     </div>

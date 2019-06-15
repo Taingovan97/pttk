@@ -22,7 +22,7 @@ class DK_Trang extends Controller
         }
 
         }else{
-            $truyens = truyen::where('duyet',true)->get();
+            $truyens = truyen::where('duyet',true)->paginate(10);
             $thongke = DK_QLTruyen::thongke('ngay');
             $chartTruyens = [];
             foreach ($thongke as $maTruyen=>$luotxem)
@@ -30,8 +30,8 @@ class DK_Trang extends Controller
                 $truyen = truyen::find($maTruyen);
                 array_push($chartTruyens, $truyen);
             }
-            $theloai = theloai::all();
-           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$chartTruyens,'theloai'=>$theloai]);
+            $truyenmoi = truyen::where('duyet',true)->orderBy('ngayDang','desc')->take(5)->get();
+           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$chartTruyens,'truyenmoi'=>$truyenmoi]);
 
             }
 
@@ -63,6 +63,12 @@ class DK_Trang extends Controller
     public function truyenmoi()
     {
     	
+       $truyens = truyen::where('duyet',1)->orderBy('ngayDang','desc')->paginate(10);
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$truyens,'option'=>'Truyện mới']);
+    }
+
+    public function truyenyeuthich(){
+
     }
 
 

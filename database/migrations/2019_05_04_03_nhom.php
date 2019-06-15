@@ -19,6 +19,7 @@ class Nhom extends Migration
             $table->string('tenNhom');
             $table->timestamp('ngayLap');
             $table->string('gioiThieu')->nullable();
+            $table->string('linkAnh')->default('cover_nhom/x.png');
             $table->integer('maTruongNhom');
 
         });

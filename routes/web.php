@@ -24,7 +24,7 @@
  	Route::get('theloai/{content?}', 'DK_QLTruyen@layTruyenTheoTheLoai')->name('theloai');
  	Route::get('nhomdich/{id?}', 'DK_QLTruyen@layTruyenTheoNhom')->name('nhomdich');
  	Route::get('tacgia', 'DK_Trang@layTruyenTheoTacGia')->name('tacgia');
- 	Route::get('nam/{id?}', 'DK_QLTruyen@layTruyenTheoNam')->name('nam');
+ 	Route::get('nam/{nam?}', 'DK_QLTruyen@layTruyenTheoNam')->name('nam');
  	Route::get('chart/{option}','DK_QLTruyen@doithongke');
 	//trang chu
 	Route::get('home', 'pagescontroller@index');
@@ -34,11 +34,11 @@
 	
 
 	// xu ly dang ky
-	Route::get('dangky', function (){	return view('Auth.DangKy');   })->name('taoformdangky');
+	Route::get('dangky', function (){	return view('Auth.DangKy'); })->name('taoformdangky');
 
 	Route::post('dangky','DK_QLTaiKhoan@dangKyTaiKhoan')->name('dangkytaikhoan');
 
-	Route::get('dangky/tao_tai_khoan/xac_thuc/{token}', 'DK_QLTaiKhoan@XacThuc')-> name('user.activate');
+	Route::get('xac_thuc/{token}', 'DK_QLTaiKhoan@XacThuc')-> name('user.activate');
 
 	// xu ly dang nhap
 	Route::get('dangnhap',function (){ return view('Auth.DangNhap'); })->name('taoformdangnhap');
@@ -51,27 +51,24 @@
 	Route::post('admin', 'DK_QLTaiKhoan@dangNhapAdmin')->name('dangnhapadmin');
 
 
-
     Route::get('dangxuat_admin', 'DK_QLTaiKhoan@dangxuatAdmin')->name('dangxuat_admin');
-
-
-
 
 
     // xu ly dang xuat
     Route::get('dangxuat', 'DK_QLTaiKhoan@dangxuatThanhVien')->name('dangxuat');
 
+    // doi mat khau
 
-    // xu ly dang ky
-    Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
+    Route::get('caplaimatkhau',function (){ return view('auth.CapLaiMatKhau');})->name('getcaplaimatkhau');
 
+    Route::post('caplaimatkhau','DK_QLTaiKhoan@capLaiMatKhau')->name('caplaimatkhau');
+
+    Route::get('xacnhancaplai/{token}', 'DK_QLTaiKhoan@xacNhanMatKhau')->name('xacnhanmatkhau');
 
     Route::get('demo/dangky', function(){
         return view('auth.DangKy');
     });
 
-    // xu ly dang ky
-    Route::get('dangky', 'DK_QLTaiKhoan@getDangKy')->name('taoformdangky');
 
         // truyen
     Route::get('chi_tiet_truyen/{id}', 'DK_QLTruyen@chiTietTruyen')->name('chitiettruyen');
@@ -124,6 +121,7 @@ Route::group(['middleware'=>['web','auth_thanhvien']], function(){
      Route::post('taonhom', 'DK_QLNhom@postTaoNhom')->name('posttaonhom');
 
 
+
  });
 Route::middleware(['auth_thanhvienNhom'])->group(function (){
     Route::group(['prefix' => 'nhom'], function(){
@@ -138,11 +136,15 @@ Route::middleware(['auth_thanhvienNhom'])->group(function (){
             Route::get('them_truyen_moi',"DK_QLTruyen@getThemTruyenMoi")->name('formthemtruyenmoi');
             Route::post('them_truyen_moi','DK_QLTruyen@themTruyenMoi')->name('postthemtruyenmoi');
 
+            Route::get('chinh_sua_truyen/id={id}','DK_QLTruyen@getchinhSuaTruyen')->name('formchinhsuatruyen');
+            Route::post('chinh_sua_truyen/id={id}','DK_QLTruyen@chinhSuaTruyen')->name('chinhsuatruyen');
+
             Route::get('them_chuong_moi/{maTruyen}','DK_QLTruyen@getthemChuongMoi')->name('formthemchuongmoi');
             Route::post('them_chuong_moi/{maTruyen}', 'DK_QLTruyen@themChuongMoi')->name('themchuongmoi');
 
             Route::get('sua_chuong/id={id}', 'DK_QLTruyen@getsuaChuongTruyen')->name('formsuachuongtruyen');
-            ROute::post('sua_chuong/id={id}','DK_QLTruyen@suaChuongTruyen')->name('suachuongtruyne');
+            ROute::post('sua_chuong/id={id}','DK_QLTruyen@suaChuongTruyen')->name('suachuongtruyen');
+            
             Route::get('thong_ke_truyen','DK_QLTruyen@thongKeTruyen')->name('thongketruyennhom');
 //            Route::get('tracuutruyen', 'DK_QLTruyen@traCuuTruyenCuaNhom')->name('tracuutruyencuanhom');
 
@@ -150,8 +152,7 @@ Route::middleware(['auth_thanhvienNhom'])->group(function (){
             Route::post('xoa/truyen_{maTruyen}', 'DK_QLTruyen@xoaTruyenNhom')->name('xoatruyennhom');
 
 //            Route::get('truyen={id}', function () { return view('tvNhom.XemChiTietTruyenNhom'); });
-            Route::get('chinh_sua_truyen/id={id}','DK_QLTruyen@getchinhSuaTruyen')->name('formchinhsuatruyen');
-            Route::post('chinh_sua_truyen/id={id}','DK_QLTruyen@chinhSuaTruyen')->name('chinhsuatruyen');
+
 
         });
         Route::group(['prefix'=>'de_xuat'], function(){
@@ -165,6 +166,7 @@ Route::middleware(['auth_thanhvienNhom'])->group(function (){
 
             Route::get('thongtinnhom','DK_QLNhom@thongTinNhom')->name('thongtinnhom');
             Route::get('suathongtin/{maTK}', 'DK_QLNhom@getSuaThongTinNhom')->name('suathongtinnhom');
+            Route::post('suathongtinnhom', 'DK_QLNhom@postSuaThongTinNhom')->name('postsuathongtinnhom');
             Route::get('thanh_vien_nhom',function (){ return view('tvNhom.dsThanhVien');})->name('thanhviennhom');
             Route::get('them_thanh_vien', 'DK_QLNhom@getThemThanhVien')->name('getthemthanhvien');
             Route::get('them_thanh_vien/{name}', 'DK_QLNhom@themThanhVien')->name('themthanhvien');
