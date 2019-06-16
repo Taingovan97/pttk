@@ -58,7 +58,7 @@
 
                         <img src="{{asset($truyen->linkAnh)}}" onerror="this.src='{{asset('images/anh1.png')}}'">
                         <div class="col-md-8">
-                            <b><a href="{{route('chitiettruyen',['id'=>$truyen->maTruyen])}}">{{$truyen->tenTruyen}}</a></b>
+                            <b><a href="{{route('chitiettruyennhom',['id'=>$truyen->maTruyen])}}">{{$truyen->tenTruyen}}</a></b>
                             <ul>
                                 <li>Đánh giá:<span> {{$truyen->diemDG}}</span></li>
                                 <li><span>Chap {{$truyen->soChuong()}}</span><span> | </span> Lượt xem:<span> {{$truyen->luotXem}}</span></li>
@@ -68,8 +68,8 @@
                                         {{$tr_theloai->getTheLoai->tenTL}},
                                     @endforeach
                                 </li>
-                                <li>Tình trạng: Đang thực hiện</li>
-                                <li>Sơ lược nội dung truyện: {{$truyen->gioiThieu}}</li>
+                                <li>Tình trạng: {{$truyen->trangThaiTruyen()}}</li>
+                                <li>Sơ lược nội dung truyện: {{substr($truyen->gioiThieu,0,25)}}</li>
                             </ul>
                             <div class="row" style="margin-top: 20px;">
                                 <button onclick="window.location='{{route("formthemchuongmoi",['maTruyen'=>$truyen->maTruyen])}}'">Thêm chương truyện</button>

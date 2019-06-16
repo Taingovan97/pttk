@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Auth;
 use App\truyen;
 use App\chuongtruyen;
+use App\theloai;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Http\Controllers\DK_QLTruyen;
@@ -21,7 +22,7 @@ class DK_Trang extends Controller
         }
 
         }else{
-            $truyens = truyen::where('duyet',true)->get();
+            $truyens = truyen::where('duyet',true)->paginate(10);
             $thongke = DK_QLTruyen::thongke('ngay');
             $chartTruyens = [];
             foreach ($thongke as $maTruyen=>$luotxem)
@@ -29,7 +30,8 @@ class DK_Trang extends Controller
                 $truyen = truyen::find($maTruyen);
                 array_push($chartTruyens, $truyen);
             }
-           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$chartTruyens]);
+            $truyenmoi = truyen::where('duyet',true)->orderBy('ngayDang','desc')->take(5)->get();
+           return view('Khach.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$chartTruyens,'truyenmoi'=>$truyenmoi]);
 
             }
 
@@ -61,6 +63,12 @@ class DK_Trang extends Controller
     public function truyenmoi()
     {
     	
+       $truyens = truyen::where('duyet',1)->orderBy('ngayDang','desc')->paginate(10);
+       return view('Khach.TimKiemTruyen',['dstruyen'=>$truyens,'option'=>'Truyện mới']);
+    }
+
+    public function truyenyeuthich(){
+
     }
 
 

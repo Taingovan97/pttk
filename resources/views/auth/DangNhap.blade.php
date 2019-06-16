@@ -33,7 +33,7 @@
       </div>
     </div>
     <div class="" >
-      <p><a href="">Quên mật khẩu?</a></p>
+      <p><a href="{{route('getcaplaimatkhau')}}">Quên mật khẩu?</a></p>
       <p>Chưa có tài khoản? <a href={{route('taoformdangky')}}>Đăng ký</a></p>
     </div>
   </div>

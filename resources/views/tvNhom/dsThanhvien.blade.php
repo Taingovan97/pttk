@@ -47,19 +47,23 @@
                             <td>{{$thanhvien->getNgayThamGia()}}</td>
                             <td>Dịch {{$thanhvien->getSoLuongTruyenDang()}} truyện</td>
                             @if (Auth::guard('thanhvien')->user()->maTK == $nhom->maTruongNhom)
+                                @if (Auth::guard('thanhvien')->user()->maTK != $thanhvien->maTK)
                                 <td><button id ="{{$count}}"  onclick="confirmDelete('{{$count}}')" style="background-color: red" value="{{$thanhvien->maTK}}">Xóa</button></td>
                                 <?php $count +=1?>
-                                <script>
-                                    function confirmDelete(id){
-                                        var maTK = document.getElementById(id).value;
-                                        var r = confirm("Xác nhận xóa thành viên " + maTK+ " khỏi danh sách của bạn?");
-                                        if (r==true){
-                                            window.location ='xoatv/'+maTK;
-                                        }
-                                    }
-
-                                </script>
+                                @else
+                                <td></td>
+                                @endif
                             @endif
+                            <script>
+                                function confirmDelete(id){
+                                    var maTK = document.getElementById(id).value;
+                                    var r = confirm("Xác nhận xóa thành viên " + maTK+ " khỏi danh sách của bạn?");
+                                    if (r==true){
+                                        window.location ='xoatv/'+maTK;
+                                    }
+                                }
+
+                            </script>
                         </tr>
                     @endforeach
 

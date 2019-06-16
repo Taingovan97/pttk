@@ -12,28 +12,8 @@
 
     <div class="row">
     <div class="col-md-4">
-        <img id = 'avatar' src="{{asset($user->linkAnh)}}" alt="avatar" onerror="this.src='{{asset('images/x.png')}}'" style="width: 100%;border: 1px solid;">
-        <input type="file" name="avatar" id="input_avatar"/>
-        <script>
+        <img id = 'avatar' src="{{asset($user->avatar)}}" alt="avatar" onerror="this.src='{{asset('images/x.png')}}'" style="width: 100%;border: 1px solid;">
 
-            function readURL(input) {
-
-                if (input.files && input.files[0]) {
-                    var reader = new FileReader();
-
-                    reader.onload = function(e) {
-                        $('#avatar').attr('src', e.target.result);
-                    }
-
-                    reader.readAsDataURL(input.files[0]);
-                }
-            }
-
-            $("#input_avatar").change(function() {
-                readURL(this);
-            });
-
-        </script>
     </div>
     <div class="col-md-8">
         @if(count($errors)>0)
@@ -49,7 +29,7 @@
             </div>
         @endif
         <form method="post" action="{{route('postsuatk')}}" enctype="multipart/form-data">
-            @csrf
+            {{csrf_field()}}
         <div class="row">
             <div class="col-md-3">
                 <p>Tên đăng nhập:</p>
@@ -111,18 +91,50 @@
                 <p>Nhóm</p>
             </div>
             <div class="col-md-4">
-                @if($user->nhom)
-                    <p>xxx</p>
+                @if($user->maNhom)
+                    <p><a href="{{route('trangchunhom')}}">{{$user->getNhom->tenNhom}}</a></p>
                 @else
                     <p> Không tham gia nhóm</p>
                 @endif
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-3">
+                <p>Avartar</p>
+            </div>
+            <div class="col-md-4">
+                <input type="file" name="avatar" id="input_avatar"/>
+                <script>
+
+                    function readURL(input) {
+
+                        if (input.files && input.files[0]) {
+                            var reader = new FileReader();
+
+                            reader.onload = function(e) {
+                                $('#avatar').attr('src', e.target.result);
+                            }
+
+                            reader.readAsDataURL(input.files[0]);
+                        }
+                    }
+
+                    $("#input_avatar").change(function() {
+                        readURL(this);
+                    });
+
+                </script>
+            </div>
+
+        </div>
         <button type="submit" name="save" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-del" >Lưu</button>
         <button type="button" name="canle" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;"
                 onclick="window.location='{{route("thongtintaikhoan")}}'">Hủy</button>
 
+<<<<<<< HEAD
         
+=======
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
         </form>
     </div>
     </div>

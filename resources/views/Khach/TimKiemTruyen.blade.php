@@ -11,13 +11,26 @@ Truyện tranh online
         <div class="navigator">
             <div class="row">
                 <div class="col-md-7">
-                    <h5><a href="{{route('trangchu')}}">Trang chủ/</a> {{$option}}: {{$content}}</h5>
+                    <h5><a href="{{route('trangchu')}}">Trang chủ/</a> {{$option}}:
+                        @if(isset($content))
+                            {{$content}}
+                        @endif
+                    </h5>
                 </div>
-
+                @if($option =='Thể loại' or $option =='Năm' or $option == 'Nhóm' )
+                <div ><select style="right: 0px; width: 150px; height: 30px; border-radius: 10px">
+                        <option disabled selected>{{$option}}</option>
+                        @foreach($select as $op)
+                            <option>{{$op}}</option>
+                        @endforeach
+                    </select></div>
+                    @endif
             </div>
+
         </div>
 
     @endif
+
 
 <div class="row root-view">
     <ul>
@@ -47,7 +60,15 @@ Truyện tranh online
                                         @endforeach
                         </span>
                                 </p>
-                                <p>Tình trạng: Đang thực hiện</p>
+                                <p>Tình trạng:
+                                    @if ($tv_tl->trangThai ==0)
+                                        Đang thưc hiện
+                                    @elseif($tv_tl->trangThai == 1)
+                                        Tạm dừng
+                                    @else
+                                        Hoàn thành
+                                    @endif
+                                </p>
                                 <p>Sơ lược nội dung truyện:<span> {{$tv_tl->gioiThieu}}</span></p>
 
                             </div>
@@ -56,9 +77,12 @@ Truyện tranh online
                     </li>
                 @endforeach
             @else
-                @if ($content)
-                    <div style="padding-left: 20px; ">Không có  {{$content}}</div>
+                @if (isset($option))
+                    @if ($content)
+                        <div style="padding-left: 20px; ">Không có {{$option}}  {{$content}}</div>
+                    @endif
                 @endif
+
             @endif
 
 
@@ -66,5 +90,6 @@ Truyện tranh online
 
 
     </ul>
+    <div style="text-align: center">{{$dstruyen->render()}}</div>
 </div>
 @stop

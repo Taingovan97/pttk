@@ -20,11 +20,12 @@ class Truyen extends Migration
             $table->string('tacGia');
             $table->timestamp('ngayDang');
             $table->text('gioiThieu')->nullable();
-            $table->string('linkAnh')->default('covers/x.png');
+            $table->string('linkAnh')->default('cover/x.png');
             $table->integer('luotXem')->unsigned()->default(0);
             $table->float('diemDG')->default(0.);
             $table->integer('maNhom');
             $table->integer('manguoiDang');
+            $table->integer('trangThai')->default(0);
             $table->boolean('duyet')->default(false);
 
         });

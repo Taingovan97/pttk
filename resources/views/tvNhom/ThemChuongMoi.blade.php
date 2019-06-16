@@ -34,7 +34,13 @@
     echo session('thongbao');
     ?>
     @endif
-
+    @if(count($errors)>0)
+        <div class="alert alert-danger">
+            @foreach($errors->all() as $err)
+                {{$err}}<br>
+            @endforeach
+        </div>
+    @endif
 
     <form method="post" action="{{route('themchuongmoi',['maTruyen'=>$truyen->maTruyen])}}">
         {{csrf_field()}}
@@ -45,7 +51,7 @@
             </tr>
             <tr>
                 <td style="width: 25%;">STT Chap*:</td>
-                <td><p>{{$truyen->soChuong()+1}}</p></td>
+                <td><p>{{$truyen->soChuong()}}</p></td>
             </tr>
             <tr>
                 <td style="width: 25%;">Tên Chap*:</td>
@@ -89,7 +95,7 @@
                         <p>- Có thể chọn nhiều file cùng lúc.</p>
                         <p>- Dung lượng file tối đa là 5MB, nên để file dưới 1MB để load nhanh hơn.</p>
                         <p>- Chỉ chấp nhận các định dạng ảnh sau: .jpg, .png, .git, .bmp.</p>
-                        <p>- Mỗi linh cách nhau bởi dấu ;</p>
+                        <p>- Mỗi link cách nhau bởi dấu ;</p>
                     </i>
                 </td>
             </tr>

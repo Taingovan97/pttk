@@ -6,7 +6,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="{{asset('css/style.css')}}">
   @yield('head.css')
+<<<<<<< HEAD
   <title>@yield('head.title')</title>
+=======
+  <title></title>
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
 </head>
 
 	<body>

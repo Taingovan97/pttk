@@ -30,7 +30,7 @@
         </div>
         
         <div class="col-md-4 user">
-        @if (Auth::guard('admin')->user()){
+        @if (Auth::guard('admin')->user())
           <div class="dropdown " style="float:right;margin-left: 20px;">
             <div class="dropdown-toggle text-danger" data-toggle="dropdown">
               <strong>{{Auth::guard('admin')->user()->name}}</strong>

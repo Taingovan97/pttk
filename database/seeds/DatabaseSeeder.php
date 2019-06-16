@@ -14,11 +14,28 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         
         $this->call(tkSeeder::class);
+=======
+        // $this->call(UsersTableSeeder::class);
+
+
+
+
+
+
+        // DB::table('chuongtruyen')->insert([
+        //     'tenChuong'=>'chuong 4 cua truyen 1',
+        //     'noiDung'=>'nd',
+        //     'ngayDang'=>'1-4-2019',
+        //     'maTruyen'=>'T0'
+        // ]);
+        // $this->call(tkSeeder::class);
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
         //$this->call(nhomSeeder::class);
-        //$this->call(Admin1::class);
-        //$this->call(Admin2::class);
+        // $this->call(Admin1::class);
+        $this->call(Admin2::class);
 
     }
 }

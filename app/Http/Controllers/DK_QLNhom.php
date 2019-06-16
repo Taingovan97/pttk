@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\nhom;
+use App\thanhvien;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 class DK_QLNhom extends Controller
@@ -43,12 +44,17 @@ class DK_QLNhom extends Controller
             'tennhom.unique'=>'Tên nhóm đã tồn tại',
         ]);
         $nhom = new nhom;
-
+        $truongnhom = thanhvien::find(Auth::guard('thanhvien')->user()->maTK);
         $nhom->tenNhom = $request->tennhom;
         $nhom->gioiThieu = $request->gioithieu;
         $nhom->maTruongNhom = Auth::guard('thanhvien')->user()->maTK;
         $nhom->ngayLap = Carbon::now('Asia/Ho_Chi_Minh');
         $nhom->save();
+
+        $loadNhom = nhom::where('tenNhom',$request->tennhom)->get()->toArray();
+        $truongnhom->maNhom = $loadNhom[0]['maNhom'];
+        $truongnhom->save();
+
 
         return redirect()->route('formtaonhom')->with('thongbao', 'Tạo nhóm thành công!');
 
@@ -62,6 +68,9 @@ class DK_QLNhom extends Controller
             return redirect()->route('trangchunhom');
     }
 
+    public function postSuaThongTinNhom(Request $request){
+      
+    }
     public function xoaThanhVienNhom($maTK){
         DB::table('thanhvien')
             ->where('maTK',$maTK)
@@ -72,9 +81,30 @@ class DK_QLNhom extends Controller
 
         $nhom = Auth::guard('thanhvien')->user()->getNhom;
         if($nhom->maTruongNhom == Auth::guard('thanhvien')->user()->maTK)
-            return view('tvNhom.ThemThanhVien');
+        {
+          $manhom = $nhom->maNhom;
+            $thanhviens = thanhvien::when($manhom, function($query,$manhom){
+                $query->where('maNhom','<>',$manhom)
+                ->orWhereNull('maNhom');
+            })->paginate(4);
+            return view('tvNhom.ThemThanhVien',['thanhviens'=>$thanhviens,'slthanhvien'=>$thanhviens->count()]);
+        }
         else
             return view('trangchunhom');
+    }
+
+    public function themThanhVien($name){
+      if(Auth::guard('thanhvien')->user()->getNhom->maNhom != Auth::guard('thanhvien')->user()->maNhom)
+        return redirect()->route('trangchunhom');
+
+      $thanhvien = thanhvien::all()->where('name',$name)[0];
+      if(!$thanhvien->maNhom)
+      {
+        $thanhvien->maNhom = Auth::guard('thanhvien')->user()->maNhom;
+        $thanhvien->save();
+      }
+
+      return redirect()->route('getthemthanhvien');
     }
 
 

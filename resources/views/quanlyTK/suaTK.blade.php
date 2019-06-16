@@ -1,9 +1,12 @@
 @extends('layouts.master_qltk')
+<<<<<<< HEAD
 
 @section('head.title')
     sua tai khoan
 @endsection
 
+=======
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
 @section('head.css')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 @stop
@@ -15,6 +18,7 @@
       <?php $user = Auth::guard('admin')->user()?>
       <div class="row">
         <div class="col-md-4">
+<<<<<<< HEAD
         <img id = 'avatar' src="{{asset($user->linkAnh)}}" alt="avatar" onerror="this.src='{{asset('images/x.png')}}'" style="width: 100%;border: 1px solid;">
         <input type="file" name="avatar" id="input_avatar"/>
         <script>
@@ -38,6 +42,10 @@
 
         </script>
     </div>
+=======
+          <img id = 'avatar' src="{{asset($user->avatar)}}" alt="avatar" onerror="this.src='{{asset('images/x.png')}}'" style="width: 100%;border: 1px solid;">
+        </div>
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
         
         <div class="col-md-8">
           @if(count($errors)>0)
@@ -122,9 +130,67 @@
               @endif 
             </div>
           </div>
+                  <div class="row">
+            <div class="col-md-3">
+                <p>Avartar</p>
+            </div>
+            <div class="col-md-4">
+                <input type="file" name="avatar" id="input_avatar"/>
+                <script>
+
+                    function readURL(input) {
+
+                        if (input.files && input.files[0]) {
+                            var reader = new FileReader();
+
+                            reader.onload = function(e) {
+                                $('#avatar').attr('src', e.target.result);
+                            }
+
+                            reader.readAsDataURL(input.files[0]);
+                        }
+                    }
+
+                    $("#input_avatar").change(function() {
+                        readURL(this);
+                    });
+
+                </script>
+            </div>
+
+        </div>
+
           <button type="submit" name="save" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-del" >Lưu</button>
           <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" onclick="window.location='{{route('admin_tk')}}'">Hủy</center></button>
+<<<<<<< HEAD
            
+=======
+<!--          <?php //// Xử Lý Upload
+//
+//        // Nếu người dùng click Upload
+////        if (isset($_POST['save']))
+////        {
+////            // Nếu người dùng có chọn file để upload
+////            if (isset($_FILES['avatar']))
+////            {
+////                // Nếu file upload không bị lỗi,
+////                // Tức là thuộc tính error > 0
+////                if ($_FILES['avatar']['error'] > 0)
+////                {
+////                    echo "<script type='text/javascript'>alert('File bi loi');</script>";
+////                }
+////                else{
+////                    // Upload file
+////                    move_uploaded_file($_FILES['avatar']['tmp_name'], './images/'.$_FILES['avatar']['name']);
+////                    echo 'File Uploaded';
+////                }
+////            }
+////            else{
+////                echo 'Bạn chưa chọn file upload';
+////            }
+////        }
+       ?> -->
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
         </form>
         </div>
       </div>

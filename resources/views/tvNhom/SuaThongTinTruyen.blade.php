@@ -1,144 +1,127 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-<head>
-    <meta charset="utf-8">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/TV_suatttruyen.css">
+@extends('layouts.master_nhom')
 
-    <title>trang mau</title>
-</head>
-<body>
+@section('head.title')
+Sửa thông tin truyện
+@endsection
+@section('head.css')
+    <link rel="stylesheet" href="{{asset('css/TV_suatttruyen.css')}}">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
-<header>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <a href="#" title="Trang chủ"><img src="images/logo1.png" alt="Logo"></a>
-            </div>
-            <div class="col-md-4 find">
-                <div class="find-element">
-                    <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
-                    <button type="submit"></button>
-                </div>
-                <div class="filter-element">
-                    <select name="mostLike" class="select">
-                        <option disabled selected value>Tìm theo tên truyện</option>
-                        <option value="tác giả">Tìm theo tên tác giả</option>
-                        <option value="thể loại">Tìm theo thể loại truyện</option>
-                    </select>
-                </div>
-            </div>
-            <div class="col-md-4 user">
 
-                    <div class="dropdown " style="float:right;margin-left: 20px;">
-                        <div class="dropdown-toggle text-danger" data-toggle="dropdown">
-                            <strong>tentaikhoan</strong>
-                        </div>
-                        <div class="dropdown-menu">
-                            <a class="dropdown-item item" href="#">Thông tin tài khoản</a>
-                            <a class="dropdown-item item" href="#">Nhóm</a>
-                            <a class="dropdown-item item" href="#"></a>
-                            <a class="dropdown-item item" href="">Đăng xuất</a>
-                        </div>
-                    </div>
-                <a href="truyenyeuthich" title="Truyện yêu thích" class="heart">❤</a>
-
-               
-            </div>
-        </div>
-        <div class="row direct">
-            <ul>
-                <li><a href="">Truyện mới</a></li>
-                <li><a href="">Thể loại</a></li>
-                <li><a href="">Nhóm dịch</a></li>
-                <li><a href="">Tác giả</a></li>
-                <li><a href="">Năm</a></li>
-            </ul>
-        </div>
-    </div>
-</header>
+@stop
+@section('head.content')
 
 <div class="main container">
     <div class="navigator">
         <div class="row">
             <div class="col-md-7">
-                <h5><a href="#">Trang chủ/</a><a href="#"> Nhóm/</a><a href="#"> Sửa thông tin truyện/</a><a href="#"> Doraemon</a></h5>
+                <h5><a href="{{route('trangchu')}}">Trang chủ/</a><a href="{{route('trangchunhom')}}"> Nhóm/</a><a href=""> Sửa thông tin truyện/</a><a href="{{route('chitiettruyennhom',['id'=>$truyen->maTruyen])}}"> {{$truyen->tenTruyen}}</a></h5>
             </div>
 
         </div>
-
     </div>
-     <h6>Doraemon</h6>
+
     <div class="row root-view">
          
 <div class="col-md-2">
 
     </div>
     <div class="col-md-10 view-comics" style="margin-top: 30px;">
-        <table style="width:80%">
-  <tr>
-    <td style="width: 25%;">Tên truyện*:</td>
-    <td><input type="text" name=""></td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Tag*:</td>
-    <td><input type="text" name=""></td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Thể loại truyện*:</td>
-    <td>
-      <div class="filter-element">
-                    <select name="mostLike" class="select">
-                        <option disabled selected value>Vui lòng chọn</option>
-                        <option value="tác giả">Hành động</option>
-                        <option value="thể loại">Cười</option>
-                        <option value="thể loại">Hoạt hình</option>
-                        <option value="thể loại">Tình cảm</option>
-                        <option value="thể loại">Ma</option>
-
+        <form action="{{route('chinhsuatruyen',['id'=>$truyen->maTruyen])}}" method="post" enctype="multipart/form-data">
+   @csrf
+    <table style="width:80%">
+      <tr>
+        <td style="width: 25%;">Tên truyện*: </td>
+        <td><input type="text" name="tentruyen" value="{{$truyen->tenTruyen}}"></td>
+      </tr>
+        <tr>
+            <td style="width: 25%;">Thể loại truyện*:</td>
+            <td>
+                <div class="filter-element">
+                    <select name="theloai[]" class="select" multiple style="height: 100px">
+                        @foreach($theloais as $theloai)
+                            <?php
+                                $status = False;
+                            ?>
+                            @foreach($truyen->getTheLoai as $tr_tl)
+                                @if($theloai->tenTL == $tr_tl->getTheLoai->tenTL)
+                                    <?php
+                                        $status = True;
+                                        ?>
+                                    @break
+                                @endif
+                            @endforeach
+                            @if ($status)
+                                    <option selected value="{{$theloai->tenTL}}">{{$theloai->tenTL}}</option>
+                            @else
+                                    <option value="{{$theloai->tenTL}}">{{$theloai->tenTL}}</option>
+                            @endif
+                        @endforeach
                     </select>
                 </div>
                 <p>*Nhấn tổ hợp Ctl+Click để chọn nhiều mục</p>
-    </td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Tác giả*:</td>
-    <td><input type="text" name=""></td>
-  </tr>
-   <tr>
-    <td style="width: 25%;">Nguồn/Nhóm dịch*:</td>
-    <td><input type="text" name=""></td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Chap mới nhất*:</td>
-    <td><input type="text" name=""></td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Tình trạng dịch*:</td>
-    <td><input type="text" name=""></td>
-  </tr>
-   <tr>
-    <td style="width: 25%;">Mô tả ngắn:</td>
-    <td><textarea style="height: 100px; width: 100%;"></textarea></td>
-  </tr>
-  <tr>
-    <td style="width: 25%;">Hình ảnh*:</td>
-    <td>
-     <div class="col-md-2">
-      <button>Chọn ảnh</button>
-      <img src="images/anh1.png" style="clear: both;" >
-    </div>
-    </td>
-  </tr>
-  <tr>
-      <td style="width: 25%;">Thời gian phát hành:</td>
-      <td><input type="text" name=""></td>
+            </td>
+      </tr>
+      <tr>
+        <td style="width: 25%;">Tác giả*:</td>
+        <td><input type="text" name="tacgia" value=" {{$truyen->tacGia}}"></td>
+      </tr>
+       <tr>
+        <td style="width: 25%;">Nguồn/Nhóm dịch*:</td>
+        <td>{{$truyen->nhom->tenNhom}}</td>
+      </tr>
+      <tr>
+        <td style="width: 25%;">Chap mới nhất*:</td>
+        <td>{{$truyen->soChuong()}}</td>
+      </tr>
+      <tr>
+        <td style="width: 25%;">Tình trạng dịch*:</td>
+        <td><select name="trangthai">
+                <option disabled selected>Tình trạng truyện</option>
+                <option value="dich">Đang dịch</option>
+                <option value="dung">Tạm dừng</option>
+                <option value="ketthuc">Kết thúc</option>
+            </select></td>
+      </tr>
+       <tr>
+        <td style="width: 25%;">Mô tả ngắn:</td>
+        <td><textarea style="height: 100px; width: 100%;" name="gioithieu" >{{$truyen->gioiThieu}}</textarea></td>
+      </tr>
+        <tr>
+            <td style="width: 25%;">Hình ảnh*:</td>
+            <td>
+                <div class="col-md-2">
+                    <img src="" name="anh" id="avatar" style="clear: both;" >
+                    <input type="file" name="avatar" id="input_avatar" style="width: 100px"/>
+                    <script>
 
-</table>
- <div class="row">
-    <button>Cập nhật</button><button>Hủy</button>
-  </div>
+                        function readURL(input) {
+
+                            if (input.files && input.files[0]) {
+                                var reader = new FileReader();
+
+                                reader.onload = function(e) {
+                                    $('#avatar').attr('src', e.target.result);
+                                }
+
+                                reader.readAsDataURL(input.files[0]);
+                            }
+                        }
+
+                        $("#input_avatar").change(function() {
+                            readURL(this);
+                        });
+
+                    </script>
+                </div>
+            </td>
+        </tr>
+
+    </table>
+     <div class="row">
+        <button type="submit">Cập nhật</button> <input type="button" onclick="window.location ='{{route('chitiettruyennhom',['id'=>$truyen->maTruyen])}}'" value="Hủy">
+      </div>
+    </form>
 
 
     </div>
@@ -150,18 +133,4 @@
 </div>
 
 </div>
-
-
-
-<footer class="main container" style="background-color: green">
-    Copyright © 2019 by ANH_EM_AN_HAI_TEAM
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</footer>
-</body>
-</html>
-<style media="screen">
-
-
-</style>
+@stop
