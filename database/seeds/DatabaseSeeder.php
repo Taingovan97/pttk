@@ -14,19 +14,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(UsersTableSeeder::class);
-
-
-
-
-
-
-        // DB::table('chuongtruyen')->insert([
-        //     'tenChuong'=>'chuong 4 cua truyen 1',
-        //     'noiDung'=>'nd',
-        //     'ngayDang'=>'1-4-2019',
-        //     'maTruyen'=>'T0'
-        // ]);
+        
         $this->call(tkSeeder::class);
         //$this->call(nhomSeeder::class);
         //$this->call(Admin1::class);

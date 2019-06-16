@@ -1,5 +1,9 @@
 @extends('layouts.master_qltk')
 
+@section('head.title')
+    quan ly nhom
+@endsection
+
 @section('noidung')
   <div class="main container" style="min-height: 500px;">
    
@@ -24,12 +28,8 @@
   <center>Thống kê nhóm</center>
   </a>
   </div>
-  
-    
-  
     <div class="row">
       <div class="col-md-10">
-
         <div class="row">
         @if(!empty($temp))  
           @foreach($temp as $nhom)
@@ -38,12 +38,12 @@
                 <div class="col-md-5">
                   <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
                 </div>
-                <div class="col-md-7">
-                  <h5><a href="{{route('xemNhom', ['id_nhom'=> $nhom['maNhom']])}}"><?php echo $nhom['tenNhom']; ?></a></h5>
-                <div class="">
-                  <p><?php echo "Số lượng thành viên: ". $nhom['soLuongTV']; ?></p>
-                  <p><?php echo "Số lượng truyện: ". $nhom['soLuongTruyen']; ?></p>
-                  <p><?php echo "Ngày thành lập: ". $nhom['ngayLap']; ?></p>
+                <div class="col-md-7" >
+                  <h5><a href="{{route('xemNhom', ['id_nhom'=> $nhom->maNhom])}}"><?php echo $nhom->tenNhom; ?></a></h5>
+                <div class="row" >
+                  <p><?php echo "Số lượng thành viên: ".$nhom->getSoLuongThanhVien();?></p>
+                  <p><?php echo "Số lượng truyện: ".$nhom->getSoLuongTruyen(); ?></p>
+                  <p><?php echo "Ngày thành lập: ".$nhom->getNgayLap(); ?></p>
                 </div>
                 </div>
               </div>
@@ -57,6 +57,4 @@
 
   </div>
   
-  
-
 @endsection

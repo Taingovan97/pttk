@@ -212,6 +212,7 @@ class DK_QLTaiKhoan extends Controller
 
     protected function suaTK_admin(Request $request)
     {
+            
             $this->validate($request,[
           'tentaikhoan'=>'min:4',
            'email' => 'required|email',
@@ -232,13 +233,13 @@ class DK_QLTaiKhoan extends Controller
            'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
            'sdt.min'=>'sô điện thoại không hợp lệ',
        ]);
-
+            $name = Auth::guard('admin')->user()->name;
             $users_email = admin::where('email','<>',Auth::guard('admin')->user()->email)->get();
             $user_ten = admin::where('name','<>',Auth::guard('admin')->user()->name)->get();
 
             foreach ($users_email as $user) {
               if ($user->name==$request->tentaikhoan) {
-                return view('quanlyTK.suaTK')->with('thongbao', 'Tên tài khoản đã được sử dụng');
+                return redirect()->route('suaTK', ['ten'=>$name])->with('thongbao', 'Tên tài khoản đã được sử dụng');
                 break;
               }
             }
@@ -246,7 +247,7 @@ class DK_QLTaiKhoan extends Controller
             foreach ($user_ten as $user) {
               if( $user->email == $request->email)
               {
-                return view('quanlyTK.suaTK')->with('thongbao', 'email đã được sử dụng');
+                return redirect()->route('suaTK', ['ten'=>$name])->with('thongbao', 'email đã được sử dụng');
                 break;
               }
             }
@@ -261,11 +262,11 @@ class DK_QLTaiKhoan extends Controller
                 $admin->sdt = $request->sdt;
               }
               $admin->save();
-              return view('quanlyTK.suaTK')->with('thongbao', 'Sửa thông tin thành công!');
+              return redirect()->route('suaTK', ['ten'=>$admin->name])->with('thongbao', 'Sửa thông tin thành công!');
             }
             else
-              return view('quanlyTK.suaTK')->with('thongbao', 'Mật khẩu sai');
-            
+              return redirect()->route('suaTK', ['ten'=>$name])->with('thongbao', 'Mật khẩu sai');
+                      
 
     }
     

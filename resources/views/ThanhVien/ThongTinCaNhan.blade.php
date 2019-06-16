@@ -35,7 +35,7 @@
             </div>
             <div class="col-md-4">
                 @if($user->sdt)
-                    <p>{{$user->std}}</p>
+                    <p>{{$user->sdt}}</p>
                 @else
                     <p> Chưa nhập </p>
                 @endif
@@ -54,7 +54,7 @@
                 <p>Nhóm:</p>
             </div>
             <div class="col-md-4">
-                @if($user->nhom)
+                @if($user->maNhom)
                     <p>xxx</p>
                     @else
                 <p> Không tham gia nhóm</p>
