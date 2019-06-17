@@ -1,4 +1,12 @@
 @extends('layouts.master_qltk')
+<<<<<<< HEAD
+
+@section('head.title')
+    sua tai khoan
+@endsection
+
+=======
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
 @section('head.css')
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 @stop
@@ -10,8 +18,34 @@
       <?php $user = Auth::guard('admin')->user()?>
       <div class="row">
         <div class="col-md-4">
+<<<<<<< HEAD
+        <img id = 'avatar' src="{{asset($user->linkAnh)}}" alt="avatar" onerror="this.src='{{asset('images/x.png')}}'" style="width: 100%;border: 1px solid;">
+        <input type="file" name="avatar" id="input_avatar"/>
+        <script>
+
+            function readURL(input) {
+
+                if (input.files && input.files[0]) {
+                    var reader = new FileReader();
+
+                    reader.onload = function(e) {
+                        $('avatar').attr('src', e.target.result);
+                    }
+
+                    reader.readAsDataURL(input.files[0]);
+                }
+            }
+
+            $("input_avatar").change(function() {
+                readURL(this);
+            });
+
+        </script>
+    </div>
+=======
           <img id = 'avatar' src="{{asset($user->avatar)}}" alt="avatar" onerror="this.src='{{asset('images/x.png')}}'" style="width: 100%;border: 1px solid;">
         </div>
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
         
         <div class="col-md-8">
           @if(count($errors)>0)
@@ -27,7 +61,7 @@
             </div>
         @endif
         <form method="post" action="{{route('suaTK_admin')}}" enctype="multipart/form-data">
-            @csrf
+            {{ csrf_field() }}
           <div class="row">
             <div class="col-md-3">
               <p>Tên đăng nhập:</p>
@@ -128,6 +162,9 @@
 
           <button type="submit" name="save" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-del" >Lưu</button>
           <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" onclick="window.location='{{route('admin_tk')}}'">Hủy</center></button>
+<<<<<<< HEAD
+           
+=======
 <!--          <?php //// Xử Lý Upload
 //
 //        // Nếu người dùng click Upload
@@ -153,6 +190,7 @@
 ////            }
 ////        }
        ?> -->
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
         </form>
         </div>
       </div>

@@ -24,7 +24,7 @@
               <p>Ngày thành lập:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $group->ngayLap; ?></p>
+              <p><?php echo $group->getNgayLap(); ?></p>
             </div>
           </div>
           <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-del">Xóa</button>
@@ -46,7 +46,7 @@
         </tr>
         @for($i=0; $i< $length; $i++)
           <tr>
-            <td><?php echo "thanh vien ".$i; ?></td>
+            <td>{{$ds_tv[$i]['name']}}</td>
             <td>truyen 1</td>
           </tr>
         @endfor

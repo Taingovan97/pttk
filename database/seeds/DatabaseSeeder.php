@@ -14,6 +14,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
+        
+        $this->call(tkSeeder::class);
+=======
         // $this->call(UsersTableSeeder::class);
 
 
@@ -28,6 +32,7 @@ class DatabaseSeeder extends Seeder
         //     'maTruyen'=>'T0'
         // ]);
         // $this->call(tkSeeder::class);
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
         //$this->call(nhomSeeder::class);
         // $this->call(Admin1::class);
         $this->call(Admin2::class);

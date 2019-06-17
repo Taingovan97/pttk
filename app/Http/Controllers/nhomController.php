@@ -17,16 +17,16 @@ class nhomController extends Controller
 
     public function index()
     {
-    	$group = nhom::all()->toArray();
+    	$group = nhom::all();
     	return view('quanlyTK.nhom', ['temp'=>$group]);
     }
 
     public function xemNhom($id_nhom)
     {
     	$data = nhom::find($id_nhom);
-    	$ds_tv = nhom::find($id_nhom)->thanhvien->toArray();
-    	$ds_truyen = nhom::find($id_nhom)->truyen->toArray();
-        $length = max([$data->soLuongTV, $data->soLuongTruyen]);
+    	$ds_tv = nhom::find($id_nhom)->getThanhVien->toArray();
+    	$ds_truyen = nhom::find($id_nhom)->getTruyen->toArray();
+        $length = max([$data->getSoLuongThanhVien(), $data->getSoLuongTruyen()]);
     	return view('quanlyTK.xemNhom', ['group'=>$data, 'ds_tv'=>$ds_tv, 'ds_truyen'=>$ds_truyen, 'length'=>$length]);
     }
 

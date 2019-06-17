@@ -35,7 +35,7 @@
             </div>
             <div class="col-md-4">
                 @if($user->sdt)
-                    <p>{{$user->std}}</p>
+                    <p>{{$user->sdt}}</p>
                 @else
                     <p> Chưa nhập </p>
                 @endif
@@ -55,10 +55,17 @@
             </div>
             <div class="col-md-4">
                 @if($user->maNhom)
+<<<<<<< HEAD
+                    <p>xxx</p>
+                    @else
+                <p> Không tham gia nhóm</p>
+                    @endif
+=======
                     <p><a href="{{route('trangchunhom')}}">{{$user->getNhom->tenNhom}}</a></p>
                 @else
                     <p> Chưa tham gia nhóm</p>
                 @endif
+>>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
             </div>
         </div>
 
