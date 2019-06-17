@@ -27,6 +27,7 @@ body {
 }
 header {
 	height: 100px;
+
 }
 footer {
 	height: 50px;
@@ -113,8 +114,9 @@ footer {
 	height: 40px;
 	width: 100%;
 	float: left;
-	margin-top: 30px;
+	margin-top: 45px;
 	margin-bottom: 20px;
+	position: relative;
 }
 ul {
 	padding: 0px;
@@ -155,12 +157,14 @@ h4 {
 	margin: 5px;
 	font-size: 20px;
 }
+
 .dropdown-list {
 	display: none;
 }
 #account:hover .dropdown-list {
 	display: block;
 	margin: 0 auto;
+
 }
 .dropdown-link:hover {
 	background-color: lightblue;
@@ -172,10 +176,11 @@ h4 {
 	border-right: 1px solid lightgrey;
     margin-top: 15px;
 	width: 150px;
-	height: 80px;
+	height: 100px;
 	padding: 2px;
 	background: white;
 	border-radius: 2px;
+
 
 }
 .dropdown-list a {
@@ -237,6 +242,7 @@ b {
   width: 65%;
   height: 40px;
   margin-left: 17%;
+
 
 }
 #like {

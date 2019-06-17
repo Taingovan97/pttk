@@ -120,7 +120,7 @@ Route::group(['middleware'=>['web','auth_thanhvien']], function(){
      Route::get('taonhom', function () { return view('ThanhVien.taoNhom');}) ->name('formtaonhom');
      Route::post('taonhom', 'DK_QLNhom@postTaoNhom')->name('posttaonhom');
 
-
+    Route::get('danhgia/{matruyen}/{diem}','DK_QLTruyen@danhGia');
 
  });
 Route::middleware(['auth_thanhvienNhom'])->group(function (){
@@ -165,7 +165,7 @@ Route::middleware(['auth_thanhvienNhom'])->group(function (){
         Route::group(['prefix' =>'quanlynhom'], function(){
 
             Route::get('thongtinnhom','DK_QLNhom@thongTinNhom')->name('thongtinnhom');
-            Route::get('suathongtin/{maTK}', 'DK_QLNhom@getSuaThongTinNhom')->name('suathongtinnhom');
+            Route::get('suathongtin', 'DK_QLNhom@getSuaThongTinNhom')->name('suathongtinnhom');
             Route::post('suathongtinnhom', 'DK_QLNhom@postSuaThongTinNhom')->name('postsuathongtinnhom');
             Route::get('thanh_vien_nhom',function (){ return view('tvNhom.dsThanhVien');})->name('thanhviennhom');
             Route::get('them_thanh_vien', 'DK_QLNhom@getThemThanhVien')->name('getthemthanhvien');

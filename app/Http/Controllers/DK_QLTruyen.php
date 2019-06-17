@@ -10,6 +10,7 @@ use App\theloai;
 use App\nhom;
 use App\log_read;
 use App\truyen_theloai;
+use App\rate_tv;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
 use Illuminate\Support\Facades\Auth;
@@ -352,6 +353,13 @@ class DK_QLTruyen extends Controller
    }
 
     public function themTruyenYeuThich($id){
+       $check_exist = thanhvien_truyenyeuthich::where('maTruyen',$id)->get();
+       foreach ($check_exist as $tr_yt)
+       {
+           if($tr_yt->maTK == Auth::user()->maTK)
+               return redirect()->route('chitiettruyen',['id'=>$id]);
+
+       }
         $tv_truyen = new thanhvien_truyenyeuthich;
         $tv_truyen->maTK = Auth::guard('thanhvien')->user()->maTK;
         $tv_truyen->maTruyen =$id;
@@ -674,8 +682,42 @@ class DK_QLTruyen extends Controller
            return redirect()->route('quanlytruyen',['thongbao'=>'Truyện không phải của nhóm!']);
        }
 
+
    }
 
+   public function danhGia($idtruyen, $data){
+       $truyen = truyen::find($idtruyen);
+       $rate = rate_tv::where('maTruyen',$idtruyen)->where('maTK',Auth::user()->maTK)->get();
+        if (count($rate)!=0)
+        {
+            $rate= $rate[0];
+            if(!$rate->checkValidateRate())
+                echo "Điểm đánh giá: ".strval($truyen->diemDG);
+            else{
+                $rate->diem = $data;
+                $rate->rateTime = Carbon::now('Asia/Ho_Chi_Minh');
+                $rate->save();
+                $truyen->soDG +=1;
+                $truyen->diemDG =round(($truyen->diemDG*($truyen->soDG-1) + $data)/$truyen->soDG,1);
+                $truyen->save();
+                echo "Điểm đánh giá: ".strval($truyen->diemDG);
+            }
+        }else
+        {
+            $rate = new rate_tv;
+            $rate->maTruyen = $idtruyen;
+            $rate->maTK = Auth::user()->maTK;
+            $rate->diem = $data;
+            $rate->rateTime = Carbon::now('Asia/Ho_Chi_Minh');
+            $rate->save();
+            $truyen->soDG +=1;
+            $truyen->diemDG =round(($truyen->diemDG*($truyen->soDG-1) + $data)/$truyen->soDG,1);
+            $truyen->save();
+            echo "Điểm đánh giá: ".strval($truyen->diemDG);
+        }
+
+
+   }
    
    
 }

@@ -27,7 +27,7 @@
             <div class="col-md-10 view-comics" style="margin-top: 30px;">
                 <div class="row">
 
-                    <img src="{{asset($nhom->linkAnh)}}" onerror="this.src='{{asset('images/x.png')}}'">
+                    <img src="{{asset($nhom->linkAnh)}}" onerror="this.src='{{asset('images/x.png')}}'" class="cover">
                     <div class="col-md-9">
                         <h6>{{$nhom->tenNhom}}</h6>
                         <ul>
@@ -43,7 +43,7 @@
                 <div class="row" style="margin-top: 50px;">
                     <button onclick="window.location='{{route("thanhviennhom")}}'">Danh sách thành viên</button>
                     @if(Auth::guard('thanhvien')->user()->maTK ==$nhom->maTruongNhom)
-                        <button onclick="window.location='{{route("suathongtinnhom",['maTK'=>$nhom->maTruongNhom])}}'">Sửa thông tin nhóm</button>
+                        <button onclick="window.location='{{route("suathongtinnhom")}}'">Sửa thông tin nhóm</button>
                     @endif
                 </div>
 

@@ -212,19 +212,14 @@ class DK_QLTaiKhoan extends Controller
             'tentaikhoan'=>'min:4',
             'email' => 'required|email',
             'matkhaucu'=> 'required',
-            'matkhaumoi'=> 'min:8|max:32',
             'nhaplaimatkhau' =>'same:matkhaumoi',
-            'sdt'=>'min:10',
 
        ],[
            'tentaikhoan.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
            'email.required' => 'Bạn chưa nhập email',
            'email.email' => 'Email không hợp lệ',
            'matkhaucu.required' => 'Bạn chưa nhập mật khẩu',
-           'matkhaumoi.min' => 'Mật khẩu không ít hơn 8 ký tự',
-           'matkhaumoi.max' => 'Mật khẩu không vượt quá 32 ký tự',
            'nhaplaimatkhau.same' => 'Mật khẩu nhập lại chưa đúng',
-           'sdt.min'=>'sô điện thoại không hợp lệ',
        ]);
 
             $users_email = thanhvien::where('email','<>',Auth::guard('thanhvien')->user()->email)->get();
@@ -246,27 +241,41 @@ class DK_QLTaiKhoan extends Controller
             }
 
             $thanhvien = thanhvien::find(Auth::guard('thanhvien')->user()->maTK);
+            if($request->matkhaumoi)
+            {
+                $this->validate($request,[
+                    'matkhaumoi'=> 'min:8|max:32'
+                ],[
+                    'matkhaumoi.min' => 'Mật khẩu mớikhông ít hơn 8 ký tự',
+                    'matkhaumoi.max' => 'Mật khẩu mới không vượt quá 32 ký tự'
+                ]);
+
+            }
             if(Hash::check($request->matkhaucu, $thanhvien->password))
             {
-              $thanhvien->name = $request ->tentaikhoan;
-              if ($request->matkhaumoi) {
-                $thanhvien->password = bcrypt($request ->matkhaumoi);
-              }
-              $thanhvien->email = $request->email;
-              if (isset($request->std)) {
-                $thanhvien->sdt = $request->sdt;
-              }
-              if ($request->hasFile('avatar')) {
-                $file = $request->avatar;
-                $thanhvien->avatar = 'avatar/'.strval($user->maTK).'.png';
-                $file->move('avatar', strval($user->maTK).'.png');
-              }
-              $thanhvien->save();
-              Auth::attempt(['name'=>$request->tentaikhoan,'password' => $request->matkhaumoi]);
-              return redirect()->route('formsuatk',['ten'=>$thanhvien->name])->with('thongbao', 'Sửa thông tin thành công!');
-            }else
-            {
-              return redirect()->route('formsuatk')->with('thongbao', 'Mật khẩu sai');
+                $thanhvien->name = $request ->tentaikhoan;
+                if ($request->matkhaumoi) {
+                    $thanhvien->password = bcrypt($request ->matkhaumoi);
+                }
+                $thanhvien->email = $request->email;
+                if ($request->std) {
+                    $this->validate($request,[
+                        'std'=>'min:10',
+                    ],[
+                        'std.min'=>'sô điện thoại không hợp lệ',
+                    ]);
+                    $thanhvien->sdt = $request->sdt;
+                }
+                if ($request->hasFile('avatar')) {
+                    $file = $request->avatar;
+                    $thanhvien->avatar = 'avatar/'.strval($user->maTK).'.png';
+                    $file->move('avatar', strval($user->maTK).'.png');
+                }
+                $thanhvien->save();
+                Auth::attempt(['name'=>$request->tentaikhoan,'password' => $request->matkhaumoi]);
+                return redirect()->route('formsuatk',['ten'=>$thanhvien->name])->with('thongbao', 'Sửa thông tin thành công!');
+            }else{
+                return redirect()->route('formsuatk')->with('thongbao', 'Mật khẩu sai');
             }
 
     }

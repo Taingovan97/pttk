@@ -9,8 +9,6 @@ class thanhvien_truyenyeuthich extends Model
 {
     protected $table = 'thanhvien_truyenyeuthich';
     public $timestamps = false;
-    protected $primaryKey = 'maTK';
-    public $incrementing = false;
 
     public function getTruyen(){
 

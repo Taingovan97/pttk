@@ -46,17 +46,17 @@
 @section('head.content')
 <div class="row root-view">
 <div class="col-md-8 view-comics">
-  <div class="row" style="border: 1px solid;margin: 2px;padding:30px 10px;margin-bottom: 20px;">
+  <div class="row" style="border: 1px solid;margin: 2px;padding:30px 10px;margin-bottom: 20px; height: 400px;">
     <div class="col-md-12" style="border-bottom: 1px solid;margin-bottom: 10px;">
-      <h3>TRUYỆN MỚI 2</h3>
+      <h3>TRUYỆN MỚI</h3>
     </div>
     <div class="w3-content w3-display-container" style="margin:10px">
       @foreach($truyenmoi as $truyenm)
       <div class="mySlides" style="width:100%" >
-        <div class="col-md-4">
-          <img src="{{asset($truyenm->linkAnh)}}" alt="cover" style="width: 100%;">
+        <div class="col-md-3">
+          <img src="{{asset($truyenm->linkAnh)}}" alt="cover"  class="cover">
         </div>
-        <div class="col-md-8">
+        <div class="col-md-6">
           <h4><a href="{{route('chitiettruyen',['id'=>$truyenm->maTruyen])}}">{{$truyenm->tenTruyen}}</a></h4>
           <div class="" style="border-bottom: 1px solid;">
             @foreach($truyenm->getTheLoai as $tr_tl)
@@ -64,7 +64,7 @@
             @endforeach
           </div>
           <div class="">
-            <p>{{$truyenm->gioiThieu}}</p>
+            <p>{{substr($truyenm->gioiThieu,0, 50)}}</p>
           </div>
           <div class="">
             <button type="button" name="button" style="    margin: 0 auto;    width: 200px;    display: block;    background: red;    border: none;    padding: 5px;    font-weight: bold;"><a href="{{route('chitiettruyen',['id'=>$truyenm->maTruyen])}}" style="color: white">Đọc liền cho máu</a></button>
@@ -102,10 +102,10 @@
       <h3>Chap mới</h3>
     </div>
     @foreach($dstruyen as $truyen)
-      @if (!empty($truyen->ChuongMoiNhat()->toArray()))
+      @if (count($truyen->ChuongMoiNhat()) !=0)
         <div class="row">
           <div class="col-md-3">
-            <img src="{{asset($truyen->linkAnh)}}" alt="cover" style="width: 150px; height: 150px;">
+            <img src="{{asset($truyen->linkAnh)}}" alt="cover" class="cover">
           </div>
           <div class="col-md-6">
             <h6><a href="{{route('chitiettruyen',['id'=>$truyen->maTruyen])}}">{{$truyen->tenTruyen}}</a></h6>
