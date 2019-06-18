@@ -117,7 +117,16 @@ Route::group(['middleware'=>['web','auth_thanhvien']], function(){
 
      // Tạo nhóm
 
-     Route::get('taonhom', function () { return view('ThanhVien.taoNhom');}) ->name('formtaonhom');
+     Route::get('taonhom', function () {
+         if (Auth::user()->active ==true)
+             if(Auth::user()->maNhom)
+                 return redirect()->route('trangchunhom');
+             else
+                 return view('ThanhVien.taoNhom');
+         else
+             return redirect()->route('trangchu')->with('thongbao','<script>alert("Bạn cần xác nhận tài khoản để tạo nhóm!")</script>');
+     })->name('formtaonhom');
+
      Route::post('taonhom', 'DK_QLNhom@postTaoNhom')->name('posttaonhom');
 
     Route::get('danhgia/{matruyen}/{diem}','DK_QLTruyen@danhGia');

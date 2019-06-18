@@ -137,6 +137,9 @@
   </div>
 </div>
 @include('partials.chart', ['chartTruyens' => $chartTruyens])
+  @if(session('thongbao'))
+    <?php echo session('thongbao')?>
+  @endif
 </div>
 
 @endsection
