@@ -5,7 +5,8 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <link rel="stylesheet" href="{{asset('css/style.css')}}">
     <link rel="stylesheet" href="{{asset('css/TV_themthanhvien.css')}}">
-
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <title>Thêm thành viên mới</title>
 </head>
 <body>
@@ -18,9 +19,16 @@
                 <h5><a href="{{route('trangchu')}}">Trang chủ/</a><a href="{{route('trangchunhom')}}"> Nhóm/</a><a href=""> Duyệt thành viên</a></h5>
                 <p>Tìm thành viên: </p>
                 <div class="find-element" style="width: 25%; margin-left: 10px;"> 
-                    <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
-                    <button type="submit"></button>
+                    <input id="timtv" type="text" name="keyword" placeholder="   Tìm kiếm" value="">
                 </div>
+                <script>
+                    $(document).on("keypress", "input", function(e){
+                        var content = $('#timtv').val();
+                        if(e.which == 13){
+                            window.location = '/nhom/quanlynhom/timtv/'+content;
+                        }
+                    });
+                </script>
             </div>
 
         </div>

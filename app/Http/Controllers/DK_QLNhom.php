@@ -8,6 +8,9 @@ use App\nhom;
 use App\thanhvien;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Input;
+use Illuminate\Pagination\LengthAwarePaginator;
+
 class DK_QLNhom extends Controller
 {
     function fetch(Request $request)
@@ -134,6 +137,37 @@ class DK_QLNhom extends Controller
         }
         else
             return view('trangchunhom');
+    }
+
+    public function timThanhVien($content=null){
+
+        $nhom = Auth::guard('thanhvien')->user()->getNhom;
+
+        $pattern = '/[a-zA-Z]*';
+        $tokens = explode(' ',$content);
+        foreach ($tokens as $tk)
+        {
+            $pattern = $pattern.$tk.'[a-zA-Z]*\s*';
+        }
+        $pattern = $pattern.'/';
+        $results =[];
+        $manhom = $nhom->maNhom;
+        $thanhviens = thanhvien::when($manhom, function($query,$manhom){
+            $query->where('maNhom','<>',$manhom)
+                ->orWhereNull('maNhom');
+        })->get();
+        foreach ($thanhviens as $tv)
+        {
+            if(preg_match($pattern, $tv->name))
+                array_push($results,$tv);
+        }
+        $paginate = 4;
+        $page = Input::get('page', 1);
+        $of = $page*$paginate-$paginate;
+        $curesults = array_slice($results, $of, $paginate, true);
+        $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+        $pagi->setpath('/theloai/');
+        return view('tvNhom.ThemThanhVien',['thanhviens'=>$pagi,'slthanhvien'=>sizeof($pagi)]);
     }
 
     public function themThanhVien($name){
