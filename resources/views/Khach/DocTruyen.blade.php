@@ -79,8 +79,8 @@
                 function changechap(){
                     var maChuong = document.getElementById("selectChap").value;
                     var maTruyen = '{{$truyen->maTruyen}}';
-                    alert(maChuong);
-                    alert(maTruyen);
+                    // alert(maChuong);
+                    // alert(maTruyen);
                     window.location = '/truyen/'+ maTruyen +'/' +maChuong;
 
                 }
@@ -104,7 +104,7 @@
       <ul class="listcomment">
         <li>
       <div class="comment">
-        <img src="{{asset('images/comment.png')}}">
+        <img src="{{asset(Auth::guard('thanhvien')->user()->avatar)}}" onerror="this.src='{{asset('images/comment.png')}}'" >
           <form method="post", action="{{route('binhluan',['maTruyen'=> $truyen->maTruyen,'maChuong'=>$chuongxem->maChuong,'noidung'])}}">
               {{csrf_field()}}
               <div class="comment_left">
@@ -112,22 +112,7 @@
                   <footer>
                       <button >Hủy</button>
                       <button id= "dang" type="submit" >Đăng</button>
-{{--                      <script>--}}
-{{--                          function clearcomment() {--}}
-{{--                              document.getElementById('binhluan').value="";--}}
-{{--                          }--}}
-{{--                          --}}{{--$(document).ready(function(){--}}
-{{--                          --}}{{--    $("#dang").click(function(){--}}
-{{--                          --}}{{--        $.post("{{route('binhluan')}}",--}}
-{{--                          --}}{{--            {--}}
-{{--                          --}}{{--                binhluan: "Donald Duck",--}}
-{{--                          --}}{{--            },--}}
-{{--                          --}}{{--            function(data){--}}
-{{--                          --}}{{--                  --}}
-{{--                          --}}{{--            });--}}
-{{--                          --}}{{--    });--}}
-{{--                          --}}{{--});--}}
-{{--                      </script>--}}
+
                   </footer>
               </div>
           </form>
@@ -138,7 +123,7 @@
     <li>
       <div class="comment">
           <div >
-              <img src="{{asset($binhluan->getThanhVien->linhAnh)}}" onerror="this.src='{{asset('images/comment.png')}}'" />
+              <img src="{{asset($binhluan->getThanhVien->avatar)}}" onerror="this.src='{{asset('images/comment.png')}}'">
           </div>
         <div class="comment_completed">
         <p>{{$binhluan->noiDung}}</p>

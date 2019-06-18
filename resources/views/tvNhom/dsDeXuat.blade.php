@@ -39,7 +39,9 @@
                 </div>
             </div>
         </div>
-        <div class="" style="padding: 30px 0;">
+        <div class="row" style="padding-top: 30px;">
+        <div class="col-md-2"></div>
+        <div class="col-md-10">
             <table border="1px" cellpadding="0px" cellspacing="0px" width="80%" style="text-align: center;">
                 <tr>
                     <td>Tiêu đề</td>
@@ -66,6 +68,7 @@
                 @endif
             </div>
         </div>
+    </div>
     </div>
 @endsection
 

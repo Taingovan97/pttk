@@ -60,21 +60,64 @@ class DK_QLNhom extends Controller
 
     }
 
-    public function getSuaThongTinNhom($maTK){
-
-        if(Auth::guard('thanhvien')->user()->maTK == $maTK)
+    public function getSuaThongTinNhom(){
+        $user = Auth::guard('thanhvien')->user();
+        if($user->maTK == $user->getNhom->maTruongNhom)
             return view('tvNhom.SuaThongTinNhom');
         else
             return redirect()->route('trangchunhom');
     }
 
     public function postSuaThongTinNhom(Request $request){
-      
+            $this->validate($request,[
+            'tennhom'=>'min:4',
+            'truongnhom' => 'required',
+            'gioithieu'=> 'min:8|max:70',
+
+           ],[
+               'tennhom.min' => 'Tên người dùng phải chứa ít nhất 4 ký tự',
+               'truongnhom.required' => 'Bạn chưa nhập email',
+               'matkhaucu.required' => 'Bạn chưa nhập mật khẩu',
+               'gioithieu.min' => 'Nội dụng giới thiệu không ít hơn 8 ký tự',
+               'gioithieu.max' => 'Nội dung giới thiệu vượt quá 32 ký tự',
+           ]);
+
+            $nhom_check = nhom::all();
+            foreach ($nhom_check as $n)
+            {
+                if($n->tenNhom == $request->tennhom and $n->maNhom !=Auth::user()->maNhom)
+                    return redirect()->route('suathongtinnhom')->with('thongbao','Tên nhóm đã được đặt');
+            }
+
+            $nhom = nhom::find(Auth::user()->maNhom);
+            $nhom->tenNhom = $request->tennhom;
+
+            $user = thanhvien::where('name',$request->truongnhom)->where('maNhom',Auth::guard('thanhvien')->user()->maNhom)->get();
+            if(count($user)!=0)
+            {
+                $user = $user[0];
+                $nhom->maTruongNhom = $user->maTK;
+
+            }else
+                return redirect()->route('suathongtinnhom')->with('thongbao','Thành viên này không thuộc nhóm');
+
+            $nhom->gioiThieu = $request->gioithieu;
+
+            if ($request->hasFile('avatar')) {
+            $file = $request->avatar;
+            $nhom->linkAnh = 'cover_nhom/'.strval($nhom->maNhom).'.png';
+            $file->move('cover_nhom', strval($nhom->maNhom).'.png');
+            }
+            $nhom->save();
+
+            return redirect()->route('suathongtinnhom')->with('thongbao', 'Sửa thông tin thành công!');
+
     }
     public function xoaThanhVienNhom($maTK){
         DB::table('thanhvien')
             ->where('maTK',$maTK)
             ->update(['maNhom' => null]);
+        return redirect()->route('thanhviennhom');
     }
 
     public function getThemThanhVien(){
@@ -97,7 +140,7 @@ class DK_QLNhom extends Controller
       if(Auth::guard('thanhvien')->user()->getNhom->maNhom != Auth::guard('thanhvien')->user()->maNhom)
         return redirect()->route('trangchunhom');
 
-      $thanhvien = thanhvien::all()->where('name',$name)[0];
+      $thanhvien = thanhvien::where('name',$name)->get()[0];
       if(!$thanhvien->maNhom)
       {
         $thanhvien->maNhom = Auth::guard('thanhvien')->user()->maNhom;

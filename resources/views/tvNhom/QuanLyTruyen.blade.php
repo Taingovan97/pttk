@@ -56,7 +56,7 @@
 
                     <div class="row" style="margin-top: 20px;">
 
-                        <img src="{{asset($truyen->linkAnh)}}" onerror="this.src='{{asset('images/anh1.png')}}'">
+                        <img src="{{asset($truyen->linkAnh)}}" onerror="this.src='{{asset('images/anh1.png')}}'" class="cover">
                         <div class="col-md-8">
                             <b><a href="{{route('chitiettruyennhom',['id'=>$truyen->maTruyen])}}">{{$truyen->tenTruyen}}</a></b>
                             <ul>

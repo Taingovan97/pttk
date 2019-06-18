@@ -18,13 +18,34 @@ Truyện tranh online
                     </h5>
                 </div>
                 @if($option =='Thể loại' or $option =='Năm' or $option == 'Nhóm' )
-                <div ><select style="right: 0px; width: 150px; height: 30px; border-radius: 10px">
+                <div ><select style="right: 0px; width: 150px; height: 30px; border-radius: 10px" id="select_">
                         <option disabled selected>{{$option}}</option>
                         @foreach($select as $op)
                             <option>{{$op}}</option>
                         @endforeach
-                    </select></div>
+                    </select>
+                </div>
                     @endif
+                <script>
+                    $(document).ready(function () {
+                        $('#select_').change(function () {
+                            var content = $(this).val();
+                            var option = "{{$option}}";
+                            switch (option) {
+                                case 'Thể loại':
+                                    window.location = '/theloai/'+content;
+                                    break;
+                                case 'Năm':
+                                    window.location = '/nam/'+content;
+                                    break;
+                                case 'Nhóm':
+                                    window.location = '/timtruyen/tennhom/'+content;
+                                    break;
+
+                            }
+                        })
+                    })
+                </script>
             </div>
 
         </div>

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTaikhoanTruyenyeuthichesTable extends Migration
+class Ratetv extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateTaikhoanTruyenyeuthichesTable extends Migration
      */
     public function up()
     {
-        Schema::create('thanhvien_truyenyeuthich', function (Blueprint $table) {
+        Schema::create('rate_tv', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->integer('maTK');
             $table->integer('maTruyen');
+            $table->integer('maTK');
+            $table->integer('diem');
+            $table->timestamp('rateTime');
         });
     }
 
@@ -27,6 +29,6 @@ class CreateTaikhoanTruyenyeuthichesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('thanhvien_truyenyeuthich');
+        Schema::dropIfExists('rate_tv');
     }
 }

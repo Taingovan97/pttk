@@ -4,7 +4,7 @@
     Truyện tranh online
 @endsection
 @section('head.css')
-    <link rel="stylesheet" href="{{asset('css/TV_like_share_xoa.css')}}">
+    <link rel="stylesheet" href="{{asset('css/TV_thongketruyen.css')}}">
 @stop
 @section('head.content')
 
@@ -25,8 +25,8 @@
 
     </div>
     <div class="col-md-10 view-comics" style="margin-top: 30px;">
-        <table style="width:100%">
-  <tr style="text-align: center;">
+<table style="width:100%; text-align: center">
+    <tr>
     <th>Tên truyện</th>
     <th>Thời gian</th> 
     <th>Chap mới nhất</th>

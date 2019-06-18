@@ -81,7 +81,6 @@
                         });
 
                     </script>
-                    <button>Chọn file</button></td>
             </tr>
             <tr>
                 <td style="width: 25%;">Link ảnh*:</td>

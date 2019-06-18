@@ -1,9 +1,16 @@
 /*header css*/
 body{
   background: #333;
+
 }
 header .container{
   background: #222222;
+  padding-left: 0;
+  padding-right: 0;
+}
+.row {
+  margin-left: 0;
+  margin-right: 0;
 }
 .find,.user{
   margin: 20px 0;
@@ -150,6 +157,26 @@ footer {
   background: #fff;
   padding-bottom: 20px;
 }
+.main {
+  padding-left: 0;
+  padding-right:0;
+}
+.cover {
+  height: 200px;
+  width: 160px;
+}
+
+.avatar_infor{
+  height: 360px;
+  width: 350px;
+}
+.avatar_comment{
+  max-height: 57px;
+  max-width: 58px;
+
+
+}
+
 .location ul{
 
 }
