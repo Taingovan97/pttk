@@ -24,7 +24,7 @@
       <h4>Thông tin tài khoản</h4>
       <div class="row">
         <div class="col-md-4">
-          <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;border: 1px solid;">
+          <img onerror="this.src='{{asset('images/x.png')}}'" src="{{$user->avatar}}" alt="" style="width: 100%;border: 1px solid;">
 		  <button type="button" name="button" style="margin: 10px auto;width: 100%;background: #00b2bf;padding: 8px;border: none;font-weight: bold;color: #fff;font-size: 14px;" class="button-del">Xóa</button>
         </div>
       <div class="col-md-8">

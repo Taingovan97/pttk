@@ -8,7 +8,7 @@
       <div class="row">
         <?php $user = Auth::guard('admin')->user()?>
         <div class="col-md-4">
-          <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;border: 1px solid;">
+          <img onerror="this.src='{{asset('images/x.png')}}'" src="{{$user->avatar}}" alt="" style="width: 100%;border: 1px solid;">
           <button type="button" name="button" onclick="window.location='{{route("suaTK",['ten'=>$user->name])}}'" style="margin: 10px auto;display: block;width: 80%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" >Sửa tài khoản</button>
         </div>
         <div class="col-md-8">

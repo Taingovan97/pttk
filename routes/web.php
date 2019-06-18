@@ -26,8 +26,7 @@
  	Route::get('tacgia', 'DK_Trang@layTruyenTheoTacGia')->name('tacgia');
  	Route::get('nam/{nam?}', 'DK_QLTruyen@layTruyenTheoNam')->name('nam');
  	Route::get('chart/{option}','DK_QLTruyen@doithongke');
-	//trang chu
-	Route::get('home', 'pagescontroller@index');
+	
 
 	
 

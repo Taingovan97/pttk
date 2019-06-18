@@ -5,6 +5,7 @@ use Carbon\Carbon;
 use App\nhom;
 use App\admin;
 use App\thanhvien;
+use App\theloai;
 class DatabaseSeeder extends Seeder
 {
     /**
@@ -14,28 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-<<<<<<< HEAD
-        
-        $this->call(tkSeeder::class);
-=======
-        // $this->call(UsersTableSeeder::class);
-
-
-
-
-
-
-        // DB::table('chuongtruyen')->insert([
-        //     'tenChuong'=>'chuong 4 cua truyen 1',
-        //     'noiDung'=>'nd',
-        //     'ngayDang'=>'1-4-2019',
-        //     'maTruyen'=>'T0'
-        // ]);
         // $this->call(tkSeeder::class);
->>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
+
         //$this->call(nhomSeeder::class);
         // $this->call(Admin1::class);
-        $this->call(Admin2::class);
+        //$this->call(Admin2::class);
+        $this->call(theloai1::class);
 
     }
 }
@@ -101,3 +86,17 @@ class Admin2 extends Seeder
         $ad1->save();
     }
 }
+class theloai1 extends Seeder
+{
+    public function run()
+    {
+        for ($i=0; $i < 10; $i++) { 
+            # code...
+            $data = new theloai;
+            $data->tenTL = str_random(5);
+            $data->moTa = 'Day la 1 the loai hap dan';
+            $data->save();
+        }
+    }
+}
+

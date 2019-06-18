@@ -36,14 +36,14 @@
             <div class="col-md-6">
               <div class="row search-view-element">
                 <div class="col-md-5">
-                  <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+                  <img onerror="this.src='{{asset('images/x.png')}}'" src="{{asset('$nhom->linkAnh')}}" alt="" style="width: 100%;">
                 </div>
                 <div class="col-md-7" >
                   <h5><a href="{{route('xemNhom', ['id_nhom'=> $nhom->maNhom])}}"><?php echo $nhom->tenNhom; ?></a></h5>
                 <div class="row" >
                   <p><?php echo "Số lượng thành viên: ".$nhom->getSoLuongThanhVien();?></p>
                   <p><?php echo "Số lượng truyện: ".$nhom->getSoLuongTruyen(); ?></p>
-                  <p><?php echo "Ngày thành lập: ".$nhom->getNgayLap(); ?></p>
+                  <h5><?php echo "Ngày thành lập: ".$nhom->getNgayLap(); ?></h5>
                 </div>
                 </div>
               </div>
