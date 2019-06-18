@@ -24,7 +24,7 @@
             </div>
         @endif
         @if(session('thongbao'))
-            <div class="alert alert-success">
+            <div class="alert alert-danger">
                 {{session('thongbao')}}
             </div>
         @endif
@@ -131,10 +131,6 @@
         <button type="button" name="canle" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;"
                 onclick="window.location='{{route("thongtintaikhoan")}}'">Hủy</button>
 
-<<<<<<< HEAD
-        
-=======
->>>>>>> dd168f6fa388ce4d087ffda87cd8b9d6fed92b89
         </form>
     </div>
     </div>

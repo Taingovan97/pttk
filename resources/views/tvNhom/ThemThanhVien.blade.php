@@ -42,7 +42,7 @@
 
                     <div class="row" style="margin-top: 20px;">
 
-                        <img src="{{asset($thanhvien->avatar)}}" onerror="this.src='{{asset('avatar/no-avatar208.png')}}'" alt="avatar">
+                        <img class="avatar_list" src="{{asset($thanhvien->avatar)}}" onerror="this.src='{{asset('avatar/no-avatar208.png')}}'" alt="avatar">
                         <div class="col-md-8">
 
                             <ul>
@@ -67,80 +67,7 @@
                 </div>
             @endif
             <?php $count +=1;?>
-        @endforeach
-{{--    <div class="col-md-6 view-comics">--}}
-{{--        <div class="row" style="margin-top: 20px;">--}}
-
-{{--        <img src="images/anh1.png" onerror="this.src='{{asset('images/anh1.png')}}'">--}}
-{{--        <div class="col-md-8">--}}
-{{--        --}}
-{{--        <ul>--}}
-{{--        <li><b>Tên tài khoản: Tokyo97</b></li>--}}
-{{--        <li>Ngày tham gia: 01/01/2019</li>--}}
-{{--        <li>Trạng thái: Chưa thuộc nhóm nào.</li>--}}
-{{--        </ul>--}}
-{{--        <div class="row" style="margin-top: 20px;">--}}
-{{--            <button>Thêm thành viên</button>--}}
-{{--            <button>Xóa yêu cầu</button>--}}
-{{--        </div>--}}
-{{--        </div>--}}
-{{--        </div>--}}
-
-{{--        <div class="row" style="margin-top: 20px;">--}}
-
-{{--        <img src="images/anh1.png">--}}
-{{--        <div class="col-md-8">--}}
-{{--        --}}
-{{--        <ul>--}}
-{{--        <li><b>Tên tài khoản: Tokyo97</b></li>--}}
-{{--        <li>Ngày tham gia: 01/01/2019</li>--}}
-{{--        <li>Trạng thái: Chưa thuộc nhóm nào.</li>--}}
-{{--    </ul>--}}
-{{--    <div class="row" style="margin-top: 20px;">--}}
-{{--            <button>Thêm thành viên</button>--}}
-{{--            <button>Xóa yêu cầu</button>--}}
-{{--        </div>--}}
-{{--        </div>--}}
-{{--        </div>    --}}
-
-{{--    </div>--}}
-{{--    <div class="col-md-6 view-comics">--}}
-{{--        <div class="row" style="margin-top: 20px;">--}}
-
-{{--        <img src="images/anh1.png">--}}
-{{--        <div class="col-md-8">--}}
-{{--        --}}
-{{--        <ul>--}}
-{{--        <li><b>Tên tài khoản: Tokyo97</b></li>--}}
-{{--        <li>Ngày tham gia: 01/01/2019</li>--}}
-{{--        <li>Trạng thái: Chưa thuộc nhóm nào.</li>--}}
-{{--    </ul>--}}
-{{--    <div class="row" style="margin-top: 20px;">--}}
-{{--            <button>Thêm thành viên</button>--}}
-{{--            <button>Xóa yêu cầu</button>--}}
-{{--        </div>--}}
-{{--        </div>--}}
-{{--        </div>--}}
-
-{{--    <div class="row" style="margin-top: 20px;">--}}
-
-{{--        <img src="images/anh1.png">--}}
-{{--        <div class="col-md-8">--}}
-{{--        --}}
-{{--        <ul>--}}
-{{--        <li><b>Tên tài khoản: Tokyo97</b></li>--}}
-{{--        <li>Ngày tham gia: 01/01/2019</li>--}}
-{{--        <li>Trạng thái: Chưa thuộc nhóm nào.</li>--}}
-{{--    </ul>--}}
-{{--    <div class="row" style="margin-top: 20px;">--}}
-{{--            <button>Thêm thành viên</button>--}}
-{{--            <button>Xóa yêu cầu</button>--}}
-{{--        </div>--}}
-{{--        </div>--}}
-{{--        </div>    --}}
-
-{{--    </div>--}}
-   
+        @endforeach   
 
 </div>
 

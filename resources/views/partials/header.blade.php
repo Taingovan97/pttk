@@ -7,7 +7,6 @@
             <div class="col-md-4 find">
                 <div class="find-element">
                     <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
-                    <button type="submit"></button>
                 </div>
                 <div class="filter-element">
                     <select id="option" name="mostLike" class="select">

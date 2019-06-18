@@ -17,7 +17,11 @@ Truyện tranh online
 
             <div class="item">
                 <div class="infor">
+                    <div class="row">
+                        <div class="col-md-3">
                     <a href="{{route('chitiettruyen',['id'=>$tv_tr->getTruyen->maTruyen])}}"><img src="{{$tv_tr->getTruyen->linkAnh}}"/></a>
+                        </div>
+                        <div class="col-md-8">
                     <a href="{{route('chitiettruyen',['id'=>$tv_tr->getTruyen->maTruyen])}}"><h4>{{$tv_tr->getTruyen->tenTruyen}}</h4></a>
                     <p>Đánh giá: <span>
                             @if($tv_tr->getTruyen->diemDG>0)
@@ -40,7 +44,6 @@ Truyện tranh online
                     <p>Tình trạng: Đang thực hiện</p>
                     <p>Sơ lược nội dung truyện:<span> {{$tv_tr->getTruyen->gioiThieu}}</span></p>
                     <nav>
-                        <button id="share" onclick="window.location='{{route("chiase",['id'=>1])}}'">Share</button>
                         <button id="delete" onclick="confirmDelete()">Xóa</button>
                         <script>
                             function confirmDelete(){
@@ -55,6 +58,8 @@ Truyện tranh online
 
                         </script>
                     </nav>
+                    </div>
+                </div>
                 </div>
             </div>
 {{--            {{$tv_tl->getTruyen->tenTruyen}}--}}

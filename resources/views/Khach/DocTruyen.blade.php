@@ -19,13 +19,21 @@
 		   <div class="logo"><a href="{{route('trangchu')}}" title="Trang chủ"><img src="{{asset('images/logo1.png')}}" alt="Logo"></a></div>
 		   <div class="container">
 		       <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
-		       <button type="submit"></button>
 		   </div>
              <select name="select" class="select">
-	            <option selected value="tentruyen"><a href="#">Tìm theo tên truyện</a></option>
-	            <option value="tennhom"><a href="#">Tìm theo tên nhóm</a></option>
-	            <option value="theloai"><a href="#">Tìm theo thể loại truyện</a></option>
+	            <option selected value="tentruyen">Tìm theo tên truyện</option>
+	            <option value="tennhom">Tìm theo tên nhóm</option>
+	            <option value="theloai">Tìm theo thể loại truyện</option>
              </select>
+            <script>
+                $(document).on("keypress", "input", function(e){
+                    var option = $('select').val();
+                    if(e.which == 13){
+                        var inputVal = $(this).val();
+                        window.location = '/timtruyen/'+option + '/' + inputVal;
+                    }
+                });
+            </script>
                  @if (Auth::guard('thanhvien')->user() or Auth::guard('admin')->user())
                 <div class="dropdown">
                     <div id="account"> <strong style="color: red">{{Auth::guard('thanhvien')->user()->name}}</strong>
@@ -63,15 +71,19 @@
 
       </div>
         <div class="title" id="navbar">
-        	<button type="button" class="next" onclick="window.location='<?php if($chuongxem->chuongTruoc())
-                echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->chuongTruoc()]);
+        	<button type="button" class="next" onclick="window.location='<?php if($chuongxem->chuongTruoc($truyen->maTruyen))
+                echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->chuongTruoc($truyen->maTruyen)]);
             else
                 echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->maChuong]);
             ?>'"><</button>
 
         	<select id="selectChap" onchange="changechap()">
                 @foreach($truyen->dsChuong as $chuong)
-	            <option  value="{{$chuong->maChuong}}" ><a href="#">{{$chuong->tenChuong}}</a></option>
+                    @if ($chuong->maChuong ==$chuongxem->maChuong)
+                        <option  value="{{$chuong->maChuong}}" selected><a href="#">{{$chuong->tenChuong}}</a></option>
+                    @else
+                        <option  value="{{$chuong->maChuong}}" ><a href="#">{{$chuong->tenChuong}}</a></option>
+                    @endif
                 @endforeach
              </select>
 
@@ -82,12 +94,11 @@
                     // alert(maChuong);
                     // alert(maTruyen);
                     window.location = '/truyen/'+ maTruyen +'/' +maChuong;
-
                 }
             </script>
 
-        	<button type="button" class="next"  onclick="window.location='<?php if($chuongxem->chuongSau())
-                echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->chuongSau()]);
+        	<button type="button" class="next"  onclick="window.location='<?php if($chuongxem->chuongSau($truyen->maTruyen))
+                echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->chuongSau($truyen->maTruyen)]);
             else
                 echo route("doctruyen",['idTruyen'=> $truyen->maTruyen, 'idChuong' =>$chuongxem->maChuong]);
             ?>'">></button>
@@ -110,9 +121,14 @@
               <div class="comment_left">
                   <textarea id="binhluan" placeholder="Thêm bình luận" name="binhluan"></textarea>
                   <footer>
-                      <button >Hủy</button>
+                      <input type="button" value="Hủy" onclick="clearcomment()">
                       <button id= "dang" type="submit" >Đăng</button>
-
+                    <script>
+                        function clearcomment() {
+                            document.getElementById('binhluan').value= '';
+                            document.getElementById('binhluan').placeholder = "Thêm bình luận";
+                        }
+                    </script>
                   </footer>
               </div>
           </form>

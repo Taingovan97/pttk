@@ -68,7 +68,8 @@
                         @endforeach
                     </li>
                     <li>Trạng thái: {{$truyen->trangThaiTruyen()}}</li>
-                    <li style="border: 1px solid grey; height: 100px;">Sơ lược nội dung truyện: {{$truyen->gioiThieu}}</li>
+                    <li style="border: 1px solid grey; height: 100px;">Sơ lược nội dung truyện: 
+                        <div style="word-wrap: break-word;">{{$truyen->gioiThieu}}</div></li>
                 </ul>
                 <div class="row" style="margin-top: 20px;">
                     <button onclick="window.location = '{{route('themTruyenYeuThich',['id'=>$truyen->maTruyen])}}'">Like</button>

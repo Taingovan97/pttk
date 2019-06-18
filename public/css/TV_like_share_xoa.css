@@ -110,4 +110,7 @@ li button {
 	padding: 0px;
 	color: white;
 }
+.col-md-8 {
+	word-wrap: break-word;
+}
 

@@ -52,8 +52,6 @@
                     <?php $start_count =$count; ?>
                         <div class="col-md-6 view-comics">
                 @endif
-
-
                     <div class="row" style="margin-top: 20px;">
 
                         <img src="{{asset($truyen->linkAnh)}}" onerror="this.src='{{asset('images/anh1.png')}}'" class="cover">
