@@ -53,7 +53,7 @@
     </div>
     <div class="w3-content w3-display-container" style="margin:10px">
       @foreach($truyenmoi as $truyenm)
-        <div class="row" style="padding-left: 30px" >
+        <div class="row" style="padding-left: 30px; width: 100%;" >
           <div class="mySlides" style="width:100%;" >
             <div class="col-md-4">
               <img src="{{asset($truyenm->linkAnh)}}" alt="cover"  class="cover">
@@ -71,8 +71,8 @@
               </div>
             </div>
             </div>
-            <div>
-              <button type="button" name="button" style="    margin: 0 auto;    width: 200px;    display: block;    background: red;    border: none;    padding: 5px;    font-weight: bold;"><a href="{{route('chitiettruyen',['id'=>$truyenm->maTruyen])}}" style="color: white">Đọc liền cho máu!!!</a></button>
+            <div style="width: 100%">
+              <button type="button" name="button" style="    margin-left: 30%;    width: 200px;    display: block;    background: red;    border: none;    padding: 5px;    font-weight: bold;"><a href="{{route('chitiettruyen',['id'=>$truyenm->maTruyen])}}" style="color: white">Đọc liền cho máu!!!</a></button>
             </div>
           </div>
         </div>
@@ -110,11 +110,11 @@
     </div>
     @foreach($dstruyen as $truyen)
       @if (count($truyen->ChuongMoiNhat()) !=0)
-        <div class="row" style="padding-top: 10px">
+        <div class="row" style="padding-top: 10px; width: 100%;">
 {{--          <div class="col-md-3">--}}
             <img src="{{asset($truyen->linkAnh)}}" alt="cover" class="cover">
 {{--          </div>--}}
-          <div class="col-md-6" >
+          <div class="col-md-7" >
             <h6><a href="{{route('chitiettruyen',['id'=>$truyen->maTruyen])}}">{{$truyen->tenTruyen}}</a></h6>
             <div class="">
               <p>{{substr($truyen->gioiThieu,0,50)}}</p>
