@@ -115,7 +115,11 @@
       <ul class="listcomment">
         <li>
       <div class="comment">
-        <img src="{{asset(Auth::guard('thanhvien')->user()->avatar)}}" onerror="this.src='{{asset('images/comment.png')}}'" >
+          @if (Auth::guard('thanhvien')->user())
+              <img src="{{asset(Auth::guard('thanhvien')->user()->avatar)}}" onerror="this.src='{{asset('images/comment.png')}}'" >
+          @else
+              <img src="{{asset('images/comment.png')}}" onerror="this.src='{{asset('images/comment.png')}}'" alt="avatar" >
+          @endif
           <form method="post", action="{{route('binhluan',['maTruyen'=> $truyen->maTruyen,'maChuong'=>$chuongxem->maChuong,'noidung'])}}">
               {{csrf_field()}}
               <div class="comment_left">

@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7e9a9f30-d6a4-4c9d-8f72-6cae53174d18" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -50,7 +49,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="468">
@@ -60,6 +59,15 @@
                 <element signature="e#2460#2479#0#HTML" expanded="true" />
                 <element signature="e#3786#3826#0#HTML" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="247">
+              <caret line="120" column="124" selection-start-line="120" selection-start-column="124" selection-end-line="120" selection-end-column="124" />
             </state>
           </provider>
         </entry>
@@ -177,7 +185,6 @@
         <option value="$PROJECT_DIR$/resources/views/partials/chart.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/QuanLyTruyen.blade.php" />
         <option value="$PROJECT_DIR$/public/css/TV_binhluan.css" />
-        <option value="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/ThanhVien/TruyenYeuThich.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/tvNhom/ThongKeTruyenNhom.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/layouts/master_nhom.blade.php" />
@@ -185,6 +192,7 @@
         <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/DK_QLNhom.php" />
         <option value="$PROJECT_DIR$/resources/views/Khach/TrangChu.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php" />
       </list>
     </option>
   </component>
@@ -274,7 +282,7 @@
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="948" />
     <option name="y" value="-12" />
     <option name="width" value="984" />
@@ -333,6 +341,12 @@
               <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
               <item name="pttk" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="avatar" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pttk" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="cover" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -346,6 +360,12 @@
               <item name="pttk" type="462c0819:PsiDirectoryNode" />
               <item name="public" type="462c0819:PsiDirectoryNode" />
               <item name="css" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
+              <item name="pttk" type="462c0819:PsiDirectoryNode" />
+              <item name="public" type="462c0819:PsiDirectoryNode" />
+              <item name="images" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="pttk" type="b2602c69:ProjectViewProjectNode" />
@@ -515,12 +535,12 @@
       <workItem from="1560757777668" duration="21124000" />
       <workItem from="1560843454438" duration="9984000" />
       <workItem from="1560860717705" duration="12096000" />
-      <workItem from="1560952288872" duration="2590000" />
+      <workItem from="1560952288872" duration="3035000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="503170000" />
+    <option name="totallyTimeSpent" value="503615000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -532,7 +552,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-7" y="-7" width="1295" height="695" extended-state="7" />
+    <frame x="-7" y="-7" width="1295" height="695" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="npm" order="0" side_tool="true" />
@@ -585,18 +605,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/public/cover/6.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/cover/1.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/cover/test.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/cover/5.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/cover_nhom/x.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -906,13 +914,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="25" column="64" selection-start-line="25" selection-start-column="64" selection-end-line="25" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/DK_QLTruyen.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="160">
@@ -929,6 +930,25 @@
             <element signature="e#2460#2479#0#HTML" expanded="true" />
             <element signature="e#3786#3826#0#HTML" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/avatar/no-avatar208.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/dep.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/comment.PNG">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/images/ava.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/Khach/DocTruyen.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="120" column="124" selection-start-line="120" selection-start-column="124" selection-end-line="120" selection-end-column="124" />
         </state>
       </provider>
     </entry>
