@@ -21,6 +21,7 @@
     </div>
       <div class="row" style="margin-top: 50px;">
         <div class="col-md-8">
+          @if(count($data)!=0)
           @foreach($data as $truyen)
            <div class="row">
             <div class="col-md-5">
@@ -43,14 +44,15 @@
                 </ul>
             </div>
         </div>
-          
-
+          <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;"class="button-del" >xét duyệt</button>
           <div class="popup-alert" style="display: none;width: 500px;margin: 0 auto;position: fixed;top: 200px;background: #ccc;left: 35%;padding: 20px;border-radius: 10px;text-align: center;">
           <h2>Xét duyệt truyện này ?</h2>
-          <a href="{{route('da_duyet', ['id'=>$temp->maTruyen])}}" type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý</a>
-          <a type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-cal">Hủy</a>
+          <button onclick="window.location='{{route('da_duyet', ['id'=>$truyen->maTruyen])}}'" type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý</button>
+          <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-cal">Hủy</button>
           </div>
           @endforeach
+          @endif
+          
           
           </div>
 
