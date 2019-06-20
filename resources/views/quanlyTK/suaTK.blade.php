@@ -54,7 +54,7 @@
                 {{session('thongbao')}}
             </div>
         @endif
-        <form method="post" action="{{route('suaTK_admin')}}" enctype="multipart/form-data">
+        <form method="post" action="{{route("suaTK_admin")}}" enctype="multipart/form-data">
             {{ csrf_field() }}
           <div class="row">
             <div class="col-md-3">
@@ -125,7 +125,7 @@
             </div>
           </div>
           <button type="submit" name="save" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-del" >Lưu</button>
-          <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" onclick="window.location='{{route('admin_tk')}}'"><center>Hủy</center></button>
+          <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" onclick="window.location='{{route('admin_tk')}}'">Hủy</button>
         </form>
         </div>      
       </div>

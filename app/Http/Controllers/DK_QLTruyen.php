@@ -386,8 +386,8 @@ class DK_QLTruyen extends Controller
    //xet duyet truyen
    public function xetduyet_truyen()
    {
-      $data = truyen::where('duyet',false);
-      return view('quanlyND.xetduyet_truyen', ['truyen'=>$data]);
+      $data = truyen::where('duyet',false)->get();
+      return view('quanlyND.xetduyet_truyen', ['data'=>$data[0]]);
    }
 
    public function da_duyet($id)
@@ -395,7 +395,7 @@ class DK_QLTruyen extends Controller
       $data = truyen::find($id);
       $data->duyet = true;
       $data->save();
-      return view('qlnd_thanhcong');
+      return redirect()->route('xetduyet_truyen')->with('thongbao', 'Đã duyệt thành công');
    }
 
     public function getThemTruyenMoi(){
@@ -718,6 +718,182 @@ class DK_QLTruyen extends Controller
 
 
    }
+
+//cac ham tuong tac truyen cua admin qlnd
    
+  public function ctTruyen($id){
+       $truyen = truyen::find($id);
+        $thongke = $this->thongke('ngay');
+       $chartTruyens = [];
+       foreach ($thongke as $maTruyen=>$luotxem)
+       {
+           $truyen = truyen::find($maTruyen);
+           array_push($chartTruyens, $truyen);
+       }
+
+       return view('quanlyND.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$chartTruyens]);
+       
+  }
+  public function read($idTruyen,$idChuong)
+   {
+       $truyen = truyen::find($idTruyen);
+       $chuong = chuongtruyen::find($idChuong);
+       if ($chuong && $truyen) {
+       $truyen->capNhatLuotXem();
+       $log = new log_read;
+       $log->maTruyen = $truyen->maTruyen;
+       $log->read_at = Carbon::now('Asia/Ho_Chi_Minh');
+       $log->save();
+
+       return  view('quanlyND.DocTruyen',['truyen'=>$truyen,'chuongxem'=>$chuong]);
+       }
+
+       return redirect()->route('trangchu');
+       
+    
+   }
+
+  public function layTheoTheLoai($content=null)
+   {
+       $pattern = '/[a-zA-Z]*';
+       $tokens = explode(' ',$content);
+       foreach ($tokens as $tk)
+       {
+           $pattern = $pattern.$tk.'[a-zA-Z]*\s*';
+       }
+       $pattern = $pattern.'/';
+       $results =[];
+       $truyens = truyen::all()->where('duyet',1);
+       foreach ($truyens as $tr)
+       {
+           $tr_tl = $tr->getTheLoai;
+           foreach ($tr_tl as $tl)
+
+               if(preg_match($pattern, $tl->getTheLoai->tenTL))
+                   if(!in_array($tr, $results))
+                    array_push($results,$tr);
+       }
+       $paginate = 10;
+       $page = Input::get('page', 1);
+       $of = $page*$paginate-$paginate;
+       $curesults = array_slice($results, $of, $paginate, true);
+       $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+       $pagi->setpath('/theloai/');
+       $theloais = theloai::all();
+       $tentl = [];
+       foreach ($theloais as $tl) {
+         array_push($tentl, $tl->tenTL);
+       }
+       return view('quanlyND.TimKiemTruyen',['dstruyen'=>$pagi,'option'=>'Thể loại','content'=>$content,'select'=>$tentl]);
+   }
    
+   public function layTheoNam($content=2019){
+        $truyens = truyen::all();
+        $results = [];
+        foreach ($truyens as $truyen)
+        {
+            if($truyen->getNam()==$content)
+            {
+                array_push($results, $truyen);
+            }
+        }
+       $paginate = 10;
+       $page = Input::get('page', 1);
+       $of = $page*$paginate-$paginate;
+       $curesults = array_slice($results, $of, $paginate, true);
+       $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+       $pagi->setpath('/theloai/');
+       $nams = range(2010, 2030);
+        return view('quanlyND.TimKiemTruyen',['dstruyen'=>$pagi,'option'=>'Năm','content'=>$content,'select' =>$nams]);
+    }
+
+    public function searchTruyen($option, $content=null)
+   {
+       if($option)
+       {
+           switch ($option)
+           {
+               case 'tentruyen':
+                   return $this->layTheoTen($content);
+
+               case 'tennhom':
+                    return $this->layTheoNhom($content);
+
+               case 'theloai':
+                  return $this->layTheoTheLoai($content);
+
+               default:
+                   return $this->layTatCaTruyen();
+           }
+       }else{
+           return $this->layTatCaTruyen();
+       }
+   }
+    public function layTheoMa($content=null)
+   {
+       $results =[];
+       $truyens = truyen::all();
+       foreach ($truyens as $tr)
+       {
+           if(preg_match($content, $tr->maTruyen))
+               array_push($results,$tr);
+       }
+       return view('quanlyND.TimKiemTruyen',['dstruyen'=>$results,'option'=>'Mã ','conten'=>$content]);
+   }
+
+    public function layTheoTen($content=null)
+   {
+       $pattern = '/[a-zA-Z]*';
+       $tokens = explode(' ',$content);
+       foreach ($tokens as $tk)
+       {
+           $pattern = $pattern.$tk.'[a-zA-Z]*\s*';
+       }
+       $pattern = $pattern.'/';
+       $results =[];
+       $truyens = truyen::all()->where('duyet',1);
+       foreach ($truyens as $tr)
+       {
+           if(preg_match($pattern, $tr->tenTruyen))
+               array_push($results,$tr);
+       }
+        $paginate = 10;
+       $page = Input::get('page', 1);
+       $of = $page*$paginate-$paginate;
+       $curesults = array_slice($results, $of, $paginate, true);
+       $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+       $pagi->setpath('/theloai/');
+       return view('quanlyND.TimKiemTruyen',['dstruyen'=>$pagi,'option'=>'Truyện','content'=>$content]);
+   }
+    public function layTheoNhom($content=null)
+   {
+       $pattern = '/[a-zA-Z]*';
+       $tokens = explode(' ',$content);
+       foreach ($tokens as $tk)
+       {
+           $pattern = $pattern.$tk.'[a-zA-Z]*\s*';
+       }
+       $pattern = $pattern.'/';
+       $results =[];
+       $truyens = truyen::all()->where('duyet',1);
+       foreach ($truyens as $tr)
+       {
+           if(preg_match($pattern, $tr->nhom->tenNhom))
+               array_push($results,$tr);
+       }
+
+              $paginate = 10;
+       $page = Input::get('page', 1);
+       $of = $page*$paginate-$paginate;
+       $curesults = array_slice($results, $of, $paginate, true);
+       $pagi = new LengthAwarePaginator($curesults,count($results),$paginate);
+       $pagi->setpath('/theloai/');
+       $nhoms = nhom::all();
+       $tennhoms = [];
+
+       foreach ($nhoms as $nhom) {
+         array_push($tennhoms, $nhom->tenNhom);
+       }
+       return view('quanlyND.TimKiemTruyen',['dstruyen'=>$pagi,'option'=>'Nhóm','content'=>$content,'select'=>$tennhoms]);
+   }
 }

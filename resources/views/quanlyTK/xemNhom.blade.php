@@ -42,12 +42,28 @@
           <td>Danh sách truyện</td>
         </tr>
         <tr>
-          <td rowspan="{{$length+1}}"><?php echo $group->gioiThieu; ?></td>
+          <td rowspan="{{$length+1}}">{{$group->gioiThieu}}</td>
         </tr>
+        <?php
+          $count = 0;
+          $count1 = 0;
+        ?>
         @for($i=0; $i< $length; $i++)
           <tr>
+            @if($count1<sizeof($ds_tv))
             <td>{{$ds_tv[$i]['name']}}</td>
-            <td>truyen 1</td>
+            @else 
+            <td></td>
+            @endif
+            @if($count<sizeof($ds_truyen))
+            <td>{{$ds_truyen[$i]['tenTruyen']}}</td>
+            <?php
+              $count +=1;
+            ?>
+            @else 
+            <td></td>
+            @endif
+
           </tr>
         @endfor
         
@@ -58,8 +74,8 @@
   </div>
   <div class="popup-alert" style="display: none;width: 500px;margin: 0 auto;position: fixed;top: 200px;background: #ccc;left: 35%;padding: 20px;border-radius: 10px;text-align: center;">
     <h2>Xác nhận xóa nhóm?</h2>
-    <a  href="{{route('xoaNhom',['id_nhom'=>$group->maNhom])}}" type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý</a>
-    <a type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-cal">Hủy</a>
+    <button onclick="window.location='{{route("xoaNhom",['id_nhom'=>$group->maNhom])}}'" type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý</button>
+    <button type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-cal">Hủy</button>
   </div>
 
 

@@ -11,7 +11,7 @@ class nhomController extends Controller
     //
     public function thongkeNhom()
     {
-    	$data = nhom::orderBy('soLuongTruyen','desc')->get()->toArray();
+    	$data = nhom::all();
         return view('quanlyTK.thongkeNhom', ['temp'=>$data]);
     }
 
@@ -41,6 +41,5 @@ class nhomController extends Controller
     {
         $data = nhom::find($id_nhom);
         $data->delete();
-        return view('thanhcong');
-    }
+        return redirect()->route('nhom')->with('thongbao', "Đã xóa thành công");    }
 }

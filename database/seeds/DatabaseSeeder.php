@@ -15,12 +15,12 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // $this->call(tkSeeder::class);
+        //$this->call(tkSeeder::class);
 
-        //$this->call(nhomSeeder::class);
-        // $this->call(Admin1::class);
+        //$this->call(nhom1::class);
+        $this->call(Admin1::class);
         //$this->call(Admin2::class);
-        $this->call(theloai1::class);
+        //$this->call(theloai1::class);
 
     }
 }
@@ -34,7 +34,7 @@ class tkSeeder extends Seeder
             $data->name = str_random(3);
             $data->password = bcrypt('12345');
             $data->email = str_random(5).'@gmail.com';
-            $data->maNhom = random_int(1,5);
+            $data->maNhom = random_int(1,6);
             $data->create_at = Carbon::now('Asia/Ho_Chi_Minh');
             $data->save();
         }
@@ -45,14 +45,12 @@ class nhom1 extends Seeder
 {
     public function run()
     {
-        for ($i=0; $i < 4; $i++) { 
+        for ($i=0; $i < 6; $i++) { 
             # code...
         
         $data = new nhom;
-        $data->tenNhom = str_random(10);
-        $data->maTruongNhom = random_int(6, 11);
-        $data->soLuongTV = random_int(5,10);
-        $data->soLuongTruyen = random_int(5,10);
+        $data->tenNhom = str_random(6);
+        $data->maTruongNhom = random_int(1, 5);
         $data->ngayLap = Carbon::now('Asia/Ho_Chi_Minh');
         $data->save(); 
         }  
@@ -64,9 +62,9 @@ class Admin1 extends Seeder
     public function run()
     {
         $ad1 = new admin;
-        $ad1->name ='ngo tai';
+        $ad1->name ='ngo kinh';
         $ad1->password = bcrypt('12345');
-        $ad1->email = '1noname@gmail.com';
+        $ad1->email = '3noname@gmail.com';
         $ad1->create_at = Carbon::now('Asia/Ho_Chi_Minh');
         $ad1->quyen = 'noidung';
         $ad1->save();

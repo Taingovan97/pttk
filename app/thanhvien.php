@@ -57,4 +57,5 @@ class thanhvien extends Authenticatable
     public function setNhom(){
 
     }
+    
 }

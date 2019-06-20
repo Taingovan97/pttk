@@ -2,14 +2,13 @@
 <html lang="en" dir="ltr">
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')}}">
-  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-  <link rel="stylesheet" href="{{asset('css/style.css')}}">
-  <link rel="icon" href="{{asset('images/favicon.png')}}">
-  @yield('head.css')
-
-  <title>@yield('head.title')</title>
+    <link rel="stylesheet" href="{{asset('https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css')}}">
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
+    <link rel="icon" href="{{asset('images/favicon.png')}}">
+    @yield('head.css')
+    <title>@yield('head.title')</title>
 </head>
 
 	<body>
@@ -36,15 +35,6 @@
           @endif
           
         </div>
-      </div>
-      <div class="row direct" style="display: none;">
-        <ul>
-          <li><a href="#">Truyện mới</a></li>
-          <li><a href="#">Thể loại</a></li>
-          <li><a href="#">Nhóm dịch</a></li>
-          <li><a href="#">Tác giả</a></li>
-          <li><a href="#">Năm</a></li>
-        </ul>
       </div>
       <div class="row direct-manager">
         <ul>

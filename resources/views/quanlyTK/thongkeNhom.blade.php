@@ -13,10 +13,10 @@
         </tr>
         @foreach($temp as $nhom)
         <tr>
-          <td><?php echo $nhom['tenNhom']; ?></td>
-          <td><?php echo $nhom['soLuongTV']; ?></td>
-          <td><?php echo $nhom['soLuongTruyen'] ?></td>
-          <td><?php echo $nhom['ngayLap']; ?></td>
+          <td><?php echo $nhom->tenNhom; ?></td>
+          <td><?php echo $nhom->getSoLuongThanhVien(); ?></td>
+          <td><?php echo $nhom->getSoLuongTruyen(); ?></td>
+          <td><?php echo $nhom->ngayLap; ?></td>
         </tr>
         @endforeach
         
