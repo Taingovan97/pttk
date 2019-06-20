@@ -42,13 +42,13 @@ class chuongtruyen extends Model
     }
 
 
-    public function chuongTruoc(){
+    public function chuongTruoc($mt){
 
-        $previous = chuongtruyen::where('maChuong', '<', $this->maChuong)->max('maChuong');
+        $previous = chuongtruyen::where('maTruyen',$mt)->where('maChuong', '<', $this->maChuong)->max('maChuong');
         return $previous;
     }
-    public function chuongSau(){
-        $next = chuongtruyen::where('maChuong', '>', $this->maChuong)->min('maChuong');
+    public function chuongSau($mt){
+        $next = chuongtruyen::where('maTruyen',$mt)->where('maChuong', '>', $this->maChuong)->min('maChuong');
         return $next;
     }
 }

@@ -116,7 +116,16 @@ Route::group(['middleware'=>['web','auth_thanhvien']], function(){
 
      // Tạo nhóm
 
-     Route::get('taonhom', function () { return view('ThanhVien.taoNhom');}) ->name('formtaonhom');
+     Route::get('taonhom', function () {
+         if (Auth::user()->active ==true)
+             if(Auth::user()->maNhom)
+                 return redirect()->route('trangchunhom');
+             else
+                 return view('ThanhVien.taoNhom');
+         else
+             return redirect()->route('trangchu')->with('thongbao','<script>alert("Bạn cần xác nhận tài khoản để tạo nhóm!")</script>');
+     })->name('formtaonhom');
+
      Route::post('taonhom', 'DK_QLNhom@postTaoNhom')->name('posttaonhom');
 
     Route::get('danhgia/{matruyen}/{diem}','DK_QLTruyen@danhGia');
@@ -166,6 +175,7 @@ Route::middleware(['auth_thanhvienNhom'])->group(function (){
             Route::get('thongtinnhom','DK_QLNhom@thongTinNhom')->name('thongtinnhom');
             Route::get('suathongtin', 'DK_QLNhom@getSuaThongTinNhom')->name('suathongtinnhom');
             Route::post('suathongtinnhom', 'DK_QLNhom@postSuaThongTinNhom')->name('postsuathongtinnhom');
+            Route::get('timtv/{content?}', 'DK_QLNhom@timThanhVien');
             Route::get('thanh_vien_nhom',function (){ return view('tvNhom.dsThanhVien');})->name('thanhviennhom');
             Route::get('them_thanh_vien', 'DK_QLNhom@getThemThanhVien')->name('getthemthanhvien');
             Route::get('them_thanh_vien/{name}', 'DK_QLNhom@themThanhVien')->name('themthanhvien');

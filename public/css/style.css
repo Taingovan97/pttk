@@ -173,10 +173,11 @@ footer {
 .avatar_comment{
   max-height: 57px;
   max-width: 58px;
-
-
 }
-
+.avatar_list{
+  height: 208px;
+  width: 208px;
+}
 .location ul{
 
 }
@@ -291,4 +292,7 @@ footer {
   font-weight: bold;
   border: none;
   background-color: unset;
+}
+.col-md-6 {
+  word-wrap: break-word;
 }

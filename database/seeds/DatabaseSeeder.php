@@ -15,12 +15,35 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
+<<<<<<< HEAD
         //$this->call(tkSeeder::class);
 
         //$this->call(nhom1::class);
         $this->call(Admin1::class);
         //$this->call(Admin2::class);
         //$this->call(theloai1::class);
+=======
+
+        $this->call(tkSeeder::class);
+
+        // $this->call(UsersTableSeeder::class);
+
+
+
+
+
+
+        // DB::table('chuongtruyen')->insert([
+        //     'tenChuong'=>'chuong 4 cua truyen 1',
+        //     'noiDung'=>'nd',
+        //     'ngayDang'=>'1-4-2019',
+        //     'maTruyen'=>'T0'
+        // ]);
+        // $this->call(tkSeeder::class);
+        //$this->call(nhomSeeder::class);
+        // $this->call(Admin1::class);
+        $this->call(Admin2::class);
+>>>>>>> 3dcf1019e85ad575671ee2afbf114a33e1b46cd0
 
     }
 }

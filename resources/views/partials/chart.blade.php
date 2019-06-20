@@ -2,13 +2,13 @@
     <h3>Bảng xêp hạng</h3>
     <div class="row" style="border-bottom: 1px solid #d5d72f;">
         <div class="col-md-4 charts select">
-           <button value="ngay">Top ngày</button>
+           <button value="ngay" onclick="changechart(this)">Top ngày</button>
         </div>
         <div class="col-md-4 charts">
-            <button value="tuan">Top tuần</button>
+            <button value="tuan" onclick="changechart(this)">Top tuần</button>
         </div>
         <div class="col-md-4 charts">
-            <button value="thang">Top tháng</button>
+            <button value="thang" onclick="changechart(this)">Top tháng</button>
         </div>
     </div>
     <div class="" id="contentChart">
@@ -24,14 +24,13 @@
     </div>
 
     <script type="text/javascript">
-
-        $(document).on("click", "button", function(e){
-            var option = $(this).val();
+        function changechart(id){
+            var option = $(id).val();
             $.get('chart/'+option, function (data) {
                 $('#contentChart').html(data);
             });
 
-        });
+        }
 
     </script>
 </div>

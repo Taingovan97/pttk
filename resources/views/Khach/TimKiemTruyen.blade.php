@@ -61,7 +61,11 @@ Truyện tranh online
 
                         <div class="item">
                             <div class="infor">
+                                <div class="row">
+                                <div class="col-md-3">
                                 <a href="{{route('chitiettruyen',['id'=>$tv_tl->maTruyen])}}"><img src="{{asset($tv_tl->linkAnh)}}"/></a>
+                                </div>
+                                <div class="col-md-8">
                                 <a href="{{route('chitiettruyen',['id'=>$tv_tl->maTruyen])}}"><h4>{{$tv_tl->tenTruyen}}</h4></a>
                                 <p>Đánh giá: <span>
                             @if($tv_tl->diemDG>0)
@@ -77,8 +81,8 @@ Truyện tranh online
                                 <p>Thể loại:
                                     <span>
                             @foreach($tv_tl->getTheloai as $theloai)
-                                            {{$theloai->getTheLoai->tenTL}},
-                                        @endforeach
+                                {{$theloai->getTheLoai->tenTL}},
+                            @endforeach
                         </span>
                                 </p>
                                 <p>Tình trạng:
@@ -91,7 +95,8 @@ Truyện tranh online
                                     @endif
                                 </p>
                                 <p>Sơ lược nội dung truyện:<span> {{$tv_tl->gioiThieu}}</span></p>
-
+                            </div>
+                                </div>
                             </div>
                         </div>
                         {{--            {{$tv_tl->getTruyen->tenTruyen}}--}}

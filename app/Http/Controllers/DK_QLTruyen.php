@@ -20,8 +20,8 @@ use Illuminate\Pagination\LengthAwarePaginator;
 class DK_QLTruyen extends Controller
 {
    function chiTietTruyen($id){
-       $truyen = truyen::find($id);
-       if ($truyen->duyet == True) {
+       $truyen0 = truyen::find($id);
+       if ($truyen0->duyet == True) {
          $thongke = $this->thongke('ngay');
        $chartTruyens = [];
        foreach ($thongke as $maTruyen=>$luotxem)
@@ -30,7 +30,7 @@ class DK_QLTruyen extends Controller
            array_push($chartTruyens, $truyen);
        }
 
-       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen, 'chartTruyens'=>$chartTruyens]);
+       return view('Khach.XemChiTietTruyen',['truyen'=>$truyen0, 'chartTruyens'=>$chartTruyens]);
        }
        return redirect()->route('trangchu');
        
@@ -453,7 +453,7 @@ class DK_QLTruyen extends Controller
 
         }
         $truyen2->save();
-        return redirect()->route('quanlytruyen');
+        return redirect()->route('formthemchuongmoi',['maTruyen'=>$truyen2->maTruyen]);
 
 
     }

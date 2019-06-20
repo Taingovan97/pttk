@@ -31,7 +31,7 @@
     <th>Thời gian</th> 
     <th>Chap mới nhất</th>
     <th>Lượt xem</th>
-    <th>Đánh giá</th>
+    <th>Điểm đánh giá</th>
   </tr>
     @foreach($dsTruyen as $truyen)
       <tr>

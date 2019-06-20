@@ -66,7 +66,6 @@ footer {
 	margin-left: -40px;
 	width: 35px;
 	height: 30px;
-	background: url('searchicon.png');
 	background-size: 100%;
     background-repeat: no-repeat;
 	text-align: center;
@@ -213,7 +212,7 @@ b {
 	height: 35px;
 	width: 35px;
 	font-size: 20px;
-	font-weight: 100%;
+	/*font-weight: 100%;*/
 	margin-right: 20px;
 	margin-left: 20px;
 
@@ -292,6 +291,14 @@ h2 {
 	height: 35px;
 	width: 75px;
 	margin-left: 20px;	
+	background: rgb(32	90	167);
+	color: white;
+}
+.comment_left input[type='button'] {
+	float: right;
+	height: 35px;
+	width: 75px;
+	margin-left: 20px;
 	background: rgb(32	90	167);
 	color: white;
 }
