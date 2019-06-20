@@ -387,7 +387,7 @@ class DK_QLTruyen extends Controller
    public function xetduyet_truyen()
    {
       $data = truyen::where('duyet',false)->get();
-      return view('quanlyND.xetduyet_truyen', ['data'=>$data[0]]);
+      return view('quanlyND.xetduyet_truyen', ['data'=>$data]);
    }
 
    public function da_duyet($id)
@@ -395,7 +395,8 @@ class DK_QLTruyen extends Controller
       $data = truyen::find($id);
       $data->duyet = true;
       $data->save();
-      return redirect()->route('xetduyet_truyen')->with('thongbao', 'Đã duyệt thành công');
+      $data1 = truyen::where('duyet',false)->get();
+      return view('quanlyND.xetduyet_truyen', ['data'=>$data1]); 
    }
 
     public function getThemTruyenMoi(){
@@ -633,7 +634,7 @@ class DK_QLTruyen extends Controller
    public function xoatruyen()
    {
       $data = truyen::all();
-      return view('quanlyND.xoatruyen', ['truyen'=>$data]);
+      return view('quanlyND.xoatruyen', ['data'=>$data]);
    }
 
    public function da_xoa($id)
