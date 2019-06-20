@@ -453,7 +453,7 @@ class DK_QLTruyen extends Controller
 
         }
         $truyen2->save();
-        return redirect()->route('quanlytruyen');
+        return redirect()->route('formthemchuongmoi',['maTruyen'=>$truyen2->maTruyen]);
 
 
     }
