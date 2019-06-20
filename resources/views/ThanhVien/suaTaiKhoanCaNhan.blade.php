@@ -130,8 +130,13 @@
         <button type="submit" name="save" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-del" >Lưu</button>
         <button type="button" name="canle" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;"
                 onclick="window.location='{{route("thongtintaikhoan")}}'">Hủy</button>
+<<<<<<< HEAD
+            </form>
+        </div>
+=======
 
         </form>
     </div>
+>>>>>>> 3dcf1019e85ad575671ee2afbf114a33e1b46cd0
     </div>
 @endsection

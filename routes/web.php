@@ -26,8 +26,7 @@
  	Route::get('tacgia', 'DK_Trang@layTruyenTheoTacGia')->name('tacgia');
  	Route::get('nam/{nam?}', 'DK_QLTruyen@layTruyenTheoNam')->name('nam');
  	Route::get('chart/{option}','DK_QLTruyen@doithongke');
-	//trang chu
-	Route::get('home', 'pagescontroller@index');
+	
 
 	
 
@@ -221,17 +220,21 @@ Route::post('quanlyTK/hienthi','taikhoanController@hienthi')->name('hienthi');
 
 
 //tim TK de xoa
-Route::get('quanlyTK/tim_xoaTK', 'taikhoanController@find')->name('tim_xoaTK');
+Route::get('quanlyTK/tim_xoaTK', function(){
+    return view('quanlyTK.timTK');
+})->name('tim_xoaTK');
 
 //giao dien xoa tk
 Route::post('quanlyTK/xoaTK', 'taikhoanController@xoaTK')->name('xoaTK');
 
-Route::get('quanlyTK/da_xoa/{id}', 'taikhoanController@da_xoa')->name('da_xoa');
+Route::get('quanlyTK/da_xoa/{ten}', 'taikhoanController@da_xoa')->name('da_xoa');
 
 
 
 //thong tin ca nhan
-Route::get('quanlyTK/ttcanhan', 'taikhoanController@ttcanhan')->name('admin_tk');
+Route::get('quanlyTK/ttcanhan', function(){
+    return view('quanlyTK.xemTKCN');
+})->name('admin_tk');
 
 //sua tk ca nhan
 Route::get('quanlyTK/suaTK/{ten}', function(){
@@ -260,7 +263,6 @@ Route::get('quanlyND', 'pagescontroller@index_qlnd')->name('index_qlnd');
 
 Route::get('quanlyND/ttcanhan', 'taikhoanController@ttcanhan')->name('admin_nd');
 
-Route::get('quanlyND/suaTK/{id}', 'taikhoanController@suuTK');
 
 //xet duyet truyen
 Route::get('quanlyND/xetduyet_truyen', 'DK_QLTruyen@xetduyet_truyen')->name('xetduyet_truyen');
@@ -279,6 +281,23 @@ Route::get('test', function(){
 	return view('qlnd_fail');
 });
 
+//xem chi tiet truyen
+Route::get('quanlyND/chi_tiet_truyen/{id}', 'DK_QLTruyen@ctTruyen')->name('cttruyen');
+
+//doc truyen
+Route::get('quanlyND/truyen/{idTruyen}/{idChuong}','DK_QLTruyen@read')->name('read');
+
+//truyen moi
+Route::get('quanlyND/truyenmoi', 'DK_Trang@truyennew')->name('truyennew');
+
+//the loai truyen
+Route::get('quanlyND/theloai/{content?}', 'DK_QLTruyen@layTheoTheLoai')->name('type');
+
+//truyen theo nam
+Route::get('quanlyND/nam/{nam?}', 'DK_QLTruyen@layTheoNam')->name('year');
+
+//tim kiem truyen
+Route::get('quanlyND/timtruyen/{option}/{content?}', 'DK_QLTruyen@searchTruyen');
 
 //xoa truyen
 Route::get('quanlyND/xoatruyen', 'DK_QLTruyen@xoatruyen')->name('xoatruyen');
@@ -317,5 +336,16 @@ Route::get('themcot', function(){
 	});
 });
 
+//thong tin ca nhan
+Route::get('quanlyND/ttcanhan', function(){
+    return view('quanlyND.xemTKCN');
+})->name('admin_nd');
 
+//sua tk ca nhan
+Route::get('quanlyND/suaTK/{ten}', function(){
+    return view('quanlyND.suaTK');
+})->name('suaTK_ND');
+
+
+Route::post('quanlyND/suaTK_admin', 'DK_QLTaiKhoan@postsuaTK_admin')->name('postsuaTK_admin');
 

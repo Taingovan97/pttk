@@ -24,7 +24,7 @@
       <h4>Thông tin tài khoản</h4>
       <div class="row">
         <div class="col-md-4">
-          <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;border: 1px solid;">
+          <img src="{{$account[0]->avatar}}" onerror="this.src='{{asset('images/x.png')}}'"  alt="" style="width: 100%;border: 1px solid;">
 		  <button type="button" name="button" style="margin: 10px auto;width: 100%;background: #00b2bf;padding: 8px;border: none;font-weight: bold;color: #fff;font-size: 14px;" class="button-del">Xóa</button>
         </div>
       <div class="col-md-8">
@@ -33,7 +33,7 @@
               <p>Tên đăng nhập:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $ten; ?></p>
+              <p>{{$account[0]->name}}</p>
             </div>
           </div>
 		  <div class="row">
@@ -42,7 +42,7 @@
             </div>
             <div class="col-md-4">
               <p><?php 
-              if ($active == true) 
+              if ($account[0]->active == true) 
               	echo "Đã xác thực";
               else
               	echo "Chưa xác thực";
@@ -54,7 +54,7 @@
               <p>Email:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $email; ?></p>
+              <p>{{$account[0]->email}}</p>
             </div>
           </div>
           <div class="row">
@@ -62,7 +62,7 @@
               <p>Số điện thoại:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $sdt; ?></p>
+              <p>{{$account[0]->sdt}}</p>
             </div>
           </div>
 
@@ -71,7 +71,7 @@
               <p>Giới tính:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $genre; ?></p>
+              <p>{{$account[0]->gioiTinh}}</p>
             </div>
           </div>
           <div class="row">
@@ -79,18 +79,28 @@
               <p>Mã tài khoản:</p>
             </div>
             <div class="col-md-4">
-              <p><?php echo $id; ?></p>
+              <p>{{$account[0]->maTK}}</p>
             </div>
           </div>
+          @if(isset($account[0]->maNhom))
           <div class="row">
             <div class="col-md-3">
               <p>Tên nhóm:</p>
             </div>
             <div class="col-md-4">
-              <p>Pinoy</p>
+              <p>{{$account[0]->getNhom->tenNhom}}</p>
             </div>
           </div>
-
+          @else
+           <div class="row">
+            <div class="col-md-3">
+              <p>Quyền:</p>
+            </div>
+            <div class="col-md-4">
+              <p>{{$account[0]->quyen}}</p>
+            </div>
+          </div>
+          @endif
         </div>
           
         </div>
@@ -99,7 +109,7 @@
   </div>
   <div class="popup-alert" style="display: none;width: 500px;margin: 0 auto;position: fixed;top: 200px;background: #ccc;left: 35%;padding: 20px;border-radius: 10px;text-align: center;">
     <h2>Xác nhận xóa ?</h2>
-    <a href="{{route('da_xoa', ['id'=>$id])}}"  type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý
+    <a href="{{route('da_xoa', ['ten'=>$account[0]->name])}}"  type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;">Đồng ý
     </a>
     <a type="button" name="button" style="margin: 10px auto;width: 40%;background: #00b2bf;padding: 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" class="button-cal">Hủy</a>
   </div>

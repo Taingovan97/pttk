@@ -1,10 +1,15 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\Http\Controllers\nhom;
 use App\truyen;
+use App\chuongtruyen;
+use App\theloai;
+use App\baocao;
+use App\Http\Controllers\DK_QLTruyen;
+
 
 
 class pagescontroller extends Controller
@@ -27,8 +32,16 @@ class pagescontroller extends Controller
 
     public function index_qlnd()
     {
-        $truyens = truyen::all();
-        return view('quanlyND.index', ['dstruyen'=> $truyens, 'chartTruyens'=>$truyens]);
+            $truyens = truyen::where('duyet',true)->paginate(10);
+            $thongke = DK_QLTruyen::thongke('ngay');
+            $chartTruyens = [];
+            foreach ($thongke as $maTruyen=>$luotxem)
+            {
+                $truyen = truyen::find($maTruyen);
+                array_push($chartTruyens, $truyen);
+            }
+            $truyenmoi = truyen::where('duyet',true)->orderBy('ngayDang','desc')->take(5)->get();
+            return view('quanlyND.TrangChu', ['dstruyen'=> $truyens, 'chartTruyens'=>$chartTruyens,'truyenmoi'=>$truyenmoi]); 
     }
 
     

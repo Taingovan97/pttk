@@ -6,13 +6,14 @@
     
 	<div class="row" >
       <div class="col-md-7">
-        <h3>Quản lý báo cáo</h3>
+        <h5><span><a style="color: blue;" href="{{route('index_qlnd')}}">Trang chủ</a></span>/<span>Quản lý báo cáo</span>/
       </div>
       <div class="col-md-2">
         <p style="margin:5px 0; text-align: right;">Chọn báo cáo :</p>
       </div>
       <div class="col-md-3">
-        <form action="{{route('xemBC')}}" method="post">
+        <form action="{{route('baocao')}}" method="post">
+        {{csrf_field()}}
         <div class="find-element">
           <input type="text" name="keyword" placeholder="   Tìm kiếm" value="">
           <button type="submit"></button>
@@ -29,9 +30,9 @@
         </tr>
         @foreach($baocao as $temp)
         <tr>
-          <td><a href="{{route('xemBC', ['id'=>$temp['maBC']])}}"><?php echo $temp['tieuDe']; ?></a></td>
+          <td><a href="{{route('xemBC', ['id'=>$temp['maBC']])}}">{{$temp['tieuDe']}}</a></td>
           <td><?php  
-            if ($temp['loaiBC']==1) {
+            if ($temp['loaiBC']==0) {
               echo "Báo cáo truyện lỗi";
             }
             else

@@ -72,4 +72,13 @@ class DK_Trang extends Controller
     }
 
 
+    //cac ham cua admin noi dung
+    public function truyennew()
+    {
+        
+       $truyens = truyen::where('duyet',1)->orderBy('ngayDang','desc')->paginate(10);
+       return view('quanlyND.TimKiemTruyen',['dstruyen'=>$truyens,'option'=>'Truyện mới']);
+    }
+
+
 }

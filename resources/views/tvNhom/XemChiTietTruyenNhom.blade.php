@@ -46,8 +46,8 @@
                 <div class="col-md-8">
                     <b>{{$truyen->tenTruyen}}</b>
                     <ul>
-                        <li><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>⭐ ⭐ ⭐ ⭐ ⭐</li>
-                        <li>Đánh giá:<span> {{$truyen->DiemDG}}</span></li>
+                        <li>Đánh giá:<span>
+                        {{$truyen->diemDG}}</span></li>
                         <li><span>Chap {{$truyen->soChuong()}}</span><span> | </span> Lượt xem:<span> 1000</span></li>
                         <li>Thể loại:
                             @foreach($truyen->getTheLoai as $tr_theloai)
@@ -58,8 +58,6 @@
                         <li style="border: 1px solid grey; height: 120px;">Sơ lược nội dung truyện: {{$truyen->gioiThieu}}</li>
                     </ul>
                     <div class="row">
-                        <button>Like</button>
-                        <button>Share</button>
                         <button onclick="confirmDelete()">Xóa</button>
                         <script>
                             function confirmDelete(id){

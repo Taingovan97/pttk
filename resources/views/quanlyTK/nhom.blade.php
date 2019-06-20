@@ -24,8 +24,7 @@
         </form>
     </div>
   <div class="col-md-3">
-  <a type="button" name="button" style="display: block;width: 70%;background: #00b2bf;padding: 2px 10px;border: none;font-weight: bold;color: #fff;font-size: 18px;" href="{{route('thongkeNhom')}}">
-  <center>Thống kê nhóm</center>
+  <buttontype="button" name="button" style="margin: 10px auto; display: block;width: 65%;background: #00b2bf;padding: 4px 10px;border: 1px;font-weight: bold;color: #fff;font-size: 18px;" onclick="window.location='{{route('thongkeNhom')}}'">Thống kê nhóm</button>
   </a>
   </div>
     <div class="row">
@@ -36,15 +35,14 @@
             <div class="col-md-6">
               <div class="row search-view-element">
                 <div class="col-md-5">
-                  <img src="{{asset('images/x.png')}}" alt="" style="width: 100%;">
+                  <img onerror="this.src='{{asset('images/x.png')}}'" src="{{asset('$nhom->linkAnh')}}" alt="" style="width: 100%;">
                 </div>
                 <div class="col-md-7" >
                   <h5><a href="{{route('xemNhom', ['id_nhom'=> $nhom->maNhom])}}"><?php echo $nhom->tenNhom; ?></a></h5>
-                <div class="row" >
-                  <p><?php echo "Số lượng thành viên: ".$nhom->getSoLuongThanhVien();?></p>
-                  <p><?php echo "Số lượng truyện: ".$nhom->getSoLuongTruyen(); ?></p>
-                  <p><?php echo "Ngày thành lập: ".$nhom->getNgayLap(); ?></p>
-                </div>
+                
+                  <p style="margin-left: 0px;"><?php echo "Số lượng thành viên: ".$nhom->getSoLuongThanhVien();?></p>
+                  <p style="margin-left: 0px;"><?php echo "Số lượng truyện: ".$nhom->getSoLuongTruyen(); ?></p>
+                  <p style="margin-left: 0px;"><?php echo "Ngày thành lập: ".$nhom->getNgayLap(); ?></p>
                 </div>
               </div>
             </div>

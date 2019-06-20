@@ -74,14 +74,15 @@ class DK_QLBaoCao extends Controller
     public function baocao(Request $request)
     {
         $name = $request->input('keyword');
+        $data = baocao::all();
         $bc = baocao::pluck('tieuDe')->toArray();
         if (in_array($name, $bc)) {
             $id = baocao::where('tieuDe',$name)->value('maBC');
-            return redirect('xemBC', ['id'=>$id]);
+            return redirect()->route('xemBC', ['id'=>$id]);
 
         }
         else
-            return view('qlnd_fail');
+            return view('quanlyND.tracuuBC', ['baocao'=>$data]);
 
     }
 
@@ -99,7 +100,8 @@ class DK_QLBaoCao extends Controller
     {
         $data = baocao::find($id);
         $data->delete();
-        return('da_xoa');
+        $bc = baocao::all();
+        return view('quanlyND.tracuuBC', ['baocao'=>$bc])->with('thongbao', 'Đã xóa thành công');
     }
 
 }
