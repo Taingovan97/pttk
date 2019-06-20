@@ -470,7 +470,7 @@ class DK_QLTruyen extends Controller
         return redirect()->route('chitiettruyen',['id'=>$id]);
     }
 
-    public function chinhSuaTruyen($id){
+    public function chinhSuaTruyen(Request $request,$id){
               $this->validate($request,[
             'tentruyen'=>'required',
             'theloai' => 'required',
